@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sky Shards Calculator</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
   :root {
     --bg: #0a0c10;
@@ -26,7 +26,7 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'Syne', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -64,7 +64,7 @@
     color: var(--text);
   }
   .logo span { color: var(--accent); }
-  .logo-sub { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 4px; letter-spacing: 0.08em; }
+  .logo-sub { font-family: 'Courier New', Courier, monospace; font-size: 11px; color: var(--muted); margin-top: 4px; letter-spacing: 0.08em; }
 
   /* Tab bar */
   .tabs {
@@ -86,7 +86,7 @@
     transition: all 0.15s;
     border: none;
     background: none;
-    font-family: 'Syne', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     white-space: nowrap;
   }
   .tab:hover { color: var(--text); }
@@ -110,7 +110,7 @@
   }
   .product-title { font-size: 22px; font-weight: 800; }
   .chain-badge {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 11px;
     color: var(--muted);
     background: var(--surface);
@@ -141,7 +141,7 @@
     padding: 20px;
   }
   .card-label {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 10px;
     color: var(--muted);
     letter-spacing: 0.1em;
@@ -162,12 +162,12 @@
     font-size: 11px;
     color: var(--muted);
     margin-top: 5px;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Courier New', Courier, monospace;
   }
 
   /* Section label */
   .section-label {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 10px;
     color: var(--muted);
     letter-spacing: 0.12em;
@@ -198,7 +198,7 @@
   .input-group-sub {
     font-size: 11px;
     color: var(--muted);
-    font-family: 'Space Mono', monospace;
+    font-family: 'Courier New', Courier, monospace;
     margin-top: 2px;
   }
   .num-input {
@@ -208,7 +208,7 @@
     color: var(--text);
     font-size: 16px;
     font-weight: 700;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Courier New', Courier, monospace;
     padding: 8px 14px;
     width: 130px;
     text-align: right;
@@ -238,7 +238,7 @@
   .ing-name { font-size: 14px; font-weight: 600; }
   .ing-right { display: flex; align-items: center; gap: 20px; }
   .ing-qty {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
     font-weight: 700;
     color: var(--accent);
@@ -246,7 +246,7 @@
     text-align: right;
   }
   .ing-cost {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 13px;
     color: var(--muted);
     min-width: 90px;
@@ -274,8 +274,8 @@
     font-size: 16px;
     background: var(--surface2);
   }
-  .profit-row .label { color: var(--muted); font-family: 'Space Mono', monospace; font-size: 12px; }
-  .profit-row .val { font-family: 'Space Mono', monospace; font-weight: 700; }
+  .profit-row .label { color: var(--muted); font-family: 'Courier New', Courier, monospace; font-size: 12px; }
+  .profit-row .val { font-family: 'Courier New', Courier, monospace; font-weight: 700; }
   .profit-row .val.pos { color: var(--accent); }
   .profit-row .val.neg { color: var(--red); }
 
@@ -289,7 +289,7 @@
     color: var(--red);
     margin-bottom: 16px;
     display: none;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Courier New', Courier, monospace;
   }
 
   /* Add/Delete product panel */
@@ -303,14 +303,14 @@
   .manage-panel h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
   .form-row { display: flex; align-items: flex-end; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
   .form-field { display: flex; flex-direction: column; gap: 6px; }
-  .form-field label { font-size: 11px; color: var(--muted); font-family: 'Space Mono', monospace; letter-spacing: 0.08em; }
+  .form-field label { font-size: 11px; color: var(--muted); font-family: 'Courier New', Courier, monospace; letter-spacing: 0.08em; }
   .form-field input, .form-field select {
     background: var(--surface2);
     border: 1px solid var(--border2);
     border-radius: 8px;
     color: var(--text);
     font-size: 14px;
-    font-family: 'Syne', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     padding: 8px 12px;
     outline: none;
     min-width: 140px;
@@ -321,7 +321,7 @@
     border-radius: 8px;
     font-size: 13px;
     font-weight: 700;
-    font-family: 'Syne', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     cursor: pointer;
     border: none;
     transition: all 0.15s;
@@ -344,7 +344,7 @@
     background: var(--surface2);
   }
   .product-list-item .name { font-weight: 600; }
-  .product-list-item .chain-mini { font-size: 11px; color: var(--muted); font-family: 'Space Mono', monospace; margin-top: 2px; }
+  .product-list-item .chain-mini { font-size: 11px; color: var(--muted); font-family: 'Courier New', Courier, monospace; margin-top: 2px; }
 
   .divider { height: 1px; background: var(--border); margin: 24px 0; }
 
@@ -355,7 +355,7 @@
     padding: 10px 20px;
     background: var(--surface2);
     border-bottom: 1px solid var(--border);
-    font-family: 'Space Mono', monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 10px;
     color: var(--muted);
     letter-spacing: 0.08em;
@@ -363,7 +363,7 @@
   }
 
   .profit-per-shard {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 11px;
     color: var(--muted);
     margin-top: 4px;
