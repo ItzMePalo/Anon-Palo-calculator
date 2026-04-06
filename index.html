@@ -30,219 +30,210 @@
   }
   body::before {
     content: '';
-    position: fixed;
-    inset: 0;
+    position: fixed; inset: 0;
     background-image:
       linear-gradient(rgba(126,232,184,0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(126,232,184,0.03) 1px, transparent 1px);
     background-size: 40px 40px;
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: none; z-index: 0;
   }
 
   .wrapper { position: relative; z-index: 1; max-width: 1300px; margin: 0 auto; padding: 0 36px 120px; }
 
   header {
     padding: 56px 0 44px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 24px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 48px;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    flex-wrap: wrap; gap: 24px;
+    border-bottom: 1px solid var(--border); margin-bottom: 48px;
   }
-  .logo { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; color: var(--text); }
+  .logo { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; }
   .logo span { color: var(--accent); }
   .logo-sub { font-size: 13px; color: var(--muted); margin-top: 6px; letter-spacing: 0.05em; }
 
+  /* Tab bar */
   .tabs {
-    display: flex;
-    gap: 5px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 5px;
-    flex-wrap: wrap;
+    display: flex; gap: 5px; align-items: center;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 5px; flex-wrap: wrap;
   }
   .tab {
-    padding: 11px 22px;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    color: var(--muted);
-    transition: all 0.15s;
-    border: none;
-    background: none;
-    font-family: inherit;
-    white-space: nowrap;
+    padding: 11px 22px; border-radius: 10px;
+    font-size: 15px; font-weight: 500; cursor: pointer;
+    color: var(--muted); transition: all 0.15s;
+    border: none; background: none; font-family: inherit; white-space: nowrap;
   }
   .tab:hover { color: var(--text); }
   .tab.active { background: var(--surface2); color: var(--accent); border: 1px solid var(--border2); }
-  .tab-add { color: var(--accent); border: 1px dashed var(--border2); }
-  .tab-add:hover { background: var(--surface2); }
+  .tab-manage {
+    margin-left: auto;
+    color: var(--accent); border: 1px solid var(--accent2);
+    background: rgba(126,232,184,0.07);
+  }
+  .tab-manage:hover { background: rgba(126,232,184,0.15); color: var(--accent); }
+  .tab-manage.active { background: rgba(126,232,184,0.18); color: var(--accent); border-color: var(--accent); }
 
   .panel { display: none; }
   .panel.active { display: block; animation: fadeIn 0.2s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
   .product-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 36px;
+    display: flex; align-items: flex-start; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px; margin-bottom: 36px;
   }
-  .product-title { font-size: 34px; font-weight: 700; color: var(--text); }
+  .product-title { font-size: 34px; font-weight: 700; }
   .chain-badge {
-    font-size: 13px;
-    color: var(--muted);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 18px;
-    line-height: 1.9;
-    max-width: 640px;
-    letter-spacing: 0.01em;
+    font-size: 13px; color: var(--muted);
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 18px; line-height: 1.9;
+    max-width: 640px; letter-spacing: 0.01em;
   }
   .chain-badge .arrow { color: var(--accent); font-weight: 600; }
 
   .section-label {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--muted);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin: 32px 0 16px;
-    padding-bottom: 10px;
+    font-size: 11px; font-weight: 600; color: var(--muted);
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin: 32px 0 16px; padding-bottom: 10px;
     border-bottom: 1px solid var(--border);
   }
+
+  /* Pulse animation for updated cards */
+  @keyframes cardPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(126,232,184,0); }
+    30%  { box-shadow: 0 0 0 4px rgba(126,232,184,0.3); }
+    100% { box-shadow: 0 0 0 0 rgba(126,232,184,0); }
+  }
+  .card.pulse { animation: cardPulse 0.6s ease-out; }
 
   .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 18px; margin-bottom: 24px; }
   @media (max-width: 860px) { .grid-4 { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 500px) { .grid-4 { grid-template-columns: 1fr; } }
 
   .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 26px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 26px;
   }
   .card-label {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--muted);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
+    font-size: 11px; font-weight: 600; color: var(--muted);
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px;
   }
-  .card-val { font-size: 36px; font-weight: 700; color: var(--text); line-height: 1; }
+  .card-val { font-size: 36px; font-weight: 700; line-height: 1; }
   .card-val.accent { color: var(--accent); }
   .card-val.gold { color: var(--gold); }
   .card-val.red { color: var(--red); }
-  .card-sub { font-size: 13px; color: var(--muted); margin-top: 8px; font-weight: 400; }
+  .card-sub { font-size: 13px; color: var(--muted); margin-top: 8px; }
 
-  /* Cost per shard — bigger prominent display */
-  .cost-per-shard-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 26px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 24px;
+  /* Cost/profit per shard big box */
+  .cps-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 26px 30px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 20px; margin-bottom: 24px;
   }
-  .cps-label { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+  .cps-label { font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
   .cps-val { font-size: 44px; font-weight: 700; line-height: 1; }
   .cps-val.pos { color: var(--accent); }
   .cps-val.neg { color: var(--red); }
-  .cps-sub { font-size: 14px; color: var(--muted); margin-top: 6px; }
+  .cps-sub { font-size: 13px; color: var(--muted); margin-top: 6px; }
 
   .input-group {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 24px 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 12px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 24px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap; margin-bottom: 12px;
   }
-  .input-group-label { font-size: 18px; font-weight: 500; color: var(--text); flex: 1; min-width: 160px; }
-  .input-group-sub { font-size: 13px; color: var(--muted); margin-top: 4px; font-weight: 400; }
+  .input-group-label { font-size: 18px; font-weight: 500; flex: 1; min-width: 160px; }
+  .input-group-sub { font-size: 13px; color: var(--muted); margin-top: 4px; }
 
   .smart-input {
-    background: var(--surface2);
-    border: 1px solid var(--border2);
-    border-radius: 10px;
-    color: var(--text);
-    font-size: 20px;
-    font-weight: 600;
+    background: var(--surface2); border: 1px solid var(--border2);
+    border-radius: 10px; color: var(--text);
+    font-size: 20px; font-weight: 600;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    padding: 12px 18px;
-    width: 160px;
-    text-align: right;
-    transition: border-color 0.15s;
-    outline: none;
+    padding: 12px 18px; width: 160px; text-align: right;
+    transition: border-color 0.15s; outline: none;
   }
   .smart-input:focus { border-color: var(--accent); }
   .smart-input.error { border-color: var(--red); }
 
+  /* Budget row */
+  .budget-row {
+    background: rgba(246,201,14,0.06); border: 1px solid rgba(246,201,14,0.2);
+    border-radius: 14px; padding: 20px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap; margin-bottom: 12px;
+  }
+  .budget-row .input-group-label { font-size: 16px; }
+  .budget-badge {
+    font-size: 13px; color: var(--gold);
+    background: rgba(246,201,14,0.1); border: 1px solid rgba(246,201,14,0.2);
+    border-radius: 8px; padding: 4px 12px; margin-top: 4px; display: inline-block;
+  }
+
+  /* Bazaar button */
+  .bazaar-btn {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(96,165,250,0.1); border: 1px solid rgba(96,165,250,0.3);
+    color: #93c5fd; border-radius: 10px; padding: 10px 18px;
+    font-size: 14px; font-weight: 500; font-family: inherit;
+    cursor: pointer; transition: all 0.15s; white-space: nowrap;
+  }
+  .bazaar-btn:hover { background: rgba(96,165,250,0.18); }
+  .bazaar-btn.loading { opacity: 0.6; pointer-events: none; }
+  .bazaar-status { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .bazaar-status.ok { color: var(--accent); }
+  .bazaar-status.err { color: var(--red); }
+
+  /* Ingredients */
   .ingredients {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    margin-bottom: 24px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden; margin-bottom: 24px;
   }
   .ing-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 28px;
-    background: var(--surface2);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 28px; background: var(--surface2);
     border-bottom: 1px solid var(--border);
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--muted);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-size: 11px; font-weight: 600; color: var(--muted);
+    letter-spacing: 0.12em; text-transform: uppercase;
   }
   .ing-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 28px;
-    border-bottom: 1px solid var(--border);
-    gap: 16px;
-    flex-wrap: wrap;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 28px; border-bottom: 1px solid var(--border);
+    gap: 16px; flex-wrap: wrap;
   }
   .ing-row:last-child { border-bottom: none; }
-  .ing-name { font-size: 18px; font-weight: 500; min-width: 160px; color: var(--text); }
+  .ing-name { font-size: 18px; font-weight: 500; min-width: 160px; }
   .ing-right { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
   .ing-qty { font-size: 20px; font-weight: 600; color: var(--accent); min-width: 80px; text-align: right; }
-  .ing-cost { font-size: 15px; color: var(--muted); min-width: 110px; text-align: right; font-weight: 400; }
+  .ing-cost { font-size: 15px; color: var(--muted); min-width: 110px; text-align: right; }
+
+  /* Mobile ingredient layout */
+  @media (max-width: 600px) {
+    .ing-header { display: none; }
+    .ing-row {
+      flex-direction: column; align-items: flex-start;
+      padding: 16px; gap: 12px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; margin: 8px; width: calc(100% - 16px);
+    }
+    .ing-row:last-child { border-bottom: 1px solid var(--border); }
+    .ing-right { width: 100%; justify-content: space-between; }
+    .ing-qty, .ing-cost { min-width: unset; text-align: left; }
+    .smart-input { width: 120px; font-size: 17px; }
+    .ingredients { border-radius: 14px; overflow: visible; background: transparent; border: none; }
+    .cps-val { font-size: 32px; }
+    .card-val { font-size: 28px; }
+    .product-title { font-size: 26px; }
+    .wrapper { padding: 0 16px 100px; }
+    header { padding: 32px 0 28px; }
+  }
 
   .profit-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    margin-top: 24px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden; margin-top: 24px;
   }
   .profit-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 28px;
-    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 28px; border-bottom: 1px solid var(--border);
   }
   .profit-row:last-child { border-bottom: none; background: var(--surface2); }
   .profit-row .label { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
@@ -252,23 +243,17 @@
 
   /* Manage */
   .manage-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 32px; margin-bottom: 24px; }
-  .manage-panel h3 { font-size: 22px; font-weight: 600; margin-bottom: 24px; color: var(--text); }
+  .manage-panel h3 { font-size: 22px; font-weight: 600; margin-bottom: 24px; }
   .form-row { display: flex; align-items: flex-end; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
   .form-field { display: flex; flex-direction: column; gap: 7px; }
   .form-field label { font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
-  .form-field input, .form-field select {
-    background: var(--surface2);
-    border: 1px solid var(--border2);
-    border-radius: 10px;
-    color: var(--text);
-    font-size: 16px;
-    font-family: inherit;
-    font-weight: 400;
-    padding: 11px 16px;
-    outline: none;
-    min-width: 160px;
+  .form-field input {
+    background: var(--surface2); border: 1px solid var(--border2);
+    border-radius: 10px; color: var(--text);
+    font-size: 16px; font-family: inherit; font-weight: 400;
+    padding: 11px 16px; outline: none; min-width: 160px;
   }
-  .form-field input:focus, .form-field select:focus { border-color: var(--accent); }
+  .form-field input:focus { border-color: var(--accent); }
   .btn { padding: 12px 24px; border-radius: 10px; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer; border: none; transition: all 0.15s; }
   .btn-accent { background: var(--accent); color: #0a0c10; }
   .btn-accent:hover { background: var(--accent2); }
@@ -279,11 +264,11 @@
 
   .product-list-item {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 20px; border: 1px solid var(--border); border-radius: 10px;
-    margin-bottom: 10px; background: var(--surface2);
+    padding: 16px 20px; border: 1px solid var(--border);
+    border-radius: 10px; margin-bottom: 10px; background: var(--surface2);
   }
-  .product-list-item .name { font-size: 17px; font-weight: 500; color: var(--text); }
-  .product-list-item .chain-mini { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .product-list-item .p-name { font-size: 17px; font-weight: 500; }
+  .product-list-item .p-chain { font-size: 13px; color: var(--muted); margin-top: 4px; }
   .alert { background: rgba(255,94,94,0.08); border: 1px solid rgba(255,94,94,0.3); border-radius: 10px; padding: 14px 18px; font-size: 14px; color: var(--red); margin-top: 14px; display: none; }
 </style>
 </head>
@@ -300,10 +285,12 @@
 </div>
 
 <script>
-// ─── PARSE k/m ───────────────────────────────────────────────────────────────
-function parseNum(s) {
-  if (s === '' || s == null) return NaN;
-  const m = String(s).trim().toLowerCase().match(/^([0-9]*\.?[0-9]+)\s*([km]?)$/);
+// ─── PARSE ───────────────────────────────────────────────────────────────────
+function parseNum(raw) {
+  if (raw == null) return NaN;
+  const s = String(raw).replace(/,/g, '').trim().toLowerCase();
+  if (s === '') return NaN;
+  const m = s.match(/^([0-9]*\.?[0-9]+)\s*([km]?)$/);
   if (!m) return NaN;
   let n = parseFloat(m[1]);
   if (m[2] === 'k') n *= 1e3;
@@ -312,21 +299,41 @@ function parseNum(s) {
 }
 function displayNum(n) {
   if (!n && n !== 0) return '';
-  if (n >= 1e6) return (n/1e6 % 1 === 0 ? n/1e6 : parseFloat((n/1e6).toFixed(3))) + 'm';
-  if (n >= 1e3) return (n/1e3 % 1 === 0 ? n/1e3 : parseFloat((n/1e3).toFixed(2))) + 'k';
-  return String(Math.round(n));
+  n = Math.round(n);
+  if (n >= 1e6 && n % 1e6 === 0) return (n/1e6) + 'm';
+  if (n >= 1e6) return parseFloat((n/1e6).toFixed(3)) + 'm';
+  if (n >= 1e3 && n % 1e3 === 0) return (n/1e3) + 'k';
+  if (n >= 1e3) return parseFloat((n/1e3).toFixed(2)) + 'k';
+  return String(n);
 }
 function fmt(n) {
   if (isNaN(n) || n == null) return '—';
+  n = Math.round(n);
   const a = Math.abs(n);
   if (a >= 1e9) return (n/1e9).toFixed(2) + 'B';
   if (a >= 1e6) return (n/1e6).toFixed(2) + 'M';
   if (a >= 1e3) return (n/1e3).toFixed(1) + 'k';
-  return Math.round(n).toLocaleString();
+  return n.toLocaleString();
 }
 function fmtCoins(n) { return fmt(n) + ' 🪙'; }
+function slugify(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
 
-// ─── DEFAULT DATA ────────────────────────────────────────────────────────────
+// ─── BAZAAR MAP ──────────────────────────────────────────────────────────────
+// Maps internal ingredient IDs → Hypixel Bazaar product IDs
+const BAZAAR_MAP = {
+  mz:        'MINER_ZOMBIE_SHARD',
+  chill:     'CHILL_SHARD',
+  invisibug: 'INVISIBUG_SHARD',
+  pest:      'PEST_SHARD',
+  glacite:   'GLACITE_WALKER_SHARD',
+  bambuleaf: 'BAMBULEAF_SHARD',
+  ghost:     'GHOST_SHARD',
+  cod:       'COD_SHARD',
+  bezal:     'BEZAL_SHARD',
+  draconic:  'DRACONIC_SHARD',
+};
+
+// ─── DEFAULT DATA ─────────────────────────────────────────────────────────────
 const DEFAULTS = [
   {
     id: 'stalagmite', name: 'Stalagmite',
@@ -338,7 +345,7 @@ const DEFAULTS = [
     defaultPrices: { mz: 11000, chill: 6000, sell: 560000 }
   },
   {
-    id: 'lunar_moth', name: 'Lunar Moth',
+    id: 'lunar-moth', name: 'Lunar Moth',
     chain: 'MZ + Invisibug → Termite → Termite + Invisibug → Ladybug → Ladybug + Invisibug → Lunar Moth',
     ingredients: [
       { id: 'mz', name: 'Miner Zombie', perUnit: 1000/64 },
@@ -398,69 +405,79 @@ const DEFAULTS = [
   },
 ];
 
-// ─── PERSISTENT STATE ────────────────────────────────────────────────────────
-// products = list of product definitions (structure + default prices)
-// prices   = { "productId_ingId": number, "productId_sell": number } — user overrides
-// qtys     = { "productId": rawString } — e.g. "64", "1k"
-// activeTab = string
-
+// ─── STATE ───────────────────────────────────────────────────────────────────
 function loadState() {
   try {
-    const products = JSON.parse(localStorage.getItem('sfc2_products') || 'null') || DEFAULTS;
-    const prices   = JSON.parse(localStorage.getItem('sfc2_prices')   || '{}');
-    const qtys     = JSON.parse(localStorage.getItem('sfc2_qtys')     || '{}');
-    const activeTab = localStorage.getItem('sfc2_active') || products[0].id;
-    return { products, prices, qtys, activeTab };
-  } catch(e) { return { products: DEFAULTS, prices: {}, qtys: {}, activeTab: DEFAULTS[0].id }; }
+    return {
+      products:  JSON.parse(localStorage.getItem('sfc3_products') || 'null') || DEFAULTS,
+      prices:    JSON.parse(localStorage.getItem('sfc3_prices')   || '{}'),
+      qtys:      JSON.parse(localStorage.getItem('sfc3_qtys')     || '{}'),
+      budgets:   JSON.parse(localStorage.getItem('sfc3_budgets')  || '{}'),
+      activeTab: localStorage.getItem('sfc3_active') || DEFAULTS[0].id,
+    };
+  } catch(e) {
+    return { products: DEFAULTS, prices: {}, qtys: {}, budgets: {}, activeTab: DEFAULTS[0].id };
+  }
 }
-
-function saveState(state) {
-  localStorage.setItem('sfc2_products', JSON.stringify(state.products));
-  localStorage.setItem('sfc2_prices',   JSON.stringify(state.prices));
-  localStorage.setItem('sfc2_qtys',     JSON.stringify(state.qtys));
-  localStorage.setItem('sfc2_active',   state.activeTab);
+function saveState() {
+  localStorage.setItem('sfc3_products', JSON.stringify(S.products));
+  localStorage.setItem('sfc3_prices',   JSON.stringify(S.prices));
+  localStorage.setItem('sfc3_qtys',     JSON.stringify(S.qtys));
+  localStorage.setItem('sfc3_budgets',  JSON.stringify(S.budgets));
+  localStorage.setItem('sfc3_active',   S.activeTab);
 }
-
 let S = loadState();
 
 // ─── ACCESSORS ───────────────────────────────────────────────────────────────
 function getPrice(pid, iid) {
-  const k = `${pid}_${iid}`;
+  const k = `${pid}__${iid}`;
   if (S.prices[k] !== undefined) return S.prices[k];
   const p = S.products.find(x => x.id === pid);
-  return (p && p.defaultPrices && p.defaultPrices[iid]) || 0;
+  return (p?.defaultPrices?.[iid]) || 0;
 }
 function getSell(pid) {
-  const k = `${pid}_sell`;
+  const k = `${pid}__sell`;
   if (S.prices[k] !== undefined) return S.prices[k];
   const p = S.products.find(x => x.id === pid);
-  return (p && p.defaultPrices && p.defaultPrices.sell) || 0;
+  return p?.defaultPrices?.sell || 0;
 }
 function getQtyStr(pid) { return S.qtys[pid] || '64'; }
-function getQty(pid) { return parseNum(getQtyStr(pid)) || 64; }
+function getQty(pid)    { return parseNum(getQtyStr(pid)) || 64; }
+function getBudgetStr(pid) { return S.budgets[pid] || ''; }
 
-function setPrice(pid, iid, val) { S.prices[`${pid}_${iid}`] = val; saveState(S); }
-function setSell(pid, val)       { S.prices[`${pid}_sell`] = val; saveState(S); }
-function setQtyStr(pid, val)     { S.qtys[pid] = val; saveState(S); }
+function setPrice(pid, iid, v) { S.prices[`${pid}__${iid}`] = Math.round(v); saveState(); }
+function setSell(pid, v)       { S.prices[`${pid}__sell`] = Math.round(v); saveState(); }
+function setQtyStr(pid, v)     { S.qtys[pid] = v; saveState(); }
+function setBudgetStr(pid, v)  { S.budgets[pid] = v; saveState(); }
 
-// ─── CALC ────────────────────────────────────────────────────────────────────
+// ─── CALC ─────────────────────────────────────────────────────────────────────
 function calc(product) {
   const qty = getQty(product.id);
   let totalCost = 0;
   const ings = product.ingredients.map(ing => {
     const price  = getPrice(product.id, ing.id);
     const needed = Math.ceil(ing.perUnit * qty);
-    const cost   = needed * price;
-    totalCost += cost;
+    const cost   = Math.round(needed * price);
+    totalCost   += cost;
     return { ...ing, price, needed, cost };
   });
+  totalCost = Math.round(totalCost);
   const sellPrice      = getSell(product.id);
-  const revenue        = qty * sellPrice;
-  const profit         = revenue - totalCost;
-  const profitPerShard = qty > 0 ? profit / qty : 0;
-  const costPerShard   = qty > 0 ? totalCost / qty : 0;
+  const revenue        = Math.round(qty * sellPrice);
+  const profit         = Math.round(revenue - totalCost);
+  const costPerShard   = qty > 0 ? Math.round(totalCost / qty) : 0;
+  const profitPerShard = qty > 0 ? Math.round(profit / qty) : 0;
   const margin         = totalCost > 0 ? profit / totalCost * 100 : 0;
-  return { qty, ings, totalCost, sellPrice, revenue, profit, profitPerShard, costPerShard, margin };
+  return { qty, ings, totalCost, sellPrice, revenue, profit, costPerShard, profitPerShard, margin };
+}
+
+// ─── PULSE ANIMATION ─────────────────────────────────────────────────────────
+function pulseCards() {
+  document.querySelectorAll('.grid-4 .card').forEach(c => {
+    c.classList.remove('pulse');
+    void c.offsetWidth; // reflow to restart animation
+    c.classList.add('pulse');
+  });
 }
 
 // ─── RENDER ──────────────────────────────────────────────────────────────────
@@ -473,15 +490,24 @@ function renderTabs() {
     const btn = document.createElement('button');
     btn.className = 'tab' + (p.id === S.activeTab ? ' active' : '');
     btn.textContent = p.name;
-    btn.onclick = () => { S.activeTab = p.id; saveState(S); renderAll(); };
+    btn.dataset.tabId = p.id;
     bar.appendChild(btn);
   });
   const m = document.createElement('button');
-  m.className = 'tab tab-add' + (S.activeTab === '__manage__' ? ' active' : '');
+  m.className = 'tab tab-manage' + (S.activeTab === '__manage__' ? ' active' : '');
   m.textContent = '+ manage';
-  m.onclick = () => { S.activeTab = '__manage__'; saveState(S); renderAll(); };
+  m.dataset.tabId = '__manage__';
   bar.appendChild(m);
 }
+
+// Single delegated listener for tab clicks
+document.getElementById('tabBar').addEventListener('click', e => {
+  const btn = e.target.closest('[data-tab-id]');
+  if (!btn) return;
+  S.activeTab = btn.dataset.tabId;
+  saveState();
+  renderAll();
+});
 
 function renderPanels() {
   const c = document.getElementById('panels');
@@ -491,279 +517,536 @@ function renderPanels() {
   if (p) c.appendChild(buildProduct(p));
 }
 
+// ─── PRODUCT PANEL ───────────────────────────────────────────────────────────
 function buildProduct(product) {
+  const pid = product.id;
   const div = document.createElement('div');
   div.className = 'panel active';
+  div.dataset.pid = pid;
   const r = calc(product);
 
-  div.innerHTML = `
-    <div class="product-header">
-      <div class="product-title">${product.name}</div>
-      <div class="chain-badge">${product.chain.replace(/→/g, '<span class="arrow"> → </span>')}</div>
-    </div>
+  // Build DOM safely (no innerHTML for user data)
+  // Header
+  const header = document.createElement('div');
+  header.className = 'product-header';
+  const titleEl = document.createElement('div');
+  titleEl.className = 'product-title';
+  titleEl.textContent = product.name;
+  const chainEl = document.createElement('div');
+  chainEl.className = 'chain-badge';
+  chainEl.textContent = product.chain;
+  header.appendChild(titleEl);
+  header.appendChild(chainEl);
+  div.appendChild(header);
 
-    <div class="section-label">Target Quantity</div>
-    <div class="input-group">
-      <div>
-        <div class="input-group-label">How many ${product.name} shards do you want?</div>
-        <div class="input-group-sub">Supports 64, 1k, 2.5m — everything scales automatically</div>
-      </div>
-      <input class="smart-input" type="text" id="qty_inp" value="${getQtyStr(product.id)}" autocomplete="off" />
-    </div>
+  // Section: Target Quantity + Budget
+  div.appendChild(sectionLabel('Target Quantity'));
 
-    <div class="section-label">Ingredient Quantities &amp; Prices</div>
-    <div class="ingredients">
-      <div class="ing-header">
-        <span>Ingredient</span>
-        <div style="display:flex;gap:56px;"><span>Qty needed</span><span>Price / shard</span><span style="min-width:110px;text-align:right;">Total cost</span></div>
-      </div>
-      ${r.ings.map(ing => `
-        <div class="ing-row">
-          <div class="ing-name">${ing.name}</div>
-          <div class="ing-right">
-            <div class="ing-qty" id="iqty_${ing.id}">${ing.needed.toLocaleString()}</div>
-            <input class="smart-input" type="text" id="iprice_${ing.id}" data-ing="${ing.id}"
-              value="${displayNum(ing.price)}" autocomplete="off" style="width:130px;" />
-            <div class="ing-cost" id="icost_${ing.id}">${fmtCoins(ing.cost)}</div>
-          </div>
-        </div>
-      `).join('')}
-    </div>
+  const qtyGroup = document.createElement('div');
+  qtyGroup.className = 'input-group';
+  const qtyLeft = document.createElement('div');
+  const qtyLbl = document.createElement('div');
+  qtyLbl.className = 'input-group-label';
+  qtyLbl.textContent = `How many ${product.name} shards do you want?`;
+  const qtySub = document.createElement('div');
+  qtySub.className = 'input-group-sub';
+  qtySub.textContent = 'Supports 64, 1k, 2.5m — everything scales automatically';
+  qtyLeft.appendChild(qtyLbl);
+  qtyLeft.appendChild(qtySub);
+  const qtyInp = document.createElement('input');
+  qtyInp.className = 'smart-input';
+  qtyInp.type = 'text';
+  qtyInp.id = `inp-qty-${pid}`;
+  qtyInp.value = getQtyStr(pid);
+  qtyInp.autocomplete = 'off';
+  qtyGroup.appendChild(qtyLeft);
+  qtyGroup.appendChild(qtyInp);
+  div.appendChild(qtyGroup);
 
-    <div class="section-label">Sell Price &amp; Profit</div>
-    <div class="input-group" style="margin-bottom:24px;">
-      <div>
-        <div class="input-group-label">Sell price per ${product.name} shard</div>
-        <div class="input-group-sub">Bazaar or AH sell order — supports 560k, 1.03m etc.</div>
-      </div>
-      <input class="smart-input" type="text" id="sell_inp" value="${displayNum(r.sellPrice)}" autocomplete="off" />
-    </div>
+  // Budget row
+  const budgetRow = document.createElement('div');
+  budgetRow.className = 'budget-row';
+  const budgetLeft = document.createElement('div');
+  const budgetLbl = document.createElement('div');
+  budgetLbl.className = 'input-group-label';
+  budgetLbl.textContent = 'Budget Mode — how many coins do you have?';
+  const budgetBadge = document.createElement('div');
+  budgetBadge.className = 'budget-badge';
+  budgetBadge.id = `budget-badge-${pid}`;
+  budgetBadge.textContent = 'Enter a budget to auto-calculate max shards';
+  budgetLeft.appendChild(budgetLbl);
+  budgetLeft.appendChild(budgetBadge);
+  const budgetInp = document.createElement('input');
+  budgetInp.className = 'smart-input';
+  budgetInp.type = 'text';
+  budgetInp.id = `inp-budget-${pid}`;
+  budgetInp.value = getBudgetStr(pid);
+  budgetInp.autocomplete = 'off';
+  budgetInp.placeholder = 'e.g. 50m';
+  budgetInp.style.borderColor = 'rgba(246,201,14,0.4)';
+  budgetRow.appendChild(budgetLeft);
+  budgetRow.appendChild(budgetInp);
+  div.appendChild(budgetRow);
 
-    <div class="cost-per-shard-box">
-      <div>
-        <div class="cps-label">Cost per shard</div>
-        <div class="cps-val ${r.profitPerShard >= 0 ? 'pos' : 'neg'}" id="cps_val">${fmt(r.costPerShard)}</div>
-        <div class="cps-sub" id="cps_sub">you spend this per shard produced</div>
-      </div>
-      <div style="text-align:right;">
-        <div class="cps-label">Profit per shard</div>
-        <div class="cps-val ${r.profitPerShard >= 0 ? 'pos' : 'neg'}" id="pps_val">${r.profitPerShard >= 0 ? '+' : ''}${fmt(r.profitPerShard)}</div>
-        <div class="cps-sub" id="pps_sub">per shard sold</div>
-      </div>
-    </div>
+  // Section: Ingredients
+  div.appendChild(sectionLabel('Ingredient Quantities & Prices'));
 
-    <div class="grid-4">
-      <div class="card">
-        <div class="card-label">Total Cost</div>
-        <div class="card-val red" id="s_cost">${fmt(r.totalCost)}</div>
-        <div class="card-sub">coins spent</div>
-      </div>
-      <div class="card">
-        <div class="card-label">Revenue</div>
-        <div class="card-val accent" id="s_rev">${fmt(r.revenue)}</div>
-        <div class="card-sub">coins in</div>
-      </div>
-      <div class="card">
-        <div class="card-label">Net Profit</div>
-        <div class="card-val ${r.profit >= 0 ? 'accent' : 'red'}" id="s_profit">${r.profit >= 0 ? '+' : ''}${fmt(r.profit)}</div>
-        <div class="card-sub">total gain</div>
-      </div>
-      <div class="card">
-        <div class="card-label">Margin</div>
-        <div class="card-val ${r.profit >= 0 ? 'gold' : 'red'}" id="s_margin">${r.margin.toFixed(1)}%</div>
-        <div class="card-sub">profit margin</div>
-      </div>
-    </div>
+  // Bazaar button
+  const bazaarWrap = document.createElement('div');
+  bazaarWrap.style.cssText = 'display:flex;align-items:center;gap:12px;margin-bottom:14px;';
+  const bazaarBtn = document.createElement('button');
+  bazaarBtn.className = 'bazaar-btn';
+  bazaarBtn.id = `bazaar-btn-${pid}`;
+  bazaarBtn.dataset.action = 'fetch-bazaar';
+  bazaarBtn.dataset.pid = pid;
+  bazaarBtn.innerHTML = '⟳ Fetch Live Bazaar Prices';
+  const bazaarStatus = document.createElement('div');
+  bazaarStatus.className = 'bazaar-status';
+  bazaarStatus.id = `bazaar-status-${pid}`;
+  bazaarWrap.appendChild(bazaarBtn);
+  bazaarWrap.appendChild(bazaarStatus);
+  div.appendChild(bazaarWrap);
 
-    <div class="profit-box">
-      <div class="profit-row"><span class="label">Total Spend</span><span class="val neg" id="pb_cost">-${fmt(r.totalCost)}</span></div>
-      <div class="profit-row"><span class="label" id="pb_rev_lbl">Revenue (${r.qty} × ${fmt(r.sellPrice)})</span><span class="val pos" id="pb_rev">+${fmt(r.revenue)}</span></div>
-      <div class="profit-row"><span class="label">Net Profit</span><span class="val ${r.profit >= 0 ? 'pos' : 'neg'}" id="pb_profit">${r.profit >= 0 ? '+' : ''}${fmt(r.profit)}</span></div>
+  // Ingredients table
+  const table = document.createElement('div');
+  table.className = 'ingredients';
+  const ingHeaderDiv = document.createElement('div');
+  ingHeaderDiv.className = 'ing-header';
+  ingHeaderDiv.innerHTML = '<span>Ingredient</span><div style="display:flex;gap:56px;"><span>Qty needed</span><span>Price / shard</span><span style="min-width:110px;text-align:right;">Total cost</span></div>';
+  table.appendChild(ingHeaderDiv);
+
+  r.ings.forEach(ing => {
+    const row = document.createElement('div');
+    row.className = 'ing-row';
+
+    const nameEl = document.createElement('div');
+    nameEl.className = 'ing-name';
+    nameEl.textContent = ing.name;
+
+    const right = document.createElement('div');
+    right.className = 'ing-right';
+
+    const qtyEl = document.createElement('div');
+    qtyEl.className = 'ing-qty';
+    qtyEl.id = `iqty-${pid}-${ing.id}`;
+    qtyEl.textContent = ing.needed.toLocaleString();
+
+    const priceInp = document.createElement('input');
+    priceInp.className = 'smart-input';
+    priceInp.type = 'text';
+    priceInp.id = `inp-price-${pid}-${ing.id}`;
+    priceInp.dataset.action = 'set-price';
+    priceInp.dataset.pid = pid;
+    priceInp.dataset.iid = ing.id;
+    priceInp.value = displayNum(ing.price);
+    priceInp.autocomplete = 'off';
+    priceInp.style.width = '130px';
+
+    const costEl = document.createElement('div');
+    costEl.className = 'ing-cost';
+    costEl.id = `icost-${pid}-${ing.id}`;
+    costEl.textContent = fmtCoins(ing.cost);
+
+    right.appendChild(qtyEl);
+    right.appendChild(priceInp);
+    right.appendChild(costEl);
+    row.appendChild(nameEl);
+    row.appendChild(right);
+    table.appendChild(row);
+  });
+  div.appendChild(table);
+
+  // Section: Sell Price
+  div.appendChild(sectionLabel('Sell Price & Profit'));
+
+  const sellGroup = document.createElement('div');
+  sellGroup.className = 'input-group';
+  sellGroup.style.marginBottom = '24px';
+  const sellLeft = document.createElement('div');
+  const sellLbl = document.createElement('div');
+  sellLbl.className = 'input-group-label';
+  sellLbl.textContent = `Sell price per ${product.name} shard`;
+  const sellSub = document.createElement('div');
+  sellSub.className = 'input-group-sub';
+  sellSub.textContent = 'Bazaar or AH sell order — supports 560k, 1.03m etc.';
+  sellLeft.appendChild(sellLbl);
+  sellLeft.appendChild(sellSub);
+  const sellInp = document.createElement('input');
+  sellInp.className = 'smart-input';
+  sellInp.type = 'text';
+  sellInp.id = `inp-sell-${pid}`;
+  sellInp.dataset.action = 'set-sell';
+  sellInp.dataset.pid = pid;
+  sellInp.value = displayNum(r.sellPrice);
+  sellInp.autocomplete = 'off';
+  sellGroup.appendChild(sellLeft);
+  sellGroup.appendChild(sellInp);
+  div.appendChild(sellGroup);
+
+  // CPS box
+  const cpsBox = document.createElement('div');
+  cpsBox.className = 'cps-box';
+  cpsBox.id = `cps-box-${pid}`;
+  cpsBox.innerHTML = `
+    <div>
+      <div class="cps-label">Cost per shard</div>
+      <div class="cps-val pos" id="cps-val-${pid}">${fmt(r.costPerShard)}</div>
+      <div class="cps-sub">you spend this per shard produced</div>
+    </div>
+    <div style="text-align:right;">
+      <div class="cps-label">Profit per shard</div>
+      <div class="cps-val ${r.profitPerShard >= 0 ? 'pos' : 'neg'}" id="pps-val-${pid}">${r.profitPerShard >= 0 ? '+' : ''}${fmt(r.profitPerShard)}</div>
+      <div class="cps-sub">per shard sold</div>
     </div>
   `;
+  div.appendChild(cpsBox);
 
-  // qty
-  div.querySelector('#qty_inp').addEventListener('input', function() {
-    const v = parseNum(this.value);
-    this.classList.toggle('error', isNaN(v) && this.value !== '');
-    setQtyStr(product.id, this.value);
-    if (!isNaN(v)) updateDisplay(product, div);
-  });
+  // Grid 4
+  const grid = document.createElement('div');
+  grid.className = 'grid-4';
+  grid.innerHTML = `
+    <div class="card"><div class="card-label">Total Cost</div><div class="card-val red" id="s-cost-${pid}">${fmt(r.totalCost)}</div><div class="card-sub">coins spent</div></div>
+    <div class="card"><div class="card-label">Revenue</div><div class="card-val accent" id="s-rev-${pid}">${fmt(r.revenue)}</div><div class="card-sub">coins in</div></div>
+    <div class="card"><div class="card-label">Net Profit</div><div class="card-val ${r.profit >= 0 ? 'accent' : 'red'}" id="s-profit-${pid}">${r.profit >= 0 ? '+' : ''}${fmt(r.profit)}</div><div class="card-sub">total gain</div></div>
+    <div class="card"><div class="card-label">Margin</div><div class="card-val ${r.profit >= 0 ? 'gold' : 'red'}" id="s-margin-${pid}">${r.margin.toFixed(1)}%</div><div class="card-sub">profit margin</div></div>
+  `;
+  div.appendChild(grid);
 
-  // ingredient prices
-  r.ings.forEach(ing => {
-    div.querySelector(`#iprice_${ing.id}`).addEventListener('input', function() {
-      const v = parseNum(this.value);
-      this.classList.toggle('error', isNaN(v) && this.value !== '');
-      if (!isNaN(v)) { setPrice(product.id, ing.id, v); updateDisplay(product, div); }
-    });
-  });
-
-  // sell price
-  div.querySelector('#sell_inp').addEventListener('input', function() {
-    const v = parseNum(this.value);
-    this.classList.toggle('error', isNaN(v) && this.value !== '');
-    if (!isNaN(v)) { setSell(product.id, v); updateDisplay(product, div); }
-  });
+  // Profit box
+  const profitBox = document.createElement('div');
+  profitBox.className = 'profit-box';
+  profitBox.innerHTML = `
+    <div class="profit-row"><span class="label">Total Spend</span><span class="val neg" id="pb-cost-${pid}">-${fmt(r.totalCost)}</span></div>
+    <div class="profit-row"><span class="label" id="pb-rev-lbl-${pid}">Revenue (${r.qty} × ${fmt(r.sellPrice)})</span><span class="val pos" id="pb-rev-${pid}">+${fmt(r.revenue)}</span></div>
+    <div class="profit-row"><span class="label">Net Profit</span><span class="val ${r.profit >= 0 ? 'pos' : 'neg'}" id="pb-profit-${pid}">${r.profit >= 0 ? '+' : ''}${fmt(r.profit)}</span></div>
+  `;
+  div.appendChild(profitBox);
 
   return div;
 }
 
-function updateDisplay(product, div) {
+function sectionLabel(text) {
+  const el = document.createElement('div');
+  el.className = 'section-label';
+  el.textContent = text;
+  return el;
+}
+
+function updateDisplay(pid) {
+  const product = S.products.find(x => x.id === pid);
+  if (!product) return;
   const r = calc(product);
 
   r.ings.forEach(ing => {
-    const qe = div.querySelector(`#iqty_${ing.id}`);
-    const ce = div.querySelector(`#icost_${ing.id}`);
+    const qe = document.getElementById(`iqty-${pid}-${ing.id}`);
+    const ce = document.getElementById(`icost-${pid}-${ing.id}`);
     if (qe) qe.textContent = ing.needed.toLocaleString();
     if (ce) ce.textContent = fmtCoins(ing.cost);
   });
 
-  div.querySelector('#cps_val').textContent = fmt(r.costPerShard);
-  div.querySelector('#cps_val').className = 'cps-val pos';
-  div.querySelector('#pps_val').textContent = (r.profitPerShard >= 0 ? '+' : '') + fmt(r.profitPerShard);
-  div.querySelector('#pps_val').className = 'cps-val ' + (r.profitPerShard >= 0 ? 'pos' : 'neg');
+  const set = (id, val) => { const e = document.getElementById(id); if (e) e.textContent = val; };
+  const setClass = (id, cls) => { const e = document.getElementById(id); if (e) e.className = cls; };
 
-  div.querySelector('#s_cost').textContent = fmt(r.totalCost);
-  div.querySelector('#s_rev').textContent = fmt(r.revenue);
-  const pe = div.querySelector('#s_profit');
-  pe.textContent = (r.profit >= 0 ? '+' : '') + fmt(r.profit);
-  pe.className = 'card-val ' + (r.profit >= 0 ? 'accent' : 'red');
-  const me = div.querySelector('#s_margin');
-  me.textContent = r.margin.toFixed(1) + '%';
-  me.className = 'card-val ' + (r.profit >= 0 ? 'gold' : 'red');
+  set(`cps-val-${pid}`, fmt(r.costPerShard));
+  set(`pps-val-${pid}`, (r.profitPerShard >= 0 ? '+' : '') + fmt(r.profitPerShard));
+  setClass(`pps-val-${pid}`, 'cps-val ' + (r.profitPerShard >= 0 ? 'pos' : 'neg'));
 
-  div.querySelector('#pb_cost').textContent = '-' + fmt(r.totalCost);
-  div.querySelector('#pb_rev_lbl').textContent = `Revenue (${r.qty} × ${fmt(r.sellPrice)})`;
-  div.querySelector('#pb_rev').textContent = '+' + fmt(r.revenue);
-  const ppe = div.querySelector('#pb_profit');
-  ppe.textContent = (r.profit >= 0 ? '+' : '') + fmt(r.profit);
-  ppe.className = 'val ' + (r.profit >= 0 ? 'pos' : 'neg');
+  set(`s-cost-${pid}`, fmt(r.totalCost));
+  set(`s-rev-${pid}`, fmt(r.revenue));
+  set(`s-profit-${pid}`, (r.profit >= 0 ? '+' : '') + fmt(r.profit));
+  setClass(`s-profit-${pid}`, 'card-val ' + (r.profit >= 0 ? 'accent' : 'red'));
+  set(`s-margin-${pid}`, r.margin.toFixed(1) + '%');
+  setClass(`s-margin-${pid}`, 'card-val ' + (r.profit >= 0 ? 'gold' : 'red'));
+
+  set(`pb-cost-${pid}`, '-' + fmt(r.totalCost));
+  set(`pb-rev-lbl-${pid}`, `Revenue (${r.qty} × ${fmt(r.sellPrice)})`);
+  set(`pb-rev-${pid}`, '+' + fmt(r.revenue));
+  set(`pb-profit-${pid}`, (r.profit >= 0 ? '+' : '') + fmt(r.profit));
+  setClass(`pb-profit-${pid}`, 'val ' + (r.profit >= 0 ? 'pos' : 'neg'));
+
+  pulseCards();
 }
 
+// ─── EVENT DELEGATION (single listener on #panels) ────────────────────────────
+document.getElementById('panels').addEventListener('input', e => {
+  const el = e.target;
+  const action = el.dataset.action;
+  const pid = el.dataset.pid;
+
+  // Qty input
+  if (el.id && el.id.startsWith('inp-qty-')) {
+    const p = el.id.replace('inp-qty-', '');
+    el.classList.toggle('error', isNaN(parseNum(el.value)) && el.value !== '');
+    setQtyStr(p, el.value);
+    // Clear budget if qty manually set
+    setBudgetStr(p, '');
+    const bi = document.getElementById(`inp-budget-${p}`);
+    if (bi) bi.value = '';
+    if (!isNaN(parseNum(el.value))) updateDisplay(p);
+    return;
+  }
+
+  // Budget input
+  if (el.id && el.id.startsWith('inp-budget-')) {
+    const p = el.id.replace('inp-budget-', '');
+    const budget = parseNum(el.value);
+    el.classList.toggle('error', isNaN(budget) && el.value !== '');
+    setBudgetStr(p, el.value);
+    if (!isNaN(budget) && budget > 0) {
+      const product = S.products.find(x => x.id === p);
+      if (product) {
+        const r = calc(product);
+        if (r.costPerShard > 0) {
+          const maxQty = Math.floor(budget / r.costPerShard);
+          setQtyStr(p, String(maxQty));
+          const qi = document.getElementById(`inp-qty-${p}`);
+          if (qi) qi.value = displayNum(maxQty);
+          updateDisplay(p);
+          const badge = document.getElementById(`budget-badge-${p}`);
+          if (badge) badge.textContent = `Max ${maxQty.toLocaleString()} shards with this budget`;
+        }
+      }
+    } else {
+      const badge = document.getElementById(`budget-badge-${p}`);
+      if (badge) badge.textContent = 'Enter a budget to auto-calculate max shards';
+    }
+    return;
+  }
+
+  // Price inputs
+  if (action === 'set-price') {
+    const v = parseNum(el.value);
+    el.classList.toggle('error', isNaN(v) && el.value !== '');
+    if (!isNaN(v)) { setPrice(pid, el.dataset.iid, v); updateDisplay(pid); }
+    return;
+  }
+
+  // Sell price
+  if (action === 'set-sell') {
+    const v = parseNum(el.value);
+    el.classList.toggle('error', isNaN(v) && el.value !== '');
+    if (!isNaN(v)) { setSell(pid, v); updateDisplay(pid); }
+    return;
+  }
+});
+
+// ─── BAZAAR FETCH (delegated click) ──────────────────────────────────────────
+document.getElementById('panels').addEventListener('click', async e => {
+  const btn = e.target.closest('[data-action="fetch-bazaar"]');
+  if (!btn) return;
+  const pid = btn.dataset.pid;
+  const statusEl = document.getElementById(`bazaar-status-${pid}`);
+  btn.classList.add('loading');
+  btn.textContent = '⟳ Fetching...';
+  statusEl.className = 'bazaar-status';
+  statusEl.textContent = 'Connecting to Hypixel API...';
+
+  try {
+    const res = await fetch('https://api.hypixel.net/v2/skyblock/bazaar');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    const products = data.products;
+
+    const product = S.products.find(x => x.id === pid);
+    if (!product) throw new Error('Product not found');
+
+    let updated = 0;
+    product.ingredients.forEach(ing => {
+      const bazaarKey = BAZAAR_MAP[ing.id];
+      if (!bazaarKey || !products[bazaarKey]) return;
+      const buyPrice = Math.round(products[bazaarKey].quick_status?.buyPrice || 0);
+      if (buyPrice > 0) {
+        setPrice(pid, ing.id, buyPrice);
+        const inp = document.getElementById(`inp-price-${pid}-${ing.id}`);
+        if (inp) inp.value = displayNum(buyPrice);
+        updated++;
+      }
+    });
+
+    updateDisplay(pid);
+    statusEl.className = 'bazaar-status ok';
+    statusEl.textContent = `✓ Updated ${updated} price${updated !== 1 ? 's' : ''} from Bazaar`;
+  } catch (err) {
+    statusEl.className = 'bazaar-status err';
+    statusEl.textContent = `✗ Failed: ${err.message}. Try a CORS proxy or check your connection.`;
+  }
+
+  btn.classList.remove('loading');
+  btn.innerHTML = '⟳ Fetch Live Bazaar Prices';
+});
+
+// ─── MANAGE PANEL ────────────────────────────────────────────────────────────
 function buildManage() {
   const div = document.createElement('div');
   div.className = 'panel active';
-  div.innerHTML = `
-    <div class="manage-panel">
-      <h3>Current Products</h3>
-      <div id="product-list">
-        ${S.products.map(p => `
-          <div class="product-list-item">
-            <div>
-              <div class="name">${p.name}</div>
-              <div class="chain-mini">${p.chain}</div>
-            </div>
-            <button class="btn btn-danger" onclick="deleteProduct('${p.id}')">Remove</button>
-          </div>
-        `).join('')}
+
+  // Current products list
+  const listPanel = document.createElement('div');
+  listPanel.className = 'manage-panel';
+  const listH = document.createElement('h3');
+  listH.textContent = 'Current Products';
+  listPanel.appendChild(listH);
+
+  S.products.forEach(p => {
+    const item = document.createElement('div');
+    item.className = 'product-list-item';
+
+    const info = document.createElement('div');
+    const nameEl = document.createElement('div');
+    nameEl.className = 'p-name';
+    nameEl.textContent = p.name;
+    const chainEl = document.createElement('div');
+    chainEl.className = 'p-chain';
+    chainEl.textContent = p.chain;
+    info.appendChild(nameEl);
+    info.appendChild(chainEl);
+
+    const delBtn = document.createElement('button');
+    delBtn.className = 'btn btn-danger';
+    delBtn.textContent = 'Remove';
+    delBtn.dataset.action = 'delete-product';
+    delBtn.dataset.pid = p.id;
+
+    item.appendChild(info);
+    item.appendChild(delBtn);
+    listPanel.appendChild(item);
+  });
+  div.appendChild(listPanel);
+
+  // Add product form
+  const addPanel = document.createElement('div');
+  addPanel.className = 'manage-panel';
+  const addH = document.createElement('h3');
+  addH.textContent = 'Add New Product';
+  addPanel.appendChild(addH);
+
+  addPanel.innerHTML += `
+    <div class="form-row">
+      <div class="form-field" style="flex:1;min-width:200px;">
+        <label>Product name</label>
+        <input type="text" id="new-name" placeholder="e.g. Wartybug" autocomplete="off" />
+      </div>
+      <div class="form-field" style="flex:2;min-width:300px;">
+        <label>Fusion chain description</label>
+        <input type="text" id="new-chain" placeholder="e.g. A + B → C → C + D → Product" autocomplete="off" />
       </div>
     </div>
-
-    <div class="manage-panel">
-      <h3>Add New Product</h3>
-      <div class="form-row">
-        <div class="form-field" style="flex:1;min-width:200px;">
-          <label>Product name</label>
-          <input type="text" id="new-name" placeholder="e.g. Wartybug" />
-        </div>
-        <div class="form-field" style="flex:2;min-width:300px;">
-          <label>Fusion chain description</label>
-          <input type="text" id="new-chain" placeholder="e.g. A + B → C → C + D → Product" />
-        </div>
+    <div class="section-label" style="margin-top:8px;">Ingredients</div>
+    <div id="ing-fields">
+      <div class="form-row ing-field-row">
+        <div class="form-field"><label>Ingredient name</label><input type="text" class="ing-name-inp" placeholder="e.g. Pest" autocomplete="off" /></div>
+        <div class="form-field"><label>Per 1 output</label><input type="number" class="ing-per-inp" placeholder="6.25" step="0.01" style="min-width:110px;" /></div>
+        <div class="form-field"><label>Default price</label><input type="text" class="ing-price-inp" placeholder="36k" autocomplete="off" style="min-width:110px;" /></div>
+        <button class="btn btn-ghost" style="align-self:flex-end;" data-action="remove-ing-row">×</button>
       </div>
-
-      <div class="section-label" style="margin-top:8px;">Ingredients</div>
-      <div id="ing-fields">
-        <div class="form-row ing-field-row">
-          <div class="form-field"><label>Ingredient name</label><input type="text" class="ing-name-inp" placeholder="e.g. Pest" /></div>
-          <div class="form-field"><label>Per 1 output</label><input type="number" class="ing-per-inp" placeholder="6.25" step="0.01" style="min-width:110px;" /></div>
-          <div class="form-field"><label>Default price</label><input type="text" class="ing-price-inp" placeholder="36k" style="min-width:110px;" /></div>
-          <button class="btn btn-ghost" style="align-self:flex-end;" onclick="removeIngRow(this)">×</button>
-        </div>
-      </div>
-      <div class="form-row" style="margin-top:12px;align-items:flex-end;">
-        <button class="btn btn-ghost" onclick="addIngRow()" style="align-self:flex-end;">+ add ingredient</button>
-        <div class="form-field">
-          <label>Default sell price</label>
-          <input type="text" id="new-sell" placeholder="500k" style="min-width:120px;" />
-        </div>
-        <button class="btn btn-accent" onclick="addProduct()">Add Product</button>
-      </div>
-      <div id="add-error" class="alert"></div>
     </div>
+    <div class="form-row" style="margin-top:12px;align-items:flex-end;">
+      <button class="btn btn-ghost" data-action="add-ing-row">+ add ingredient</button>
+      <div class="form-field">
+        <label>Default sell price</label>
+        <input type="text" id="new-sell" placeholder="500k" autocomplete="off" style="min-width:120px;" />
+      </div>
+      <button class="btn btn-accent" data-action="add-product">Add Product</button>
+    </div>
+    <div id="add-error" class="alert"></div>
   `;
+  div.appendChild(addPanel);
   return div;
 }
 
-function addIngRow() {
-  const c = document.getElementById('ing-fields');
-  const row = document.createElement('div');
-  row.className = 'form-row ing-field-row';
-  row.innerHTML = `
-    <div class="form-field"><label>Ingredient name</label><input type="text" class="ing-name-inp" placeholder="e.g. Pest" /></div>
-    <div class="form-field"><label>Per 1 output</label><input type="number" class="ing-per-inp" placeholder="6.25" step="0.01" style="min-width:110px;" /></div>
-    <div class="form-field"><label>Default price</label><input type="text" class="ing-price-inp" placeholder="36k" style="min-width:110px;" /></div>
-    <button class="btn btn-ghost" style="align-self:flex-end;" onclick="removeIngRow(this)">×</button>
-  `;
-  c.appendChild(row);
-}
+// Manage panel delegated clicks
+document.getElementById('panels').addEventListener('click', e => {
+  const btn = e.target.closest('[data-action]');
+  if (!btn) return;
+  const action = btn.dataset.action;
 
-function removeIngRow(btn) {
-  const rows = document.querySelectorAll('.ing-field-row');
-  if (rows.length > 1) btn.closest('.ing-field-row').remove();
-}
-
-function addProduct() {
-  const name  = document.getElementById('new-name').value.trim();
-  const chain = document.getElementById('new-chain').value.trim();
-  const sell  = parseNum(document.getElementById('new-sell').value) || 0;
-  const errEl = document.getElementById('add-error');
-  errEl.style.display = 'none';
-
-  if (!name) { errEl.textContent = 'Product name is required.'; errEl.style.display = 'block'; return; }
-
-  const rows = document.querySelectorAll('.ing-field-row');
-  const ingredients = [];
-  const defaultPrices = { sell };
-
-  for (const row of rows) {
-    const n     = row.querySelector('.ing-name-inp').value.trim();
-    const per   = parseFloat(row.querySelector('.ing-per-inp').value);
-    const price = parseNum(row.querySelector('.ing-price-inp').value) || 0;
-    if (!n || isNaN(per)) { errEl.textContent = 'Each ingredient needs a name and qty per output.'; errEl.style.display = 'block'; return; }
-    const ingId = n.toLowerCase().replace(/\s+/g, '_');
-    ingredients.push({ id: ingId, name: n, perUnit: per });
-    defaultPrices[ingId] = price;
+  if (action === 'delete-product') {
+    const pid = btn.dataset.pid;
+    if (!confirm('Remove this product?')) return;
+    S.products = S.products.filter(p => p.id !== pid);
+    Object.keys(S.prices).filter(k => k.startsWith(pid + '__')).forEach(k => delete S.prices[k]);
+    delete S.qtys[pid];
+    delete S.budgets[pid];
+    if (S.activeTab === pid) S.activeTab = S.products[0]?.id || '__manage__';
+    saveState();
+    renderAll();
+    return;
   }
 
-  if (!ingredients.length) { errEl.textContent = 'Add at least one ingredient.'; errEl.style.display = 'block'; return; }
+  if (action === 'add-ing-row') {
+    const c = document.getElementById('ing-fields');
+    const row = document.createElement('div');
+    row.className = 'form-row ing-field-row';
+    row.innerHTML = `
+      <div class="form-field"><label>Ingredient name</label><input type="text" class="ing-name-inp" placeholder="e.g. Pest" autocomplete="off" /></div>
+      <div class="form-field"><label>Per 1 output</label><input type="number" class="ing-per-inp" placeholder="6.25" step="0.01" style="min-width:110px;" /></div>
+      <div class="form-field"><label>Default price</label><input type="text" class="ing-price-inp" placeholder="36k" autocomplete="off" style="min-width:110px;" /></div>
+      <button class="btn btn-ghost" style="align-self:flex-end;" data-action="remove-ing-row">×</button>
+    `;
+    c.appendChild(row);
+    return;
+  }
 
-  const id = name.toLowerCase().replace(/[^a-z0-9]/g, '_') + '_' + Date.now();
-  const newProduct = { id, name, chain: chain || name, ingredients, defaultPrices };
-  S.products.push(newProduct);
+  if (action === 'remove-ing-row') {
+    const rows = document.querySelectorAll('.ing-field-row');
+    if (rows.length > 1) btn.closest('.ing-field-row').remove();
+    return;
+  }
 
-  // Persist the default prices into S.prices immediately so they're remembered
-  ingredients.forEach(ing => { S.prices[`${id}_${ing.id}`] = defaultPrices[ing.id]; });
-  S.prices[`${id}_sell`] = sell;
-  S.qtys[id] = '64';
+  if (action === 'add-product') {
+    const nameInp  = document.getElementById('new-name');
+    const chainInp = document.getElementById('new-chain');
+    const sellInp  = document.getElementById('new-sell');
+    const errEl    = document.getElementById('add-error');
+    errEl.style.display = 'none';
 
-  S.activeTab = id;
-  saveState(S);
-  renderAll();
-}
+    const name  = nameInp.value.trim();
+    const chain = chainInp.value.trim();
+    const sell  = parseNum(sellInp.value) || 0;
 
-function deleteProduct(id) {
-  if (!confirm('Remove this product?')) return;
-  S.products = S.products.filter(p => p.id !== id);
-  // Clean up stored prices and qtys for this product
-  Object.keys(S.prices).filter(k => k.startsWith(id + '_')).forEach(k => delete S.prices[k]);
-  delete S.qtys[id];
-  if (S.activeTab === id) S.activeTab = S.products[0]?.id || '__manage__';
-  saveState(S);
-  renderAll();
-}
+    if (!name) { errEl.textContent = 'Product name is required.'; errEl.style.display = 'block'; return; }
 
+    // Slug-based ID
+    let baseSlug = slugify(name);
+    let id = baseSlug;
+    let counter = 1;
+    while (S.products.find(p => p.id === id)) { id = `${baseSlug}-${counter++}`; }
+
+    const rows = document.querySelectorAll('.ing-field-row');
+    const ingredients = [];
+    const defaultPrices = { sell };
+
+    for (const row of rows) {
+      const n   = row.querySelector('.ing-name-inp').value.trim();
+      const per = parseFloat(row.querySelector('.ing-per-inp').value);
+      const p   = parseNum(row.querySelector('.ing-price-inp').value) || 0;
+      if (!n || isNaN(per)) {
+        errEl.textContent = 'Each ingredient needs a name and qty per output.';
+        errEl.style.display = 'block'; return;
+      }
+      const iid = slugify(n);
+      ingredients.push({ id: iid, name: n, perUnit: per });
+      defaultPrices[iid] = Math.round(p);
+    }
+
+    if (!ingredients.length) { errEl.textContent = 'Add at least one ingredient.'; errEl.style.display = 'block'; return; }
+
+    const newProduct = { id, name, chain: chain || name, ingredients, defaultPrices };
+    S.products.push(newProduct);
+
+    // Immediately persist all prices and default qty
+    ingredients.forEach(ing => { S.prices[`${id}__${ing.id}`] = defaultPrices[ing.id]; });
+    S.prices[`${id}__sell`] = Math.round(sell);
+    S.qtys[id] = '64';
+
+    S.activeTab = id;
+    saveState();
+    renderAll();
+    return;
+  }
+});
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
 renderAll();
 </script>
 </body>
