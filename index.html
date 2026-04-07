@@ -472,7 +472,10 @@ function buildProduct(product){
   header.appendChild(titleEl); header.appendChild(chainEl); div.appendChild(header);
 
   div.appendChild(secLabel('Target Quantity'));
-  div.appendChild(inputGroupEl(`How many ${product.name} shards do you want?`,'Supports 64, 1k, 2.5m — everything scales automatically',`inp-qty-${pid}`,getQtyStr(pid)));
+  div.appendChild(inputGroupEl(
+  `How many ${product.name} shards do you want?`,
+  'Supports 64, 1k, 2.5m — everything'
+); scales automatically',`inp-qty-${pid}`,getQtyStr(pid)));
 
   const budRow=document.createElement('div'); budRow.className='budget-row';
   const budLeft=document.createElement('div');
