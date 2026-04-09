@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,195 +10,354 @@
     --bg:#0a0c10;--surface:#111318;--surface2:#181c24;
     --border:#252a36;--border2:#2e3545;--text:#f0f2fa;
     --muted:#8b95aa;--accent:#7ee8b8;--accent2:#4fd1c5;
-    --gold:#f6c90e;--red:#ff5e5e;--blue:#60a5fa;
+    --gold:#f6c90e;--red:#ff5e5e;--blue:#60a5fa;--purple:#c084fc;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:17px;font-weight:400;min-height:100vh;overflow-x:hidden;}
   body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(126,232,184,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(126,232,184,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
   .wrapper{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:0 36px 120px;}
 
-  /* ── HEADER ── */
-  header{padding:52px 0 40px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid var(--border);margin-bottom:44px;}
-  .logo{font-size:34px;font-weight:700;letter-spacing:-0.5px;}
-  .logo span{color:var(--accent);}
-  .logo-sub{font-size:13px;color:var(--muted);margin-top:6px;letter-spacing:0.05em;}
-  .header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-  .sync-status{font-size:12px;padding:6px 12px;border-radius:8px;border:1px solid var(--border2);color:var(--muted);background:var(--surface);}
-  .sync-status.ok{color:var(--accent);border-color:rgba(126,232,184,0.3);}
-  .sync-status.err{color:var(--red);border-color:rgba(255,94,94,0.3);}
-  .sync-status.loading{color:var(--gold);border-color:rgba(246,201,14,0.3);}
+/* ── HEADER ── */
+header{padding:52px 0 40px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid var(–border);margin-bottom:44px;}
+.logo{font-size:34px;font-weight:700;letter-spacing:-0.5px;}
+.logo span{color:var(–accent);}
+.logo-sub{font-size:13px;color:var(–muted);margin-top:6px;letter-spacing:0.05em;}
+.header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.sync-status{font-size:12px;padding:6px 12px;border-radius:8px;border:1px solid var(–border2);color:var(–muted);background:var(–surface);}
+.sync-status.ok{color:var(–accent);border-color:rgba(126,232,184,0.3);}
+.sync-status.err{color:var(–red);border-color:rgba(255,94,94,0.3);}
+.sync-status.loading{color:var(–gold);border-color:rgba(246,201,14,0.3);}
 
-  /* ── TABS ── */
-  .tabs{display:flex;gap:5px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:5px;flex-wrap:wrap;}
-  .tab{padding:10px 20px;border-radius:10px;font-size:15px;font-weight:500;cursor:pointer;color:var(--muted);transition:all 0.15s;border:none;background:none;font-family:inherit;white-space:nowrap;-webkit-appearance:none;appearance:none;text-decoration:none;-webkit-text-fill-color:var(--muted);}
-  .tab:hover{color:var(--text);-webkit-text-fill-color:var(--text);}
-  .tab.active{background:var(--surface2);color:var(--accent);border:1px solid var(--border2);-webkit-text-fill-color:var(--accent);}
-  .tab-manage{margin-left:4px;color:var(--accent);border:1px solid rgba(126,232,184,0.3);background:rgba(126,232,184,0.06);-webkit-text-fill-color:var(--accent);}
-  .tab-manage:hover{background:rgba(126,232,184,0.12);}
-  .tab-manage.active{background:rgba(126,232,184,0.16);border-color:var(--accent);}
-  .tab-log{color:var(--gold);border:1px solid rgba(246,201,14,0.3);background:rgba(246,201,14,0.06);-webkit-text-fill-color:var(--gold);}
-  .tab-log:hover{background:rgba(246,201,14,0.12);}
-  .tab-log.active{background:rgba(246,201,14,0.16);border-color:var(--gold);color:var(--gold);}
+/* ── TABS ── */
+.tabs{display:flex;gap:5px;align-items:center;background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:5px;flex-wrap:wrap;}
+.tab{padding:10px 20px;border-radius:10px;font-size:15px;font-weight:500;cursor:pointer;color:var(–muted);transition:all 0.15s;border:none;background:none;font-family:inherit;white-space:nowrap;-webkit-appearance:none;appearance:none;text-decoration:none;-webkit-text-fill-color:var(–muted);}
+.tab:hover{color:var(–text);-webkit-text-fill-color:var(–text);}
+.tab.active{background:var(–surface2);color:var(–accent);border:1px solid var(–border2);-webkit-text-fill-color:var(–accent);}
+.tab-manage{margin-left:4px;color:var(–accent);border:1px solid rgba(126,232,184,0.3);background:rgba(126,232,184,0.06);-webkit-text-fill-color:var(–accent);}
+.tab-manage:hover{background:rgba(126,232,184,0.12);}
+.tab-manage.active{background:rgba(126,232,184,0.16);border-color:var(–accent);}
+.tab-log{color:var(–gold);border:1px solid rgba(246,201,14,0.3);background:rgba(246,201,14,0.06);-webkit-text-fill-color:var(–gold);}
+.tab-log:hover{background:rgba(246,201,14,0.12);}
+.tab-log.active{background:rgba(246,201,14,0.16);border-color:var(–gold);color:var(–gold);}
+.tab-worth{color:var(–purple);border:1px solid rgba(192,132,252,0.3);background:rgba(192,132,252,0.06);-webkit-text-fill-color:var(–purple);}
+.tab-worth:hover{background:rgba(192,132,252,0.12);}
+.tab-worth.active{background:rgba(192,132,252,0.16);border-color:var(–purple);color:var(–purple);-webkit-text-fill-color:var(–purple);}
 
-  .panel{display:none;}
-  .panel.active{display:block;animation:fadeIn 0.2s ease;}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.panel{display:none;}
+.panel.active{display:block;animation:fadeIn 0.2s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 
-  /* ── PRODUCT PANEL ── */
-  .product-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:32px;}
-  .product-title{font-size:32px;font-weight:700;}
-  .chain-badge{font-size:13px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 18px;line-height:1.9;max-width:640px;}
-  .chain-badge .arrow{color:var(--accent);font-weight:600;}
-  .section-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase;margin:30px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+/* ── PRODUCT PANEL ── */
+.product-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:32px;}
+.product-title{font-size:32px;font-weight:700;}
+.chain-badge{font-size:13px;color:var(–muted);background:var(–surface);border:1px solid var(–border);border-radius:10px;padding:12px 18px;line-height:1.9;max-width:640px;}
 
-  @keyframes cardPulse{0%{box-shadow:0 0 0 0 rgba(126,232,184,0);}30%{box-shadow:0 0 0 4px rgba(126,232,184,0.3);}100%{box-shadow:0 0 0 0 rgba(126,232,184,0);}}
-  .card.pulse{animation:cardPulse 0.6s ease-out;}
+.section-label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.14em;text-transform:uppercase;margin:30px 0 14px;padding-bottom:10px;border-bottom:1px solid var(–border);}
 
-  .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:20px;}
-  @media(max-width:860px){.grid-4{grid-template-columns:1fr 1fr;}}
-  @media(max-width:500px){.grid-4{grid-template-columns:1fr;}}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;}
-  .card-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
-  .card-val{font-size:34px;font-weight:700;line-height:1;}
-  .card-val.accent{color:var(--accent);}
-  .card-val.gold{color:var(--gold);}
-  .card-val.red{color:var(--red);}
-  .card-sub{font-size:13px;color:var(--muted);margin-top:7px;}
+@keyframes cardPulse{0%{box-shadow:0 0 0 0 rgba(126,232,184,0);}30%{box-shadow:0 0 0 4px rgba(126,232,184,0.3);}100%{box-shadow:0 0 0 0 rgba(126,232,184,0);}}
+.card.pulse{animation:cardPulse 0.6s ease-out;}
 
-  .cps-box{background:var(--surface2);border:1px solid var(--border2);border-radius:14px;padding:30px 34px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:20px;}
-  .cps-half{flex:1;min-width:180px;}
-  .cps-half:last-child{text-align:right;}
-  .cps-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:8px;}
-  .cps-val{font-size:52px;font-weight:700;line-height:1;letter-spacing:-1px;}
-  .cps-val.pos{color:var(--accent);}
-  .cps-val.neg{color:var(--red);}
-  .cps-sub{font-size:13px;color:var(--muted);margin-top:7px;}
-  .cps-divider{width:1px;background:var(--border2);align-self:stretch;min-height:60px;}
+.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:20px;}
+@media(max-width:860px){.grid-4{grid-template-columns:1fr 1fr;}}
+@media(max-width:500px){.grid-4{grid-template-columns:1fr;}}
+.card{background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:24px;}
+.card-label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.card-val{font-size:34px;font-weight:700;line-height:1;}
+.card-val.accent{color:var(–accent);}
+.card-val.gold{color:var(–gold);}
+.card-val.red{color:var(–red);}
+.card-sub{font-size:13px;color:var(–muted);margin-top:7px;}
 
-  .input-group{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:10px;}
-  .input-group-label{font-size:17px;font-weight:500;flex:1;min-width:160px;}
-  .input-group-sub{font-size:13px;color:var(--muted);margin-top:4px;}
-  .budget-row{background:rgba(246,201,14,0.05);border:1px solid rgba(246,201,14,0.2);border-radius:14px;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:10px;}
-  .budget-badge{font-size:13px;color:var(--gold);margin-top:4px;}
+.cps-box{background:var(–surface2);border:1px solid var(–border2);border-radius:14px;padding:30px 34px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:20px;}
+.cps-half{flex:1;min-width:180px;}
+.cps-half:last-child{text-align:right;}
+.cps-label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:8px;}
+.cps-val{font-size:52px;font-weight:700;line-height:1;letter-spacing:-1px;}
+.cps-val.pos{color:var(–accent);}
+.cps-val.neg{color:var(–red);}
+.cps-sub{font-size:13px;color:var(–muted);margin-top:7px;}
+.cps-divider{width:1px;background:var(–border2);align-self:stretch;min-height:60px;}
 
-  .smart-input{background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:19px;font-weight:600;font-family:inherit;padding:11px 16px;width:150px;text-align:right;transition:border-color 0.15s;outline:none;-webkit-appearance:none;appearance:none;-webkit-text-fill-color:var(--text);}
-  .smart-input:focus{border-color:var(--accent);}
-  .smart-input.error{border-color:var(--red);}
-  /* Force dark theme on all inputs/selects — iOS Safari overrides these without -webkit */
-  input,select,textarea{background:var(--surface2);color:var(--text);-webkit-text-fill-color:var(--text);-webkit-appearance:none;appearance:none;}
-  input::placeholder{color:var(--muted);-webkit-text-fill-color:var(--muted);opacity:1;}
-  /* Tab bar — force non-link appearance on mobile */
-  .tab,.btn{-webkit-appearance:none;appearance:none;cursor:pointer;}
-  .tabs{-webkit-tap-highlight-color:transparent;}
-  a,.tab{color:inherit;text-decoration:none;}
+.input-group{background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:10px;}
+.input-group-label{font-size:17px;font-weight:500;flex:1;min-width:160px;}
+.input-group-sub{font-size:13px;color:var(–muted);margin-top:4px;}
+.budget-row{background:rgba(246,201,14,0.05);border:1px solid rgba(246,201,14,0.2);border-radius:14px;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:10px;}
+.budget-badge{font-size:13px;color:var(–gold);margin-top:4px;}
 
-  .bazaar-btn{display:flex;align-items:center;gap:8px;background:rgba(96,165,250,0.08);border:1px solid rgba(96,165,250,0.25);color:#93c5fd;border-radius:10px;padding:10px 18px;font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;transition:all 0.15s;}
-  .bazaar-btn:hover{background:rgba(96,165,250,0.15);}
-  .bazaar-btn.loading{opacity:0.6;pointer-events:none;}
-  .bazaar-status{font-size:12px;color:var(--muted);}
-  .bazaar-status.ok{color:var(--accent);}
-  .bazaar-status.err{color:var(--red);}
+/* ── INVENTORY MODE ── */
+.inv-toggle-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding:16px 20px;background:rgba(96,165,250,0.05);border:1px solid rgba(96,165,250,0.2);border-radius:12px;}
+.inv-toggle-label{font-size:15px;font-weight:500;flex:1;}
+.inv-toggle-sub{font-size:13px;color:var(–muted);margin-top:3px;}
+.toggle-switch{position:relative;width:44px;height:24px;flex-shrink:0;}
+.toggle-switch input{opacity:0;width:0;height:0;}
+.toggle-slider{position:absolute;cursor:pointer;inset:0;background:var(–surface2);border:1px solid var(–border2);border-radius:24px;transition:0.2s;}
+.toggle-slider:before{content:’’;position:absolute;height:16px;width:16px;left:3px;bottom:3px;background:var(–muted);border-radius:50%;transition:0.2s;}
+input:checked+.toggle-slider{background:rgba(96,165,250,0.2);border-color:rgba(96,165,250,0.5);}
+input:checked+.toggle-slider:before{transform:translateX(20px);background:#60a5fa;}
 
-  .ingredients{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:20px;}
-  .ing-header{display:flex;align-items:center;justify-content:space-between;padding:12px 26px;background:var(--surface2);border-bottom:1px solid var(--border);font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;}
-  .ing-row{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid var(--border);gap:14px;flex-wrap:wrap;}
-  .ing-row:last-child{border-bottom:none;}
-  .ing-name{font-size:17px;font-weight:500;min-width:150px;}
-  .ing-right{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
-  .ing-qty{font-size:19px;font-weight:600;color:var(--accent);min-width:80px;text-align:right;}
-  .ing-cost{font-size:14px;color:var(--muted);min-width:100px;text-align:right;}
+.inv-panel{background:var(–surface);border:1px solid rgba(96,165,250,0.25);border-radius:14px;padding:24px;margin-bottom:20px;display:none;}
+.inv-panel.visible{display:block;animation:fadeIn 0.2s ease;}
+.inv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:20px;}
+.inv-field{display:flex;flex-direction:column;gap:7px;}
+.inv-field label{font-size:11px;font-weight:700;color:var(–blue);letter-spacing:0.12em;text-transform:uppercase;}
+.inv-field input{background:var(–surface2);border:1px solid rgba(96,165,250,0.3);border-radius:10px;color:var(–text);font-size:17px;font-weight:600;font-family:inherit;padding:11px 14px;outline:none;-webkit-appearance:none;appearance:none;-webkit-text-fill-color:var(–text);}
+.inv-field input:focus{border-color:#60a5fa;}
+.inv-result{background:var(–surface2);border:1px solid var(–border2);border-radius:12px;padding:20px 24px;}
+.inv-result-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(–border);}
+.inv-result-row:last-child{border-bottom:none;}
+.inv-result-row .ir-label{font-size:14px;color:var(–muted);}
+.inv-result-row .ir-val{font-size:18px;font-weight:600;}
+.inv-result-row .ir-val.accent{color:var(–accent);}
+.inv-result-row .ir-val.gold{color:var(–gold);}
+.inv-result-row .ir-val.red{color:var(–red);}
+.inv-shortage{margin-top:14px;padding:14px 18px;background:rgba(255,94,94,0.07);border:1px solid rgba(255,94,94,0.25);border-radius:10px;font-size:13px;color:var(–red);display:none;}
+.inv-shortage.visible{display:block;}
 
-  .profit-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:20px;}
-  .profit-row{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid var(--border);}
-  .profit-row:last-child{border-bottom:none;background:var(--surface2);}
-  .profit-row .label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;}
-  .profit-row .val{font-size:20px;font-weight:700;}
-  .profit-row .val.pos{color:var(--accent);}
-  .profit-row .val.neg{color:var(--red);}
+.smart-input{background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:19px;font-weight:600;font-family:inherit;padding:11px 16px;width:150px;text-align:right;transition:border-color 0.15s;outline:none;-webkit-appearance:none;appearance:none;-webkit-text-fill-color:var(–text);}
+.smart-input:focus{border-color:var(–accent);}
+.smart-input.error{border-color:var(–red);}
+input,select,textarea{background:var(–surface2);color:var(–text);-webkit-text-fill-color:var(–text);-webkit-appearance:none;appearance:none;}
+input::placeholder{color:var(–muted);-webkit-text-fill-color:var(–muted);opacity:1;}
+.tab,.btn{-webkit-appearance:none;appearance:none;cursor:pointer;}
+.tabs{-webkit-tap-highlight-color:transparent;}
+a,.tab{color:inherit;text-decoration:none;}
 
-  /* ── FLIP LOG PANEL ── */
-  .log-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:28px;}
-  @media(max-width:600px){.log-stats{grid-template-columns:1fr;}}
-  .log-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;}
-  .log-card .lc-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
-  .log-card .lc-val{font-size:36px;font-weight:700;}
-  .log-card .lc-val.pos{color:var(--accent);}
-  .log-card .lc-val.neg{color:var(--red);}
-  .log-card .lc-val.gold{color:var(--gold);}
+.bazaar-btn{display:flex;align-items:center;gap:8px;background:rgba(96,165,250,0.08);border:1px solid rgba(96,165,250,0.25);color:#93c5fd;border-radius:10px;padding:10px 18px;font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;transition:all 0.15s;}
+.bazaar-btn:hover{background:rgba(96,165,250,0.15);}
+.bazaar-btn.loading{opacity:0.6;pointer-events:none;}
+.bazaar-status{font-size:12px;color:var(–muted);}
+.bazaar-status.ok{color:var(–accent);}
+.bazaar-status.err{color:var(–red);}
 
-  .log-form{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:24px;}
-  .log-form h3{font-size:20px;font-weight:600;margin-bottom:20px;}
-  .log-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:16px;}
-  .log-field{display:flex;flex-direction:column;gap:6px;}
-  .log-field label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
-  .log-field input,.log-field select{background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:16px;font-family:inherit;padding:11px 14px;outline:none;}
-  .log-field input:focus,.log-field select:focus{border-color:var(--accent);}
-  .log-preview{font-size:14px;color:var(--muted);margin-bottom:16px;padding:12px 16px;background:var(--surface2);border-radius:10px;min-height:42px;}
-  .log-preview span{color:var(--accent);font-weight:600;}
+.ingredients{background:var(–surface);border:1px solid var(–border);border-radius:14px;overflow:hidden;margin-bottom:20px;}
+.ing-header{display:flex;align-items:center;justify-content:space-between;padding:12px 26px;background:var(–surface2);border-bottom:1px solid var(–border);font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.12em;text-transform:uppercase;}
+.ing-row{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid var(–border);gap:14px;flex-wrap:wrap;}
+.ing-row:last-child{border-bottom:none;}
+.ing-name{font-size:17px;font-weight:500;min-width:150px;}
+.ing-right{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+.ing-qty{font-size:19px;font-weight:600;color:var(–accent);min-width:80px;text-align:right;}
+.ing-cost{font-size:14px;color:var(–muted);min-width:100px;text-align:right;}
 
-  .flip-table{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
-  .flip-table-header{display:grid;grid-template-columns:1fr 80px 100px 100px 110px 44px;gap:0;padding:12px 20px;background:var(--surface2);border-bottom:1px solid var(--border);font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
-  .flip-row{display:grid;grid-template-columns:1fr 80px 100px 100px 110px 44px;gap:0;padding:16px 20px;border-bottom:1px solid var(--border);align-items:center;font-size:15px;}
-  .flip-row:last-child{border-bottom:none;}
-  .flip-row:hover{background:var(--surface2);}
-  .flip-row .fr-name{font-weight:500;}
-  .flip-row .fr-profit{font-weight:600;}
-  .flip-row .fr-profit.pos{color:var(--accent);}
-  .flip-row .fr-profit.neg{color:var(--red);}
-  .flip-row .fr-date{color:var(--muted);font-size:13px;}
-  .flip-empty{padding:40px;text-align:center;color:var(--muted);font-size:15px;}
-  .del-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px;padding:4px 8px;border-radius:6px;font-family:inherit;}
-  .del-btn:hover{color:var(--red);background:rgba(255,94,94,0.1);}
-  @media(max-width:700px){
-    .flip-table-header,.flip-row{grid-template-columns:1fr 80px 100px 44px;}
-    .flip-table-header>*:nth-child(3),.flip-table-header>*:nth-child(4),
-    .flip-row>*:nth-child(3),.flip-row>*:nth-child(4){display:none;}
-  }
+.profit-box{background:var(–surface);border:1px solid var(–border);border-radius:14px;overflow:hidden;margin-top:20px;}
+.profit-row{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid var(–border);}
+.profit-row:last-child{border-bottom:none;background:var(–surface2);}
+.profit-row .label{font-size:12px;font-weight:700;color:var(–muted);letter-spacing:0.08em;text-transform:uppercase;}
+.profit-row .val{font-size:20px;font-weight:700;}
+.profit-row .val.pos{color:var(–accent);}
+.profit-row .val.neg{color:var(–red);}
 
-  /* ── MANAGE PANEL ── */
-  .manage-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:20px;}
-  .manage-panel h3{font-size:20px;font-weight:600;margin-bottom:20px;}
-  .form-row{display:flex;align-items:flex-end;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
-  .form-field{display:flex;flex-direction:column;gap:6px;}
-  .form-field label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
-  .form-field input{background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:15px;font-family:inherit;padding:10px 14px;outline:none;min-width:150px;}
-  .form-field input:focus{border-color:var(--accent);}
-  .product-list-item{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border:1px solid var(--border);border-radius:10px;margin-bottom:8px;background:var(--surface2);}
-  .p-name{font-size:16px;font-weight:500;}
-  .p-chain{font-size:13px;color:var(--muted);margin-top:3px;}
-  .alert{background:rgba(255,94,94,0.08);border:1px solid rgba(255,94,94,0.3);border-radius:10px;padding:12px 16px;font-size:14px;color:var(--red);margin-top:12px;display:none;}
+/* ── FLIP LOG ── */
+.log-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:28px;}
+@media(max-width:600px){.log-stats{grid-template-columns:1fr;}}
+.log-card{background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:24px;}
+.log-card .lc-label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.log-card .lc-val{font-size:36px;font-weight:700;}
+.log-card .lc-val.pos{color:var(–accent);}
+.log-card .lc-val.neg{color:var(–red);}
+.log-card .lc-val.gold{color:var(–gold);}
 
-  /* ── BUTTONS ── */
-  .btn{padding:11px 22px;border-radius:10px;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;border:none;transition:all 0.15s;}
-  .btn-accent{background:var(--accent);color:#0a0c10;}
-  .btn-accent:hover{background:var(--accent2);}
-  .btn-danger{background:rgba(255,94,94,0.1);color:var(--red);border:1px solid rgba(255,94,94,0.3);}
-  .btn-danger:hover{background:rgba(255,94,94,0.2);}
-  .btn-ghost{background:var(--surface2);color:var(--muted);border:1px solid var(--border2);}
-  .btn-ghost:hover{color:var(--text);}
-  .btn-gold{background:rgba(246,201,14,0.12);color:var(--gold);border:1px solid rgba(246,201,14,0.3);}
-  .btn-gold:hover{background:rgba(246,201,14,0.2);}
-  .btn-sm{padding:7px 14px;font-size:13px;}
+.log-form{background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:28px;margin-bottom:24px;}
+.log-form h3{font-size:20px;font-weight:600;margin-bottom:20px;}
+.log-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:16px;}
+.log-field{display:flex;flex-direction:column;gap:6px;}
+.log-field label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.1em;text-transform:uppercase;}
+.log-field input,.log-field select{background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:16px;font-family:inherit;padding:11px 14px;outline:none;}
+.log-field input:focus,.log-field select:focus{border-color:var(–accent);}
+.log-preview{font-size:14px;color:var(–muted);margin-bottom:16px;padding:12px 16px;background:var(–surface2);border-radius:10px;min-height:42px;}
+.log-preview span{color:var(–accent);font-weight:600;}
 
-  @media(max-width:600px){
-    .wrapper{padding:0 16px 100px;}
-    header{padding:28px 0 24px;}
-    .ing-header{display:none;}
-    .ing-row{flex-direction:column;align-items:flex-start;padding:14px;gap:10px;border-radius:10px;margin:6px;width:calc(100% - 12px);}
-    .ing-right{width:100%;justify-content:space-between;}
-    .ingredients{border-radius:14px;overflow:visible;background:transparent;border:none;}
-    .cps-val{font-size:36px;}
-    .cps-divider{display:none;}
-    .cps-half:last-child{text-align:left;}
-    .card-val{font-size:28px;}
-    .product-title{font-size:26px;}
-  }
+.flip-table{background:var(–surface);border:1px solid var(–border);border-radius:14px;overflow:hidden;}
+.flip-table-header{display:grid;grid-template-columns:1fr 80px 100px 100px 110px 44px;gap:0;padding:12px 20px;background:var(–surface2);border-bottom:1px solid var(–border);font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.1em;text-transform:uppercase;}
+.flip-row{display:grid;grid-template-columns:1fr 80px 100px 100px 110px 44px;gap:0;padding:16px 20px;border-bottom:1px solid var(–border);align-items:center;font-size:15px;}
+.flip-row:last-child{border-bottom:none;}
+.flip-row:hover{background:var(–surface2);}
+.flip-row .fr-name{font-weight:500;}
+.flip-row .fr-profit{font-weight:600;}
+.flip-row .fr-profit.pos{color:var(–accent);}
+.flip-row .fr-profit.neg{color:var(–red);}
+.flip-empty{padding:40px;text-align:center;color:var(–muted);font-size:15px;}
+.del-btn{background:none;border:none;color:var(–muted);cursor:pointer;font-size:16px;padding:4px 8px;border-radius:6px;font-family:inherit;}
+.del-btn:hover{color:var(–red);background:rgba(255,94,94,0.1);}
+@media(max-width:700px){
+.flip-table-header,.flip-row{grid-template-columns:1fr 80px 100px 44px;}
+.flip-table-header>*:nth-child(3),.flip-table-header>*:nth-child(4),
+.flip-row>*:nth-child(3),.flip-row>*:nth-child(4){display:none;}
+}
+
+/* ── MANAGE PANEL ── */
+.manage-panel{background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:28px;margin-bottom:20px;}
+.manage-panel h3{font-size:20px;font-weight:600;margin-bottom:20px;}
+.form-row{display:flex;align-items:flex-end;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
+.form-field{display:flex;flex-direction:column;gap:6px;}
+.form-field label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.1em;text-transform:uppercase;}
+.form-field input{background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:15px;font-family:inherit;padding:10px 14px;outline:none;min-width:150px;}
+.form-field input:focus{border-color:var(–accent);}
+.product-list-item{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border:1px solid var(–border);border-radius:10px;margin-bottom:8px;background:var(–surface2);}
+.p-name{font-size:16px;font-weight:500;}
+.p-chain{font-size:13px;color:var(–muted);margin-top:3px;}
+.alert{background:rgba(255,94,94,0.08);border:1px solid rgba(255,94,94,0.3);border-radius:10px;padding:12px 16px;font-size:14px;color:var(–red);margin-top:12px;display:none;}
+
+/* ── ITEM WORTH ── */
+.worth-layout{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:start;}
+@media(max-width:900px){.worth-layout{grid-template-columns:1fr;}}
+
+.worth-left{}
+.worth-right{position:sticky;top:24px;}
+
+.worth-section{background:var(–surface);border:1px solid var(–border);border-radius:14px;overflow:hidden;margin-bottom:16px;}
+.worth-section-header{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;background:var(–surface2);border-bottom:1px solid var(–border);cursor:pointer;user-select:none;}
+.worth-section-header:hover{background:var(–border);}
+.worth-section-title{font-size:14px;font-weight:700;color:var(–text);letter-spacing:0.05em;}
+.worth-section-badge{font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px;background:rgba(192,132,252,0.12);color:var(–purple);border:1px solid rgba(192,132,252,0.25);}
+.worth-section-badge.has-cost{background:rgba(126,232,184,0.1);color:var(–accent);border-color:rgba(126,232,184,0.3);}
+.worth-section-chevron{color:var(–muted);font-size:12px;transition:transform 0.2s;}
+.worth-section-chevron.open{transform:rotate(180deg);}
+.worth-section-body{padding:20px 22px;display:none;}
+.worth-section-body.open{display:block;animation:fadeIn 0.15s ease;}
+
+/* stepper + qty row */
+.worth-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(–border);gap:12px;}
+.worth-row:last-child{border-bottom:none;}
+.worth-row-left{flex:1;}
+.worth-row-name{font-size:15px;font-weight:500;}
+.worth-row-sub{font-size:12px;color:var(–muted);margin-top:3px;}
+.worth-row-right{display:flex;align-items:center;gap:10px;}
+.stepper{display:flex;align-items:center;gap:0;background:var(–surface2);border:1px solid var(–border2);border-radius:10px;overflow:hidden;}
+.step-btn{background:none;border:none;color:var(–muted);font-size:18px;padding:6px 12px;cursor:pointer;font-family:inherit;transition:all 0.12s;line-height:1;}
+.step-btn:hover{color:var(–text);background:var(–border);}
+.step-val{font-size:16px;font-weight:700;min-width:32px;text-align:center;color:var(–text);padding:6px 4px;}
+.worth-price-inp{background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:14px;font-weight:600;font-family:inherit;padding:8px 10px;width:100px;text-align:right;outline:none;-webkit-appearance:none;-webkit-text-fill-color:var(–text);}
+.worth-price-inp:focus{border-color:var(–purple);}
+.worth-price-inp.live{border-color:rgba(96,165,250,0.4);color:#93c5fd;-webkit-text-fill-color:#93c5fd;}
+.worth-price-label{font-size:11px;color:var(–muted);min-width:50px;text-align:right;}
+.price-tag{font-size:13px;color:var(–muted);min-width:70px;text-align:right;}
+.price-tag.has-val{color:var(–accent);}
+
+/* enchant search */
+.enchant-search{width:100%;background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:15px;font-family:inherit;padding:11px 14px;outline:none;margin-bottom:14px;-webkit-appearance:none;-webkit-text-fill-color:var(–text);}
+.enchant-search:focus{border-color:var(–purple);}
+.enchant-list{display:flex;flex-direction:column;gap:2px;max-height:320px;overflow-y:auto;}
+.enchant-item{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:8px;gap:10px;}
+.enchant-item:hover{background:var(–surface2);}
+.enchant-item-left{flex:1;}
+.enchant-item-name{font-size:14px;font-weight:500;}
+.enchant-item-tier{font-size:12px;color:var(–muted);margin-top:2px;}
+.enchant-item-right{display:flex;align-items:center;gap:8px;}
+.enchant-tier-sel{background:var(–surface2);border:1px solid var(–border2);border-radius:8px;color:var(–text);font-size:13px;font-family:inherit;padding:5px 8px;outline:none;-webkit-text-fill-color:var(–text);}
+.enchant-add-btn{background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.3);color:var(–purple);border-radius:8px;padding:5px 12px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;}
+.enchant-add-btn:hover{background:rgba(192,132,252,0.2);}
+.enchant-added{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:14px;min-height:32px;}
+.enchant-chip{display:flex;align-items:center;gap:6px;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.3);border-radius:20px;padding:5px 12px;font-size:13px;color:var(–purple);}
+.enchant-chip .chip-rm{background:none;border:none;color:var(–muted);cursor:pointer;font-size:14px;padding:0;line-height:1;}
+.enchant-chip .chip-rm:hover{color:var(–red);}
+
+/* summary card */
+.worth-summary{background:var(–surface);border:1px solid var(–border);border-radius:14px;overflow:hidden;}
+.ws-header{padding:20px 24px;background:var(–surface2);border-bottom:1px solid var(–border);}
+.ws-title{font-size:13px;font-weight:700;color:var(–muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;}
+.ws-item-name{font-size:18px;font-weight:600;color:var(–text);}
+.ws-rows{padding:0;}
+.ws-row{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid var(–border);gap:8px;}
+.ws-row:last-child{border-bottom:none;}
+.ws-row .wsr-label{font-size:13px;color:var(–muted);}
+.ws-row .wsr-val{font-size:16px;font-weight:600;}
+.ws-row .wsr-val.accent{color:var(–accent);}
+.ws-row .wsr-val.gold{color:var(–gold);}
+.ws-row .wsr-val.red{color:var(–red);}
+.ws-row .wsr-val.purple{color:var(–purple);}
+.ws-total{padding:20px 24px;background:linear-gradient(135deg,rgba(192,132,252,0.08),rgba(126,232,184,0.05));border-top:1px solid var(–border2);}
+.ws-total-label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;}
+.ws-total-val{font-size:48px;font-weight:700;letter-spacing:-1px;color:var(–gold);}
+.ws-breakdown{margin-top:16px;padding-top:14px;border-top:1px solid var(–border);display:flex;flex-direction:column;gap:4px;}
+.ws-breakdown-row{display:flex;justify-content:space-between;font-size:13px;}
+.ws-breakdown-row .wbr-label{color:var(–muted);}
+.ws-breakdown-row .wbr-val{color:var(–text);font-weight:600;}
+.margin-row{padding:16px 24px;border-top:1px solid var(–border);}
+.margin-label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.margin-controls{display:flex;align-items:center;gap:12px;}
+.margin-slider{flex:1;-webkit-appearance:none;height:4px;border-radius:4px;background:var(–border2);outline:none;}
+.margin-slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(–purple);cursor:pointer;border:2px solid var(–bg);}
+.margin-val-display{font-size:16px;font-weight:700;color:var(–purple);min-width:42px;text-align:right;}
+.sell-suggest{padding:16px 24px;background:rgba(246,201,14,0.05);border-top:1px solid rgba(246,201,14,0.2);}
+.ss-label{font-size:11px;font-weight:700;color:var(–gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
+.ss-val{font-size:32px;font-weight:700;color:var(–gold);letter-spacing:-0.5px;}
+.ss-sub{font-size:13px;color:var(–muted);margin-top:5px;}
+.worth-fetch-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.item-name-input{background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:16px;font-family:inherit;padding:11px 14px;outline:none;flex:1;-webkit-text-fill-color:var(–text);}
+.item-name-input:focus{border-color:var(–purple);}
+.worth-reset-btn{background:rgba(255,94,94,0.08);border:1px solid rgba(255,94,94,0.25);color:var(–red);border-radius:10px;padding:10px 16px;font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;}
+.worth-reset-btn:hover{background:rgba(255,94,94,0.15);}
+
+/* ── AH IMPORT ── */
+.ah-import-box{background:var(–surface);border:1px solid rgba(192,132,252,0.3);border-radius:14px;padding:24px 28px;margin-bottom:20px;}
+.ah-import-title{font-size:14px;font-weight:700;color:var(–purple);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;}
+.ah-import-sub{font-size:13px;color:var(–muted);margin-bottom:16px;line-height:1.5;}
+.ah-import-sub a{color:var(–blue);text-decoration:none;}
+.ah-import-sub a:hover{text-decoration:underline;}
+.ah-url-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px;}
+.ah-url-inp{flex:1;min-width:260px;background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:14px;font-family:inherit;padding:11px 14px;outline:none;-webkit-text-fill-color:var(–text);}
+.ah-url-inp:focus{border-color:var(–purple);}
+.ah-url-inp::placeholder{color:var(–muted);-webkit-text-fill-color:var(–muted);}
+.ah-import-btn{background:rgba(192,132,252,0.12);border:1px solid rgba(192,132,252,0.35);color:var(–purple);border-radius:10px;padding:10px 18px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;white-space:nowrap;transition:all 0.15s;}
+.ah-import-btn:hover{background:rgba(192,132,252,0.22);}
+.ah-import-btn.loading{opacity:0.6;pointer-events:none;}
+.ah-status{font-size:13px;color:var(–muted);margin-top:8px;min-height:20px;line-height:1.5;}
+.ah-status.ok{color:var(–accent);}
+.ah-status.err{color:var(–red);}
+.ah-status.loading{color:var(–gold);}
+.ah-parsed-preview{display:none;background:var(–surface2);border:1px solid var(–border2);border-radius:10px;padding:14px 18px;margin-top:12px;font-size:13px;}
+.ah-parsed-preview.visible{display:block;animation:fadeIn 0.2s ease;}
+.ah-parsed-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(–border);gap:8px;}
+.ah-parsed-row:last-child{border-bottom:none;}
+.ah-parsed-label{color:var(–muted);}
+.ah-parsed-val{font-weight:600;color:var(–text);}
+.ah-parsed-val.accent{color:var(–accent);}
+.ah-parsed-val.gold{color:var(–gold);}
+.ah-parsed-val.purple{color:var(–purple);}
+.ah-parsed-val.blue{color:var(–blue);}
+.floor-box{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.2);border-radius:10px;margin-top:10px;flex-wrap:wrap;}
+.floor-label{font-size:13px;color:var(–muted);flex:1;}
+.floor-val{font-size:18px;font-weight:700;color:var(–blue);}
+.floor-sub{font-size:12px;color:var(–muted);margin-top:2px;}
+.floor-search-btn{background:rgba(96,165,250,0.1);border:1px solid rgba(96,165,250,0.3);color:#93c5fd;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;}
+.floor-search-btn:hover{background:rgba(96,165,250,0.18);}
+.floor-search-btn.loading{opacity:0.6;pointer-events:none;}
+/* Base item cost row in summary */
+.ws-base-row{padding:14px 24px;background:rgba(96,165,250,0.04);border-top:1px solid var(–border);}
+.ws-base-label{font-size:11px;font-weight:700;color:var(–blue);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;}
+.ws-base-val{font-size:18px;font-weight:700;color:var(–blue);}
+.ws-base-sub{font-size:12px;color:var(–muted);margin-top:2px;}
+
+/* ── BUTTONS ── */
+.btn{padding:11px 22px;border-radius:10px;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;border:none;transition:all 0.15s;}
+.btn-accent{background:var(–accent);color:#0a0c10;}
+.btn-accent:hover{background:var(–accent2);}
+.btn-danger{background:rgba(255,94,94,0.1);color:var(–red);border:1px solid rgba(255,94,94,0.3);}
+.btn-danger:hover{background:rgba(255,94,94,0.2);}
+.btn-ghost{background:var(–surface2);color:var(–muted);border:1px solid var(–border2);}
+.btn-ghost:hover{color:var(–text);}
+.btn-gold{background:rgba(246,201,14,0.12);color:var(–gold);border:1px solid rgba(246,201,14,0.3);}
+.btn-gold:hover{background:rgba(246,201,14,0.2);}
+.btn-sm{padding:7px 14px;font-size:13px;}
+
+@media(max-width:600px){
+.wrapper{padding:0 16px 100px;}
+header{padding:28px 0 24px;}
+.ing-header{display:none;}
+.ing-row{flex-direction:column;align-items:flex-start;padding:14px;gap:10px;border-radius:10px;margin:6px;width:calc(100% - 12px);}
+.ing-right{width:100%;justify-content:space-between;}
+.ingredients{border-radius:14px;overflow:visible;background:transparent;border:none;}
+.cps-val{font-size:36px;}
+.cps-divider{display:none;}
+.cps-half:last-child{text-align:left;}
+.card-val{font-size:28px;}
+.product-title{font-size:26px;}
+.worth-row-right{flex-wrap:wrap;justify-content:flex-end;}
+}
 </style>
+
 </head>
 <body>
-
-
-
 <div class="wrapper">
   <header>
     <div>
@@ -219,36 +379,36 @@ const GH_REPO   = 'Anon-Palo-Calculator';
 const GH_BRANCH = 'main';
 const GH_FILE   = 'data.json';
 const GH_API    = `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_FILE}`;
-const GH_TOKEN  = 'PASTE_YOUR_TOKEN_HERE'; // replace this with your token
+const GH_TOKEN  = 'PASTE_YOUR_TOKEN_HERE';
 
 // ─── HELPERS ─────────────────────────────────────────────────────────────────
-function parseNum(raw) {
-  if (raw == null) return NaN;
-  const s = String(raw).replace(/,/g,'').trim().toLowerCase();
-  if (!s) return NaN;
-  const m = s.match(/^([0-9]*\.?[0-9]+)\s*([km]?)$/);
-  if (!m) return NaN;
-  let n = parseFloat(m[1]);
-  if (m[2]==='k') n*=1e3;
-  if (m[2]==='m') n*=1e6;
+function parseNum(raw){
+  if(raw==null) return NaN;
+  const s=String(raw).replace(/,/g,'').trim().toLowerCase();
+  if(!s) return NaN;
+  const m=s.match(/^([0-9]*\.?[0-9]+)\s*([km]?)$/);
+  if(!m) return NaN;
+  let n=parseFloat(m[1]);
+  if(m[2]==='k') n*=1e3;
+  if(m[2]==='m') n*=1e6;
   return n;
 }
-function displayNum(n) {
-  if (!n && n!==0) return '';
-  n = Math.round(n);
-  if (n>=1e6 && n%1e6===0) return (n/1e6)+'m';
-  if (n>=1e6) return parseFloat((n/1e6).toFixed(3))+'m';
-  if (n>=1e3 && n%1e3===0) return (n/1e3)+'k';
-  if (n>=1e3) return parseFloat((n/1e3).toFixed(2))+'k';
+function displayNum(n){
+  if(!n&&n!==0) return '';
+  n=Math.round(n);
+  if(n>=1e6&&n%1e6===0) return (n/1e6)+'m';
+  if(n>=1e6) return parseFloat((n/1e6).toFixed(3))+'m';
+  if(n>=1e3&&n%1e3===0) return (n/1e3)+'k';
+  if(n>=1e3) return parseFloat((n/1e3).toFixed(2))+'k';
   return String(n);
 }
-function fmt(n) {
-  if (isNaN(n)||n==null) return '—';
-  n = Math.round(n);
-  const a = Math.abs(n);
-  if (a>=1e9) return (n/1e9).toFixed(2)+'B';
-  if (a>=1e6) return (n/1e6).toFixed(2)+'M';
-  if (a>=1e3) return (n/1e3).toFixed(1)+'k';
+function fmt(n){
+  if(isNaN(n)||n==null) return '—';
+  n=Math.round(n);
+  const a=Math.abs(n);
+  if(a>=1e9) return (n/1e9).toFixed(2)+'B';
+  if(a>=1e6) return (n/1e6).toFixed(2)+'M';
+  if(a>=1e3) return (n/1e3).toFixed(1)+'k';
   return n.toLocaleString();
 }
 function slugify(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -257,158 +417,145 @@ function setText(id,v){const e=el(id);if(e)e.textContent=v;}
 function setClass(id,c){const e=el(id);if(e)e.className=c;}
 
 // ─── GITHUB SYNC ─────────────────────────────────────────────────────────────
-let ghToken = GH_TOKEN;
-let ghSha   = '';  // current SHA of data.json for updates
+let ghToken=GH_TOKEN;
+let ghSha='';
 
-function setStatus(msg, cls='') {
-  const s = el('sync-status');
-  if (!s) return;
-  s.textContent = msg;
-  s.className = 'sync-status' + (cls ? ' '+cls : '');
+function setStatus(msg,cls=''){
+  const s=el('sync-status');
+  if(!s) return;
+  s.textContent=msg;
+  s.className='sync-status'+(cls?' '+cls:'');
 }
 
-async function ghRead() {
-  setStatus('⟳ Syncing...', 'loading');
-  try {
-    // Public read — no token needed
-    const res = await fetch(GH_API + `?ref=${GH_BRANCH}&t=${Date.now()}`);
-    if (res.status === 404) {
-      // File doesn't exist yet — create it
-      setStatus('⚠ No data.json yet', '');
-      return null;
-    }
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const json = await res.json();
-    ghSha = json.sha;
-    const decoded = JSON.parse(atob(json.content.replace(/\n/g,'')));
-    setStatus('✓ Synced', 'ok');
+async function ghRead(){
+  setStatus('⟳ Syncing...','loading');
+  try{
+    const res=await fetch(GH_API+`?ref=${GH_BRANCH}&t=${Date.now()}`);
+    if(res.status===404){setStatus('⚠ No data.json yet','');return null;}
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const json=await res.json();
+    ghSha=json.sha;
+    const decoded=JSON.parse(atob(json.content.replace(/\n/g,'')));
+    setStatus('✓ Synced','ok');
     return decoded;
-  } catch(e) {
-    setStatus('✗ Sync failed', 'err');
-    console.error('ghRead:', e);
-    return null;
-  }
+  }catch(e){setStatus('✗ Sync failed','err');console.error('ghRead:',e);return null;}
 }
 
-async function ghWrite(data) {
-  if (!ghToken) { setStatus('Read-only (no token)', ''); return false; }
-  setStatus('⟳ Saving...', 'loading');
-  try {
-    const body = {
-      message: 'Update data.json via Shard Flip Calculator',
-      content: btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2)))),
-      branch: GH_BRANCH,
+async function ghWrite(data){
+  if(!ghToken){setStatus('Read-only (no token)','');return false;}
+  setStatus('⟳ Saving...','loading');
+  try{
+    const body={
+      message:'Update data.json via Shard Flip Calculator',
+      content:btoa(unescape(encodeURIComponent(JSON.stringify(data,null,2)))),
+      branch:GH_BRANCH,
     };
-    if (ghSha) body.sha = ghSha;
-    const res = await fetch(GH_API, {
-      method: 'PUT',
-      headers: {
-        'Authorization': 'token ' + ghToken,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
+    if(ghSha) body.sha=ghSha;
+    const res=await fetch(GH_API,{
+      method:'PUT',
+      headers:{'Authorization':'token '+ghToken,'Content-Type':'application/json'},
+      body:JSON.stringify(body),
     });
-    if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.message || 'HTTP ' + res.status);
-    }
-    const json = await res.json();
-    ghSha = json.content.sha;
-    setStatus('✓ Saved', 'ok');
+    if(!res.ok){const err=await res.json();throw new Error(err.message||'HTTP '+res.status);}
+    const json=await res.json();
+    ghSha=json.content.sha;
+    setStatus('✓ Saved','ok');
     return true;
-  } catch(e) {
-    setStatus('✗ Save failed: ' + e.message, 'err');
-    console.error('ghWrite:', e);
-    return false;
-  }
+  }catch(e){setStatus('✗ Save failed: '+e.message,'err');console.error('ghWrite:',e);return false;}
 }
 
 // ─── DEFAULT PRODUCTS ─────────────────────────────────────────────────────────
-const DEFAULT_PRODUCTS = [
-  { id:'stalagmite', name:'Stalagmite',
-    chain:'MZ + Chill → Trog → Trog + MZ → Quartzfang → QF + MZ → Stalagmite',
-    ingredients:[{id:'mz',name:'Miner Zombie',perUnit:1560/64},{id:'chill',name:'Chill',perUnit:1000/64}],
-    defaultPrices:{mz:11000,chill:6000,sell:560000} },
-  { id:'lunar-moth', name:'Lunar Moth',
-    chain:'MZ + Invisibug → Termite → Termite + Invisibug → Ladybug → Ladybug + Invisibug → Lunar Moth',
-    ingredients:[{id:'mz',name:'Miner Zombie',perUnit:1000/64},{id:'invisibug',name:'Invisibug',perUnit:1560/64}],
-    defaultPrices:{mz:11000,invisibug:23500,sell:1030000} },
-  { id:'cropeetle', name:'Cropeetle',
-    chain:'Pest + Chill → Mantis → MZ + Invisibug → Termite → Mantis + Termite → Cropeetle',
-    ingredients:[{id:'pest',name:'Pest',perUnit:1000/160},{id:'chill',name:'Chill',perUnit:1000/160},{id:'mz',name:'Miner Zombie',perUnit:1000/160},{id:'invisibug',name:'Invisibug',perUnit:1000/160}],
-    defaultPrices:{pest:36000,chill:6000,mz:12000,invisibug:25000,sell:620000} },
-  { id:'pandarai', name:'Pandarai',
-    chain:'Bambuleaf OR Mochibear + Glacite Walker → Pandarai',
-    ingredients:[{id:'bambuleaf',name:'Bambuleaf / Mochibear',perUnit:1000/400},{id:'glacite',name:'Glacite Walker',perUnit:1000/400}],
-    defaultPrices:{bambuleaf:42000,glacite:7500,sell:204000} },
-  { id:'sphinx', name:'Sphinx',
-    chain:'Ghost + Cod → Sphinx',
-    ingredients:[{id:'ghost',name:'Ghost',perUnit:1000/200},{id:'cod',name:'Cod',perUnit:1000/200}],
-    defaultPrices:{ghost:15000,cod:2500,sell:100000} },
-  { id:'firefly', name:'Firefly',
-    chain:'Pest + Chill → Mantis → Mantis + Bezal → Firefly',
-    ingredients:[{id:'pest',name:'Pest',perUnit:1000/160},{id:'chill',name:'Chill',perUnit:1000/160},{id:'bezal',name:'Bezal',perUnit:400/160}],
-    defaultPrices:{pest:36000,chill:6000,bezal:17000,sell:450000} },
-  { id:'dragonfly', name:'Dragonfly',
-    chain:'Pest + Chill → Mantis → Mantis + Bezal → Firefly → Firefly + Draconic → Dragonfly',
-    ingredients:[{id:'pest',name:'Pest',perUnit:1000/64},{id:'chill',name:'Chill',perUnit:1000/64},{id:'bezal',name:'Bezal',perUnit:400/64},{id:'draconic',name:'Draconic',perUnit:160/64}],
-    defaultPrices:{pest:43000,chill:6000,bezal:13500,draconic:135000,sell:1540000} },
+const DEFAULT_PRODUCTS=[
+  {id:'stalagmite',name:'Stalagmite',
+   chain:'MZ + Chill → Trog → Trog + MZ → Quartzfang → QF + MZ → Stalagmite',
+   ingredients:[{id:'mz',name:'Miner Zombie',perUnit:1560/64},{id:'chill',name:'Chill',perUnit:1000/64}],
+   defaultPrices:{mz:11000,chill:6000,sell:560000},
+   bazaarSell:'SHARD_STALAGMITE'},
+  {id:'lunar-moth',name:'Lunar Moth',
+   chain:'MZ + Invisibug → Termite → Termite + Invisibug → Ladybug → Ladybug + Invisibug → Lunar Moth',
+   ingredients:[{id:'mz',name:'Miner Zombie',perUnit:1000/64},{id:'invisibug',name:'Invisibug',perUnit:1560/64}],
+   defaultPrices:{mz:11000,invisibug:23500,sell:1030000},
+   bazaarSell:'SHARD_LUNAR_MOTH'},
+  {id:'cropeetle',name:'Cropeetle',
+   chain:'Pest + Chill → Mantis → MZ + Invisibug → Termite → Mantis + Termite → Cropeetle',
+   ingredients:[{id:'pest',name:'Pest',perUnit:1000/160},{id:'chill',name:'Chill',perUnit:1000/160},{id:'mz',name:'Miner Zombie',perUnit:1000/160},{id:'invisibug',name:'Invisibug',perUnit:1000/160}],
+   defaultPrices:{pest:36000,chill:6000,mz:12000,invisibug:25000,sell:620000},
+   bazaarSell:'SHARD_CROPEETLE'},
+  {id:'pandarai',name:'Pandarai',
+   chain:'Bambuleaf OR Mochibear + Glacite Walker → Pandarai',
+   ingredients:[{id:'bambuleaf',name:'Bambuleaf / Mochibear',perUnit:1000/400},{id:'glacite',name:'Glacite Walker',perUnit:1000/400}],
+   defaultPrices:{bambuleaf:42000,glacite:7500,sell:204000},
+   bazaarSell:'SHARD_PANDARAI'},
+  {id:'sphinx',name:'Sphinx',
+   chain:'Ghost + Cod → Sphinx',
+   ingredients:[{id:'ghost',name:'Ghost',perUnit:1000/200},{id:'cod',name:'Cod',perUnit:1000/200}],
+   defaultPrices:{ghost:15000,cod:2500,sell:100000},
+   bazaarSell:'SHARD_SPHINX'},
+  {id:'firefly',name:'Firefly',
+   chain:'Pest + Chill → Mantis → Mantis + Bezal → Firefly',
+   ingredients:[{id:'pest',name:'Pest',perUnit:1000/160},{id:'chill',name:'Chill',perUnit:1000/160},{id:'bezal',name:'Bezal',perUnit:400/160}],
+   defaultPrices:{pest:36000,chill:6000,bezal:17000,sell:450000},
+   bazaarSell:'SHARD_FIREFLY'},
+  {id:'dragonfly',name:'Dragonfly',
+   chain:'Pest + Chill → Mantis → Mantis + Bezal → Firefly → Firefly + Draconic → Dragonfly',
+   ingredients:[{id:'pest',name:'Pest',perUnit:1000/64},{id:'chill',name:'Chill',perUnit:1000/64},{id:'bezal',name:'Bezal',perUnit:400/64},{id:'draconic',name:'Draconic',perUnit:160/64}],
+   defaultPrices:{pest:43000,chill:6000,bezal:13500,draconic:135000,sell:1540000},
+   bazaarSell:'SHARD_DRAGONFLY'},
 ];
 
-const BAZAAR_MAP = {
-  mz:        'SHARD_MINER_ZOMBIE',
-  chill:     'SHARD_CHILL',
-  invisibug: 'SHARD_INVISIBUG',
-  pest:      'SHARD_PEST',
-  glacite:   'SHARD_GLACITE_WALKER',
-  bambuleaf: 'SHARD_BAMBULEAF',
-  ghost:     'SHARD_GHOST',
-  cod:       'SHARD_COD',
-  bezal:     'SHARD_BEZAL',
-  draconic:  'SHARD_DRACONIC',
+// ingredient bazaar keys
+const BAZAAR_MAP={
+  mz:'SHARD_MINER_ZOMBIE',chill:'SHARD_CHILL',invisibug:'SHARD_INVISIBUG',
+  pest:'SHARD_PEST',glacite:'SHARD_GLACITE_WALKER',bambuleaf:'SHARD_BAMBULEAF',
+  ghost:'SHARD_GHOST',cod:'SHARD_COD',bezal:'SHARD_BEZAL',draconic:'SHARD_DRACONIC',
 };
 
 // ─── STATE ───────────────────────────────────────────────────────────────────
-// Remote (GitHub data.json): products[], flips[]
-// Local  (localStorage):     prices{}, qtys{}, budgets{}, activeTab
-let remoteData = { products: DEFAULT_PRODUCTS, flips: [] };
-let local = {
-  prices:    JSON.parse(localStorage.getItem('sfc_prices')  || '{}'),
-  qtys:      JSON.parse(localStorage.getItem('sfc_qtys')    || '{}'),
-  budgets:   JSON.parse(localStorage.getItem('sfc_budgets') || '{}'),
-  activeTab: localStorage.getItem('sfc_active') || 'stalagmite',
+let remoteData={products:DEFAULT_PRODUCTS,flips:[]};
+let local={
+  prices:   JSON.parse(localStorage.getItem('sfc_prices')  ||'{}'),
+  qtys:     JSON.parse(localStorage.getItem('sfc_qtys')    ||'{}'),
+  budgets:  JSON.parse(localStorage.getItem('sfc_budgets') ||'{}'),
+  invMode:  JSON.parse(localStorage.getItem('sfc_invmode') ||'{}'),
+  invQtys:  JSON.parse(localStorage.getItem('sfc_invqtys') ||'{}'),
+  activeTab:localStorage.getItem('sfc_active')||'stalagmite',
 };
 function saveLocal(){
   localStorage.setItem('sfc_prices',  JSON.stringify(local.prices));
   localStorage.setItem('sfc_qtys',    JSON.stringify(local.qtys));
   localStorage.setItem('sfc_budgets', JSON.stringify(local.budgets));
+  localStorage.setItem('sfc_invmode', JSON.stringify(local.invMode));
+  localStorage.setItem('sfc_invqtys', JSON.stringify(local.invQtys));
   localStorage.setItem('sfc_active',  local.activeTab);
 }
 
-// Merge remote into local state
-function applyRemote(data) {
-  if (!data) return;
-  if (data.products && data.products.length) remoteData.products = data.products;
-  if (data.flips) remoteData.flips = data.flips;
+function applyRemote(data){
+  if(!data) return;
+  if(data.products&&data.products.length) remoteData.products=data.products;
+  if(data.flips) remoteData.flips=data.flips;
 }
 
 // ─── ACCESSORS ───────────────────────────────────────────────────────────────
-function getProduct(pid){ return remoteData.products.find(x=>x.id===pid); }
-function getPrice(pid,iid){ const k=`${pid}__${iid}`; return local.prices[k]!==undefined ? local.prices[k] : (getProduct(pid)?.defaultPrices?.[iid]||0); }
-function getSell(pid){ const k=`${pid}__sell`; return local.prices[k]!==undefined ? local.prices[k] : (getProduct(pid)?.defaultPrices?.sell||0); }
-function getQtyStr(pid){ return local.qtys[pid]||'64'; }
-function getQty(pid){ return parseNum(getQtyStr(pid))||64; }
-function getBudgetStr(pid){ return local.budgets[pid]||''; }
-function setPrice(pid,iid,v){ local.prices[`${pid}__${iid}`]=Math.round(v); saveLocal(); }
-function setSell(pid,v){ local.prices[`${pid}__sell`]=Math.round(v); saveLocal(); }
-function setQtyStr(pid,v){ local.qtys[pid]=v; saveLocal(); }
-function setBudgetStr(pid,v){ local.budgets[pid]=v; saveLocal(); }
+function getProduct(pid){return remoteData.products.find(x=>x.id===pid);}
+function getPrice(pid,iid){const k=`${pid}__${iid}`;return local.prices[k]!==undefined?local.prices[k]:(getProduct(pid)?.defaultPrices?.[iid]||0);}
+function getSell(pid){const k=`${pid}__sell`;return local.prices[k]!==undefined?local.prices[k]:(getProduct(pid)?.defaultPrices?.sell||0);}
+function getQtyStr(pid){return local.qtys[pid]||'64';}
+function getQty(pid){return parseNum(getQtyStr(pid))||64;}
+function getBudgetStr(pid){return local.budgets[pid]||'';}
+function isInvMode(pid){return !!local.invMode[pid];}
+function getInvQty(pid,iid){return local.invQtys[`${pid}__${iid}`]||'';}
+function setPrice(pid,iid,v){local.prices[`${pid}__${iid}`]=Math.round(v);saveLocal();}
+function setSell(pid,v){local.prices[`${pid}__sell`]=Math.round(v);saveLocal();}
+function setQtyStr(pid,v){local.qtys[pid]=v;saveLocal();}
+function setBudgetStr(pid,v){local.budgets[pid]=v;saveLocal();}
+function setInvMode(pid,v){local.invMode[pid]=v;saveLocal();}
+function setInvQty(pid,iid,v){local.invQtys[`${pid}__${iid}`]=v;saveLocal();}
 
-// ─── CALC ────────────────────────────────────────────────────────────────────
+// ─── CALC ─────────────────────────────────────────────────────────────────────
 function calc(product){
-  const qty = getQty(product.id);
+  const qty=getQty(product.id);
   let totalCost=0;
-  const ings = product.ingredients.map(ing=>{
+  const ings=product.ingredients.map(ing=>{
     const price=getPrice(product.id,ing.id);
     const needed=Math.ceil(ing.perUnit*qty);
     const cost=Math.round(needed*price);
@@ -422,32 +569,76 @@ function calc(product){
   const costPerShard=qty>0?Math.round(totalCost/qty):0;
   const profitPerShard=qty>0?Math.round(profit/qty):0;
   const margin=totalCost>0?profit/totalCost*100:0;
-  return {qty,ings,totalCost,sellPrice,revenue,profit,costPerShard,profitPerShard,margin};
+  return{qty,ings,totalCost,sellPrice,revenue,profit,costPerShard,profitPerShard,margin};
 }
 
-// ─── FLIP LOG CALC ───────────────────────────────────────────────────────────
+// ─── INVENTORY CALC ───────────────────────────────────────────────────────────
+// Given amounts of each ingredient, figure out max outputs + shortages
+function calcInventory(product){
+  const ings=product.ingredients;
+  // For each ingredient, how many outputs can we produce from it alone?
+  let maxOutputs=Infinity;
+  const invData=[];
+  for(const ing of ings){
+    const haveStr=getInvQty(product.id,ing.id);
+    const have=parseNum(haveStr)||0;
+    const perOutput=ing.perUnit; // shards needed per 1 output shard
+    // outputs possible from this ingredient alone:
+    const possible=perOutput>0?Math.floor(have/perOutput):Infinity;
+    if(perOutput>0) maxOutputs=Math.min(maxOutputs,possible);
+    invData.push({...ing,have,perOutput,possible});
+  }
+  if(maxOutputs===Infinity) maxOutputs=0;
+
+  // Compute shortages if the user wants more than possible from the limiting ing
+  const shortages=[];
+  for(const ing of invData){
+    const needed=Math.ceil(ing.perOutput*maxOutputs);
+    const shortage=needed-ing.have;
+    if(shortage>0) shortages.push({name:ing.name,needed,have:ing.have,shortage});
+  }
+
+  // Revenue / profit from these outputs
+  const sellPrice=getSell(product.id);
+  const revenue=Math.round(maxOutputs*sellPrice);
+  let totalCost=0;
+  for(const ing of invData){
+    const price=getPrice(product.id,ing.id);
+    const used=Math.ceil(ing.perOutput*maxOutputs);
+    totalCost+=Math.round(used*price);
+  }
+  const profit=Math.round(revenue-totalCost);
+
+  return{maxOutputs,invData,shortages,revenue,totalCost,profit,sellPrice};
+}
+
+// ─── FLIP LOG CALC ────────────────────────────────────────────────────────────
 function calcLifetime(){
-  let totalRevenue=0, totalSpend=0;
+  let totalRevenue=0,totalSpend=0;
   remoteData.flips.forEach(f=>{
     totalRevenue+=Math.round(f.qty*f.sellPrice);
     totalSpend  +=Math.round(f.qty*f.costPerShard);
   });
-  return { totalRevenue:Math.round(totalRevenue), totalSpend:Math.round(totalSpend), totalProfit:Math.round(totalRevenue-totalSpend), count:remoteData.flips.length };
+  return{totalRevenue:Math.round(totalRevenue),totalSpend:Math.round(totalSpend),totalProfit:Math.round(totalRevenue-totalSpend),count:remoteData.flips.length};
 }
 
 // ─── RENDER ──────────────────────────────────────────────────────────────────
-function renderAll(){ renderTabs(); renderPanels(); }
-function pulseCards(){ document.querySelectorAll('.grid-4 .card').forEach(c=>{ c.classList.remove('pulse'); void c.offsetWidth; c.classList.add('pulse'); }); }
+function renderAll(){renderTabs();renderPanels();}
+function pulseCards(){document.querySelectorAll('.grid-4 .card').forEach(c=>{c.classList.remove('pulse');void c.offsetWidth;c.classList.add('pulse');});}
 
 function renderTabs(){
-  const bar = el('tabBar');
-  bar.innerHTML='';
+  const bar=el('tabBar'); bar.innerHTML='';
   remoteData.products.forEach(p=>{
     const b=document.createElement('button');
     b.className='tab'+(p.id===local.activeTab?' active':'');
     b.textContent=p.name; b.dataset.tabId=p.id;
     bar.appendChild(b);
   });
+  // Worth tab
+  const worthBtn=document.createElement('button');
+  worthBtn.className='tab tab-worth'+(local.activeTab==='__worth__'?' active':'');
+  worthBtn.textContent='💎 Item Worth'; worthBtn.dataset.tabId='__worth__';
+  bar.appendChild(worthBtn);
   // Log tab
   const logBtn=document.createElement('button');
   logBtn.className='tab tab-log'+(local.activeTab==='__log__'?' active':'');
@@ -459,34 +650,82 @@ function renderTabs(){
   manBtn.textContent='+ Manage'; manBtn.dataset.tabId='__manage__';
   bar.appendChild(manBtn);
 }
+
 el('tabBar').addEventListener('click',e=>{
-  const b=e.target.closest('[data-tab-id]');
-  if(!b) return;
+  const b=e.target.closest('[data-tab-id]'); if(!b) return;
   local.activeTab=b.dataset.tabId; saveLocal(); renderAll();
 });
 
 function renderPanels(){
   const c=el('panels'); c.innerHTML='';
-  if(local.activeTab==='__manage__'){ c.appendChild(buildManage()); return; }
-  if(local.activeTab==='__log__'){ c.appendChild(buildLog()); return; }
+  if(local.activeTab==='__manage__'){c.appendChild(buildManage());return;}
+  if(local.activeTab==='__log__'){c.appendChild(buildLog());return;}
+  if(local.activeTab==='__worth__'){c.appendChild(buildWorth());return;}
   const p=getProduct(local.activeTab);
   if(p) c.appendChild(buildProduct(p));
 }
 
-// ─── PRODUCT PANEL ───────────────────────────────────────────────────────────
+// ─── PRODUCT PANEL ────────────────────────────────────────────────────────────
 function buildProduct(product){
   const pid=product.id;
   const div=document.createElement('div');
   div.className='panel active'; div.dataset.pid=pid;
   const r=calc(product);
 
+  // Header
   const header=document.createElement('div'); header.className='product-header';
   const titleEl=document.createElement('div'); titleEl.className='product-title'; titleEl.textContent=product.name;
   const chainEl=document.createElement('div'); chainEl.className='chain-badge'; chainEl.textContent=product.chain;
   header.appendChild(titleEl); header.appendChild(chainEl); div.appendChild(header);
 
-  div.appendChild(secLabel('Target Quantity'));
-  div.appendChild(inputGroupEl(`How many ${product.name} shards do you want?`,'Supports 64, 1k, 2.5m — everything scales automatically',`inp-qty-${pid}`,getQtyStr(pid)));
+  // ── Inventory Mode toggle ──
+  div.appendChild(secLabel('Mode'));
+  const invToggle=document.createElement('div'); invToggle.className='inv-toggle-row';
+  const invLeft=document.createElement('div'); invLeft.style.flex='1';
+  const itLabel=document.createElement('div'); itLabel.className='input-group-label'; itLabel.textContent='Inventory Mode';
+  const itSub=document.createElement('div'); itSub.className='input-group-sub';
+  itSub.textContent='Enter how many ingredient shards you have — auto-calculates outputs';
+  invLeft.appendChild(itLabel); invLeft.appendChild(itSub);
+  const togWrap=document.createElement('label'); togWrap.className='toggle-switch';
+  const togInp=document.createElement('input'); togInp.type='checkbox'; togInp.id=`inv-toggle-${pid}`; togInp.checked=isInvMode(pid);
+  const togSlider=document.createElement('span'); togSlider.className='toggle-slider';
+  togWrap.appendChild(togInp); togWrap.appendChild(togSlider);
+  invToggle.appendChild(invLeft); invToggle.appendChild(togWrap);
+  div.appendChild(invToggle);
+
+  // ── Inventory panel (hidden until toggled) ──
+  const invPanel=document.createElement('div');
+  invPanel.className='inv-panel'+(isInvMode(pid)?' visible':'');
+  invPanel.id=`inv-panel-${pid}`;
+
+  const invGrid=document.createElement('div'); invGrid.className='inv-grid';
+  product.ingredients.forEach(ing=>{
+    const f=document.createElement('div'); f.className='inv-field';
+    const lbl=document.createElement('label'); lbl.textContent=`${ing.name} you have`;
+    const inp=document.createElement('input'); inp.type='text'; inp.placeholder='e.g. 1250';
+    inp.id=`inv-qty-${pid}-${ing.id}`; inp.value=getInvQty(pid,ing.id)||'';
+    inp.autocomplete='off'; inp.dataset.action='set-inv-qty'; inp.dataset.pid=pid; inp.dataset.iid=ing.id;
+    f.appendChild(lbl); f.appendChild(inp); invGrid.appendChild(f);
+  });
+  invPanel.appendChild(invGrid);
+
+  // Result box
+  const invResult=document.createElement('div'); invResult.className='inv-result'; invResult.id=`inv-result-${pid}`;
+  invResult.innerHTML=`<div class="inv-result-row"><span class="ir-label">Max ${product.name} you can fuse</span><span class="ir-val accent" id="inv-outputs-${pid}">—</span></div>
+    <div class="inv-result-row"><span class="ir-label">Estimated revenue</span><span class="ir-val gold" id="inv-revenue-${pid}">—</span></div>
+    <div class="inv-result-row"><span class="ir-label">Estimated profit</span><span class="ir-val" id="inv-profit-${pid}">—</span></div>`;
+  invPanel.appendChild(invResult);
+
+  const invShortage=document.createElement('div'); invShortage.className='inv-shortage'; invShortage.id=`inv-shortage-${pid}`;
+  invPanel.appendChild(invShortage);
+  div.appendChild(invPanel);
+
+  // ── Normal quantity mode ──
+  const normalWrap=document.createElement('div'); normalWrap.id=`normal-wrap-${pid}`;
+  normalWrap.style.display=isInvMode(pid)?'none':'block';
+
+  normalWrap.appendChild(secLabel('Target Quantity'));
+  normalWrap.appendChild(inputGroupEl(`How many ${product.name} shards do you want?`,'Supports 64, 1k, 2.5m — everything scales automatically',`inp-qty-${pid}`,getQtyStr(pid)));
 
   const budRow=document.createElement('div'); budRow.className='budget-row';
   const budLeft=document.createElement('div');
@@ -494,8 +733,11 @@ function buildProduct(product){
   const budBadge=document.createElement('div'); budBadge.className='budget-badge'; budBadge.id=`budget-badge-${pid}`; budBadge.textContent='Enter coins to auto-calc max shards';
   budLeft.appendChild(budLbl); budLeft.appendChild(budBadge);
   const budInp=makeSmartInput(`inp-budget-${pid}`,getBudgetStr(pid),'e.g. 50m');
-  budRow.appendChild(budLeft); budRow.appendChild(budInp); div.appendChild(budRow);
+  budRow.appendChild(budLeft); budRow.appendChild(budInp);
+  normalWrap.appendChild(budRow);
+  div.appendChild(normalWrap);
 
+  // Ingredients
   div.appendChild(secLabel('Ingredients & Prices'));
   const bazWrap=document.createElement('div'); bazWrap.style.cssText='display:flex;align-items:center;gap:12px;margin-bottom:14px;';
   const bazBtn=document.createElement('button'); bazBtn.className='bazaar-btn'; bazBtn.dataset.action='fetch-bazaar'; bazBtn.dataset.pid=pid; bazBtn.textContent='⟳ Fetch Live Bazaar Prices';
@@ -522,34 +764,27 @@ function buildProduct(product){
   div.appendChild(sellG);
 
   const cpsBox=document.createElement('div'); cpsBox.className='cps-box'; cpsBox.id=`cps-box-${pid}`;
-  cpsBox.innerHTML=`
-    <div class="cps-half">
-      <div class="cps-label">Cost per shard</div>
-      <div class="cps-val pos" id="cps-val-${pid}">${fmt(r.costPerShard)}</div>
-      <div class="cps-sub">coins spent per shard made</div>
-    </div>
+  cpsBox.innerHTML=`<div class="cps-half"><div class="cps-label">Cost per shard</div><div class="cps-val pos" id="cps-val-${pid}">${fmt(r.costPerShard)}</div><div class="cps-sub">coins spent per shard made</div></div>
     <div class="cps-divider"></div>
-    <div class="cps-half">
-      <div class="cps-label">Profit per shard</div>
-      <div class="cps-val ${r.profitPerShard>=0?'pos':'neg'}" id="pps-val-${pid}">${r.profitPerShard>=0?'+':''}${fmt(r.profitPerShard)}</div>
-      <div class="cps-sub">coins gained per shard sold</div>
-    </div>`;
+    <div class="cps-half"><div class="cps-label">Profit per shard</div><div class="cps-val ${r.profitPerShard>=0?'pos':'neg'}" id="pps-val-${pid}">${r.profitPerShard>=0?'+':''}${fmt(r.profitPerShard)}</div><div class="cps-sub">coins gained per shard sold</div></div>`;
   div.appendChild(cpsBox);
 
   const grid=document.createElement('div'); grid.className='grid-4';
-  grid.innerHTML=`
-    <div class="card"><div class="card-label">Total Cost</div><div class="card-val red" id="s-cost-${pid}">${fmt(r.totalCost)}</div><div class="card-sub">coins spent</div></div>
+  grid.innerHTML=`<div class="card"><div class="card-label">Total Cost</div><div class="card-val red" id="s-cost-${pid}">${fmt(r.totalCost)}</div><div class="card-sub">coins spent</div></div>
     <div class="card"><div class="card-label">Revenue</div><div class="card-val accent" id="s-rev-${pid}">${fmt(r.revenue)}</div><div class="card-sub">coins in</div></div>
     <div class="card"><div class="card-label">Net Profit</div><div class="card-val ${r.profit>=0?'accent':'red'}" id="s-profit-${pid}">${r.profit>=0?'+':''}${fmt(r.profit)}</div><div class="card-sub">total gain</div></div>
     <div class="card"><div class="card-label">Margin</div><div class="card-val ${r.profit>=0?'gold':'red'}" id="s-margin-${pid}">${r.margin.toFixed(1)}%</div><div class="card-sub">profit margin</div></div>`;
   div.appendChild(grid);
 
   const pb=document.createElement('div'); pb.className='profit-box';
-  pb.innerHTML=`
-    <div class="profit-row"><span class="label">Total Spend</span><span class="val neg" id="pb-cost-${pid}">-${fmt(r.totalCost)}</span></div>
+  pb.innerHTML=`<div class="profit-row"><span class="label">Total Spend</span><span class="val neg" id="pb-cost-${pid}">-${fmt(r.totalCost)}</span></div>
     <div class="profit-row"><span class="label" id="pb-rev-lbl-${pid}">Revenue (${r.qty} × ${fmt(r.sellPrice)})</span><span class="val pos" id="pb-rev-${pid}">+${fmt(r.revenue)}</span></div>
     <div class="profit-row"><span class="label">Net Profit</span><span class="val ${r.profit>=0?'pos':'neg'}" id="pb-profit-${pid}">${r.profit>=0?'+':''}${fmt(r.profit)}</span></div>`;
   div.appendChild(pb);
+
+  // Re-render inventory result if inv mode is on
+  if(isInvMode(pid)) updateInvDisplay(pid);
+
   return div;
 }
 
@@ -557,109 +792,110 @@ function updateDisplay(pid){
   const product=getProduct(pid); if(!product) return;
   const r=calc(product);
   r.ings.forEach(ing=>{
-    setText(`iqty-${pid}-${ing.id}`, ing.needed.toLocaleString());
-    setText(`icost-${pid}-${ing.id}`, fmt(ing.cost));
+    setText(`iqty-${pid}-${ing.id}`,ing.needed.toLocaleString());
+    setText(`icost-${pid}-${ing.id}`,fmt(ing.cost));
   });
-  setText(`cps-val-${pid}`, fmt(r.costPerShard));
-  setText(`pps-val-${pid}`, (r.profitPerShard>=0?'+':'')+fmt(r.profitPerShard));
-  setClass(`pps-val-${pid}`, 'cps-val '+(r.profitPerShard>=0?'pos':'neg'));
-  setText(`s-cost-${pid}`, fmt(r.totalCost));
-  setText(`s-rev-${pid}`, fmt(r.revenue));
-  setText(`s-profit-${pid}`, (r.profit>=0?'+':'')+fmt(r.profit));
-  setClass(`s-profit-${pid}`, 'card-val '+(r.profit>=0?'accent':'red'));
-  setText(`s-margin-${pid}`, r.margin.toFixed(1)+'%');
-  setClass(`s-margin-${pid}`, 'card-val '+(r.profit>=0?'gold':'red'));
-  setText(`pb-cost-${pid}`, '-'+fmt(r.totalCost));
-  setText(`pb-rev-lbl-${pid}`, `Revenue (${r.qty} × ${fmt(r.sellPrice)})`);
-  setText(`pb-rev-${pid}`, '+'+fmt(r.revenue));
-  setText(`pb-profit-${pid}`, (r.profit>=0?'+':'')+fmt(r.profit));
-  setClass(`pb-profit-${pid}`, 'val '+(r.profit>=0?'pos':'neg'));
+  setText(`cps-val-${pid}`,fmt(r.costPerShard));
+  setText(`pps-val-${pid}`,(r.profitPerShard>=0?'+':'')+fmt(r.profitPerShard));
+  setClass(`pps-val-${pid}`,'cps-val '+(r.profitPerShard>=0?'pos':'neg'));
+  setText(`s-cost-${pid}`,fmt(r.totalCost));
+  setText(`s-rev-${pid}`,fmt(r.revenue));
+  setText(`s-profit-${pid}`,(r.profit>=0?'+':'')+fmt(r.profit));
+  setClass(`s-profit-${pid}`,'card-val '+(r.profit>=0?'accent':'red'));
+  setText(`s-margin-${pid}`,r.margin.toFixed(1)+'%');
+  setClass(`s-margin-${pid}`,'card-val '+(r.profit>=0?'gold':'red'));
+  setText(`pb-cost-${pid}`,'-'+fmt(r.totalCost));
+  setText(`pb-rev-lbl-${pid}`,`Revenue (${r.qty} × ${fmt(r.sellPrice)})`);
+  setText(`pb-rev-${pid}`,'+'+fmt(r.revenue));
+  setText(`pb-profit-${pid}`,(r.profit>=0?'+':'')+fmt(r.profit));
+  setClass(`pb-profit-${pid}`,'val '+(r.profit>=0?'pos':'neg'));
   pulseCards();
+  // also refresh sell price input
+  const si=el(`inp-sell-${pid}`); if(si) si.value=displayNum(getSell(pid));
 }
 
-// Re-run budget calc if a budget is set — call after any price change
+function updateInvDisplay(pid){
+  const product=getProduct(pid); if(!product) return;
+  const inv=calcInventory(product);
+  setText(`inv-outputs-${pid}`,inv.maxOutputs.toLocaleString());
+  setText(`inv-revenue-${pid}`,fmt(inv.revenue));
+  const pp=el(`inv-profit-${pid}`);
+  if(pp){pp.textContent=(inv.profit>=0?'+':'')+fmt(inv.profit);pp.className='ir-val '+(inv.profit>=0?'accent':'red');}
+  const sh=el(`inv-shortage-${pid}`);
+  if(sh){
+    if(inv.shortages.length){
+      sh.className='inv-shortage visible';
+      sh.innerHTML='<strong>Need to buy:</strong> '+inv.shortages.map(s=>`${s.name}: need ${s.needed.toLocaleString()}, have ${s.have.toLocaleString()} → buy <strong>${s.shortage.toLocaleString()}</strong> more`).join(' &nbsp;|&nbsp; ');
+    } else { sh.className='inv-shortage'; }
+  }
+}
+
 function reapplyBudget(pid){
-  const budStr = getBudgetStr(pid);
-  const budget = parseNum(budStr);
-  if(isNaN(budget) || budget <= 0) return;
-  const product = getProduct(pid); if(!product) return;
-  const r = calc(product);
-  if(r.costPerShard > 0){
-    const mq = Math.floor(budget / r.costPerShard);
-    setQtyStr(pid, String(mq));
-    const qi = el(`inp-qty-${pid}`); if(qi) qi.value = displayNum(mq);
-    setText(`budget-badge-${pid}`, `Max ${mq.toLocaleString()} shards`);
+  const budStr=getBudgetStr(pid);
+  const budget=parseNum(budStr);
+  if(isNaN(budget)||budget<=0) return;
+  const product=getProduct(pid); if(!product) return;
+  const r=calc(product);
+  if(r.costPerShard>0){
+    const mq=Math.floor(budget/r.costPerShard);
+    setQtyStr(pid,String(mq));
+    const qi=el(`inp-qty-${pid}`); if(qi) qi.value=displayNum(mq);
+    setText(`budget-badge-${pid}`,`Max ${mq.toLocaleString()} shards`);
     updateDisplay(pid);
   }
 }
+
+// ─── LOG PANEL ────────────────────────────────────────────────────────────────
 function buildLog(){
   const div=document.createElement('div'); div.className='panel active';
   const lt=calcLifetime();
 
-  // Stats
   const stats=document.createElement('div'); stats.className='log-stats'; stats.id='log-stats';
-  stats.innerHTML=`
-    <div class="log-card"><div class="lc-label">Total Revenue</div><div class="lc-val gold" id="lt-rev">${fmt(lt.totalRevenue)}</div></div>
+  stats.innerHTML=`<div class="log-card"><div class="lc-label">Total Revenue</div><div class="lc-val gold" id="lt-rev">${fmt(lt.totalRevenue)}</div></div>
     <div class="log-card"><div class="lc-label">Total Spent</div><div class="lc-val" id="lt-spend">${fmt(lt.totalSpend)}</div></div>
     <div class="log-card"><div class="lc-label">Lifetime Profit</div><div class="lc-val ${lt.totalProfit>=0?'pos':'neg'}" id="lt-profit">${lt.totalProfit>=0?'+':''}${fmt(lt.totalProfit)}</div></div>`;
   div.appendChild(stats);
 
-  // Log form
   const form=document.createElement('div'); form.className='log-form';
   form.innerHTML='<h3>Log a Flip</h3>';
   const grid=document.createElement('div'); grid.className='log-form-grid';
-
-  // Product select
   const pField=document.createElement('div'); pField.className='log-field';
   const pLbl=document.createElement('label'); pLbl.textContent='Product';
   const pSel=document.createElement('select'); pSel.id='log-product';
-  remoteData.products.forEach(p=>{ const o=document.createElement('option'); o.value=p.id; o.textContent=p.name; pSel.appendChild(o); });
+  remoteData.products.forEach(p=>{const o=document.createElement('option');o.value=p.id;o.textContent=p.name;pSel.appendChild(o);});
   pField.appendChild(pLbl); pField.appendChild(pSel); grid.appendChild(pField);
-
   [['log-qty','Qty sold','e.g. 128'],['log-sell','Sell price / shard','e.g. 560k'],['log-cost','Cost / shard','e.g. 361k']].forEach(([id,lbl,ph])=>{
     const f=document.createElement('div'); f.className='log-field';
     const l=document.createElement('label'); l.textContent=lbl;
     const i=document.createElement('input'); i.type='text'; i.id=id; i.placeholder=ph; i.autocomplete='off';
     f.appendChild(l); f.appendChild(i); grid.appendChild(f);
   });
-
   const noteField=document.createElement('div'); noteField.className='log-field'; noteField.style.gridColumn='1/-1';
   const noteLbl=document.createElement('label'); noteLbl.textContent='Note (optional)';
   const noteInp=document.createElement('input'); noteInp.type='text'; noteInp.id='log-note'; noteInp.placeholder='e.g. Sold at peak price'; noteInp.autocomplete='off';
   noteField.appendChild(noteLbl); noteField.appendChild(noteInp); grid.appendChild(noteField);
-
   form.appendChild(grid);
-
   const preview=document.createElement('div'); preview.className='log-preview'; preview.id='log-preview'; preview.textContent='Fill in the fields above to preview profit';
   form.appendChild(preview);
-
   const logErr=document.createElement('div'); logErr.className='alert'; logErr.id='log-err';
   const logBtn=document.createElement('button'); logBtn.className='btn btn-gold'; logBtn.dataset.action='log-flip'; logBtn.textContent='Log Flip';
-  if(!ghToken) { logBtn.disabled=true; logBtn.title='Need a GitHub token to log flips'; logBtn.style.opacity='0.5'; }
+  if(!ghToken){logBtn.disabled=true;logBtn.title='Need a GitHub token';logBtn.style.opacity='0.5';}
   form.appendChild(logBtn); form.appendChild(logErr);
   div.appendChild(form);
-
-  // Update preview on input
-  ['log-qty','log-sell','log-cost'].forEach(id=>{
-    el(id)?.addEventListener('input', updateLogPreview);
+  ['log-qty','log-sell','log-cost'].forEach(id=>{ el(id)?.addEventListener('input',updateLogPreview); });
+  pSel.addEventListener('change',updateLogPreview);
+  pSel.addEventListener('change',()=>{
+    const pid=pSel.value; const product=getProduct(pid);
+    if(product){const r=calc(product);const ci=el('log-cost');if(ci&&!ci.value)ci.value=displayNum(r.costPerShard);}
   });
-  pSel.addEventListener('change', updateLogPreview);
-
-  // Auto-fill cost from calculator
-  pSel.addEventListener('change', ()=>{
-    const pid=pSel.value;
-    const product=getProduct(pid);
-    if(product){ const r=calc(product); const ci=el('log-cost'); if(ci&&!ci.value) ci.value=displayNum(r.costPerShard); }
-  });
-  // Init auto-fill
-  setTimeout(()=>{ const pid=pSel.value; const product=getProduct(pid); if(product){ const r=calc(product); const ci=el('log-cost'); if(ci&&!ci.value) ci.value=displayNum(r.costPerShard); } updateLogPreview(); },0);
-
-  // Flip history table
+  setTimeout(()=>{
+    const pid=pSel.value; const product=getProduct(pid);
+    if(product){const r=calc(product);const ci=el('log-cost');if(ci&&!ci.value)ci.value=displayNum(r.costPerShard);}
+    updateLogPreview();
+  },0);
   div.appendChild(secLabel('Flip History'));
-  const tableWrap=document.createElement('div'); tableWrap.id='flip-table-wrap';
-  tableWrap.appendChild(buildFlipTable());
+  const tableWrap=document.createElement('div'); tableWrap.id='flip-table-wrap'; tableWrap.appendChild(buildFlipTable());
   div.appendChild(tableWrap);
-
   return div;
 }
 
@@ -668,26 +904,20 @@ function updateLogPreview(){
   const sell=parseNum(el('log-sell')?.value||'');
   const cost=parseNum(el('log-cost')?.value||'');
   const prev=el('log-preview'); if(!prev) return;
-  if(isNaN(qty)||isNaN(sell)||isNaN(cost)){ prev.textContent='Fill in the fields above to preview profit'; return; }
-  const revenue=Math.round(qty*sell);
-  const spend=Math.round(qty*cost);
-  const profit=Math.round(revenue-spend);
-  const sign=profit>=0?'+':'-';
-  prev.innerHTML=`${qty.toLocaleString()} shards → Revenue <span>${fmt(revenue)}</span> − Spend <span>${fmt(spend)}</span> = <span style="color:${profit>=0?'var(--accent)':'var(--red)'}">${sign}${fmt(Math.abs(profit))}</span>`;
+  if(isNaN(qty)||isNaN(sell)||isNaN(cost)){prev.textContent='Fill in the fields above to preview profit';return;}
+  const revenue=Math.round(qty*sell),spend=Math.round(qty*cost),profit=Math.round(revenue-spend);
+  prev.innerHTML=`${qty.toLocaleString()} shards → Revenue <span>${fmt(revenue)}</span> − Spend <span>${fmt(spend)}</span> = <span style="color:${profit>=0?'var(--accent)':'var(--red)'}">${profit>=0?'+':'-'}${fmt(Math.abs(profit))}</span>`;
 }
 
 function buildFlipTable(){
   if(!remoteData.flips.length){
-    const emp=document.createElement('div'); emp.className='flip-empty'; emp.textContent='No flips logged yet. Log your first flip above!';
-    return emp;
+    const emp=document.createElement('div'); emp.className='flip-empty'; emp.textContent='No flips logged yet. Log your first flip above!'; return emp;
   }
   const wrap=document.createElement('div'); wrap.className='flip-table';
   wrap.innerHTML='<div class="flip-table-header"><span>Product</span><span>Qty</span><span>Revenue</span><span>Spent</span><span>Profit</span><span></span></div>';
   [...remoteData.flips].reverse().forEach((f,ri)=>{
-    const i=remoteData.flips.length-1-ri; // real index
-    const revenue=Math.round(f.qty*f.sellPrice);
-    const spend=Math.round(f.qty*f.costPerShard);
-    const profit=Math.round(revenue-spend);
+    const i=remoteData.flips.length-1-ri;
+    const revenue=Math.round(f.qty*f.sellPrice),spend=Math.round(f.qty*f.costPerShard),profit=Math.round(revenue-spend);
     const row=document.createElement('div'); row.className='flip-row';
     const nameEl=document.createElement('span'); nameEl.className='fr-name'; nameEl.textContent=f.productName+(f.note?' — '+f.note:'');
     const qtyEl=document.createElement('span'); qtyEl.textContent=f.qty.toLocaleString();
@@ -695,7 +925,7 @@ function buildFlipTable(){
     const spEl=document.createElement('span'); spEl.textContent=fmt(spend);
     const prEl=document.createElement('span'); prEl.className='fr-profit '+(profit>=0?'pos':'neg'); prEl.textContent=(profit>=0?'+':'')+fmt(profit);
     const delBtn=document.createElement('button'); delBtn.className='del-btn'; delBtn.textContent='✕'; delBtn.dataset.action='delete-flip'; delBtn.dataset.flipIndex=i;
-    row.appendChild(nameEl); row.appendChild(qtyEl); row.appendChild(revEl); row.appendChild(spEl); row.appendChild(prEl); row.appendChild(delBtn);
+    row.appendChild(nameEl);row.appendChild(qtyEl);row.appendChild(revEl);row.appendChild(spEl);row.appendChild(prEl);row.appendChild(delBtn);
     wrap.appendChild(row);
   });
   return wrap;
@@ -703,16 +933,14 @@ function buildFlipTable(){
 
 function refreshLogStats(){
   const lt=calcLifetime();
-  setText('lt-rev', fmt(lt.totalRevenue));
-  setText('lt-spend', fmt(lt.totalSpend));
-  const pe=el('lt-profit'); if(pe){ pe.textContent=(lt.totalProfit>=0?'+':'')+fmt(lt.totalProfit); pe.className='lc-val '+(lt.totalProfit>=0?'pos':'neg'); }
-  const tw=el('flip-table-wrap'); if(tw){ tw.innerHTML=''; tw.appendChild(buildFlipTable()); }
+  setText('lt-rev',fmt(lt.totalRevenue)); setText('lt-spend',fmt(lt.totalSpend));
+  const pe=el('lt-profit'); if(pe){pe.textContent=(lt.totalProfit>=0?'+':'')+fmt(lt.totalProfit);pe.className='lc-val '+(lt.totalProfit>=0?'pos':'neg');}
+  const tw=el('flip-table-wrap'); if(tw){tw.innerHTML='';tw.appendChild(buildFlipTable());}
 }
 
-// ─── MANAGE PANEL ────────────────────────────────────────────────────────────
+// ─── MANAGE PANEL ─────────────────────────────────────────────────────────────
 function buildManage(){
   const div=document.createElement('div'); div.className='panel active';
-
   const lp=document.createElement('div'); lp.className='manage-panel';
   const lh=document.createElement('h3'); lh.textContent='Current Products'; lp.appendChild(lh);
   remoteData.products.forEach(p=>{
@@ -720,15 +948,14 @@ function buildManage(){
     const info=document.createElement('div');
     const n=document.createElement('div'); n.className='p-name'; n.textContent=p.name;
     const c=document.createElement('div'); c.className='p-chain'; c.textContent=p.chain;
-    info.appendChild(n); info.appendChild(c);
+    info.appendChild(n);info.appendChild(c);
     const db=document.createElement('button'); db.className='btn btn-danger btn-sm'; db.textContent='Remove'; db.dataset.action='delete-product'; db.dataset.pid=p.id;
-    item.appendChild(info); item.appendChild(db); lp.appendChild(item);
+    item.appendChild(info);item.appendChild(db); lp.appendChild(item);
   });
   div.appendChild(lp);
-
   const ap=document.createElement('div'); ap.className='manage-panel';
   const ah=document.createElement('h3'); ah.textContent='Add New Product'; ap.appendChild(ah);
-  if(!ghToken){ const w=document.createElement('div'); w.style.cssText='color:var(--gold);font-size:14px;margin-bottom:16px;padding:12px 16px;background:rgba(246,201,14,0.08);border-radius:10px;'; w.textContent='⚠ You need a GitHub token to add products. Click ⚙ Token in the header.'; ap.appendChild(w); }
+  if(!ghToken){const w=document.createElement('div');w.style.cssText='color:var(--gold);font-size:14px;margin-bottom:16px;padding:12px 16px;background:rgba(246,201,14,0.08);border-radius:10px;';w.textContent='⚠ You need a GitHub token to add products.';ap.appendChild(w);}
   ap.innerHTML+=`
     <div class="form-row">
       <div class="form-field" style="flex:1;min-width:180px;"><label>Product name</label><input type="text" id="new-name" placeholder="e.g. Wartybug" autocomplete="off" /></div>
@@ -753,14 +980,459 @@ function buildManage(){
   return div;
 }
 
-// ─── EVENT DELEGATION ────────────────────────────────────────────────────────
-el('panels').addEventListener('input', e=>{
+// ─── ITEM WORTH PANEL ─────────────────────────────────────────────────────────
+// Upgrade definitions
+const UPGRADES = {
+  hpb: {
+    label: 'Hot Potato Books',
+    items: [
+      { id:'hpb', name:'Hot Potato Book', maxQty:10, bazaarKey:'HOT_POTATO_BOOK', defaultPrice:700000 },
+      { id:'fphb', name:'Fuming Potato Book', maxQty:5, bazaarKey:'FUMING_POTATO_BOOK', defaultPrice:2500000 },
+    ]
+  },
+  recomb: {
+    label: 'Recombobulator',
+    items: [
+      { id:'recomb', name:'Recombobulator 3000', maxQty:1, bazaarKey:'RECOMBOBULATOR_3000', defaultPrice:6500000 },
+    ]
+  },
+  stars: {
+    label: 'Dungeon Stars',
+    items: [
+      { id:'star1', name:'1st Star (Master Star 1)', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_1', defaultPrice:500000 },
+      { id:'star2', name:'2nd Star (Master Star 2)', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_2', defaultPrice:1500000 },
+      { id:'star3', name:'3rd Star (Master Star 3)', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_3', defaultPrice:4000000 },
+      { id:'star4', name:'4th Star (Master Star 4)', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_4', defaultPrice:10000000 },
+      { id:'star5', name:'5th Star (Master Star 5)', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_5', defaultPrice:25000000 },
+    ]
+  },
+  scrolls: {
+    label: 'Scrolls',
+    items: [
+      { id:'scroll_sa', name:'Shadow Assassin Scroll', maxQty:3, bazaarKey:null, defaultPrice:12000000 },
+      { id:'scroll_jc', name:'Juju Shortbow Scroll', maxQty:3, bazaarKey:null, defaultPrice:8000000 },
+      { id:'scroll_necro', name:'Necromancer Scroll', maxQty:3, bazaarKey:null, defaultPrice:5000000 },
+      { id:'scroll_livid', name:'Livid Dagger Scroll', maxQty:3, bazaarKey:null, defaultPrice:3000000 },
+    ]
+  },
+  skins: {
+    label: 'Skins / Cosmetic',
+    items: [
+      { id:'skin_generic', name:'Skin (custom price)', maxQty:1, bazaarKey:null, defaultPrice:0, customPrice:true },
+    ]
+  },
+  ult_enchants: {
+    label: 'Ultimate Enchants',
+    items: [
+      { id:'ult_wise',      name:'Ultimate Wise',      maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_WISE_5',         defaultPrice:80000000 },
+      { id:'ult_chimera',   name:'Chimera',             maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_CHIMERA_5',      defaultPrice:120000000 },
+      { id:'ult_bank',      name:'Ultimate Bank',       maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_BANK_5',         defaultPrice:5000000 },
+      { id:'ult_jerry',     name:'Ultimate Jerry',      maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_JERRY_5',        defaultPrice:3000000 },
+      { id:'ult_legion',    name:'Legion',              maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_LEGION_5',       defaultPrice:20000000 },
+      { id:'ult_one_for_all',name:'One For All',        maxTier:4, bazaarKey:'ENCHANTMENT_ULTIMATE_ONE_FOR_ALL_4',  defaultPrice:150000000 },
+      { id:'ult_rend',      name:'Rend',                maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_REND_5',         defaultPrice:10000000 },
+      { id:'ult_soul_eater',name:'Soul Eater',          maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_SOUL_EATER_5',   defaultPrice:15000000 },
+      { id:'ult_swarm',     name:'Swarm',               maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_SWARM_5',        defaultPrice:8000000 },
+    ]
+  },
+  reg_enchants: {
+    label: 'Regular Enchants',
+    items: [
+      { id:'enc_sharp',     name:'Sharpness',           maxTier:7, bazaarKey:'ENCHANTMENT_SHARPNESS_6',             defaultPrice:2000000 },
+      { id:'enc_crit',      name:'Critical',            maxTier:6, bazaarKey:'ENCHANTMENT_CRITICAL_6',              defaultPrice:500000 },
+      { id:'enc_ench',      name:'Enchanted Quiver',    maxTier:10,bazaarKey:null,                                   defaultPrice:0, customPrice:true },
+      { id:'enc_execute',   name:'Execute',             maxTier:6, bazaarKey:'ENCHANTMENT_EXECUTE_5',               defaultPrice:3000000 },
+      { id:'enc_cubism',    name:'Cubism',              maxTier:5, bazaarKey:'ENCHANTMENT_CUBISM_5',                defaultPrice:100000 },
+      { id:'enc_power',     name:'Power',               maxTier:7, bazaarKey:'ENCHANTMENT_POWER_6',                 defaultPrice:1500000 },
+      { id:'enc_growth',    name:'Growth',              maxTier:7, bazaarKey:'ENCHANTMENT_GROWTH_6',                defaultPrice:2000000 },
+      { id:'enc_prot',      name:'Protection',          maxTier:7, bazaarKey:'ENCHANTMENT_PROTECTION_6',            defaultPrice:1000000 },
+      { id:'enc_true_prot', name:'True Protection',     maxTier:1, bazaarKey:'ENCHANTMENT_TRUE_PROTECTION_1',       defaultPrice:5000000 },
+      { id:'enc_feather',   name:'Feather Falling',     maxTier:10,bazaarKey:'ENCHANTMENT_FEATHER_FALLING_10',      defaultPrice:8000000 },
+      { id:'enc_thorns',    name:'Thorns',              maxTier:3, bazaarKey:'ENCHANTMENT_THORNS_3',                defaultPrice:300000 },
+      { id:'enc_rejuv',     name:'Rejuvenate',          maxTier:5, bazaarKey:'ENCHANTMENT_REJUVENATE_5',            defaultPrice:1000000 },
+      { id:'enc_dragon',    name:'Dragon Hunter',       maxTier:5, bazaarKey:'ENCHANTMENT_DRAGON_HUNTER_5',         defaultPrice:500000 },
+      { id:'enc_prosecute', name:'Prosecute',           maxTier:5, bazaarKey:null,                                   defaultPrice:0, customPrice:true },
+    ]
+  },
+};
+
+// worth state (in-memory, not persisted to keep things simple)
+let worthState = {
+  itemName: '',
+  margin: 20,
+  upgrades: {}, // { id: { qty:N, price:P, isLive:false } }
+  addedEnchants: [], // [{id, name, tier, price, isLive}]
+  livePrices: {}, // bazaarKey -> price
+  baseItemCost: 0,  // floor price of clean base item from AH
+  baseItemTag: '',  // SkyBlock item ID for floor lookup
+  auctionPrice: 0,  // actual listed price on the parsed auction
+};
+
+// ─── LORE PARSER ─────────────────────────────────────────────────────────────
+function stripCodes(s){ return s.replace(/§[0-9a-fklmnor]/gi,'').trim(); }
+
+function parseLore(loreStr){
+  const lines = loreStr.split('\n').map(stripCodes).filter(Boolean);
+  const result = { hpb:0, fphb:0, recomb:false, stars:0, enchants:[], scrolls:[], reforge:'' };
+  for(const line of lines){
+    // HPB count from "N/15 Hot Potato Books Applied"
+    const hpbFull = line.match(/(\d+)\s*\/\s*15/);
+    if(hpbFull){ const n=parseInt(hpbFull[1]); result.hpb=Math.min(n,10); result.fphb=Math.max(0,n-10); }
+    // Recombobulated tag
+    if(/recombobulated/i.test(line)||line.includes('\u2726')) result.recomb=true;
+    // Stars via ✪ symbols in item name row
+    const starCount=(line.match(/\u272a/g)||[]).length;
+    if(starCount>result.stars) result.stars=starCount;
+    // Enchant lines: "Name Tier" at end of line
+    const em=line.match(/^([A-Za-z][A-Za-z '\-]{1,30}?)\s+([IVXivx]{1,4}|\d{1,2})$/);
+    if(em){
+      const eName=em[1].trim(); const eTierRaw=em[2];
+      let tier=parseInt(eTierRaw); if(isNaN(tier)) tier=romanToInt(eTierRaw);
+      if(tier>0&&tier<=10&&eName.length>2&&!/[+\-\u272a%\u2763\u2748\u2694\u2726\u2741\u2665]/.test(eName)){
+        result.enchants.push({name:eName,tier});
+      }
+    }
+    // Scrolls
+    if(/shadow assassin/i.test(line)) result.scrolls.push('Shadow Assassin Scroll');
+    if(/juju shortbow/i.test(line)&&/scroll/i.test(line)) result.scrolls.push('Juju Shortbow Scroll');
+    if(/necromancer.*scroll/i.test(line)) result.scrolls.push('Necromancer Scroll');
+    if(/livid dagger.*scroll/i.test(line)) result.scrolls.push('Livid Dagger Scroll');
+  }
+  return result;
+}
+
+function romanToInt(s){
+  const map={'I':1,'V':5,'X':10,'L':50,'C':100};
+  s=String(s).toUpperCase(); let n=0;
+  for(let i=0;i<s.length;i++){const c=map[s[i]]||0,nc=map[s[i+1]]||0;n+=c<nc?-c:c;}
+  return n||NaN;
+}
+
+function matchEnchant(name,tier){
+  const nl=name.toLowerCase().replace(/\s+/g,'');
+  const allEnchItems=[...UPGRADES.ult_enchants.items,...UPGRADES.reg_enchants.items];
+  for(const item of allEnchItems){
+    const il=item.name.toLowerCase().replace(/\s+/g,'');
+    if(il===nl||il.includes(nl)||nl.includes(il)) return {item,tier:Math.min(tier,item.maxTier),secId:UPGRADES.ult_enchants.items.includes(item)?'ult_enchants':'reg_enchants'};
+  }
+  return null;
+}
+
+function extractAuctionUUID(raw){
+  raw=raw.trim();
+  if(/^[0-9a-f]{8}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{12}$/i.test(raw)) return raw.replace(/-/g,'');
+  const m=raw.match(/[?&](?:auction|id|uuid)=([0-9a-f\-]{32,36})/i)||raw.match(/\/([0-9a-f]{32})(?:[/?#]|$)/i);
+  if(m) return m[1].replace(/-/g,'');
+  const hex=raw.match(/[0-9a-f]{32}/i);
+  if(hex) return hex[0];
+  return null;
+}
+
+function inferItemTag(itemName){
+  let n=stripCodes(itemName);
+  n=n.replace(/[\u272a\u2725\u2724\u2723\u2722\u2721\u278e\u278d\u278c\u278b\u278a\u2726]/g,'').trim();
+  const REFORGES=['fabled','heroic','giant','fierce','renowned','deadly','necrotic','warped','strong','superior','spiked','forceful','demonic','loving','lucky','clean','odd','fast','fair','epic','sharp','spicy','legendary','withered','bulky','festive','brilliant','mossy','shiny','jaded','magnetic','stiff','dirty','ancient','spiritual','wicked','frail','unreal','headstrong','precise','light','rich'];
+  const parts=n.split(' ');
+  if(parts.length>1&&REFORGES.includes(parts[0].toLowerCase())) n=parts.slice(1).join(' ');
+  return n.toUpperCase().replace(/[^A-Z0-9]+/g,'_').replace(/^_|_$/g,'');
+}
+
+function worthCost(){
+  let total=0;
+  // base item
+  total+=worthState.baseItemCost||0;
+  // HPB / recomb / stars / scrolls / skins
+  for(const [secId, sec] of Object.entries(UPGRADES)){
+    if(secId==='ult_enchants'||secId==='reg_enchants') continue;
+    for(const item of sec.items){
+      const s=worthState.upgrades[item.id];
+      if(!s||!s.qty) continue;
+      total+=s.qty*(s.price||item.defaultPrice);
+    }
+  }
+  // enchants
+  for(const e of worthState.addedEnchants){
+    total+=(e.price||0);
+  }
+  return Math.round(total);
+}
+
+function worthBreakdown(){
+  const rows=[];
+  for(const [secId, sec] of Object.entries(UPGRADES)){
+    if(secId==='ult_enchants'||secId==='reg_enchants') continue;
+    for(const item of sec.items){
+      const s=worthState.upgrades[item.id];
+      if(!s||!s.qty) continue;
+      rows.push({label:`${item.name} ×${s.qty}`,val:s.qty*(s.price||item.defaultPrice)});
+    }
+  }
+  for(const e of worthState.addedEnchants){
+    rows.push({label:`${e.name} ${e.tier>0?'T'+e.tier:''}`,val:e.price||0});
+  }
+  return rows;
+}
+
+function buildWorth(){
+  const div=document.createElement('div'); div.className='panel active';
+
+  // Title row
+  const titleRow=document.createElement('div'); titleRow.style.cssText='margin-bottom:28px;';
+  const ph=document.createElement('div'); ph.className='product-title'; ph.textContent='Item Worth Calculator';
+  const ps=document.createElement('div'); ps.style.cssText='font-size:14px;color:var(--muted);margin-top:8px;'; ps.textContent='Add upgrades manually or import directly from an AH listing to auto-detect everything.';
+  titleRow.appendChild(ph); titleRow.appendChild(ps); div.appendChild(titleRow);
+
+  // ── AH IMPORT BOX ──
+  const ahBox=document.createElement('div'); ahBox.className='ah-import-box';
+  ahBox.innerHTML=`
+    <div class="ah-import-title">\u{1F517} Import from Auction House</div>
+    <div class="ah-import-sub">
+      Paste a <a href="https://www.brandonfowler.me/skyblockah/" target="_blank" rel="noopener">Brandonfowler.me</a> auction link, or a raw auction UUID.
+      We\u2019ll auto-detect HPBs, stars, recombs, enchants, scrolls, and look up the clean floor price.
+    </div>
+    <div class="ah-url-row">
+      <input class="ah-url-inp" type="text" id="ah-url-inp" placeholder="e.g. https://www.brandonfowler.me/skyblockah/?...  or  7d01ffc3a89c40d398b7518a272045e4" autocomplete="off" />
+      <button class="ah-import-btn" id="ah-import-btn" data-action="ah-import">⟳ Import</button>
+    </div>
+    <div class="ah-status" id="ah-status"></div>
+    <div class="ah-parsed-preview" id="ah-parsed-preview"></div>
+    <div class="floor-box" id="ah-floor-box" style="display:none;">
+      <div class="floor-label"><strong>Clean floor price</strong><div class="floor-sub" style="margin-top:2px;"></div></div>
+      <div class="floor-val">—</div>
+    </div>
+  `;
+  div.appendChild(ahBox);
+
+  // Item name + fetch + reset row
+  const topRow=document.createElement('div'); topRow.className='worth-fetch-row';
+  const nameInp=document.createElement('input'); nameInp.className='item-name-input'; nameInp.type='text'; nameInp.placeholder='Item name (e.g. Bouquet of Lies)'; nameInp.value=worthState.itemName; nameInp.id='worth-item-name';
+  const fetchBtn=document.createElement('button'); fetchBtn.className='bazaar-btn'; fetchBtn.dataset.action='worth-fetch-bazaar'; fetchBtn.textContent='⟳ Fetch Live Prices';
+  const bazStat=document.createElement('div'); bazStat.className='bazaar-status'; bazStat.id='worth-bazaar-status';
+  const resetBtn=document.createElement('button'); resetBtn.className='worth-reset-btn'; resetBtn.dataset.action='worth-reset'; resetBtn.textContent='Reset All';
+  topRow.appendChild(nameInp); topRow.appendChild(fetchBtn); topRow.appendChild(bazStat); topRow.appendChild(resetBtn);
+  div.appendChild(topRow);
+
+  // Layout
+  const layout=document.createElement('div'); layout.className='worth-layout';
+  const left=document.createElement('div'); left.className='worth-left';
+  const right=document.createElement('div'); right.className='worth-right';
+  layout.appendChild(left); layout.appendChild(right);
+
+  // ── LEFT: upgrade sections ──
+  // HPB / Recomb / Stars / Scrolls / Skins
+  ['hpb','recomb','stars','scrolls','skins'].forEach(secId=>{
+    const sec=UPGRADES[secId];
+    const secCost=calcSectionCost(secId);
+    const wrap=document.createElement('div'); wrap.className='worth-section'; wrap.id=`ws-${secId}`;
+    const hdr=document.createElement('div'); hdr.className='worth-section-header'; hdr.dataset.action='toggle-worth-section'; hdr.dataset.section=secId;
+    const titleSpan=document.createElement('span'); titleSpan.className='worth-section-title'; titleSpan.textContent=sec.label;
+    const badge=document.createElement('span'); badge.className='worth-section-badge'+(secCost>0?' has-cost':''); badge.id=`ws-badge-${secId}`; badge.textContent=secCost>0?fmt(secCost):'—';
+    const chev=document.createElement('span'); chev.className='worth-section-chevron'; chev.id=`ws-chev-${secId}`; chev.textContent='▼';
+    hdr.appendChild(titleSpan); hdr.appendChild(badge); hdr.appendChild(chev); wrap.appendChild(hdr);
+    const body=document.createElement('div'); body.className='worth-section-body'; body.id=`ws-body-${secId}`;
+    sec.items.forEach(item=>{
+      const s=worthState.upgrades[item.id]||{qty:0,price:item.defaultPrice,isLive:false};
+      const row=document.createElement('div'); row.className='worth-row';
+      const rowLeft=document.createElement('div'); rowLeft.className='worth-row-left';
+      const nm=document.createElement('div'); nm.className='worth-row-name'; nm.textContent=item.name;
+      rowLeft.appendChild(nm);
+      const rowRight=document.createElement('div'); rowRight.className='worth-row-right';
+      if(item.maxQty===1){
+        // checkbox-style stepper 0/1
+        const st=document.createElement('div'); st.className='stepper';
+        const dm=document.createElement('button'); dm.className='step-btn'; dm.textContent='−'; dm.dataset.action='worth-step'; dm.dataset.itemId=item.id; dm.dataset.delta='-1'; dm.dataset.max=item.maxQty;
+        const sv=document.createElement('span'); sv.className='step-val'; sv.id=`ws-qty-${item.id}`; sv.textContent=s.qty;
+        const dp=document.createElement('button'); dp.className='step-btn'; dp.textContent='+'; dp.dataset.action='worth-step'; dp.dataset.itemId=item.id; dp.dataset.delta='1'; dp.dataset.max=item.maxQty;
+        st.appendChild(dm);st.appendChild(sv);st.appendChild(dp);
+        rowRight.appendChild(st);
+      } else {
+        const st=document.createElement('div'); st.className='stepper';
+        const dm=document.createElement('button'); dm.className='step-btn'; dm.textContent='−'; dm.dataset.action='worth-step'; dm.dataset.itemId=item.id; dm.dataset.delta='-1'; dm.dataset.max=item.maxQty;
+        const sv=document.createElement('span'); sv.className='step-val'; sv.id=`ws-qty-${item.id}`; sv.textContent=s.qty;
+        const dp=document.createElement('button'); dp.className='step-btn'; dp.textContent='+'; dp.dataset.action='worth-step'; dp.dataset.itemId=item.id; dp.dataset.delta='1'; dp.dataset.max=item.maxQty;
+        st.appendChild(dm);st.appendChild(sv);st.appendChild(dp);
+        rowRight.appendChild(st);
+      }
+      // Price input
+      const pi=document.createElement('input'); pi.className='worth-price-inp'+(s.isLive?' live':''); pi.type='text'; pi.value=s.price>0?displayNum(s.price):''; pi.placeholder=displayNum(item.defaultPrice)||'price';
+      pi.id=`ws-price-${item.id}`; pi.dataset.action='worth-price'; pi.dataset.itemId=item.id;
+      const pl=document.createElement('span'); pl.className='price-tag has-val'; pl.id=`ws-cost-${item.id}`; pl.textContent=s.qty>0?fmt(s.qty*(s.price||item.defaultPrice)):'';
+      rowRight.appendChild(pi); rowRight.appendChild(pl);
+      row.appendChild(rowLeft); row.appendChild(rowRight); body.appendChild(row);
+    });
+    wrap.appendChild(body); left.appendChild(wrap);
+  });
+
+  // ── Enchant sections ──
+  ['ult_enchants','reg_enchants'].forEach(secId=>{
+    const sec=UPGRADES[secId];
+    const secCost=calcSectionCost(secId);
+    const wrap=document.createElement('div'); wrap.className='worth-section'; wrap.id=`ws-${secId}`;
+    const hdr=document.createElement('div'); hdr.className='worth-section-header'; hdr.dataset.action='toggle-worth-section'; hdr.dataset.section=secId;
+    const titleSpan=document.createElement('span'); titleSpan.className='worth-section-title'; titleSpan.textContent=sec.label;
+    const badge=document.createElement('span'); badge.className='worth-section-badge'+(secCost>0?' has-cost':''); badge.id=`ws-badge-${secId}`; badge.textContent=secCost>0?fmt(secCost):'—';
+    const chev=document.createElement('span'); chev.className='worth-section-chevron'; chev.id=`ws-chev-${secId}`; chev.textContent='▼';
+    hdr.appendChild(titleSpan);hdr.appendChild(badge);hdr.appendChild(chev); wrap.appendChild(hdr);
+    const body=document.createElement('div'); body.className='worth-section-body'; body.id=`ws-body-${secId}`;
+
+    // Added enchants chips
+    const addedDiv=document.createElement('div'); addedDiv.className='enchant-added'; addedDiv.id=`enchant-added-${secId}`;
+    body.appendChild(addedDiv);
+
+    // Search
+    const srch=document.createElement('input'); srch.className='enchant-search'; srch.type='text'; srch.placeholder='Search enchants...'; srch.id=`enchant-search-${secId}`;
+    srch.dataset.action='enchant-search'; srch.dataset.section=secId;
+    body.appendChild(srch);
+
+    const list=document.createElement('div'); list.className='enchant-list'; list.id=`enchant-list-${secId}`;
+    buildEnchantList(secId, '', list);
+    body.appendChild(list);
+    wrap.appendChild(body); left.appendChild(wrap);
+    // Render existing chips
+    setTimeout(()=>renderEnchantChips(secId),0);
+  });
+
+  // ── RIGHT: summary ──
+  const summary=document.createElement('div'); summary.className='worth-summary'; summary.id='worth-summary';
+  renderWorthSummary(summary);
+  right.appendChild(summary);
+
+  div.appendChild(layout);
+
+  // name input handler
+  nameInp.addEventListener('input',()=>{ worthState.itemName=nameInp.value; updateWorthSummary(); });
+
+  return div;
+}
+
+function calcSectionCost(secId){
+  const sec=UPGRADES[secId];
+  if(!sec) return 0;
+  if(secId==='ult_enchants'||secId==='reg_enchants'){
+    return worthState.addedEnchants.filter(e=>{
+      return sec.items.some(i=>i.id===e.id);
+    }).reduce((a,e)=>a+(e.price||0),0);
+  }
+  return sec.items.reduce((a,item)=>{
+    const s=worthState.upgrades[item.id];
+    if(!s||!s.qty) return a;
+    return a+s.qty*(s.price||item.defaultPrice);
+  },0);
+}
+
+function buildEnchantList(secId, filter, listEl){
+  const sec=UPGRADES[secId];
+  listEl.innerHTML='';
+  const fl=filter.toLowerCase();
+  sec.items.filter(item=>!fl||item.name.toLowerCase().includes(fl)).forEach(item=>{
+    const s=worthState.upgrades[item.id]||{price:item.defaultPrice,isLive:false};
+    const row=document.createElement('div'); row.className='enchant-item';
+    const left=document.createElement('div'); left.className='enchant-item-left';
+    const nm=document.createElement('div'); nm.className='enchant-item-name'; nm.textContent=item.name;
+    const tier=document.createElement('div'); tier.className='enchant-item-tier'; tier.textContent=`Max T${item.maxTier}`;
+    left.appendChild(nm);left.appendChild(tier);
+    const right=document.createElement('div'); right.className='enchant-item-right';
+    // Tier select
+    const ts=document.createElement('select'); ts.className='enchant-tier-sel'; ts.id=`ench-tier-${item.id}`;
+    for(let t=1;t<=item.maxTier;t++){const o=document.createElement('option');o.value=t;o.textContent='T'+t;ts.appendChild(o);}
+    ts.value=item.maxTier;
+    // Price input
+    const pi=document.createElement('input'); pi.className='worth-price-inp'+(s.isLive?' live':''); pi.type='text'; pi.value=s.price>0?displayNum(s.price):''; pi.placeholder=displayNum(item.defaultPrice)||'price';
+    pi.id=`ws-price-${item.id}`; pi.dataset.action='worth-price'; pi.dataset.itemId=item.id;
+    pi.style.width='90px';
+    // Add button
+    const ab=document.createElement('button'); ab.className='enchant-add-btn'; ab.textContent='+ Add'; ab.dataset.action='add-enchant'; ab.dataset.itemId=item.id; ab.dataset.section=secId;
+    right.appendChild(ts);right.appendChild(pi);right.appendChild(ab);
+    row.appendChild(left);row.appendChild(right);
+    listEl.appendChild(row);
+  });
+}
+
+function renderEnchantChips(secId){
+  const addedDiv=el(`enchant-added-${secId}`); if(!addedDiv) return;
+  const sec=UPGRADES[secId];
+  const relevant=worthState.addedEnchants.filter(e=>sec.items.some(i=>i.id===e.id));
+  addedDiv.innerHTML='';
+  relevant.forEach((e,idx)=>{
+    const chip=document.createElement('div'); chip.className='enchant-chip';
+    const lbl=document.createElement('span'); lbl.textContent=`${e.name}${e.tier>0?' T'+e.tier:''} (${fmt(e.price)})`;
+    const rm=document.createElement('button'); rm.className='chip-rm'; rm.textContent='×'; rm.dataset.action='remove-enchant'; rm.dataset.enchantId=e.uid;
+    chip.appendChild(lbl);chip.appendChild(rm); addedDiv.appendChild(chip);
+  });
+}
+
+function renderWorthSummary(container){
+  const cost=worthCost();
+  const margin=worthState.margin;
+  const suggested=Math.round(cost*(1+margin/100));
+  const breakdown=worthBreakdown();
+
+  const upgradeOnlyCost=cost-(worthState.baseItemCost||0);
+  container.innerHTML=`
+  <div class="ws-header">
+    <div class="ws-title">Item Worth</div>
+    <div class="ws-item-name" id="ws-item-name-display">${worthState.itemName||'Unnamed Item'}</div>
+  </div>
+  ${worthState.baseItemCost>0?`<div class="ws-base-row"><div class="ws-base-label">Base item (clean floor)</div><div class="ws-base-val">${fmt(worthState.baseItemCost)}</div><div class="ws-base-sub">${worthState.baseItemTag||''}  (lowest clean BIN)</div></div>`:''}
+  <div class="ws-rows">
+    ${worthState.auctionPrice>0?`<div class="ws-row"><span class="wsr-label">Listed price</span><span class="wsr-val blue">${fmt(worthState.auctionPrice)}</span></div>`:''}
+    <div class="ws-row"><span class="wsr-label">Upgrade categories</span><span class="wsr-val purple">${breakdown.length}</span></div>
+    ${worthState.baseItemCost>0?`<div class="ws-row"><span class="wsr-label">Upgrades only</span><span class="wsr-val accent">${fmt(upgradeOnlyCost)}</span></div>`:`<div class="ws-row"><span class="wsr-label">Total upgrade cost</span><span class="wsr-val accent">${fmt(cost)}</span></div>`}
+  </div>
+  <div class="ws-total">
+    <div class="ws-total-label">Total Worth</div>
+    <div class="ws-total-val">${fmt(cost)}</div>
+    ${breakdown.length>0?`<div class="ws-breakdown">${breakdown.map(r=>`<div class="ws-breakdown-row"><span class="wbr-label">${r.label}</span><span class="wbr-val">${fmt(r.val)}</span></div>`).join('')}</div>`:'<div style="font-size:13px;color:var(--muted);margin-top:8px;">Add upgrades on the left to calculate.</div>'}
+  </div>
+  <div class="margin-row">
+    <div class="margin-label">Profit Margin</div>
+    <div class="margin-controls">
+      <input type="range" class="margin-slider" id="worth-margin-slider" min="0" max="100" value="${margin}" />
+      <div class="margin-val-display" id="worth-margin-val">${margin}%</div>
+    </div>
+  </div>
+  <div class="sell-suggest">
+    <div class="ss-label">Suggested Sell Price</div>
+    <div class="ss-val">${fmt(suggested)}</div>
+    <div class="ss-sub">= cost (${fmt(cost)}) + ${margin}% margin</div>
+  </div>`;
+
+  // Slider listener
+  const slider=container.querySelector('#worth-margin-slider');
+  if(slider){
+    slider.addEventListener('input',()=>{
+      worthState.margin=parseInt(slider.value);
+      updateWorthSummary();
+    });
+  }
+}
+
+function setAhStatus(msg,cls=''){
+  const s=el('ah-status'); if(!s) return;
+  s.textContent=msg; s.className='ah-status'+(cls?' '+cls:'');
+}
+
+function updateWorthSummary(){
+  const summary=el('worth-summary'); if(!summary) return;
+  renderWorthSummary(summary);
+  // Re-attach slider listener is handled inside renderWorthSummary
+  // Update section badges
+  for(const secId of Object.keys(UPGRADES)){
+    const badge=el(`ws-badge-${secId}`); if(!badge) continue;
+    const cost=calcSectionCost(secId);
+    badge.textContent=cost>0?fmt(cost):'—';
+    badge.className='worth-section-badge'+(cost>0?' has-cost':'');
+  }
+}
+
+// ─── EVENT DELEGATION ─────────────────────────────────────────────────────────
+el('panels').addEventListener('input',e=>{
   const t=e.target;
 
   if(t.id&&t.id.startsWith('inp-qty-')){
     const pid=t.id.replace('inp-qty-','');
-    t.classList.toggle('error', isNaN(parseNum(t.value))&&t.value!=='');
-    setQtyStr(pid, t.value);
+    t.classList.toggle('error',isNaN(parseNum(t.value))&&t.value!=='');
+    setQtyStr(pid,t.value);
     setBudgetStr(pid,'');
     const bi=el(`inp-budget-${pid}`); if(bi) bi.value='';
     if(!isNaN(parseNum(t.value))) updateDisplay(pid);
@@ -769,29 +1441,61 @@ el('panels').addEventListener('input', e=>{
   if(t.id&&t.id.startsWith('inp-budget-')){
     const pid=t.id.replace('inp-budget-','');
     const budget=parseNum(t.value);
-    t.classList.toggle('error', isNaN(budget)&&t.value!=='');
-    setBudgetStr(pid, t.value);
+    t.classList.toggle('error',isNaN(budget)&&t.value!=='');
+    setBudgetStr(pid,t.value);
     if(!isNaN(budget)&&budget>0){
       const product=getProduct(pid);
-      if(product){ const r=calc(product); if(r.costPerShard>0){ const mq=Math.floor(budget/r.costPerShard); setQtyStr(pid,String(mq)); const qi=el(`inp-qty-${pid}`); if(qi) qi.value=displayNum(mq); updateDisplay(pid); setText(`budget-badge-${pid}`,`Max ${mq.toLocaleString()} shards`); } }
-    } else { setText(`budget-badge-${pid}`,'Enter coins to auto-calc max shards'); }
+      if(product){const r=calc(product);if(r.costPerShard>0){const mq=Math.floor(budget/r.costPerShard);setQtyStr(pid,String(mq));const qi=el(`inp-qty-${pid}`);if(qi)qi.value=displayNum(mq);updateDisplay(pid);setText(`budget-badge-${pid}`,`Max ${mq.toLocaleString()} shards`);}}
+    } else {setText(`budget-badge-${pid}`,'Enter coins to auto-calc max shards');}
     return;
   }
   if(t.dataset.action==='set-price'){
     const v=parseNum(t.value); t.classList.toggle('error',isNaN(v)&&t.value!=='');
-    if(!isNaN(v)){ setPrice(t.dataset.pid,t.dataset.iid,v); updateDisplay(t.dataset.pid); reapplyBudget(t.dataset.pid); }
+    if(!isNaN(v)){setPrice(t.dataset.pid,t.dataset.iid,v);updateDisplay(t.dataset.pid);reapplyBudget(t.dataset.pid);}
     return;
   }
   if(t.dataset.action==='set-sell'){
     const v=parseNum(t.value); t.classList.toggle('error',isNaN(v)&&t.value!=='');
-    if(!isNaN(v)){ setSell(t.dataset.pid,v); updateDisplay(t.dataset.pid); reapplyBudget(t.dataset.pid); }
+    if(!isNaN(v)){setSell(t.dataset.pid,v);updateDisplay(t.dataset.pid);reapplyBudget(t.dataset.pid);}
+    return;
+  }
+  if(t.dataset.action==='set-inv-qty'){
+    const {pid,iid}=t.dataset;
+    setInvQty(pid,iid,t.value);
+    updateInvDisplay(pid);
+    return;
+  }
+
+  // Worth price inputs
+  if(t.dataset.action==='worth-price'){
+    const itemId=t.dataset.itemId;
+    const v=parseNum(t.value);
+    if(!isNaN(v)&&v>0){
+      if(!worthState.upgrades[itemId]) worthState.upgrades[itemId]={qty:0,price:v,isLive:false};
+      else worthState.upgrades[itemId].price=v;
+      // Also update in addedEnchants if present
+      worthState.addedEnchants.forEach(e=>{if(e.id===itemId) e.price=v;});
+    }
+    updateWorthSummary();
+    return;
+  }
+
+  // Enchant search
+  if(t.dataset.action==='enchant-search'){
+    const secId=t.dataset.section;
+    const list=el(`enchant-list-${secId}`); if(!list) return;
+    buildEnchantList(secId,t.value,list);
     return;
   }
 });
 
-el('panels').addEventListener('click', async e=>{
+el('panels').addEventListener('click',async e=>{
   const b=e.target.closest('[data-action]'); if(!b) return;
   const action=b.dataset.action;
+
+  // ── Inventory toggle ──
+  if(action==='inv-toggle'||b.id&&b.id.startsWith('inv-toggle-')){return;} // handled via change
+  // toggle handled below via change event on checkbox
 
   if(action==='fetch-bazaar'){
     const pid=b.dataset.pid;
@@ -802,54 +1506,258 @@ el('panels').addEventListener('click', async e=>{
       const res=await fetch('https://api.hypixel.net/v2/skyblock/bazaar');
       if(!res.ok) throw new Error('HTTP '+res.status);
       const data=await res.json();
-      if(!data.success) throw new Error('API error: '+JSON.stringify(data));
-      const allKeys=Object.keys(data.products);
+      if(!data.success) throw new Error('API error');
       const product=getProduct(pid); if(!product) throw new Error('No product');
       let updated=0;
+      // Update ingredient prices
       product.ingredients.forEach(ing=>{
-        const bk=BAZAAR_MAP[ing.id];
-        if(!bk){ console.warn('No bazaar key mapped for ingredient:', ing.id); return; }
-        const prod=data.products[bk];
-        if(!prod){
-          // Try to find similar key to help debug
-          const similar=allKeys.filter(k=>k.includes(ing.id.toUpperCase())||k.includes(ing.name.toUpperCase().replace(/ /g,'_')));
-          console.warn(`Key "${bk}" not found in bazaar. Similar keys:`, similar);
-          return;
-        }
-        // Highest buy order = buy_summary[0].pricePerUnit
-        // This is the best price someone is willing to pay (highest bid)
-        let bp = 0;
-        if(prod.buy_summary && prod.buy_summary.length > 0){
-          bp = prod.buy_summary[0].pricePerUnit;
-        } else if(prod.quick_status?.buyPrice){
-          bp = prod.quick_status.buyPrice;
-        }
-        if(bp > 0){
-          local.prices[`${pid}__${ing.id}`] = bp;
-          saveLocal();
+        const bk=BAZAAR_MAP[ing.id]; if(!bk) return;
+        const prod=data.products[bk]; if(!prod) return;
+        let bp=0;
+        if(prod.buy_summary&&prod.buy_summary.length>0) bp=prod.buy_summary[0].pricePerUnit;
+        else if(prod.quick_status?.buyPrice) bp=prod.quick_status.buyPrice;
+        if(bp>0){
+          local.prices[`${pid}__${ing.id}`]=bp; saveLocal();
           const inp=el(`inp-price-${pid}-${ing.id}`);
-          // Show full decimal precision
-          if(inp) inp.value = Number.isInteger(bp) ? displayNum(bp) : bp.toFixed(1);
+          if(inp) inp.value=Number.isInteger(bp)?displayNum(bp):bp.toFixed(1);
           updated++;
-        } else {
-          console.warn('Got zero price for', bk, prod.quick_status);
         }
       });
+      // ── NEW: Also update sell price ──
+      const sellKey=product.bazaarSell;
+      if(sellKey&&data.products[sellKey]){
+        const sp=data.products[sellKey];
+        let sellP=0;
+        // Use sell_summary[0] (highest buy order = what buyers will pay)
+        if(sp.buy_summary&&sp.buy_summary.length>0) sellP=sp.buy_summary[0].pricePerUnit;
+        else if(sp.quick_status?.buyPrice) sellP=sp.quick_status.buyPrice;
+        if(sellP>0){
+          setSell(pid,sellP);
+          const si=el(`inp-sell-${pid}`);
+          if(si) si.value=Number.isInteger(sellP)?displayNum(sellP):sellP.toFixed(1);
+          updated++;
+        }
+      }
       updateDisplay(pid);
       reapplyBudget(pid);
-      if(updated === 0){
-        // Log all shard-like keys to help identify correct names
-        const shardKeys = allKeys.filter(k=>k.startsWith('SHARD_'));
-        console.log('All SHARD_ keys in API:', shardKeys);
-        st.className='bazaar-status err'; st.textContent=`✗ 0 prices matched — check console for available SHARD_ keys`;
-      } else {
-        st.className='bazaar-status ok'; st.textContent=`✓ Updated ${updated} price${updated!==1?'s':''}`;
-      }
-    }catch(err){ st.className='bazaar-status err'; st.textContent='✗ '+err.message; console.error(err); }
+      if(isInvMode(pid)) updateInvDisplay(pid);
+      st.className='bazaar-status ok'; st.textContent=`✓ Updated ${updated} price${updated!==1?'s':''} (incl. sell)`;
+    }catch(err){st.className='bazaar-status err';st.textContent='✗ '+err.message;console.error(err);}
     b.classList.remove('loading'); b.textContent='⟳ Fetch Live Bazaar Prices';
     return;
   }
 
+  // ── Worth: fetch bazaar ──
+  if(action==='worth-fetch-bazaar'){
+    const st=el('worth-bazaar-status');
+    b.classList.add('loading'); b.textContent='⟳ Fetching...';
+    st.className='bazaar-status'; st.textContent='Connecting...';
+    try{
+      const res=await fetch('https://api.hypixel.net/v2/skyblock/bazaar');
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      const data=await res.json();
+      if(!data.success) throw new Error('API error');
+      let updated=0;
+      // Go through all upgrade items with a bazaarKey
+      for(const sec of Object.values(UPGRADES)){
+        for(const item of sec.items){
+          if(!item.bazaarKey) continue;
+          const prod=data.products[item.bazaarKey]; if(!prod) continue;
+          let bp=0;
+          if(prod.sell_summary&&prod.sell_summary.length>0) bp=prod.sell_summary[0].pricePerUnit;
+          else if(prod.quick_status?.sellPrice) bp=prod.quick_status.sellPrice;
+          if(bp>0){
+            if(!worthState.upgrades[item.id]) worthState.upgrades[item.id]={qty:(worthState.upgrades[item.id]?.qty||0),price:bp,isLive:true};
+            else {worthState.upgrades[item.id].price=bp;worthState.upgrades[item.id].isLive=true;}
+            worthState.livePrices[item.bazaarKey]=bp;
+            const inp=el(`ws-price-${item.id}`);
+            if(inp){inp.value=Number.isInteger(bp)?displayNum(bp):bp.toFixed(1);inp.classList.add('live');}
+            // update enchant if added
+            worthState.addedEnchants.forEach(e=>{if(e.id===item.id){e.price=bp;e.isLive=true;}});
+            updated++;
+          }
+        }
+      }
+      updateWorthSummary();
+      // Re-render enchant chips to reflect new prices
+      ['ult_enchants','reg_enchants'].forEach(s=>renderEnchantChips(s));
+      st.className='bazaar-status ok'; st.textContent=`✓ Updated ${updated} live prices`;
+    }catch(err){st.className='bazaar-status err';st.textContent='✗ '+err.message;}
+    b.classList.remove('loading'); b.textContent='⟳ Fetch Live Prices';
+    return;
+  }
+
+  // ── Worth: reset ──
+  if(action==='worth-reset'){
+    if(!confirm('Reset all Item Worth upgrades?')) return;
+    worthState.upgrades={};worthState.addedEnchants=[];worthState.itemName='';worthState.margin=20;
+    worthState.baseItemCost=0;worthState.baseItemTag='';worthState.auctionPrice=0;
+    renderAll(); return;
+  }
+
+  // ── AH Import ──
+  if(action==='ah-import'){
+    const inp=el('ah-url-inp'); if(!inp) return;
+    const raw=inp.value.trim();
+    if(!raw){ setAhStatus('Paste a Brandonfowler.me link or auction UUID first.','err'); return; }
+    const uuid=extractAuctionUUID(raw);
+    if(!uuid){ setAhStatus('Could not find a valid auction UUID in that link.','err'); return; }
+    const btn=el('ah-import-btn'); if(btn){btn.classList.add('loading');btn.textContent='⟳ Fetching...';}
+    setAhStatus('Fetching auction from Hypixel API...','loading');
+    try{
+      // Hypixel auction API — no key needed for public auctions
+      const res=await fetch(`https://api.hypixel.net/v2/skyblock/auction?uuid=${uuid}`);
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      const data=await res.json();
+      if(!data.success||!data.auctions||!data.auctions.length) throw new Error('Auction not found (may have expired)');
+      const auc=data.auctions[0];
+      const lore=auc.item_lore||'';
+      const itemName=stripCodes(auc.item_name||'');
+      const auctionPrice=auc.bin?auc.starting_bid:(auc.highest_bid_amount||auc.starting_bid||0);
+      worthState.itemName=itemName;
+      worthState.auctionPrice=auctionPrice;
+      // Parse lore
+      const parsed=parseLore(lore);
+      // Apply to worthState
+      // Reset upgrades first (keep live prices)
+      worthState.upgrades={};worthState.addedEnchants=[];
+      // HPB
+      if(parsed.hpb>0){ worthState.upgrades['hpb']={qty:parsed.hpb,price:worthState.upgrades['hpb']?.price||UPGRADES.hpb.items[0].defaultPrice,isLive:false}; }
+      if(parsed.fphb>0){ worthState.upgrades['fphb']={qty:parsed.fphb,price:worthState.upgrades['fphb']?.price||UPGRADES.hpb.items[1].defaultPrice,isLive:false}; }
+      // Recomb
+      if(parsed.recomb){ worthState.upgrades['recomb']={qty:1,price:worthState.upgrades['recomb']?.price||UPGRADES.recomb.items[0].defaultPrice,isLive:false}; }
+      // Stars
+      for(let s=1;s<=Math.min(parsed.stars,5);s++){
+        const sid='star'+s;
+        const sitem=UPGRADES.stars.items[s-1];
+        worthState.upgrades[sid]={qty:1,price:worthState.upgrades[sid]?.price||sitem.defaultPrice,isLive:false};
+      }
+      // Scrolls
+      const scrollMap={'Shadow Assassin Scroll':'scroll_sa','Juju Shortbow Scroll':'scroll_jc','Necromancer Scroll':'scroll_necro','Livid Dagger Scroll':'scroll_livid'};
+      for(const sName of parsed.scrolls){
+        const sid=scrollMap[sName]; if(!sid) continue;
+        const sitem=UPGRADES.scrolls.items.find(i=>i.id===sid); if(!sitem) continue;
+        const cur=worthState.upgrades[sid];
+        worthState.upgrades[sid]={qty:(cur?.qty||0)+1,price:cur?.price||sitem.defaultPrice,isLive:false};
+      }
+      // Enchants
+      for(const enc of parsed.enchants){
+        const match=matchEnchant(enc.name,enc.tier);
+        if(!match) continue;
+        const uid=match.item.id+'_'+Date.now()+'_'+Math.random();
+        const price=worthState.upgrades[match.item.id]?.price||match.item.defaultPrice||0;
+        worthState.addedEnchants.push({uid,id:match.item.id,name:match.item.name,tier:match.tier,price,isLive:false});
+      }
+      // Item name input
+      const ni=el('worth-item-name'); if(ni) ni.value=itemName;
+      // Show parsed preview
+      const previewLines=[
+        `Item: ${itemName}`,
+        `Listed price: ${fmt(auctionPrice)}`,
+        parsed.hpb||parsed.fphb ? `HPBs: ${parsed.hpb} Hot Potato + ${parsed.fphb} Fuming` : null,
+        parsed.recomb ? 'Recombobulated: yes' : null,
+        parsed.stars ? `Stars: ${parsed.stars}✪` : null,
+        parsed.scrolls.length ? `Scrolls: ${parsed.scrolls.join(', ')}` : null,
+        parsed.enchants.length ? `Enchants detected: ${parsed.enchants.length} (${parsed.enchants.slice(0,4).map(e=>e.name+' T'+e.tier).join(', ')}${parsed.enchants.length>4?'…':''})` : null,
+      ].filter(Boolean);
+      const prev=el('ah-parsed-preview');
+      if(prev){
+        prev.className='ah-parsed-preview visible';
+        prev.innerHTML=previewLines.map(l=>`<div class="ah-parsed-row"><span class="ah-parsed-label">${l.split(':')[0]}</span><span class="ah-parsed-val accent">${l.split(':').slice(1).join(':').trim()}</span></div>`).join('');
+      }
+      // Floor price lookup via Coflnet
+      const tag=inferItemTag(auc.item_name||itemName);
+      worthState.baseItemTag=tag;
+      setAhStatus(`✓ Parsed! Fetching clean floor price for ${tag}...`,'ok');
+      try{
+        const fres=await fetch(`https://sky.coflnet.com/api/auctions/tag/${encodeURIComponent(tag)}/active/bin?page=0`);
+        if(fres.ok){
+          const fdata=await fres.json();
+          // fdata is array of auctions sorted by price asc; find clean ones (no enchants in name ideally)
+          if(fdata&&fdata.length){
+            const floors=fdata.filter(a=>a.bin&&a.startingBid>0).sort((a,b)=>a.startingBid-b.startingBid);
+            if(floors.length){
+              worthState.baseItemCost=floors[0].startingBid;
+              const floorBox=el('ah-floor-box');
+              if(floorBox){floorBox.style.display='flex';floorBox.querySelector('.floor-val').textContent=fmt(worthState.baseItemCost);floorBox.querySelector('.floor-sub').textContent=`Lowest clean BIN for ${tag}`;}
+              setAhStatus(`✓ Done! Upgrades auto-filled. Clean floor: ${fmt(worthState.baseItemCost)}`,'ok');
+            }
+          }
+        }
+      }catch(fe){console.warn('Floor price lookup failed:',fe);}
+      updateWorthSummary();
+      renderAll();
+    }catch(err){
+      setAhStatus('✗ '+err.message,'err');
+      console.error('AH import error:',err);
+    }
+    if(btn){btn.classList.remove('loading');btn.textContent='⟳ Import';}
+    return;
+  }
+
+  // ── Worth: toggle section ──
+  if(action==='toggle-worth-section'){
+    const secId=b.dataset.section;
+    const body=el(`ws-body-${secId}`);
+    const chev=el(`ws-chev-${secId}`);
+    if(body){body.classList.toggle('open');if(chev)chev.classList.toggle('open');}
+    return;
+  }
+
+  // ── Worth: stepper ──
+  if(action==='worth-step'){
+    const itemId=b.dataset.itemId;
+    const delta=parseInt(b.dataset.delta);
+    const max=parseInt(b.dataset.max)||1;
+    // Find default price
+    let defPrice=0;
+    for(const sec of Object.values(UPGRADES)){
+      const found=sec.items.find(i=>i.id===itemId);
+      if(found){defPrice=found.defaultPrice;break;}
+    }
+    if(!worthState.upgrades[itemId]) worthState.upgrades[itemId]={qty:0,price:defPrice,isLive:false};
+    const s=worthState.upgrades[itemId];
+    s.qty=Math.max(0,Math.min(max,s.qty+delta));
+    const qEl=el(`ws-qty-${itemId}`); if(qEl) qEl.textContent=s.qty;
+    const costEl=el(`ws-cost-${itemId}`); if(costEl){costEl.textContent=s.qty>0?fmt(s.qty*(s.price||defPrice)):'';costEl.className='price-tag'+(s.qty>0?' has-val':'');}
+    updateWorthSummary();
+    return;
+  }
+
+  // ── Worth: add enchant ──
+  if(action==='add-enchant'){
+    const itemId=b.dataset.itemId;
+    const secId=b.dataset.section;
+    const sec=UPGRADES[secId];
+    const item=sec.items.find(i=>i.id===itemId); if(!item) return;
+    const tierEl=el(`ench-tier-${itemId}`);
+    const tier=tierEl?parseInt(tierEl.value):item.maxTier;
+    const priceEl=el(`ws-price-${itemId}`);
+    const price=parseNum(priceEl?.value)||item.defaultPrice||0;
+    const uid=itemId+'_'+Date.now();
+    worthState.addedEnchants.push({uid,id:itemId,name:item.name,tier,price,isLive:worthState.upgrades[itemId]?.isLive||false});
+    if(!worthState.upgrades[itemId]) worthState.upgrades[itemId]={qty:1,price,isLive:false};
+    updateWorthSummary();
+    renderEnchantChips(secId);
+    return;
+  }
+
+  // ── Worth: remove enchant ──
+  if(action==='remove-enchant'){
+    const uid=b.dataset.enchantId;
+    const e=worthState.addedEnchants.find(x=>x.uid===uid);
+    worthState.addedEnchants=worthState.addedEnchants.filter(x=>x.uid!==uid);
+    updateWorthSummary();
+    if(e){
+      // find section
+      for(const [secId,sec] of Object.entries(UPGRADES)){
+        if(sec.items.some(i=>i.id===e.id)){renderEnchantChips(secId);break;}
+      }
+    }
+    return;
+  }
+
+  // ── Log flip ──
   if(action==='log-flip'){
     const pid=el('log-product')?.value;
     const qty=parseNum(el('log-qty')?.value||'');
@@ -857,31 +1765,31 @@ el('panels').addEventListener('click', async e=>{
     const cost=parseNum(el('log-cost')?.value||'');
     const note=el('log-note')?.value.trim()||'';
     const errEl=el('log-err'); errEl.style.display='none';
-    if(!pid||isNaN(qty)||qty<=0){ errEl.textContent='Enter a valid qty.'; errEl.style.display='block'; return; }
-    if(isNaN(sell)||sell<=0){ errEl.textContent='Enter a valid sell price.'; errEl.style.display='block'; return; }
-    if(isNaN(cost)||cost<0){ errEl.textContent='Enter a valid cost per shard.'; errEl.style.display='block'; return; }
+    if(!pid||isNaN(qty)||qty<=0){errEl.textContent='Enter a valid qty.';errEl.style.display='block';return;}
+    if(isNaN(sell)||sell<=0){errEl.textContent='Enter a valid sell price.';errEl.style.display='block';return;}
+    if(isNaN(cost)||cost<0){errEl.textContent='Enter a valid cost per shard.';errEl.style.display='block';return;}
     const product=getProduct(pid);
-    const flip={ id: Date.now(), productId:pid, productName:product?.name||pid, qty:Math.round(qty), sellPrice:Math.round(sell), costPerShard:Math.round(cost), note, date:new Date().toISOString() };
+    const flip={id:Date.now(),productId:pid,productName:product?.name||pid,qty:Math.round(qty),sellPrice:Math.round(sell),costPerShard:Math.round(cost),note,date:new Date().toISOString()};
     remoteData.flips.push(flip);
     const ok=await ghWrite(remoteData);
-    if(ok){ el('log-qty').value=''; el('log-sell').value=''; el('log-note').value=''; el('log-preview').textContent='Fill in the fields above to preview profit'; refreshLogStats(); }
-    else { remoteData.flips.pop(); errEl.textContent='Failed to save. Check your token.'; errEl.style.display='block'; }
+    if(ok){el('log-qty').value='';el('log-sell').value='';el('log-note').value='';el('log-preview').textContent='Fill in the fields above to preview profit';refreshLogStats();}
+    else{remoteData.flips.pop();errEl.textContent='Failed to save. Check your token.';errEl.style.display='block';}
     return;
   }
 
   if(action==='delete-flip'){
-    if(!ghToken){ alert('Need a token to delete flips.'); return; }
+    if(!ghToken){alert('Need a token to delete flips.');return;}
     const i=parseInt(b.dataset.flipIndex);
     if(!confirm('Delete this flip?')) return;
     remoteData.flips.splice(i,1);
     const ok=await ghWrite(remoteData);
     if(ok) refreshLogStats();
-    else { remoteData.flips.splice(i,0,remoteData.flips[i]); alert('Save failed.'); }
+    else{remoteData.flips.splice(i,0,remoteData.flips[i]);alert('Save failed.');}
     return;
   }
 
   if(action==='delete-product'){
-    if(!ghToken){ alert('Need a token to delete products.'); return; }
+    if(!ghToken){alert('Need a token to delete products.');return;}
     const pid=b.dataset.pid;
     if(!confirm('Remove this product?')) return;
     remoteData.products=remoteData.products.filter(p=>p.id!==pid);
@@ -896,68 +1804,83 @@ el('panels').addEventListener('click', async e=>{
     row.innerHTML='<div class="form-field"><label>Ingredient</label><input type="text" class="ing-name-inp" placeholder="e.g. Pest" autocomplete="off" /></div><div class="form-field"><label>Per 1 output</label><input type="number" class="ing-per-inp" placeholder="6.25" step="0.01" style="min-width:100px;" /></div><div class="form-field"><label>Default price</label><input type="text" class="ing-price-inp" placeholder="36k" autocomplete="off" style="min-width:100px;" /></div><button class="btn btn-ghost btn-sm" style="align-self:flex-end;" data-action="remove-ing-row">×</button>';
     c.appendChild(row); return;
   }
-
   if(action==='remove-ing-row'){
     const rows=document.querySelectorAll('.ing-field-row');
     if(rows.length>1) b.closest('.ing-field-row').remove(); return;
   }
 
   if(action==='add-product'){
-    if(!ghToken){ alert('Need a GitHub token to add products.'); return; }
+    if(!ghToken){alert('Need a GitHub token to add products.');return;}
     const name=el('new-name')?.value.trim();
     const chain=el('new-chain')?.value.trim();
     const sell=parseNum(el('new-sell')?.value)||0;
     const errEl=el('add-error'); errEl.style.display='none';
-    if(!name){ errEl.textContent='Product name required.'; errEl.style.display='block'; return; }
-    let baseSlug=slugify(name), id=baseSlug, n=1;
-    while(getProduct(id)){ id=`${baseSlug}-${n++}`; }
+    if(!name){errEl.textContent='Product name required.';errEl.style.display='block';return;}
+    let baseSlug=slugify(name),id=baseSlug,n=1;
+    while(getProduct(id)){id=`${baseSlug}-${n++}`;}
     const rows=document.querySelectorAll('.ing-field-row');
-    const ingredients=[], defaultPrices={sell:Math.round(sell)};
+    const ingredients=[],defaultPrices={sell:Math.round(sell)};
     for(const row of rows){
       const nm=row.querySelector('.ing-name-inp').value.trim();
       const per=parseFloat(row.querySelector('.ing-per-inp').value);
       const pr=parseNum(row.querySelector('.ing-price-inp').value)||0;
-      if(!nm||isNaN(per)){ errEl.textContent='Each ingredient needs a name and qty.'; errEl.style.display='block'; return; }
+      if(!nm||isNaN(per)){errEl.textContent='Each ingredient needs a name and qty.';errEl.style.display='block';return;}
       const iid=slugify(nm); ingredients.push({id:iid,name:nm,perUnit:per}); defaultPrices[iid]=Math.round(pr);
     }
-    if(!ingredients.length){ errEl.textContent='Add at least one ingredient.'; errEl.style.display='block'; return; }
+    if(!ingredients.length){errEl.textContent='Add at least one ingredient.';errEl.style.display='block';return;}
     const newP={id,name,chain:chain||name,ingredients,defaultPrices};
     remoteData.products.push(newP);
-    ingredients.forEach(ing=>{ local.prices[`${id}__${ing.id}`]=defaultPrices[ing.id]; });
+    ingredients.forEach(ing=>{local.prices[`${id}__${ing.id}`]=defaultPrices[ing.id];});
     local.prices[`${id}__sell`]=Math.round(sell);
     local.qtys[id]='64';
     const ok=await ghWrite(remoteData);
-    if(ok){ saveLocal(); local.activeTab=id; renderAll(); }
-    else { remoteData.products.pop(); errEl.textContent='Save failed. Check your token.'; errEl.style.display='block'; }
+    if(ok){saveLocal();local.activeTab=id;renderAll();}
+    else{remoteData.products.pop();errEl.textContent='Save failed. Check your token.';errEl.style.display='block';}
     return;
   }
 });
 
-// ─── HELPERS ─────────────────────────────────────────────────────────────────
-function secLabel(text){ const e=document.createElement('div'); e.className='section-label'; e.textContent=text; return e; }
+// ── Inventory toggle via change event ──
+el('panels').addEventListener('change',e=>{
+  const t=e.target;
+  if(t.id&&t.id.startsWith('inv-toggle-')){
+    const pid=t.id.replace('inv-toggle-','');
+    setInvMode(pid,t.checked);
+    const normalWrap=el(`normal-wrap-${pid}`);
+    const invPanel=el(`inv-panel-${pid}`);
+    if(normalWrap) normalWrap.style.display=t.checked?'none':'block';
+    if(invPanel){invPanel.className='inv-panel'+(t.checked?' visible':'');}
+    if(t.checked) updateInvDisplay(pid);
+    return;
+  }
+});
+
+// ─── HELPERS ──────────────────────────────────────────────────────────────────
+function secLabel(text){const e=document.createElement('div');e.className='section-label';e.textContent=text;return e;}
 function makeSmartInput(id,val,placeholder=''){
-  const i=document.createElement('input'); i.className='smart-input'; i.type='text';
-  i.id=id; i.value=val||''; i.autocomplete='off'; if(placeholder) i.placeholder=placeholder; return i;
+  const i=document.createElement('input');i.className='smart-input';i.type='text';
+  i.id=id;i.value=val||'';i.autocomplete='off';if(placeholder)i.placeholder=placeholder;return i;
 }
 function inputGroupEl(label,sub,inputId,val){
-  const g=document.createElement('div'); g.className='input-group';
+  const g=document.createElement('div');g.className='input-group';
   const left=document.createElement('div');
-  const lbl=document.createElement('div'); lbl.className='input-group-label'; lbl.textContent=label;
-  const s=document.createElement('div'); s.className='input-group-sub'; s.textContent=sub;
-  left.appendChild(lbl); left.appendChild(s);
+  const lbl=document.createElement('div');lbl.className='input-group-label';lbl.textContent=label;
+  const s=document.createElement('div');s.className='input-group-sub';s.textContent=sub;
+  left.appendChild(lbl);left.appendChild(s);
   const inp=makeSmartInput(inputId,val);
-  g.appendChild(left); g.appendChild(inp); return g;
+  g.appendChild(left);g.appendChild(inp);return g;
 }
 
 // ─── BOOT ────────────────────────────────────────────────────────────────────
-(async ()=>{
+(async()=>{
   const remote=await ghRead();
   if(remote) applyRemote(remote);
-  if(local.activeTab!=='__manage__'&&local.activeTab!=='__log__'&&!getProduct(local.activeTab)){
-    local.activeTab=remoteData.products[0]?.id||'__manage__'; saveLocal();
+  if(local.activeTab!=='__manage__'&&local.activeTab!=='__log__'&&local.activeTab!=='__worth__'&&!getProduct(local.activeTab)){
+    local.activeTab=remoteData.products[0]?.id||'__manage__';saveLocal();
   }
   renderAll();
 })();
 </script>
+
 </body>
 </html>
