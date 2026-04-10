@@ -1859,9 +1859,9 @@ el('panels').addEventListener('click',async e=>{
       if(sellKey&&data.products[sellKey]){
         const sp=data.products[sellKey];
         let sellP=0;
-        // sell_summary = buy orders (what you get when instaselling)
-        if(sp.sell_summary&&sp.sell_summary.length>0) sellP=sp.sell_summary[0].pricePerUnit;
-        else if(sp.quick_status?.sellPrice) sellP=sp.quick_status.sellPrice;
+        // buy_summary = sell offers = instabuy price = higher price (what buyers pay you when you sell)
+        if(sp.buy_summary&&sp.buy_summary.length>0) sellP=sp.buy_summary[0].pricePerUnit;
+        else if(sp.quick_status?.buyPrice) sellP=sp.quick_status.buyPrice;
         if(sellP>0){
           setSell(pid,sellP);
           const si=el(`inp-sell-${pid}`);
