@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -16,359 +17,352 @@
   body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(126,232,184,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(126,232,184,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
   .wrapper{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:0 36px 120px;}
 
-  /* ── HEADER ── */
-  header{padding:52px 0 40px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid var(--border);margin-bottom:44px;}
-  .logo{font-size:34px;font-weight:700;letter-spacing:-0.5px;}
-  .logo span{color:var(--accent);}
-  .logo-sub{font-size:13px;color:var(--muted);margin-top:6px;letter-spacing:0.05em;}
-  .header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-  .sync-status{font-size:12px;padding:6px 12px;border-radius:8px;border:1px solid var(--border2);color:var(--muted);background:var(--surface);}
-  .sync-status.ok{color:var(--accent);border-color:rgba(126,232,184,0.3);}
-  .sync-status.err{color:var(--red);border-color:rgba(255,94,94,0.3);}
-  .sync-status.loading{color:var(--gold);border-color:rgba(246,201,14,0.3);}
+/* ── HEADER ── */
+header{padding:52px 0 40px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid var(–border);margin-bottom:44px;}
+.logo{font-size:34px;font-weight:700;letter-spacing:-0.5px;}
+.logo span{color:var(–accent);}
+.logo-sub{font-size:13px;color:var(–muted);margin-top:6px;letter-spacing:0.05em;}
+.header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.sync-status{font-size:12px;padding:6px 12px;border-radius:8px;border:1px solid var(–border2);color:var(–muted);background:var(–surface);}
+.sync-status.ok{color:var(–accent);border-color:rgba(126,232,184,0.3);}
+.sync-status.err{color:var(–red);border-color:rgba(255,94,94,0.3);}
+.sync-status.loading{color:var(–gold);border-color:rgba(246,201,14,0.3);}
 
-  /* ── TABS ── */
-  .tabs{display:flex;gap:5px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:5px;flex-wrap:wrap;}
-  .tab{padding:10px 20px;border-radius:10px;font-size:15px;font-weight:500;cursor:pointer;color:var(--muted);transition:all 0.15s;border:none;background:none;font-family:inherit;white-space:nowrap;-webkit-appearance:none;appearance:none;text-decoration:none;-webkit-text-fill-color:var(--muted);}
-  .tab:hover{color:var(--text);-webkit-text-fill-color:var(--text);}
-  .tab.active{background:var(--surface2);color:var(--accent);border:1px solid var(--border2);-webkit-text-fill-color:var(--accent);}
-  .tab-manage{margin-left:4px;color:var(--accent);border:1px solid rgba(126,232,184,0.3);background:rgba(126,232,184,0.06);-webkit-text-fill-color:var(--accent);}
-  .tab-manage:hover{background:rgba(126,232,184,0.12);}
-  .tab-manage.active{background:rgba(126,232,184,0.16);border-color:var(--accent);}
-  .tab-log{color:var(--gold);border:1px solid rgba(246,201,14,0.3);background:rgba(246,201,14,0.06);-webkit-text-fill-color:var(--gold);}
-  .tab-log:hover{background:rgba(246,201,14,0.12);}
-  .tab-log.active{background:rgba(246,201,14,0.16);border-color:var(--gold);color:var(--gold);}
-  .tab-worth{color:var(--purple);border:1px solid rgba(192,132,252,0.3);background:rgba(192,132,252,0.06);-webkit-text-fill-color:var(--purple);}
-  .tab-worth:hover{background:rgba(192,132,252,0.12);}
-  .tab-worth.active{background:rgba(192,132,252,0.16);border-color:var(--purple);color:var(--purple);-webkit-text-fill-color:var(--purple);}
+/* ── TABS ── */
+.tabs{display:flex;gap:5px;align-items:center;background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:5px;flex-wrap:wrap;}
+.tab{padding:10px 20px;border-radius:10px;font-size:15px;font-weight:500;cursor:pointer;color:var(–muted);transition:all 0.15s;border:none;background:none;font-family:inherit;white-space:nowrap;-webkit-appearance:none;appearance:none;text-decoration:none;-webkit-text-fill-color:var(–muted);}
+.tab:hover{color:var(–text);-webkit-text-fill-color:var(–text);}
+.tab.active{background:var(–surface2);color:var(–accent);border:1px solid var(–border2);-webkit-text-fill-color:var(–accent);}
+.tab-manage{margin-left:4px;color:var(–accent);border:1px solid rgba(126,232,184,0.3);background:rgba(126,232,184,0.06);-webkit-text-fill-color:var(–accent);}
+.tab-manage:hover{background:rgba(126,232,184,0.12);}
+.tab-manage.active{background:rgba(126,232,184,0.16);border-color:var(–accent);}
+.tab-log{color:var(–gold);border:1px solid rgba(246,201,14,0.3);background:rgba(246,201,14,0.06);-webkit-text-fill-color:var(–gold);}
+.tab-log:hover{background:rgba(246,201,14,0.12);}
+.tab-log.active{background:rgba(246,201,14,0.16);border-color:var(–gold);color:var(–gold);}
+.tab-worth{color:var(–purple);border:1px solid rgba(192,132,252,0.3);background:rgba(192,132,252,0.06);-webkit-text-fill-color:var(–purple);}
+.tab-worth:hover{background:rgba(192,132,252,0.12);}
+.tab-worth.active{background:rgba(192,132,252,0.16);border-color:var(–purple);color:var(–purple);-webkit-text-fill-color:var(–purple);}
 
-  .panel{display:none;}
-  .panel.active{display:block;animation:fadeIn 0.2s ease;}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.panel{display:none;}
+.panel.active{display:block;animation:fadeIn 0.2s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 
-  /* ── PRODUCT PANEL ── */
-  .product-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:32px;}
-  .product-title{font-size:32px;font-weight:700;}
-  .chain-badge{font-size:13px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 18px;line-height:1.9;max-width:640px;}
+/* ── PRODUCT PANEL ── */
+.product-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:32px;}
+.product-title{font-size:32px;font-weight:700;}
+.chain-badge{font-size:13px;color:var(–muted);background:var(–surface);border:1px solid var(–border);border-radius:10px;padding:12px 18px;line-height:1.9;max-width:640px;}
 
-  .section-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase;margin:30px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.section-label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.14em;text-transform:uppercase;margin:30px 0 14px;padding-bottom:10px;border-bottom:1px solid var(–border);}
 
-  @keyframes cardPulse{0%{box-shadow:0 0 0 0 rgba(126,232,184,0);}30%{box-shadow:0 0 0 4px rgba(126,232,184,0.3);}100%{box-shadow:0 0 0 0 rgba(126,232,184,0);}}
-  .card.pulse{animation:cardPulse 0.6s ease-out;}
+@keyframes cardPulse{0%{box-shadow:0 0 0 0 rgba(126,232,184,0);}30%{box-shadow:0 0 0 4px rgba(126,232,184,0.3);}100%{box-shadow:0 0 0 0 rgba(126,232,184,0);}}
+.card.pulse{animation:cardPulse 0.6s ease-out;}
 
-  .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:20px;}
-  @media(max-width:860px){.grid-4{grid-template-columns:1fr 1fr;}}
-  @media(max-width:500px){.grid-4{grid-template-columns:1fr;}}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;}
-  .card-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
-  .card-val{font-size:34px;font-weight:700;line-height:1;}
-  .card-val.accent{color:var(--accent);}
-  .card-val.gold{color:var(--gold);}
-  .card-val.red{color:var(--red);}
-  .card-sub{font-size:13px;color:var(--muted);margin-top:7px;}
+.grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:20px;}
+@media(max-width:860px){.grid-4{grid-template-columns:1fr 1fr;}}
+@media(max-width:500px){.grid-4{grid-template-columns:1fr;}}
+.card{background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:24px;}
+.card-label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.card-val{font-size:34px;font-weight:700;line-height:1;}
+.card-val.accent{color:var(–accent);}
+.card-val.gold{color:var(–gold);}
+.card-val.red{color:var(–red);}
+.card-sub{font-size:13px;color:var(–muted);margin-top:7px;}
 
-  .cps-box{background:var(--surface2);border:1px solid var(--border2);border-radius:14px;padding:30px 34px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:20px;}
-  .cps-half{flex:1;min-width:180px;}
-  .cps-half:last-child{text-align:right;}
-  .cps-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:8px;}
-  .cps-val{font-size:52px;font-weight:700;line-height:1;letter-spacing:-1px;}
-  .cps-val.pos{color:var(--accent);}
-  .cps-val.neg{color:var(--red);}
-  .cps-sub{font-size:13px;color:var(--muted);margin-top:7px;}
-  .cps-divider{width:1px;background:var(--border2);align-self:stretch;min-height:60px;}
+.cps-box{background:var(–surface2);border:1px solid var(–border2);border-radius:14px;padding:30px 34px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:20px;}
+.cps-half{flex:1;min-width:180px;}
+.cps-half:last-child{text-align:right;}
+.cps-label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:8px;}
+.cps-val{font-size:52px;font-weight:700;line-height:1;letter-spacing:-1px;}
+.cps-val.pos{color:var(–accent);}
+.cps-val.neg{color:var(–red);}
+.cps-sub{font-size:13px;color:var(–muted);margin-top:7px;}
+.cps-divider{width:1px;background:var(–border2);align-self:stretch;min-height:60px;}
 
-  .input-group{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:10px;}
-  .input-group-label{font-size:17px;font-weight:500;flex:1;min-width:160px;}
-  .input-group-sub{font-size:13px;color:var(--muted);margin-top:4px;}
-  .budget-row{background:rgba(246,201,14,0.05);border:1px solid rgba(246,201,14,0.2);border-radius:14px;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:10px;}
-  .budget-badge{font-size:13px;color:var(--gold);margin-top:4px;}
+.input-group{background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:10px;}
+.input-group-label{font-size:17px;font-weight:500;flex:1;min-width:160px;}
+.input-group-sub{font-size:13px;color:var(–muted);margin-top:4px;}
+.budget-row{background:rgba(246,201,14,0.05);border:1px solid rgba(246,201,14,0.2);border-radius:14px;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:10px;}
+.budget-badge{font-size:13px;color:var(–gold);margin-top:4px;}
 
-  /* ── INVENTORY MODE ── */
-  .inv-toggle-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding:16px 20px;background:rgba(96,165,250,0.05);border:1px solid rgba(96,165,250,0.2);border-radius:12px;}
-  .inv-toggle-label{font-size:15px;font-weight:500;flex:1;}
-  .inv-toggle-sub{font-size:13px;color:var(--muted);margin-top:3px;}
-  .toggle-switch{position:relative;width:44px;height:24px;flex-shrink:0;}
-  .toggle-switch input{opacity:0;width:0;height:0;}
-  .toggle-slider{position:absolute;cursor:pointer;inset:0;background:var(--surface2);border:1px solid var(--border2);border-radius:24px;transition:0.2s;}
-  .toggle-slider:before{content:'';position:absolute;height:16px;width:16px;left:3px;bottom:3px;background:var(--muted);border-radius:50%;transition:0.2s;}
-  input:checked+.toggle-slider{background:rgba(96,165,250,0.2);border-color:rgba(96,165,250,0.5);}
-  input:checked+.toggle-slider:before{transform:translateX(20px);background:#60a5fa;}
+/* ── STOCK MODE (from-stock calculator) ── */
+.stock-section{background:var(–surface);border:1px solid rgba(96,165,250,0.2);border-radius:14px;padding:22px 26px;margin-bottom:16px;}
+.stock-title{font-size:14px;font-weight:700;color:var(–blue);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+.stock-sub{font-size:13px;color:var(–muted);margin-bottom:16px;}
+.stock-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:16px;}
+.stock-field{display:flex;flex-direction:column;gap:6px;}
+.stock-field label{font-size:11px;font-weight:700;color:var(–blue);letter-spacing:0.1em;text-transform:uppercase;}
+.stock-field input{background:var(–surface2);border:1px solid rgba(96,165,250,0.3);border-radius:10px;color:var(–text);font-size:16px;font-weight:600;font-family:inherit;padding:10px 14px;outline:none;-webkit-appearance:none;-webkit-text-fill-color:var(–text);}
+.stock-field input:focus{border-color:#60a5fa;}
+.stock-result{background:var(–surface2);border:1px solid var(–border2);border-radius:10px;padding:16px 20px;font-size:14px;color:var(–muted);min-height:44px;}
+.stock-result .sr-hi{font-weight:700;color:var(–accent);}
+.stock-result .sr-need{color:var(–blue);}
+.stock-result .sr-cost{color:var(–gold);}
+/* keep toggle-switch for alt-ingredient toggle */
+.toggle-switch{position:relative;width:44px;height:24px;flex-shrink:0;}
+.toggle-switch input{opacity:0;width:0;height:0;}
+.toggle-slider{position:absolute;cursor:pointer;inset:0;background:var(–surface2);border:1px solid var(–border2);border-radius:24px;transition:0.2s;}
+.toggle-slider:before{content:’’;position:absolute;height:16px;width:16px;left:3px;bottom:3px;background:var(–muted);border-radius:50%;transition:0.2s;}
+input:checked+.toggle-slider{background:rgba(96,165,250,0.2);border-color:rgba(96,165,250,0.5);}
+input:checked+.toggle-slider:before{transform:translateX(20px);background:#60a5fa;}
 
-  .inv-panel{background:var(--surface);border:1px solid rgba(96,165,250,0.25);border-radius:14px;padding:24px;margin-bottom:20px;display:none;}
-  .inv-panel.visible{display:block;animation:fadeIn 0.2s ease;}
-  .inv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:20px;}
-  .inv-field{display:flex;flex-direction:column;gap:7px;}
-  .inv-field label{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:0.12em;text-transform:uppercase;}
-  .inv-field input{background:var(--surface2);border:1px solid rgba(96,165,250,0.3);border-radius:10px;color:var(--text);font-size:17px;font-weight:600;font-family:inherit;padding:11px 14px;outline:none;-webkit-appearance:none;appearance:none;-webkit-text-fill-color:var(--text);}
-  .inv-field input:focus{border-color:#60a5fa;}
-  .inv-result{background:var(--surface2);border:1px solid var(--border2);border-radius:12px;padding:20px 24px;}
-  .inv-result-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);}
-  .inv-result-row:last-child{border-bottom:none;}
-  .inv-result-row .ir-label{font-size:14px;color:var(--muted);}
-  .inv-result-row .ir-val{font-size:18px;font-weight:600;}
-  .inv-result-row .ir-val.accent{color:var(--accent);}
-  .inv-result-row .ir-val.gold{color:var(--gold);}
-  .inv-result-row .ir-val.red{color:var(--red);}
-  .inv-shortage{margin-top:14px;padding:14px 18px;background:rgba(255,94,94,0.07);border:1px solid rgba(255,94,94,0.25);border-radius:10px;font-size:13px;color:var(--red);display:none;}
-  .inv-shortage.visible{display:block;}
+.smart-input{background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:19px;font-weight:600;font-family:inherit;padding:11px 16px;width:150px;text-align:right;transition:border-color 0.15s;outline:none;-webkit-appearance:none;appearance:none;-webkit-text-fill-color:var(–text);}
+.smart-input:focus{border-color:var(–accent);}
+.smart-input.error{border-color:var(–red);}
+input,select,textarea{background:var(–surface2);color:var(–text);-webkit-text-fill-color:var(–text);-webkit-appearance:none;appearance:none;}
+input::placeholder{color:var(–muted);-webkit-text-fill-color:var(–muted);opacity:1;}
+.tab,.btn{-webkit-appearance:none;appearance:none;cursor:pointer;}
+.tabs{-webkit-tap-highlight-color:transparent;}
+a,.tab{color:inherit;text-decoration:none;}
 
-  .smart-input{background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:19px;font-weight:600;font-family:inherit;padding:11px 16px;width:150px;text-align:right;transition:border-color 0.15s;outline:none;-webkit-appearance:none;appearance:none;-webkit-text-fill-color:var(--text);}
-  .smart-input:focus{border-color:var(--accent);}
-  .smart-input.error{border-color:var(--red);}
-  input,select,textarea{background:var(--surface2);color:var(--text);-webkit-text-fill-color:var(--text);-webkit-appearance:none;appearance:none;}
-  input::placeholder{color:var(--muted);-webkit-text-fill-color:var(--muted);opacity:1;}
-  .tab,.btn{-webkit-appearance:none;appearance:none;cursor:pointer;}
-  .tabs{-webkit-tap-highlight-color:transparent;}
-  a,.tab{color:inherit;text-decoration:none;}
+.bazaar-btn{display:flex;align-items:center;gap:8px;background:rgba(96,165,250,0.08);border:1px solid rgba(96,165,250,0.25);color:#93c5fd;border-radius:10px;padding:10px 18px;font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;transition:all 0.15s;}
+.bazaar-btn:hover{background:rgba(96,165,250,0.15);}
+.bazaar-btn.loading{opacity:0.6;pointer-events:none;}
+.bazaar-status{font-size:12px;color:var(–muted);}
+.bazaar-status.ok{color:var(–accent);}
+.bazaar-status.err{color:var(–red);}
 
-  .bazaar-btn{display:flex;align-items:center;gap:8px;background:rgba(96,165,250,0.08);border:1px solid rgba(96,165,250,0.25);color:#93c5fd;border-radius:10px;padding:10px 18px;font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;transition:all 0.15s;}
-  .bazaar-btn:hover{background:rgba(96,165,250,0.15);}
-  .bazaar-btn.loading{opacity:0.6;pointer-events:none;}
-  .bazaar-status{font-size:12px;color:var(--muted);}
-  .bazaar-status.ok{color:var(--accent);}
-  .bazaar-status.err{color:var(--red);}
+.ingredients{background:var(–surface);border:1px solid var(–border);border-radius:14px;overflow:hidden;margin-bottom:20px;}
+.ing-header{display:flex;align-items:center;justify-content:space-between;padding:12px 26px;background:var(–surface2);border-bottom:1px solid var(–border);font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.12em;text-transform:uppercase;}
+.ing-row{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid var(–border);gap:14px;flex-wrap:wrap;}
+.ing-row:last-child{border-bottom:none;}
+.ing-name{font-size:17px;font-weight:500;min-width:150px;}
+.ing-right{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+.ing-qty{font-size:19px;font-weight:600;color:var(–accent);min-width:80px;text-align:right;}
+.ing-cost{font-size:14px;color:var(–muted);min-width:100px;text-align:right;}
 
-  .ingredients{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:20px;}
-  .ing-header{display:flex;align-items:center;justify-content:space-between;padding:12px 26px;background:var(--surface2);border-bottom:1px solid var(--border);font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;}
-  .ing-row{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid var(--border);gap:14px;flex-wrap:wrap;}
-  .ing-row:last-child{border-bottom:none;}
-  .ing-name{font-size:17px;font-weight:500;min-width:150px;}
-  .ing-right{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
-  .ing-qty{font-size:19px;font-weight:600;color:var(--accent);min-width:80px;text-align:right;}
-  .ing-cost{font-size:14px;color:var(--muted);min-width:100px;text-align:right;}
+.profit-box{background:var(–surface);border:1px solid var(–border);border-radius:14px;overflow:hidden;margin-top:20px;}
+.profit-row{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid var(–border);}
+.profit-row:last-child{border-bottom:none;background:var(–surface2);}
+.profit-row .label{font-size:12px;font-weight:700;color:var(–muted);letter-spacing:0.08em;text-transform:uppercase;}
+.profit-row .val{font-size:20px;font-weight:700;}
+.profit-row .val.pos{color:var(–accent);}
+.profit-row .val.neg{color:var(–red);}
 
-  .profit-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:20px;}
-  .profit-row{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid var(--border);}
-  .profit-row:last-child{border-bottom:none;background:var(--surface2);}
-  .profit-row .label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;}
-  .profit-row .val{font-size:20px;font-weight:700;}
-  .profit-row .val.pos{color:var(--accent);}
-  .profit-row .val.neg{color:var(--red);}
+/* ── FLIP LOG ── */
+.log-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:28px;}
+/* ── LOG FLIP INLINE ── */
+.log-flip-box{background:rgba(246,201,14,0.05);border:1px solid rgba(246,201,14,0.2);border-radius:14px;padding:20px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:8px;}
+.log-flip-left{flex:1;min-width:180px;}
+.log-flip-title{font-size:16px;font-weight:600;color:var(–gold);}
+.log-flip-sub{font-size:13px;color:var(–muted);margin-top:4px;}
+.log-flip-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.log-flip-status{font-size:13px;min-width:80px;}
+.log-flip-status.ok{color:var(–accent);}
+.log-flip-status.err{color:var(–red);}
+/* ── WORTH SAVE PRICE ── */
+.worth-save-btn{background:rgba(126,232,184,0.08);border:1px solid rgba(126,232,184,0.25);color:var(–accent);border-radius:7px;padding:5px 11px;font-size:12px;font-weight:600;font-family:inherit;cursor:pointer;transition:all 0.12s;}
+.worth-save-btn:hover{background:rgba(126,232,184,0.18);}
+.worth-save-btn.saving{opacity:0.5;pointer-events:none;}
+.worth-save-btn.saved{color:var(–muted);border-color:var(–border2);}
 
-  /* ── FLIP LOG ── */
-  .log-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:28px;}
-  /* ── LOG FLIP INLINE ── */
-  .log-flip-box{background:rgba(246,201,14,0.05);border:1px solid rgba(246,201,14,0.2);border-radius:14px;padding:20px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:8px;}
-  .log-flip-left{flex:1;min-width:180px;}
-  .log-flip-title{font-size:16px;font-weight:600;color:var(--gold);}
-  .log-flip-sub{font-size:13px;color:var(--muted);margin-top:4px;}
-  .log-flip-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-  .log-flip-status{font-size:13px;min-width:80px;}
-  .log-flip-status.ok{color:var(--accent);}
-  .log-flip-status.err{color:var(--red);}
-  /* ── WORTH SAVE PRICE ── */
-  .worth-save-btn{background:rgba(126,232,184,0.08);border:1px solid rgba(126,232,184,0.25);color:var(--accent);border-radius:7px;padding:5px 11px;font-size:12px;font-weight:600;font-family:inherit;cursor:pointer;transition:all 0.12s;}
-  .worth-save-btn:hover{background:rgba(126,232,184,0.18);}
-  .worth-save-btn.saving{opacity:0.5;pointer-events:none;}
-  .worth-save-btn.saved{color:var(--muted);border-color:var(--border2);}
+@media(max-width:600px){.log-stats{grid-template-columns:1fr;}}
+.log-card{background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:24px;}
+.log-card .lc-label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.log-card .lc-val{font-size:36px;font-weight:700;}
+.log-card .lc-val.pos{color:var(–accent);}
+.log-card .lc-val.neg{color:var(–red);}
+.log-card .lc-val.gold{color:var(–gold);}
 
-  @media(max-width:600px){.log-stats{grid-template-columns:1fr;}}
-  .log-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;}
-  .log-card .lc-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
-  .log-card .lc-val{font-size:36px;font-weight:700;}
-  .log-card .lc-val.pos{color:var(--accent);}
-  .log-card .lc-val.neg{color:var(--red);}
-  .log-card .lc-val.gold{color:var(--gold);}
+.log-form{background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:28px;margin-bottom:24px;}
+.log-form h3{font-size:20px;font-weight:600;margin-bottom:20px;}
+.log-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:16px;}
+.log-field{display:flex;flex-direction:column;gap:6px;}
+.log-field label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.1em;text-transform:uppercase;}
+.log-field input,.log-field select{background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:16px;font-family:inherit;padding:11px 14px;outline:none;}
+.log-field input:focus,.log-field select:focus{border-color:var(–accent);}
+.log-preview{font-size:14px;color:var(–muted);margin-bottom:16px;padding:12px 16px;background:var(–surface2);border-radius:10px;min-height:42px;}
+.log-preview span{color:var(–accent);font-weight:600;}
 
-  .log-form{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:24px;}
-  .log-form h3{font-size:20px;font-weight:600;margin-bottom:20px;}
-  .log-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:16px;}
-  .log-field{display:flex;flex-direction:column;gap:6px;}
-  .log-field label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
-  .log-field input,.log-field select{background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:16px;font-family:inherit;padding:11px 14px;outline:none;}
-  .log-field input:focus,.log-field select:focus{border-color:var(--accent);}
-  .log-preview{font-size:14px;color:var(--muted);margin-bottom:16px;padding:12px 16px;background:var(--surface2);border-radius:10px;min-height:42px;}
-  .log-preview span{color:var(--accent);font-weight:600;}
+.flip-table{background:var(–surface);border:1px solid var(–border);border-radius:14px;overflow:hidden;}
+.flip-table-header{display:grid;grid-template-columns:1fr 80px 100px 100px 110px 44px;gap:0;padding:12px 20px;background:var(–surface2);border-bottom:1px solid var(–border);font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.1em;text-transform:uppercase;}
+.flip-row{display:grid;grid-template-columns:1fr 80px 100px 100px 110px 44px;gap:0;padding:16px 20px;border-bottom:1px solid var(–border);align-items:center;font-size:15px;}
+.flip-row:last-child{border-bottom:none;}
+.flip-row:hover{background:var(–surface2);}
+.flip-row .fr-name{font-weight:500;}
+.flip-row .fr-profit{font-weight:600;}
+.flip-row .fr-profit.pos{color:var(–accent);}
+.flip-row .fr-profit.neg{color:var(–red);}
+.flip-empty{padding:40px;text-align:center;color:var(–muted);font-size:15px;}
+.del-btn{background:none;border:none;color:var(–muted);cursor:pointer;font-size:16px;padding:4px 8px;border-radius:6px;font-family:inherit;}
+.del-btn:hover{color:var(–red);background:rgba(255,94,94,0.1);}
+@media(max-width:700px){
+.flip-table-header,.flip-row{grid-template-columns:1fr 80px 100px 44px;}
+.flip-table-header>*:nth-child(3),.flip-table-header>*:nth-child(4),
+.flip-row>*:nth-child(3),.flip-row>*:nth-child(4){display:none;}
+}
 
-  .flip-table{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
-  .flip-table-header{display:grid;grid-template-columns:1fr 80px 100px 100px 110px 44px;gap:0;padding:12px 20px;background:var(--surface2);border-bottom:1px solid var(--border);font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
-  .flip-row{display:grid;grid-template-columns:1fr 80px 100px 100px 110px 44px;gap:0;padding:16px 20px;border-bottom:1px solid var(--border);align-items:center;font-size:15px;}
-  .flip-row:last-child{border-bottom:none;}
-  .flip-row:hover{background:var(--surface2);}
-  .flip-row .fr-name{font-weight:500;}
-  .flip-row .fr-profit{font-weight:600;}
-  .flip-row .fr-profit.pos{color:var(--accent);}
-  .flip-row .fr-profit.neg{color:var(--red);}
-  .flip-empty{padding:40px;text-align:center;color:var(--muted);font-size:15px;}
-  .del-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px;padding:4px 8px;border-radius:6px;font-family:inherit;}
-  .del-btn:hover{color:var(--red);background:rgba(255,94,94,0.1);}
-  @media(max-width:700px){
-    .flip-table-header,.flip-row{grid-template-columns:1fr 80px 100px 44px;}
-    .flip-table-header>*:nth-child(3),.flip-table-header>*:nth-child(4),
-    .flip-row>*:nth-child(3),.flip-row>*:nth-child(4){display:none;}
-  }
+/* ── MANAGE PANEL ── */
+.manage-panel{background:var(–surface);border:1px solid var(–border);border-radius:14px;padding:28px;margin-bottom:20px;}
+.manage-panel h3{font-size:20px;font-weight:600;margin-bottom:20px;}
+.form-row{display:flex;align-items:flex-end;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
+.form-field{display:flex;flex-direction:column;gap:6px;}
+.form-field label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.1em;text-transform:uppercase;}
+.form-field input{background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:15px;font-family:inherit;padding:10px 14px;outline:none;min-width:150px;}
+.form-field input:focus{border-color:var(–accent);}
+.product-list-item{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border:1px solid var(–border);border-radius:10px;margin-bottom:8px;background:var(–surface2);}
+.p-name{font-size:16px;font-weight:500;}
+.p-chain{font-size:13px;color:var(–muted);margin-top:3px;}
+.alert{background:rgba(255,94,94,0.08);border:1px solid rgba(255,94,94,0.3);border-radius:10px;padding:12px 16px;font-size:14px;color:var(–red);margin-top:12px;display:none;}
 
-  /* ── MANAGE PANEL ── */
-  .manage-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:20px;}
-  .manage-panel h3{font-size:20px;font-weight:600;margin-bottom:20px;}
-  .form-row{display:flex;align-items:flex-end;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
-  .form-field{display:flex;flex-direction:column;gap:6px;}
-  .form-field label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
-  .form-field input{background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:15px;font-family:inherit;padding:10px 14px;outline:none;min-width:150px;}
-  .form-field input:focus{border-color:var(--accent);}
-  .product-list-item{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border:1px solid var(--border);border-radius:10px;margin-bottom:8px;background:var(--surface2);}
-  .p-name{font-size:16px;font-weight:500;}
-  .p-chain{font-size:13px;color:var(--muted);margin-top:3px;}
-  .alert{background:rgba(255,94,94,0.08);border:1px solid rgba(255,94,94,0.3);border-radius:10px;padding:12px 16px;font-size:14px;color:var(--red);margin-top:12px;display:none;}
+/* ── ITEM WORTH ── */
+.worth-layout{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:start;}
+@media(max-width:900px){.worth-layout{grid-template-columns:1fr;}}
 
-  /* ── ITEM WORTH ── */
-  .worth-layout{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:start;}
-  @media(max-width:900px){.worth-layout{grid-template-columns:1fr;}}
+.worth-left{}
+.worth-right{position:sticky;top:24px;}
 
-  .worth-left{}
-  .worth-right{position:sticky;top:24px;}
+.worth-section{background:var(–surface);border:1px solid var(–border);border-radius:14px;overflow:hidden;margin-bottom:16px;}
+.worth-section-header{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;background:var(–surface2);border-bottom:1px solid var(–border);cursor:pointer;user-select:none;}
+.worth-section-header:hover{background:var(–border);}
+.worth-section-title{font-size:14px;font-weight:700;color:var(–text);letter-spacing:0.05em;}
+.worth-section-badge{font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px;background:rgba(192,132,252,0.12);color:var(–purple);border:1px solid rgba(192,132,252,0.25);}
+.worth-section-badge.has-cost{background:rgba(126,232,184,0.1);color:var(–accent);border-color:rgba(126,232,184,0.3);}
+.worth-section-chevron{color:var(–muted);font-size:12px;transition:transform 0.2s;}
+.worth-section-chevron.open{transform:rotate(180deg);}
+.worth-section-body{padding:20px 22px;display:none;}
+.worth-section-body.open{display:block;animation:fadeIn 0.15s ease;}
 
-  .worth-section{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px;}
-  .worth-section-header{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;background:var(--surface2);border-bottom:1px solid var(--border);cursor:pointer;user-select:none;}
-  .worth-section-header:hover{background:var(--border);}
-  .worth-section-title{font-size:14px;font-weight:700;color:var(--text);letter-spacing:0.05em;}
-  .worth-section-badge{font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px;background:rgba(192,132,252,0.12);color:var(--purple);border:1px solid rgba(192,132,252,0.25);}
-  .worth-section-badge.has-cost{background:rgba(126,232,184,0.1);color:var(--accent);border-color:rgba(126,232,184,0.3);}
-  .worth-section-chevron{color:var(--muted);font-size:12px;transition:transform 0.2s;}
-  .worth-section-chevron.open{transform:rotate(180deg);}
-  .worth-section-body{padding:20px 22px;display:none;}
-  .worth-section-body.open{display:block;animation:fadeIn 0.15s ease;}
+/* stepper + qty row */
+.worth-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(–border);gap:12px;}
+.worth-row:last-child{border-bottom:none;}
+.worth-row-left{flex:1;}
+.worth-row-name{font-size:15px;font-weight:500;}
+.worth-row-sub{font-size:12px;color:var(–muted);margin-top:3px;}
+.worth-row-right{display:flex;align-items:center;gap:10px;}
+.stepper{display:flex;align-items:center;gap:0;background:var(–surface2);border:1px solid var(–border2);border-radius:10px;overflow:hidden;}
+.step-btn{background:none;border:none;color:var(–muted);font-size:18px;padding:6px 12px;cursor:pointer;font-family:inherit;transition:all 0.12s;line-height:1;}
+.step-btn:hover{color:var(–text);background:var(–border);}
+.step-val{font-size:16px;font-weight:700;min-width:32px;text-align:center;color:var(–text);padding:6px 4px;}
+.worth-price-inp{background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:14px;font-weight:600;font-family:inherit;padding:8px 10px;width:100px;text-align:right;outline:none;-webkit-appearance:none;-webkit-text-fill-color:var(–text);}
+.worth-price-inp:focus{border-color:var(–purple);}
+.worth-price-inp.live{border-color:rgba(96,165,250,0.4);color:#93c5fd;-webkit-text-fill-color:#93c5fd;}
+.worth-price-label{font-size:11px;color:var(–muted);min-width:50px;text-align:right;}
+.price-tag{font-size:13px;color:var(–muted);min-width:70px;text-align:right;}
+.price-tag.has-val{color:var(–accent);}
 
-  /* stepper + qty row */
-  .worth-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);gap:12px;}
-  .worth-row:last-child{border-bottom:none;}
-  .worth-row-left{flex:1;}
-  .worth-row-name{font-size:15px;font-weight:500;}
-  .worth-row-sub{font-size:12px;color:var(--muted);margin-top:3px;}
-  .worth-row-right{display:flex;align-items:center;gap:10px;}
-  .stepper{display:flex;align-items:center;gap:0;background:var(--surface2);border:1px solid var(--border2);border-radius:10px;overflow:hidden;}
-  .step-btn{background:none;border:none;color:var(--muted);font-size:18px;padding:6px 12px;cursor:pointer;font-family:inherit;transition:all 0.12s;line-height:1;}
-  .step-btn:hover{color:var(--text);background:var(--border);}
-  .step-val{font-size:16px;font-weight:700;min-width:32px;text-align:center;color:var(--text);padding:6px 4px;}
-  .worth-price-inp{background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:14px;font-weight:600;font-family:inherit;padding:8px 10px;width:100px;text-align:right;outline:none;-webkit-appearance:none;-webkit-text-fill-color:var(--text);}
-  .worth-price-inp:focus{border-color:var(--purple);}
-  .worth-price-inp.live{border-color:rgba(96,165,250,0.4);color:#93c5fd;-webkit-text-fill-color:#93c5fd;}
-  .worth-price-label{font-size:11px;color:var(--muted);min-width:50px;text-align:right;}
-  .price-tag{font-size:13px;color:var(--muted);min-width:70px;text-align:right;}
-  .price-tag.has-val{color:var(--accent);}
+/* enchant search */
+.enchant-search{width:100%;background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:15px;font-family:inherit;padding:11px 14px;outline:none;margin-bottom:14px;-webkit-appearance:none;-webkit-text-fill-color:var(–text);}
+.enchant-search:focus{border-color:var(–purple);}
+.enchant-list{display:flex;flex-direction:column;gap:2px;max-height:320px;overflow-y:auto;}
+.enchant-item{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:8px;gap:10px;}
+.enchant-item:hover{background:var(–surface2);}
+.enchant-item-left{flex:1;}
+.enchant-item-name{font-size:14px;font-weight:500;}
+.enchant-item-tier{font-size:12px;color:var(–muted);margin-top:2px;}
+.enchant-item-right{display:flex;align-items:center;gap:8px;}
+.enchant-tier-sel{background:var(–surface2);border:1px solid var(–border2);border-radius:8px;color:var(–text);font-size:13px;font-family:inherit;padding:5px 8px;outline:none;-webkit-text-fill-color:var(–text);}
+.enchant-add-btn{background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.3);color:var(–purple);border-radius:8px;padding:5px 12px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;}
+.enchant-add-btn:hover{background:rgba(192,132,252,0.2);}
+.enchant-added{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:14px;min-height:32px;}
+.enchant-chip{display:flex;align-items:center;gap:6px;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.3);border-radius:20px;padding:5px 12px;font-size:13px;color:var(–purple);}
+.enchant-chip .chip-rm{background:none;border:none;color:var(–muted);cursor:pointer;font-size:14px;padding:0;line-height:1;}
+.enchant-chip .chip-rm:hover{color:var(–red);}
 
-  /* enchant search */
-  .enchant-search{width:100%;background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:15px;font-family:inherit;padding:11px 14px;outline:none;margin-bottom:14px;-webkit-appearance:none;-webkit-text-fill-color:var(--text);}
-  .enchant-search:focus{border-color:var(--purple);}
-  .enchant-list{display:flex;flex-direction:column;gap:2px;max-height:320px;overflow-y:auto;}
-  .enchant-item{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:8px;gap:10px;}
-  .enchant-item:hover{background:var(--surface2);}
-  .enchant-item-left{flex:1;}
-  .enchant-item-name{font-size:14px;font-weight:500;}
-  .enchant-item-tier{font-size:12px;color:var(--muted);margin-top:2px;}
-  .enchant-item-right{display:flex;align-items:center;gap:8px;}
-  .enchant-tier-sel{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:13px;font-family:inherit;padding:5px 8px;outline:none;-webkit-text-fill-color:var(--text);}
-  .enchant-add-btn{background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.3);color:var(--purple);border-radius:8px;padding:5px 12px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;}
-  .enchant-add-btn:hover{background:rgba(192,132,252,0.2);}
-  .enchant-added{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:14px;min-height:32px;}
-  .enchant-chip{display:flex;align-items:center;gap:6px;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.3);border-radius:20px;padding:5px 12px;font-size:13px;color:var(--purple);}
-  .enchant-chip .chip-rm{background:none;border:none;color:var(--muted);cursor:pointer;font-size:14px;padding:0;line-height:1;}
-  .enchant-chip .chip-rm:hover{color:var(--red);}
+/* summary card */
+.worth-summary{background:var(–surface);border:1px solid var(–border);border-radius:14px;overflow:hidden;}
+.ws-header{padding:20px 24px;background:var(–surface2);border-bottom:1px solid var(–border);}
+.ws-title{font-size:13px;font-weight:700;color:var(–muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;}
+.ws-item-name{font-size:18px;font-weight:600;color:var(–text);}
+.ws-rows{padding:0;}
+.ws-row{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid var(–border);gap:8px;}
+.ws-row:last-child{border-bottom:none;}
+.ws-row .wsr-label{font-size:13px;color:var(–muted);}
+.ws-row .wsr-val{font-size:16px;font-weight:600;}
+.ws-row .wsr-val.accent{color:var(–accent);}
+.ws-row .wsr-val.gold{color:var(–gold);}
+.ws-row .wsr-val.red{color:var(–red);}
+.ws-row .wsr-val.purple{color:var(–purple);}
+.ws-total{padding:20px 24px;background:linear-gradient(135deg,rgba(192,132,252,0.08),rgba(126,232,184,0.05));border-top:1px solid var(–border2);}
+.ws-total-label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;}
+.ws-total-val{font-size:48px;font-weight:700;letter-spacing:-1px;color:var(–gold);}
+.ws-breakdown{margin-top:16px;padding-top:14px;border-top:1px solid var(–border);display:flex;flex-direction:column;gap:4px;}
+.ws-breakdown-row{display:flex;justify-content:space-between;font-size:13px;}
+.ws-breakdown-row .wbr-label{color:var(–muted);}
+.ws-breakdown-row .wbr-val{color:var(–text);font-weight:600;}
+.margin-row{padding:16px 24px;border-top:1px solid var(–border);}
+.margin-label{font-size:11px;font-weight:700;color:var(–muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.margin-controls{display:flex;align-items:center;gap:12px;}
+.margin-slider{flex:1;-webkit-appearance:none;height:4px;border-radius:4px;background:var(–border2);outline:none;}
+.margin-slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(–purple);cursor:pointer;border:2px solid var(–bg);}
+.margin-val-display{font-size:16px;font-weight:700;color:var(–purple);min-width:42px;text-align:right;}
+.sell-suggest{padding:16px 24px;background:rgba(246,201,14,0.05);border-top:1px solid rgba(246,201,14,0.2);}
+.ss-label{font-size:11px;font-weight:700;color:var(–gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
+.ss-val{font-size:32px;font-weight:700;color:var(–gold);letter-spacing:-0.5px;}
+.ss-sub{font-size:13px;color:var(–muted);margin-top:5px;}
+.worth-fetch-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.item-name-input{background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:16px;font-family:inherit;padding:11px 14px;outline:none;flex:1;-webkit-text-fill-color:var(–text);}
+.item-name-input:focus{border-color:var(–purple);}
+.worth-reset-btn{background:rgba(255,94,94,0.08);border:1px solid rgba(255,94,94,0.25);color:var(–red);border-radius:10px;padding:10px 16px;font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;}
+.worth-reset-btn:hover{background:rgba(255,94,94,0.15);}
 
-  /* summary card */
-  .worth-summary{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
-  .ws-header{padding:20px 24px;background:var(--surface2);border-bottom:1px solid var(--border);}
-  .ws-title{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;}
-  .ws-item-name{font-size:18px;font-weight:600;color:var(--text);}
-  .ws-rows{padding:0;}
-  .ws-row{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid var(--border);gap:8px;}
-  .ws-row:last-child{border-bottom:none;}
-  .ws-row .wsr-label{font-size:13px;color:var(--muted);}
-  .ws-row .wsr-val{font-size:16px;font-weight:600;}
-  .ws-row .wsr-val.accent{color:var(--accent);}
-  .ws-row .wsr-val.gold{color:var(--gold);}
-  .ws-row .wsr-val.red{color:var(--red);}
-  .ws-row .wsr-val.purple{color:var(--purple);}
-  .ws-total{padding:20px 24px;background:linear-gradient(135deg,rgba(192,132,252,0.08),rgba(126,232,184,0.05));border-top:1px solid var(--border2);}
-  .ws-total-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:6px;}
-  .ws-total-val{font-size:48px;font-weight:700;letter-spacing:-1px;color:var(--gold);}
-  .ws-breakdown{margin-top:16px;padding-top:14px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:4px;}
-  .ws-breakdown-row{display:flex;justify-content:space-between;font-size:13px;}
-  .ws-breakdown-row .wbr-label{color:var(--muted);}
-  .ws-breakdown-row .wbr-val{color:var(--text);font-weight:600;}
-  .margin-row{padding:16px 24px;border-top:1px solid var(--border);}
-  .margin-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
-  .margin-controls{display:flex;align-items:center;gap:12px;}
-  .margin-slider{flex:1;-webkit-appearance:none;height:4px;border-radius:4px;background:var(--border2);outline:none;}
-  .margin-slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--purple);cursor:pointer;border:2px solid var(--bg);}
-  .margin-val-display{font-size:16px;font-weight:700;color:var(--purple);min-width:42px;text-align:right;}
-  .sell-suggest{padding:16px 24px;background:rgba(246,201,14,0.05);border-top:1px solid rgba(246,201,14,0.2);}
-  .ss-label{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
-  .ss-val{font-size:32px;font-weight:700;color:var(--gold);letter-spacing:-0.5px;}
-  .ss-sub{font-size:13px;color:var(--muted);margin-top:5px;}
-  .worth-fetch-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
-  .item-name-input{background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:16px;font-family:inherit;padding:11px 14px;outline:none;flex:1;-webkit-text-fill-color:var(--text);}
-  .item-name-input:focus{border-color:var(--purple);}
-  .worth-reset-btn{background:rgba(255,94,94,0.08);border:1px solid rgba(255,94,94,0.25);color:var(--red);border-radius:10px;padding:10px 16px;font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;}
-  .worth-reset-btn:hover{background:rgba(255,94,94,0.15);}
+/* ── AH IMPORT ── */
+.ah-import-box{background:var(–surface);border:1px solid rgba(192,132,252,0.3);border-radius:14px;padding:24px 28px;margin-bottom:20px;}
+.ah-import-title{font-size:14px;font-weight:700;color:var(–purple);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;}
+.ah-import-sub{font-size:13px;color:var(–muted);margin-bottom:16px;line-height:1.5;}
+.ah-import-sub a{color:var(–blue);text-decoration:none;}
+.ah-import-sub a:hover{text-decoration:underline;}
+.ah-url-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px;}
+.ah-url-inp{flex:1;min-width:260px;background:var(–surface2);border:1px solid var(–border2);border-radius:10px;color:var(–text);font-size:14px;font-family:inherit;padding:11px 14px;outline:none;-webkit-text-fill-color:var(–text);}
+.ah-url-inp:focus{border-color:var(–purple);}
+.ah-url-inp::placeholder{color:var(–muted);-webkit-text-fill-color:var(–muted);}
+.ah-import-btn{background:rgba(192,132,252,0.12);border:1px solid rgba(192,132,252,0.35);color:var(–purple);border-radius:10px;padding:10px 18px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;white-space:nowrap;transition:all 0.15s;}
+.ah-import-btn:hover{background:rgba(192,132,252,0.22);}
+.ah-import-btn.loading{opacity:0.6;pointer-events:none;}
+.ah-status{font-size:13px;color:var(–muted);margin-top:8px;min-height:20px;line-height:1.5;}
+.ah-status.ok{color:var(–accent);}
+.ah-status.err{color:var(–red);}
+.ah-status.loading{color:var(–gold);}
+.ah-parsed-preview{display:none;background:var(–surface2);border:1px solid var(–border2);border-radius:10px;padding:14px 18px;margin-top:12px;font-size:13px;}
+.ah-parsed-preview.visible{display:block;animation:fadeIn 0.2s ease;}
+.ah-parsed-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(–border);gap:8px;}
+.ah-parsed-row:last-child{border-bottom:none;}
+.ah-parsed-label{color:var(–muted);}
+.ah-parsed-val{font-weight:600;color:var(–text);}
+.ah-parsed-val.accent{color:var(–accent);}
+.ah-parsed-val.gold{color:var(–gold);}
+.ah-parsed-val.purple{color:var(–purple);}
+.ah-parsed-val.blue{color:var(–blue);}
+.floor-box{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.2);border-radius:10px;margin-top:10px;flex-wrap:wrap;}
+.floor-label{font-size:13px;color:var(–muted);flex:1;}
+.floor-val{font-size:18px;font-weight:700;color:var(–blue);}
+.floor-sub{font-size:12px;color:var(–muted);margin-top:2px;}
+.floor-search-btn{background:rgba(96,165,250,0.1);border:1px solid rgba(96,165,250,0.3);color:#93c5fd;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;}
+.floor-search-btn:hover{background:rgba(96,165,250,0.18);}
+.floor-search-btn.loading{opacity:0.6;pointer-events:none;}
+/* Base item cost row in summary */
+.ws-base-row{padding:14px 24px;background:rgba(96,165,250,0.04);border-top:1px solid var(–border);}
+.ws-base-label{font-size:11px;font-weight:700;color:var(–blue);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;}
+.ws-base-val{font-size:18px;font-weight:700;color:var(–blue);}
+.ws-base-sub{font-size:12px;color:var(–muted);margin-top:2px;}
 
-  /* ── AH IMPORT ── */
-  .ah-import-box{background:var(--surface);border:1px solid rgba(192,132,252,0.3);border-radius:14px;padding:24px 28px;margin-bottom:20px;}
-  .ah-import-title{font-size:14px;font-weight:700;color:var(--purple);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;}
-  .ah-import-sub{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.5;}
-  .ah-import-sub a{color:var(--blue);text-decoration:none;}
-  .ah-import-sub a:hover{text-decoration:underline;}
-  .ah-url-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px;}
-  .ah-url-inp{flex:1;min-width:260px;background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:14px;font-family:inherit;padding:11px 14px;outline:none;-webkit-text-fill-color:var(--text);}
-  .ah-url-inp:focus{border-color:var(--purple);}
-  .ah-url-inp::placeholder{color:var(--muted);-webkit-text-fill-color:var(--muted);}
-  .ah-import-btn{background:rgba(192,132,252,0.12);border:1px solid rgba(192,132,252,0.35);color:var(--purple);border-radius:10px;padding:10px 18px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;white-space:nowrap;transition:all 0.15s;}
-  .ah-import-btn:hover{background:rgba(192,132,252,0.22);}
-  .ah-import-btn.loading{opacity:0.6;pointer-events:none;}
-  .ah-status{font-size:13px;color:var(--muted);margin-top:8px;min-height:20px;line-height:1.5;}
-  .ah-status.ok{color:var(--accent);}
-  .ah-status.err{color:var(--red);}
-  .ah-status.loading{color:var(--gold);}
-  .ah-parsed-preview{display:none;background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:14px 18px;margin-top:12px;font-size:13px;}
-  .ah-parsed-preview.visible{display:block;animation:fadeIn 0.2s ease;}
-  .ah-parsed-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--border);gap:8px;}
-  .ah-parsed-row:last-child{border-bottom:none;}
-  .ah-parsed-label{color:var(--muted);}
-  .ah-parsed-val{font-weight:600;color:var(--text);}
-  .ah-parsed-val.accent{color:var(--accent);}
-  .ah-parsed-val.gold{color:var(--gold);}
-  .ah-parsed-val.purple{color:var(--purple);}
-  .ah-parsed-val.blue{color:var(--blue);}
-  .floor-box{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.2);border-radius:10px;margin-top:10px;flex-wrap:wrap;}
-  .floor-label{font-size:13px;color:var(--muted);flex:1;}
-  .floor-val{font-size:18px;font-weight:700;color:var(--blue);}
-  .floor-sub{font-size:12px;color:var(--muted);margin-top:2px;}
-  .floor-search-btn{background:rgba(96,165,250,0.1);border:1px solid rgba(96,165,250,0.3);color:#93c5fd;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;}
-  .floor-search-btn:hover{background:rgba(96,165,250,0.18);}
-  .floor-search-btn.loading{opacity:0.6;pointer-events:none;}
-  /* Base item cost row in summary */
-  .ws-base-row{padding:14px 24px;background:rgba(96,165,250,0.04);border-top:1px solid var(--border);}
-  .ws-base-label{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;}
-  .ws-base-val{font-size:18px;font-weight:700;color:var(--blue);}
-  .ws-base-sub{font-size:12px;color:var(--muted);margin-top:2px;}
+/* ── BUTTONS ── */
+.btn{padding:11px 22px;border-radius:10px;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;border:none;transition:all 0.15s;}
+.btn-accent{background:var(–accent);color:#0a0c10;}
+.btn-accent:hover{background:var(–accent2);}
+.btn-danger{background:rgba(255,94,94,0.1);color:var(–red);border:1px solid rgba(255,94,94,0.3);}
+.btn-danger:hover{background:rgba(255,94,94,0.2);}
+.btn-ghost{background:var(–surface2);color:var(–muted);border:1px solid var(–border2);}
+.btn-ghost:hover{color:var(–text);}
+.btn-gold{background:rgba(246,201,14,0.12);color:var(–gold);border:1px solid rgba(246,201,14,0.3);}
+.btn-gold:hover{background:rgba(246,201,14,0.2);}
+.btn-sm{padding:7px 14px;font-size:13px;}
 
-  /* ── BUTTONS ── */
-  .btn{padding:11px 22px;border-radius:10px;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;border:none;transition:all 0.15s;}
-  .btn-accent{background:var(--accent);color:#0a0c10;}
-  .btn-accent:hover{background:var(--accent2);}
-  .btn-danger{background:rgba(255,94,94,0.1);color:var(--red);border:1px solid rgba(255,94,94,0.3);}
-  .btn-danger:hover{background:rgba(255,94,94,0.2);}
-  .btn-ghost{background:var(--surface2);color:var(--muted);border:1px solid var(--border2);}
-  .btn-ghost:hover{color:var(--text);}
-  .btn-gold{background:rgba(246,201,14,0.12);color:var(--gold);border:1px solid rgba(246,201,14,0.3);}
-  .btn-gold:hover{background:rgba(246,201,14,0.2);}
-  .btn-sm{padding:7px 14px;font-size:13px;}
-
-  @media(max-width:600px){
-    .wrapper{padding:0 16px 100px;}
-    header{padding:28px 0 24px;}
-    .ing-header{display:none;}
-    .ing-row{flex-direction:column;align-items:flex-start;padding:14px;gap:10px;border-radius:10px;margin:6px;width:calc(100% - 12px);}
-    .ing-right{width:100%;justify-content:space-between;}
-    .ingredients{border-radius:14px;overflow:visible;background:transparent;border:none;}
-    .cps-val{font-size:36px;}
-    .cps-divider{display:none;}
-    .cps-half:last-child{text-align:left;}
-    .card-val{font-size:28px;}
-    .product-title{font-size:26px;}
-    .worth-row-right{flex-wrap:wrap;justify-content:flex-end;}
-  }
+@media(max-width:600px){
+.wrapper{padding:0 16px 100px;}
+header{padding:28px 0 24px;}
+.ing-header{display:none;}
+.ing-row{flex-direction:column;align-items:flex-start;padding:14px;gap:10px;border-radius:10px;margin:6px;width:calc(100% - 12px);}
+.ing-right{width:100%;justify-content:space-between;}
+.ingredients{border-radius:14px;overflow:visible;background:transparent;border:none;}
+.cps-val{font-size:36px;}
+.cps-divider{display:none;}
+.cps-half:last-child{text-align:left;}
+.card-val{font-size:28px;}
+.product-title{font-size:26px;}
+.worth-row-right{flex-wrap:wrap;justify-content:flex-end;}
+}
 </style>
+
 </head>
 <body>
 <div class="wrapper">
@@ -387,6 +381,12 @@
 
 <script>
 // ─── CONFIG ──────────────────────────────────────────────────────────────────
+// ─── TOKEN SETUP ──────────────────────────────────────────────────────────────
+// Replace 'PASTE_YOUR_TOKEN_HERE' with your GitHub Personal Access Token.
+// In GitHub: Settings → Developer Settings → Personal access tokens → Tokens (classic)
+// Permissions needed: repo (full), specifically "Contents: Read and Write"
+// IMPORTANT: Your data.json must already exist in the repo with at least: {"products":[],"flips":[],"worthPrices":{}}
+// If it doesn't exist, create it manually in GitHub with that content first.
 const GH_USER   = 'ItzMePalo';
 const GH_REPO   = 'Anon-Palo-Calculator';
 const GH_BRANCH = 'main';
@@ -414,6 +414,13 @@ function displayNum(n){
   if(n>=1e3&&n%1e3===0) return (n/1e3)+'k';
   if(n>=1e3) return parseFloat((n/1e3).toFixed(2))+'k';
   return String(n);
+}
+// fmtPrice: show raw number for price inputs - preserves decimals, no k/m conversion
+function fmtPrice(n){
+  if(!n&&n!==0) return '';
+  // Round to at most 1 decimal place to avoid floating point noise
+  const r = Math.round(n*10)/10;
+  return String(r);
 }
 function fmt(n){
   if(isNaN(n)||n==null) return '—';
@@ -455,9 +462,19 @@ async function ghRead(){
 }
 
 async function ghWrite(data){
-  if(!ghToken){setStatus('Read-only (no token)','');return false;}
+  if(!ghToken||ghToken==='PASTE_YOUR_TOKEN_HERE'){
+    setStatus('⚠ No token — open index.html, find GH_TOKEN and paste your token','err');
+    return false;
+  }
   setStatus('⟳ Saving...','loading');
   try{
+    // If we don't have a SHA yet (first run or page reload), fetch it now
+    if(!ghSha){
+      try{
+        const r=await fetch(GH_API+`?ref=${GH_BRANCH}&t=${Date.now()}`);
+        if(r.ok){const j=await r.json();ghSha=j.sha||'';}
+      }catch(e){/* file might not exist yet, sha stays empty */}
+    }
     const body={
       message:'Update data.json via Shard Flip Calculator',
       content:btoa(unescape(encodeURIComponent(JSON.stringify(data,null,2)))),
@@ -469,7 +486,7 @@ async function ghWrite(data){
       headers:{'Authorization':'token '+ghToken,'Content-Type':'application/json'},
       body:JSON.stringify(body),
     });
-    if(!res.ok){const err=await res.json();throw new Error(err.message||'HTTP '+res.status);}
+    if(!res.ok){const err=await res.json().catch(()=>({}));throw new Error(err.message||'HTTP '+res.status);}
     const json=await res.json();
     ghSha=json.content.sha;
     setStatus('✓ Saved','ok');
@@ -479,11 +496,11 @@ async function ghWrite(data){
 
 // ─── DEFAULT PRODUCTS ─────────────────────────────────────────────────────────
 const DEFAULT_PRODUCTS=[
-  {id:'stalagmite',name:'Stalagmite',
-   chain:'MZ + Chill → Trog → Trog + MZ → Quartzfang → QF + MZ → Stalagmite',
+  {id:'stalagmite',name:'Stalagmight',
+   chain:'MZ + Chill → Trog → Trog + MZ → Quartzfang → QF + MZ → Stalagmight',
    ingredients:[{id:'mz',name:'Miner Zombie',perUnit:1560/64},{id:'chill',name:'Chill',perUnit:1000/64}],
    defaultPrices:{mz:11000,chill:6000,sell:560000},
-   bazaarSell:'SHARD_STALAGMITE'},
+   bazaarSell:'SHARD_STALAGMIGHT'},
   {id:'lunar-moth',name:'Lunar Moth',
    chain:'MZ + Invisibug → Termite → Termite + Invisibug → Ladybug → Ladybug + Invisibug → Lunar Moth',
    ingredients:[{id:'mz',name:'Miner Zombie',perUnit:1000/64},{id:'invisibug',name:'Invisibug',perUnit:1560/64}],
@@ -539,7 +556,7 @@ let local={
   altChoice:   JSON.parse(localStorage.getItem('sfc_altchoice')   ||'{}'), // {pid__ingId: 'alt' | 'base'}
   worthPrices: JSON.parse(localStorage.getItem('sfc_worthprices') ||'{}'), // {itemId: price}
   worthMargin: parseFloat(localStorage.getItem('sfc_worthmargin') ||'20'),
-  activeTab:   localStorage.getItem('sfc_active')||'stalagmite',
+  activeTab:   localStorage.getItem('sfc_active')||'stalagmight',
 };
 function saveLocal(){
   localStorage.setItem('sfc_prices',      JSON.stringify(local.prices));
@@ -610,44 +627,46 @@ function calc(product){
   return{qty,ings,totalCost,sellPrice,revenue,profit,costPerShard,profitPerShard,margin};
 }
 
-// ─── INVENTORY CALC ───────────────────────────────────────────────────────────
-// Given amounts of each ingredient, figure out max outputs + shortages
-function calcInventory(product){
-  const ings=product.ingredients;
-  // For each ingredient, how many outputs can we produce from it alone?
+// ─── STOCK CALC ───────────────────────────────────────────────────────────────
+// Given amounts of each ingredient, figure out max outputs, what to buy, profit
+function calcStock(product){
+  const pid=product.id;
   let maxOutputs=Infinity;
-  const invData=[];
-  for(const ing of ings){
-    const haveStr=getInvQty(product.id,ing.id);
+  const ingData=[];
+  for(const origIng of product.ingredients){
+    const effId=getEffIngId(pid,origIng);
+    const effName=getEffIngName(pid,origIng);
+    const haveStr=getInvQty(pid,origIng.id);
     const have=parseNum(haveStr)||0;
-    const perOutput=ing.perUnit; // shards needed per 1 output shard
-    // outputs possible from this ingredient alone:
+    const perOutput=origIng.perUnit;
     const possible=perOutput>0?Math.floor(have/perOutput):Infinity;
-    if(perOutput>0) maxOutputs=Math.min(maxOutputs,possible);
-    invData.push({...ing,have,perOutput,possible});
+    if(perOutput>0&&have>0) maxOutputs=Math.min(maxOutputs,possible);
+    ingData.push({origId:origIng.id,effId,effName,have,perOutput,possible});
   }
+  // If no stock entered at all, return null
+  const anyEntered=ingData.some(i=>i.have>0);
+  if(!anyEntered) return null;
   if(maxOutputs===Infinity) maxOutputs=0;
 
-  // Compute shortages if the user wants more than possible from the limiting ing
-  const shortages=[];
-  for(const ing of invData){
+  // For each ingredient: how many do you have, how many do you need, how many to buy
+  const breakdown=[];
+  let totalBuyCost=0;
+  for(const ing of ingData){
     const needed=Math.ceil(ing.perOutput*maxOutputs);
-    const shortage=needed-ing.have;
-    if(shortage>0) shortages.push({name:ing.name,needed,have:ing.have,shortage});
+    const toUse=Math.min(ing.have,needed);
+    const toBuy=Math.max(0,needed-ing.have);
+    const buyPrice=getPrice(pid,ing.effId);
+    const buyCost=Math.round(toBuy*buyPrice);
+    totalBuyCost+=buyCost;
+    breakdown.push({...ing,needed,toUse,toBuy,buyCost});
   }
 
-  // Revenue / profit from these outputs
-  const sellPrice=getSell(product.id);
+  const sellPrice=getSell(pid);
   const revenue=Math.round(maxOutputs*sellPrice);
-  let totalCost=0;
-  for(const ing of invData){
-    const price=getPrice(product.id,ing.id);
-    const used=Math.ceil(ing.perOutput*maxOutputs);
-    totalCost+=Math.round(used*price);
-  }
-  const profit=Math.round(revenue-totalCost);
+  // Total cost = cost of what you're buying to fill gaps
+  const profit=Math.round(revenue-totalBuyCost);
 
-  return{maxOutputs,invData,shortages,revenue,totalCost,profit,sellPrice};
+  return{maxOutputs,breakdown,revenue,totalBuyCost,profit,sellPrice,anyEntered};
 }
 
 // ─── FLIP LOG CALC ────────────────────────────────────────────────────────────
@@ -716,51 +735,33 @@ function buildProduct(product){
   const chainEl=document.createElement('div'); chainEl.className='chain-badge'; chainEl.textContent=product.chain;
   header.appendChild(titleEl); header.appendChild(chainEl); div.appendChild(header);
 
-  // ── Inventory Mode toggle ──
-  div.appendChild(secLabel('Mode'));
-  const invToggle=document.createElement('div'); invToggle.className='inv-toggle-row';
-  const invLeft=document.createElement('div'); invLeft.style.flex='1';
-  const itLabel=document.createElement('div'); itLabel.className='input-group-label'; itLabel.textContent='Inventory Mode';
-  const itSub=document.createElement('div'); itSub.className='input-group-sub';
-  itSub.textContent='Enter how many ingredient shards you have — auto-calculates outputs';
-  invLeft.appendChild(itLabel); invLeft.appendChild(itSub);
-  const togWrap=document.createElement('label'); togWrap.className='toggle-switch';
-  const togInp=document.createElement('input'); togInp.type='checkbox'; togInp.id=`inv-toggle-${pid}`; togInp.checked=isInvMode(pid);
-  const togSlider=document.createElement('span'); togSlider.className='toggle-slider';
-  togWrap.appendChild(togInp); togWrap.appendChild(togSlider);
-  invToggle.appendChild(invLeft); invToggle.appendChild(togWrap);
-  div.appendChild(invToggle);
-
-  // ── Inventory panel (hidden until toggled) ──
-  const invPanel=document.createElement('div');
-  invPanel.className='inv-panel'+(isInvMode(pid)?' visible':'');
-  invPanel.id=`inv-panel-${pid}`;
-
-  const invGrid=document.createElement('div'); invGrid.className='inv-grid';
-  product.ingredients.forEach(ing=>{
-    const f=document.createElement('div'); f.className='inv-field';
-    const lbl=document.createElement('label'); lbl.textContent=`${ing.name} you have`;
+  // ── From-stock calculator ──
+  const stockSection=document.createElement('div'); stockSection.className='stock-section';
+  const stockTitle=document.createElement('div'); stockTitle.className='stock-title'; stockTitle.textContent='From My Stock';
+  const stockSub=document.createElement('div'); stockSub.className='stock-sub'; stockSub.textContent='Enter how many ingredient shards you have — calculates max outputs and what you still need to buy.';
+  stockSection.appendChild(stockTitle); stockSection.appendChild(stockSub);
+  const stockGrid=document.createElement('div'); stockGrid.className='stock-grid';
+  product.ingredients.forEach(origIng=>{
+    const f=document.createElement('div'); f.className='stock-field';
+    // Effective ingredient (could be alt)
+    const effId=getEffIngId(pid,origIng);
+    const effName=getEffIngName(pid,origIng);
+    const lbl=document.createElement('label'); lbl.textContent=effName+' I have';
+    lbl.id=`stock-lbl-${pid}-${origIng.id}`;
     const inp=document.createElement('input'); inp.type='text'; inp.placeholder='e.g. 1250';
-    inp.id=`inv-qty-${pid}-${ing.id}`; inp.value=getInvQty(pid,ing.id)||'';
-    inp.autocomplete='off'; inp.dataset.action='set-inv-qty'; inp.dataset.pid=pid; inp.dataset.iid=ing.id;
-    f.appendChild(lbl); f.appendChild(inp); invGrid.appendChild(f);
+    inp.id=`stock-qty-${pid}-${origIng.id}`; inp.value=getInvQty(pid,origIng.id)||'';
+    inp.autocomplete='off'; inp.dataset.action='set-stock-qty'; inp.dataset.pid=pid; inp.dataset.origId=origIng.id;
+    f.appendChild(lbl); f.appendChild(inp); stockGrid.appendChild(f);
   });
-  invPanel.appendChild(invGrid);
-
-  // Result box
-  const invResult=document.createElement('div'); invResult.className='inv-result'; invResult.id=`inv-result-${pid}`;
-  invResult.innerHTML=`<div class="inv-result-row"><span class="ir-label">Max ${product.name} you can fuse</span><span class="ir-val accent" id="inv-outputs-${pid}">—</span></div>
-    <div class="inv-result-row"><span class="ir-label">Estimated revenue</span><span class="ir-val gold" id="inv-revenue-${pid}">—</span></div>
-    <div class="inv-result-row"><span class="ir-label">Estimated profit</span><span class="ir-val" id="inv-profit-${pid}">—</span></div>`;
-  invPanel.appendChild(invResult);
-
-  const invShortage=document.createElement('div'); invShortage.className='inv-shortage'; invShortage.id=`inv-shortage-${pid}`;
-  invPanel.appendChild(invShortage);
-  div.appendChild(invPanel);
+  stockSection.appendChild(stockGrid);
+  const stockResult=document.createElement('div'); stockResult.className='stock-result'; stockResult.id=`stock-result-${pid}`;
+  stockResult.innerHTML='Enter quantities above to see how many you can make.';
+  stockSection.appendChild(stockResult);
+  div.appendChild(stockSection);
 
   // ── Normal quantity mode ──
   const normalWrap=document.createElement('div'); normalWrap.id=`normal-wrap-${pid}`;
-  normalWrap.style.display=isInvMode(pid)?'none':'block';
+  normalWrap.style.display='block';
 
   normalWrap.appendChild(secLabel('Target Quantity'));
   normalWrap.appendChild(inputGroupEl(`How many ${product.name} shards do you want?`,'Supports 64, 1k, 2.5m — everything scales automatically',`inp-qty-${pid}`,getQtyStr(pid)));
@@ -818,7 +819,7 @@ function buildProduct(product){
     }
     const right=document.createElement('div'); right.className='ing-right';
     const qEl=document.createElement('div'); qEl.className='ing-qty'; qEl.id=`iqty-${pid}-${origIng.id}`; qEl.textContent=ing.needed.toLocaleString();
-    const pInp=makeSmartInput(`inp-price-${pid}-${ing.id}`,displayNum(ing.price)); pInp.style.width='120px'; pInp.dataset.action='set-price'; pInp.dataset.pid=pid; pInp.dataset.iid=ing.id;
+    const pInp=makeSmartInput(`inp-price-${pid}-${ing.id}`,fmtPrice(ing.price)); pInp.style.width='120px'; pInp.dataset.action='set-price'; pInp.dataset.pid=pid; pInp.dataset.iid=ing.id;
     const cEl=document.createElement('div'); cEl.className='ing-cost'; cEl.id=`icost-${pid}-${origIng.id}`; cEl.textContent=fmt(ing.cost);
     right.appendChild(qEl); right.appendChild(pInp); right.appendChild(cEl);
     row.appendChild(nameWrap); row.appendChild(right); table.appendChild(row);
@@ -826,7 +827,7 @@ function buildProduct(product){
   div.appendChild(table);
 
   div.appendChild(secLabel('Sell Price & Profit'));
-  const sellG=inputGroupEl(`Sell price per ${product.name} shard`,'Bazaar or AH — supports 560k, 1.03m etc.',`inp-sell-${pid}`,displayNum(r.sellPrice));
+  const sellG=inputGroupEl(`Sell price per ${product.name} shard`,'Bazaar or AH — supports 560k, 1.03m etc.',`inp-sell-${pid}`,fmtPrice(r.sellPrice));
   sellG.style.marginBottom='20px'; sellG.querySelector('.smart-input').dataset.action='set-sell'; sellG.querySelector('.smart-input').dataset.pid=pid;
   div.appendChild(sellG);
 
@@ -865,7 +866,6 @@ function buildProduct(product){
   div.appendChild(logBox);
 
   // Re-render inventory result if inv mode is on
-  if(isInvMode(pid)) updateInvDisplay(pid);
 
   return div;
 }
@@ -878,7 +878,7 @@ function updateDisplay(pid){
     setText(`iqty-${pid}-${origIng.id}`,ing.needed.toLocaleString());
     setText(`icost-${pid}-${origIng.id}`,fmt(ing.cost));
     // refresh price input to match active ingredient
-    const pInp=el(`inp-price-${pid}-${ing.id}`); if(pInp) pInp.value=displayNum(ing.price);
+    const pInp=el(`inp-price-${pid}-${ing.id}`); if(pInp&&document.activeElement!==pInp) pInp.value=fmtPrice(ing.price);
   });
   setText(`cps-val-${pid}`,fmt(r.costPerShard));
   setText(`pps-val-${pid}`,(r.profitPerShard>=0?'+':'')+fmt(r.profitPerShard));
@@ -896,26 +896,40 @@ function updateDisplay(pid){
   setClass(`pb-profit-${pid}`,'val '+(r.profit>=0?'pos':'neg'));
   pulseCards();
   // also refresh sell price input
-  const si=el(`inp-sell-${pid}`); if(si) si.value=displayNum(getSell(pid));
+  const si=el(`inp-sell-${pid}`); if(si&&document.activeElement!==si) si.value=fmtPrice(getSell(pid));
   // refresh log-flip-box subtitle
   const logSub=el(`log-flip-box-${pid}`)?.querySelector('.log-flip-sub');
   if(logSub) logSub.textContent=`Saves current qty (${r.qty.toLocaleString()}) at ${fmt(r.sellPrice)}/shard to your Flip Log.`;
 }
 
-function updateInvDisplay(pid){
+function updateStockDisplay(pid){
   const product=getProduct(pid); if(!product) return;
-  const inv=calcInventory(product);
-  setText(`inv-outputs-${pid}`,inv.maxOutputs.toLocaleString());
-  setText(`inv-revenue-${pid}`,fmt(inv.revenue));
-  const pp=el(`inv-profit-${pid}`);
-  if(pp){pp.textContent=(inv.profit>=0?'+':'')+fmt(inv.profit);pp.className='ir-val '+(inv.profit>=0?'accent':'red');}
-  const sh=el(`inv-shortage-${pid}`);
-  if(sh){
-    if(inv.shortages.length){
-      sh.className='inv-shortage visible';
-      sh.innerHTML='<strong>Need to buy:</strong> '+inv.shortages.map(s=>`${s.name}: need ${s.needed.toLocaleString()}, have ${s.have.toLocaleString()} → buy <strong>${s.shortage.toLocaleString()}</strong> more`).join(' &nbsp;|&nbsp; ');
-    } else { sh.className='inv-shortage'; }
+  const sr=el(`stock-result-${pid}`); if(!sr) return;
+  const s=calcStock(product);
+  if(!s){sr.innerHTML='Enter quantities above to see how many you can make.';return;}
+  
+  let html=`<div style="margin-bottom:8px;">`;
+  html+=`Can make: <span class="sr-hi">${s.maxOutputs.toLocaleString()} ${product.name} shards</span>`;
+  if(s.revenue>0) html+=` → Revenue: <span class="sr-cost">${fmt(s.revenue)}</span>`;
+  html+=`</div>`;
+  
+  const needToBuy=s.breakdown.filter(i=>i.toBuy>0);
+  const alreadyHave=s.breakdown.filter(i=>i.toBuy===0&&i.have>0);
+  
+  if(needToBuy.length){
+    html+=`<div style="margin-bottom:6px;color:var(--blue);font-weight:600;font-size:13px;">Need to buy:</div>`;
+    needToBuy.forEach(i=>{
+      html+=`<div style="font-size:13px;margin-bottom:3px;">`;
+      html+=`<span class="sr-need">${i.effName}</span>: have ${i.have.toLocaleString()}, need ${i.needed.toLocaleString()} → buy <strong>${i.toBuy.toLocaleString()}</strong>`;
+      if(i.buyCost>0) html+=` <span style="color:var(--gold)">(${fmt(i.buyCost)})</span>`;
+      html+=`</div>`;
+    });
+    if(s.totalBuyCost>0) html+=`<div style="margin-top:6px;font-size:13px;">Total buy cost: <span class="sr-cost">${fmt(s.totalBuyCost)}</span> → Profit after buying: <span class="${s.profit>=0?'sr-hi':''}${s.profit<0?'" style="color:var(--red)':''}">` + (s.profit>=0?'+':'') + `${fmt(s.profit)}</span></div>`;
+  } else if(alreadyHave.length){
+    html+=`<div style="font-size:13px;color:var(--accent);">You have enough of all ingredients!</div>`;
   }
+  
+  sr.innerHTML=html;
 }
 
 function reapplyBudget(pid){
@@ -1084,15 +1098,49 @@ const UPGRADES = {
       { id:'recomb', name:'Recombobulator 3000', maxQty:1, bazaarKey:'RECOMBOBULATOR_3000', defaultPrice:6500000 },
     ]
   },
-  stars: {
-    label: 'Dungeon Stars',
+  master_stars: {
+    label: 'Master Stars (M1–M5)',
     items: [
-      { id:'star1', name:'1st Star (Master Star 1)', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_1', defaultPrice:500000 },
-      { id:'star2', name:'2nd Star (Master Star 2)', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_2', defaultPrice:1500000 },
-      { id:'star3', name:'3rd Star (Master Star 3)', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_3', defaultPrice:4000000 },
-      { id:'star4', name:'4th Star (Master Star 4)', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_4', defaultPrice:10000000 },
-      { id:'star5', name:'5th Star (Master Star 5)', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_5', defaultPrice:25000000 },
+      { id:'star1', name:'Master Star 1', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_1', defaultPrice:500000 },
+      { id:'star2', name:'Master Star 2', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_2', defaultPrice:1500000 },
+      { id:'star3', name:'Master Star 3', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_3', defaultPrice:4000000 },
+      { id:'star4', name:'Master Star 4', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_4', defaultPrice:10000000 },
+      { id:'star5', name:'Master Star 5', maxQty:1, bazaarKey:'DUNGEON_MASTER_STAR_5', defaultPrice:25000000 },
     ]
+  },
+  // Normal stars: 1-5 via essence. Essence type depends on item type; cost varies by rarity.
+  // Essence amounts per star (common pattern: star N costs N*50 essence for rare, N*75 epic, N*100 legendary)
+  // Actual formula from wiki: Star 1=50 Rare/75 Epic/100 Leg, Star 2=100/150/200, Star 3=150/225/300, Star 4=200/300/400, Star 5=250/375/500
+  normal_stars: {
+    label: 'Normal Stars (★1–★5, Essence)',
+    items: [
+      // These are not Bazaar items — we calculate cost from essence price × essence qty
+      { id:'nstar1', name:'★1 (Star 1)', maxQty:1, bazaarKey:null, defaultPrice:0, essenceStar:1 },
+      { id:'nstar2', name:'★2 (Star 2)', maxQty:1, bazaarKey:null, defaultPrice:0, essenceStar:2 },
+      { id:'nstar3', name:'★3 (Star 3)', maxQty:1, bazaarKey:null, defaultPrice:0, essenceStar:3 },
+      { id:'nstar4', name:'★4 (Star 4)', maxQty:1, bazaarKey:null, defaultPrice:0, essenceStar:4 },
+      { id:'nstar5', name:'★5 (Star 5)', maxQty:1, bazaarKey:null, defaultPrice:0, essenceStar:5 },
+    ],
+    // essence amounts per star by rarity
+    essenceCosts: {
+      common:    [30,60,90,120,150],
+      uncommon:  [40,80,120,160,200],
+      rare:      [50,100,150,200,250],
+      epic:      [75,150,225,300,375],
+      legendary: [100,200,300,400,500],
+      mythic:    [100,200,300,400,500],
+    },
+    // bazaar keys for each essence type (instasell price = what you get, but here we're BUYING essence to use it)
+    essenceTypes: {
+      WITHER_ESSENCE:   'WITHER_ESSENCE',
+      UNDEAD_ESSENCE:   'UNDEAD_ESSENCE',
+      SPIDER_ESSENCE:   'SPIDER_ESSENCE',
+      DRAGON_ESSENCE:   'DRAGON_ESSENCE',
+      DIAMOND_ESSENCE:  'DIAMOND_ESSENCE',
+      ICE_ESSENCE:      'ICE_ESSENCE',
+      GOLD_ESSENCE:     'GOLD_ESSENCE',
+      CRIMSON_ESSENCE:  'CRIMSON_ESSENCE',
+    }
   },
   scrolls: {
     label: 'Scrolls',
@@ -1110,36 +1158,80 @@ const UPGRADES = {
     ]
   },
   ult_enchants: {
-    label: 'Ultimate Enchants',
+    label: 'Ultimate Enchants (all 24)',
     items: [
-      { id:'ult_wise',      name:'Ultimate Wise',      maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_WISE_5',         defaultPrice:80000000 },
-      { id:'ult_chimera',   name:'Chimera',             maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_CHIMERA_5',      defaultPrice:120000000 },
-      { id:'ult_bank',      name:'Ultimate Bank',       maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_BANK_5',         defaultPrice:5000000 },
-      { id:'ult_jerry',     name:'Ultimate Jerry',      maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_JERRY_5',        defaultPrice:3000000 },
-      { id:'ult_legion',    name:'Legion',              maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_LEGION_5',       defaultPrice:20000000 },
-      { id:'ult_one_for_all',name:'One For All',        maxTier:4, bazaarKey:'ENCHANTMENT_ULTIMATE_ONE_FOR_ALL_4',  defaultPrice:150000000 },
-      { id:'ult_rend',      name:'Rend',                maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_REND_5',         defaultPrice:10000000 },
-      { id:'ult_soul_eater',name:'Soul Eater',          maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_SOUL_EATER_5',   defaultPrice:15000000 },
-      { id:'ult_swarm',     name:'Swarm',               maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_SWARM_5',        defaultPrice:8000000 },
+      // Weapon
+      { id:'ult_wise',       name:'Ultimate Wise',      maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_WISE_5',             defaultPrice:80000000 },
+      { id:'ult_chimera',    name:'Chimera',             maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_CHIMERA_5',          defaultPrice:120000000 },
+      { id:'ult_one_for_all',name:'One For All',         maxTier:1, bazaarKey:'ENCHANTMENT_ULTIMATE_ONE_FOR_ALL_1',      defaultPrice:150000000 },
+      { id:'ult_soul_eater', name:'Soul Eater',          maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_SOUL_EATER_5',       defaultPrice:15000000 },
+      { id:'ult_combo',      name:'Combo',               maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_COMBO_5',            defaultPrice:3000000 },
+      { id:'ult_rend',       name:'Rend',                maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_REND_5',             defaultPrice:10000000 },
+      { id:'ult_duplex',     name:'Duplex',              maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_DUPLEX_5',           defaultPrice:5000000 },
+      { id:'ult_fatal_tempo',name:'Fatal Tempo',         maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_FATAL_TEMPO_5',      defaultPrice:12000000 },
+      { id:'ult_flash',      name:'Flash',               maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_FLASH_5',            defaultPrice:4000000 },
+      { id:'ult_flowstate',  name:'Flowstate',           maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_FLOWSTATE_5',        defaultPrice:6000000 },
+      { id:'ult_inferno',    name:'Inferno',             maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_INFERNO_5',          defaultPrice:7000000 },
+      { id:'ult_missile',    name:'Missile',             maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_MISSILE_5',          defaultPrice:8000000 },
+      { id:'ult_the_one',    name:'The One',             maxTier:3, bazaarKey:'ENCHANTMENT_ULTIMATE_THE_ONE_3',          defaultPrice:0, customPrice:true },
+      { id:'ult_first_imp',  name:'First Impression',   maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_FIRST_IMPRESSION_5', defaultPrice:0, customPrice:true },
+      // Armor
+      { id:'ult_bank',       name:'Ultimate Bank',       maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_BANK_5',             defaultPrice:5000000 },
+      { id:'ult_jerry',      name:'Ultimate Jerry',      maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_JERRY_5',            defaultPrice:3000000 },
+      { id:'ult_legion',     name:'Legion',              maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_LEGION_5',           defaultPrice:20000000 },
+      { id:'ult_swarm',      name:'Swarm',               maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_SWARM_5',            defaultPrice:8000000 },
+      { id:'ult_last_stand', name:'Last Stand',          maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_LAST_STAND_5',       defaultPrice:6000000 },
+      { id:'ult_wisdom',     name:'Wisdom',              maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_WISDOM_5',           defaultPrice:4000000 },
+      { id:'ult_no_pain',    name:'No Pain No Gain',     maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_NO_PAIN_NO_GAIN_5',  defaultPrice:1000000 },
+      { id:'ult_bobbin',     name:"Bobbin' Time",        maxTier:3, bazaarKey:"ENCHANTMENT_ULTIMATE_BOBBIN_TIME_3",      defaultPrice:200000000 },
+      { id:'ult_habanero',   name:'Habanero Tactics',    maxTier:4, bazaarKey:'ENCHANTMENT_ULTIMATE_HABANERO_TACTICS_4', defaultPrice:50000000 },
+      { id:'ult_refrigerate',name:'Refrigerate',         maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_REFRIGERATE_5',     defaultPrice:0, customPrice:true },
     ]
   },
   reg_enchants: {
     label: 'Regular Enchants',
     items: [
-      { id:'enc_sharp',     name:'Sharpness',           maxTier:7, bazaarKey:'ENCHANTMENT_SHARPNESS_6',             defaultPrice:2000000 },
-      { id:'enc_crit',      name:'Critical',            maxTier:6, bazaarKey:'ENCHANTMENT_CRITICAL_6',              defaultPrice:500000 },
-      { id:'enc_ench',      name:'Enchanted Quiver',    maxTier:10,bazaarKey:null,                                   defaultPrice:0, customPrice:true },
-      { id:'enc_execute',   name:'Execute',             maxTier:6, bazaarKey:'ENCHANTMENT_EXECUTE_5',               defaultPrice:3000000 },
-      { id:'enc_cubism',    name:'Cubism',              maxTier:5, bazaarKey:'ENCHANTMENT_CUBISM_5',                defaultPrice:100000 },
-      { id:'enc_power',     name:'Power',               maxTier:7, bazaarKey:'ENCHANTMENT_POWER_6',                 defaultPrice:1500000 },
-      { id:'enc_growth',    name:'Growth',              maxTier:7, bazaarKey:'ENCHANTMENT_GROWTH_6',                defaultPrice:2000000 },
-      { id:'enc_prot',      name:'Protection',          maxTier:7, bazaarKey:'ENCHANTMENT_PROTECTION_6',            defaultPrice:1000000 },
-      { id:'enc_true_prot', name:'True Protection',     maxTier:1, bazaarKey:'ENCHANTMENT_TRUE_PROTECTION_1',       defaultPrice:5000000 },
-      { id:'enc_feather',   name:'Feather Falling',     maxTier:10,bazaarKey:'ENCHANTMENT_FEATHER_FALLING_10',      defaultPrice:8000000 },
-      { id:'enc_thorns',    name:'Thorns',              maxTier:3, bazaarKey:'ENCHANTMENT_THORNS_3',                defaultPrice:300000 },
-      { id:'enc_rejuv',     name:'Rejuvenate',          maxTier:5, bazaarKey:'ENCHANTMENT_REJUVENATE_5',            defaultPrice:1000000 },
-      { id:'enc_dragon',    name:'Dragon Hunter',       maxTier:5, bazaarKey:'ENCHANTMENT_DRAGON_HUNTER_5',         defaultPrice:500000 },
-      { id:'enc_prosecute', name:'Prosecute',           maxTier:5, bazaarKey:null,                                   defaultPrice:0, customPrice:true },
+      // ── Sword ──
+      { id:'enc_sharp',     name:'Sharpness',           maxTier:7, bazaarKey:'ENCHANTMENT_SHARPNESS_6',              defaultPrice:2000000 },
+      { id:'enc_crit',      name:'Critical',            maxTier:6, bazaarKey:'ENCHANTMENT_CRITICAL_6',               defaultPrice:500000 },
+      { id:'enc_execute',   name:'Execute',             maxTier:6, bazaarKey:'ENCHANTMENT_EXECUTE_5',                defaultPrice:3000000 },
+      { id:'enc_looting',   name:'Looting',             maxTier:5, bazaarKey:'ENCHANTMENT_LOOTING_5',                defaultPrice:200000 },
+      { id:'enc_life_steal',name:'Life Steal',          maxTier:5, bazaarKey:'ENCHANTMENT_LIFE_STEAL_4',             defaultPrice:1000000 },
+      { id:'enc_syphon',    name:'Syphon',              maxTier:5, bazaarKey:'ENCHANTMENT_SYPHON_4',                 defaultPrice:800000 },
+      { id:'enc_ender_sl',  name:'Ender Slayer',        maxTier:7, bazaarKey:'ENCHANTMENT_ENDER_SLAYER_6',           defaultPrice:5000000 },
+      { id:'enc_giant_kill',name:'Giant Killer',        maxTier:7, bazaarKey:'ENCHANTMENT_GIANT_KILLER_6',           defaultPrice:3000000 },
+      { id:'enc_vampirism', name:'Vampirism',           maxTier:6, bazaarKey:'ENCHANTMENT_VAMPIRISM_6',              defaultPrice:500000 },
+      { id:'enc_prosecute', name:'Prosecute',           maxTier:5, bazaarKey:null,                                    defaultPrice:0, customPrice:true },
+      { id:'enc_champion',  name:'Champion',            maxTier:10,bazaarKey:null,                                    defaultPrice:0, customPrice:true },
+      { id:'enc_scavenger', name:'Scavenger',           maxTier:5, bazaarKey:'ENCHANTMENT_SCAVENGER_4',              defaultPrice:500000 },
+      { id:'enc_experience',name:'Experience',          maxTier:4, bazaarKey:'ENCHANTMENT_EXPERIENCE_4',             defaultPrice:200000 },
+      { id:'enc_first_str', name:'First Strike',        maxTier:4, bazaarKey:'ENCHANTMENT_FIRST_STRIKE_4',           defaultPrice:300000 },
+      { id:'enc_thunderlord',name:'Thunderlord',        maxTier:7, bazaarKey:'ENCHANTMENT_THUNDERLORD_6',            defaultPrice:2000000 },
+      { id:'enc_cubism',    name:'Cubism',              maxTier:5, bazaarKey:'ENCHANTMENT_CUBISM_5',                 defaultPrice:100000 },
+      { id:'enc_impaling',  name:'Impaling',            maxTier:3, bazaarKey:null,                                    defaultPrice:0, customPrice:true },
+      { id:'enc_smite',     name:'Smite',               maxTier:7, bazaarKey:'ENCHANTMENT_SMITE_7',                  defaultPrice:1000000 },
+      { id:'enc_divine_gift',name:'Divine Gift',        maxTier:3, bazaarKey:null,                                    defaultPrice:0, customPrice:true },
+      // ── Bow ──
+      { id:'enc_power',     name:'Power',               maxTier:7, bazaarKey:'ENCHANTMENT_POWER_6',                  defaultPrice:1500000 },
+      { id:'enc_drag_tracer',name:'Dragon Tracer',      maxTier:5, bazaarKey:'ENCHANTMENT_DRAGON_TRACER_5',          defaultPrice:500000 },
+      { id:'enc_snipe',     name:'Snipe',               maxTier:4, bazaarKey:'ENCHANTMENT_SNIPE_3',                  defaultPrice:200000 },
+      { id:'enc_overload',  name:'Overload',            maxTier:5, bazaarKey:'ENCHANTMENT_OVERLOAD_5',               defaultPrice:50000000 },
+      { id:'enc_inf_quiv',  name:'Infinite Quiver',     maxTier:10,bazaarKey:'ENCHANTMENT_INFINITE_QUIVER_10',       defaultPrice:8000000 },
+      // ── Armor ──
+      { id:'enc_growth',    name:'Growth',              maxTier:7, bazaarKey:'ENCHANTMENT_GROWTH_6',                 defaultPrice:2000000 },
+      { id:'enc_prot',      name:'Protection',          maxTier:7, bazaarKey:'ENCHANTMENT_PROTECTION_6',             defaultPrice:1000000 },
+      { id:'enc_true_prot', name:'True Protection',     maxTier:1, bazaarKey:'ENCHANTMENT_TRUE_PROTECTION_1',        defaultPrice:5000000 },
+      { id:'enc_feather',   name:'Feather Falling',     maxTier:10,bazaarKey:'ENCHANTMENT_FEATHER_FALLING_10',       defaultPrice:8000000 },
+      { id:'enc_thorns',    name:'Thorns',              maxTier:3, bazaarKey:'ENCHANTMENT_THORNS_3',                 defaultPrice:300000 },
+      { id:'enc_rejuv',     name:'Rejuvenate',          maxTier:5, bazaarKey:'ENCHANTMENT_REJUVENATE_5',             defaultPrice:1000000 },
+      { id:'enc_strong_mana',name:'Strong Mana',        maxTier:5, bazaarKey:null,                                    defaultPrice:0, customPrice:true },
+      { id:'enc_sugar_rush',name:'Sugar Rush',          maxTier:3, bazaarKey:'ENCHANTMENT_SUGAR_RUSH_3',             defaultPrice:500000 },
+      // ── Misc/Combat ──
+      { id:'enc_dragon',    name:'Dragon Hunter',       maxTier:5, bazaarKey:'ENCHANTMENT_DRAGON_HUNTER_5',          defaultPrice:500000 },
+      { id:'enc_over_lv7',  name:'Overload VII',        maxTier:7, bazaarKey:null,                                    defaultPrice:0, customPrice:true },
+      { id:'enc_luck_sea',  name:'Luck of the Sea',     maxTier:6, bazaarKey:'ENCHANTMENT_LUCK_OF_THE_SEA_6',        defaultPrice:500000 },
+      { id:'enc_lure',      name:'Lure',                maxTier:6, bazaarKey:'ENCHANTMENT_LURE_6',                   defaultPrice:300000 },
+      { id:'enc_blessing',  name:'Blessing',            maxTier:5, bazaarKey:'ENCHANTMENT_BLESSING_5',               defaultPrice:200000 },
     ]
   },
 };
@@ -1155,6 +1247,10 @@ let worthState = {
   baseItemCost: 0,
   baseItemTag: '',
   auctionPrice: 0,
+  itemImageUrl: '',
+  normalStarRarity: 'legendary',
+  normalStarEssenceType: 'WITHER_ESSENCE',
+  essencePrices: {},  // {ESSENCE_TYPE: price_per_unit}
 };
 // Restore saved prices into worthState after local is initialized
 function restoreWorthPrices(){
@@ -1250,21 +1346,17 @@ function inferItemTag(itemName){
 
 function worthCost(){
   let total=0;
-  // base item
   total+=worthState.baseItemCost||0;
-  // HPB / recomb / stars / scrolls / skins
   for(const [secId, sec] of Object.entries(UPGRADES)){
     if(secId==='ult_enchants'||secId==='reg_enchants') continue;
+    if(secId==='normal_stars'){total+=calcNormalStarsCost();continue;}
     for(const item of sec.items){
       const s=worthState.upgrades[item.id];
       if(!s||!s.qty) continue;
       total+=s.qty*(s.price||item.defaultPrice);
     }
   }
-  // enchants
-  for(const e of worthState.addedEnchants){
-    total+=(e.price||0);
-  }
+  for(const e of worthState.addedEnchants){total+=(e.price||0);}
   return Math.round(total);
 }
 
@@ -1272,6 +1364,14 @@ function worthBreakdown(){
   const rows=[];
   for(const [secId, sec] of Object.entries(UPGRADES)){
     if(secId==='ult_enchants'||secId==='reg_enchants') continue;
+    if(secId==='normal_stars'){
+      const ns=calcNormalStarsCost();
+      if(ns>0){
+        const starsApplied=[1,2,3,4,5].filter(s=>worthState.upgrades['nstar'+s]?.qty>0);
+        if(starsApplied.length) rows.push({label:`★${starsApplied.join('★')} Stars (essence)`,val:ns});
+      }
+      continue;
+    }
     for(const item of sec.items){
       const s=worthState.upgrades[item.id];
       if(!s||!s.qty) continue;
@@ -1330,8 +1430,7 @@ function buildWorth(){
   layout.appendChild(left); layout.appendChild(right);
 
   // ── LEFT: upgrade sections ──
-  // HPB / Recomb / Stars / Scrolls / Skins
-  ['hpb','recomb','stars','scrolls','skins'].forEach(secId=>{
+  ['hpb','recomb','master_stars','normal_stars','scrolls','skins'].forEach(secId=>{
     const sec=UPGRADES[secId];
     const secCost=calcSectionCost(secId);
     const wrap=document.createElement('div'); wrap.className='worth-section'; wrap.id=`ws-${secId}`;
@@ -1341,12 +1440,58 @@ function buildWorth(){
     const chev=document.createElement('span'); chev.className='worth-section-chevron'; chev.id=`ws-chev-${secId}`; chev.textContent='▼';
     hdr.appendChild(titleSpan); hdr.appendChild(badge); hdr.appendChild(chev); wrap.appendChild(hdr);
     const body=document.createElement('div'); body.className='worth-section-body'; body.id=`ws-body-${secId}`;
+    // Normal stars gets special controls
+    if(secId==='normal_stars'){
+      const ctrlRow=document.createElement('div'); ctrlRow.style.cssText='display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:flex-end;';
+      // Rarity picker
+      const rarityWrap=document.createElement('div'); rarityWrap.style.cssText='display:flex;flex-direction:column;gap:5px;';
+      const rarLbl=document.createElement('label'); rarLbl.style.cssText='font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;'; rarLbl.textContent='Item Rarity';
+      const rarSel=document.createElement('select'); rarSel.id='ns-rarity';
+      rarSel.style.cssText='background:var(--surface2);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:14px;font-family:inherit;padding:8px 12px;outline:none;-webkit-text-fill-color:var(--text);';
+      ['common','uncommon','rare','epic','legendary','mythic'].forEach(r=>{
+        const o=document.createElement('option'); o.value=r; o.textContent=r.charAt(0).toUpperCase()+r.slice(1);
+        if(r===worthState.normalStarRarity) o.selected=true;
+        rarSel.appendChild(o);
+      });
+      rarSel.addEventListener('change',()=>{worthState.normalStarRarity=rarSel.value;updateNormalStarLabels();updateWorthSummary();});
+      rarityWrap.appendChild(rarLbl); rarityWrap.appendChild(rarSel); ctrlRow.appendChild(rarityWrap);
+      // Essence type picker
+      const essWrap=document.createElement('div'); essWrap.style.cssText='display:flex;flex-direction:column;gap:5px;';
+      const essLbl=document.createElement('label'); essLbl.style.cssText='font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;'; essLbl.textContent='Essence Type';
+      const essSel=document.createElement('select'); essSel.id='ns-essence';
+      essSel.style.cssText='background:var(--surface2);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:14px;font-family:inherit;padding:8px 12px;outline:none;-webkit-text-fill-color:var(--text);';
+      Object.keys(UPGRADES.normal_stars.essenceTypes).forEach(k=>{
+        const o=document.createElement('option'); o.value=k; o.textContent=k.replace('_ESSENCE','').replace('_',' ');
+        if(k===worthState.normalStarEssenceType) o.selected=true;
+        essSel.appendChild(o);
+      });
+      essSel.addEventListener('change',()=>{worthState.normalStarEssenceType=essSel.value;updateNormalStarLabels();updateWorthSummary();});
+      essWrap.appendChild(essLbl); essWrap.appendChild(essSel); ctrlRow.appendChild(essWrap);
+      // Essence price display
+      const epWrap=document.createElement('div'); epWrap.style.cssText='display:flex;flex-direction:column;gap:5px;';
+      const epLbl=document.createElement('label'); epLbl.style.cssText='font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;'; epLbl.textContent='Essence Price (each)';
+      const epVal=document.createElement('div'); epVal.id='ns-essence-price'; epVal.style.cssText='font-size:14px;color:var(--blue);padding:8px 0;';
+      epVal.textContent=worthState.essencePrices[worthState.normalStarEssenceType]?fmt(worthState.essencePrices[worthState.normalStarEssenceType]):'— (fetch bazaar prices above)';
+      epWrap.appendChild(epLbl); epWrap.appendChild(epVal); ctrlRow.appendChild(epWrap);
+      body.appendChild(ctrlRow);
+    }
     sec.items.forEach(item=>{
       const s=worthState.upgrades[item.id]||{qty:0,price:item.defaultPrice,isLive:false};
       const row=document.createElement('div'); row.className='worth-row';
       const rowLeft=document.createElement('div'); rowLeft.className='worth-row-left';
       const nm=document.createElement('div'); nm.className='worth-row-name'; nm.textContent=item.name;
       rowLeft.appendChild(nm);
+      // For normal stars, add essence qty sub-label
+      if(item.essenceStar){
+        const sub=document.createElement('div'); sub.style.cssText='font-size:12px;color:var(--muted);margin-top:2px;';
+        sub.id=`ws-sub-${item.id}`;
+        const rarity=worthState.normalStarRarity||'legendary';
+        const costs=UPGRADES.normal_stars.essenceCosts[rarity];
+        const essAmt=costs?costs[item.essenceStar-1]:0;
+        const ep=worthState.essencePrices[worthState.normalStarEssenceType||'WITHER_ESSENCE']||0;
+        sub.textContent=`${essAmt} essence${ep>0?' = '+fmt(Math.round(essAmt*ep)):''}`;
+        rowLeft.appendChild(sub);
+      }
       const rowRight=document.createElement('div'); rowRight.className='worth-row-right';
       if(item.maxQty===1){
         // checkbox-style stepper 0/1
@@ -1419,9 +1564,27 @@ function buildWorth(){
   return div;
 }
 
+function calcNormalStarsCost(){
+  // Sum up: for each nstar that's selected (qty=1), cost = essence_price * essence_qty_for_that_star_and_rarity
+  const rarity=worthState.normalStarRarity||'legendary';
+  const essenceType=worthState.normalStarEssenceType||'WITHER_ESSENCE';
+  const essencePrice=worthState.essencePrices[essenceType]||0;
+  const costs=UPGRADES.normal_stars.essenceCosts[rarity]||UPGRADES.normal_stars.essenceCosts.legendary;
+  let total=0;
+  for(let s=1;s<=5;s++){
+    const sid='nstar'+s;
+    const st=worthState.upgrades[sid];
+    if(st&&st.qty>0){
+      total+=costs[s-1]*essencePrice;
+    }
+  }
+  return Math.round(total);
+}
+
 function calcSectionCost(secId){
   const sec=UPGRADES[secId];
   if(!sec) return 0;
+  if(secId==='normal_stars') return calcNormalStarsCost();
   if(secId==='ult_enchants'||secId==='reg_enchants'){
     return worthState.addedEnchants.filter(e=>{
       return sec.items.some(i=>i.id===e.id);
@@ -1432,6 +1595,29 @@ function calcSectionCost(secId){
     if(!s||!s.qty) return a;
     return a+s.qty*(s.price||item.defaultPrice);
   },0);
+}
+
+function updateNormalStarLabels(){
+  const rarity=worthState.normalStarRarity||'legendary';
+  const essenceType=worthState.normalStarEssenceType||'WITHER_ESSENCE';
+  const essencePrice=worthState.essencePrices[essenceType]||0;
+  const costs=UPGRADES.normal_stars.essenceCosts[rarity]||UPGRADES.normal_stars.essenceCosts.legendary;
+  for(let s=1;s<=5;s++){
+    const sid='nstar'+s;
+    const essAmt=costs[s-1];
+    const cost=Math.round(essAmt*essencePrice);
+    // Update label
+    const qEl=el(`ws-qty-${sid}`); // stepper value
+    // Update the sub label if present
+    const subEl=el(`ws-sub-${sid}`);
+    if(subEl) subEl.textContent=`${essAmt} essence${essencePrice>0?' = '+fmt(cost):''}`;
+    // Update stored price
+    if(!worthState.upgrades[sid]) worthState.upgrades[sid]={qty:0,price:cost,isLive:false};
+    else worthState.upgrades[sid].price=cost;
+  }
+  // Update essence price display
+  const epEl=el('ns-essence-price');
+  if(epEl) epEl.textContent=essencePrice>0?fmt(essencePrice)+' per essence':'— (fetch bazaar prices above)';
 }
 
 function buildEnchantList(secId, filter, listEl){
@@ -1478,50 +1664,50 @@ function renderEnchantChips(secId){
 }
 
 function renderWorthSummary(container){
-  const cost=worthCost();
-  const margin=worthState.margin;
-  const suggested=Math.round(cost*(1+margin/100));
+  const upgradeWorth=worthCost()-(worthState.baseItemCost||0); // upgrades only
+  const totalWorth=worthCost(); // base + upgrades
+  const ahPaid=worthState.auctionPrice||0; // what you paid on AH
+  const flipProfit=ahPaid>0?Math.round(totalWorth-ahPaid):null;
   const breakdown=worthBreakdown();
 
-  const upgradeOnlyCost=cost-(worthState.baseItemCost||0);
+  // Item image if available
+  const imgHtml=worthState.itemImageUrl?
+    `<img src="${worthState.itemImageUrl}" alt="${worthState.itemName||''}" style="width:48px;height:48px;image-rendering:pixelated;border-radius:8px;background:var(--surface2);border:1px solid var(--border);flex-shrink:0;" onerror="this.style.display='none'">`
+    :'';
+
   container.innerHTML=`
   <div class="ws-header">
     <div class="ws-title">Item Worth</div>
-    <div class="ws-item-name" id="ws-item-name-display">${worthState.itemName||'Unnamed Item'}</div>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:4px;">
+      ${imgHtml}
+      <div class="ws-item-name" id="ws-item-name-display">${worthState.itemName||'Unnamed Item'}</div>
+    </div>
   </div>
-  ${worthState.baseItemCost>0?`<div class="ws-base-row"><div class="ws-base-label">Base item (clean floor)</div><div class="ws-base-val">${fmt(worthState.baseItemCost)}</div><div class="ws-base-sub">${worthState.baseItemTag||''}  (lowest clean BIN)</div></div>`:''}
+  ${worthState.baseItemCost>0?`<div class="ws-base-row"><div class="ws-base-label">Clean floor price</div><div class="ws-base-val">${fmt(worthState.baseItemCost)}</div><div class="ws-base-sub">${worthState.baseItemTag||''} — lowest BIN</div></div>`:''}
   <div class="ws-rows">
-    ${worthState.auctionPrice>0?`<div class="ws-row"><span class="wsr-label">Listed price</span><span class="wsr-val blue">${fmt(worthState.auctionPrice)}</span></div>`:''}
-    <div class="ws-row"><span class="wsr-label">Upgrade categories</span><span class="wsr-val purple">${breakdown.length}</span></div>
-    ${worthState.baseItemCost>0?`<div class="ws-row"><span class="wsr-label">Upgrades only</span><span class="wsr-val accent">${fmt(upgradeOnlyCost)}</span></div>`:`<div class="ws-row"><span class="wsr-label">Total upgrade cost</span><span class="wsr-val accent">${fmt(cost)}</span></div>`}
+    ${ahPaid>0?`<div class="ws-row" style="background:rgba(255,94,94,0.04)"><span class="wsr-label" style="color:var(--red)">You paid (AH cost)</span><span class="wsr-val red">-${fmt(ahPaid)}</span></div>`:''}
+    ${worthState.baseItemCost>0?`<div class="ws-row"><span class="wsr-label">Upgrades value</span><span class="wsr-val accent">+${fmt(upgradeWorth)}</span></div>`:''}
+    <div class="ws-row"><span class="wsr-label">Upgrades added (${breakdown.length})</span><span class="wsr-val purple">${breakdown.length>0?breakdown.map(r=>r.label).slice(0,3).join(', ')+(breakdown.length>3?'…':''):'—'}</span></div>
   </div>
   <div class="ws-total">
     <div class="ws-total-label">Total Worth</div>
-    <div class="ws-total-val">${fmt(cost)}</div>
-    ${breakdown.length>0?`<div class="ws-breakdown">${breakdown.map(r=>`<div class="ws-breakdown-row"><span class="wbr-label">${r.label}</span><span class="wbr-val">${fmt(r.val)}</span></div>`).join('')}</div>`:'<div style="font-size:13px;color:var(--muted);margin-top:8px;">Add upgrades on the left to calculate.</div>'}
+    <div class="ws-total-val">${fmt(totalWorth)}</div>
+    ${ahPaid>0&&flipProfit!==null?`<div style="margin-top:12px;padding:12px 16px;border-radius:10px;background:${flipProfit>=0?'rgba(126,232,184,0.1)':'rgba(255,94,94,0.08)'};border:1px solid ${flipProfit>=0?'rgba(126,232,184,0.3)':'rgba(255,94,94,0.3)'};">
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Flip Profit</div>
+      <div style="font-size:32px;font-weight:700;color:${flipProfit>=0?'var(--accent)':'var(--red)'};">${flipProfit>=0?'+':''}${fmt(flipProfit)}</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px;">Worth ${fmt(totalWorth)} − Paid ${fmt(ahPaid)}</div>
+    </div>`:''}
+    ${breakdown.length>0?`<div class="ws-breakdown" style="margin-top:14px;">${breakdown.map(r=>`<div class="ws-breakdown-row"><span class="wbr-label">${r.label}</span><span class="wbr-val">${fmt(r.val)}</span></div>`).join('')}</div>`:'<div style="font-size:13px;color:var(--muted);margin-top:8px;">Add upgrades on the left to calculate.</div>'}
   </div>
-  <div class="margin-row">
-    <div class="margin-label">Profit Margin</div>
-    <div class="margin-controls">
-      <input type="range" class="margin-slider" id="worth-margin-slider" min="0" max="100" value="${margin}" />
-      <div class="margin-val-display" id="worth-margin-val">${margin}%</div>
+  <div style="padding:16px 24px;border-top:1px solid var(--border);">
+    <div style="font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">You Paid (AH Price)</div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <input type="text" id="worth-ah-paid-inp" value="${ahPaid>0?fmtPrice(ahPaid):''}" placeholder="e.g. 6800000" 
+        style="background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:17px;font-family:inherit;padding:10px 14px;outline:none;flex:1;-webkit-text-fill-color:var(--text);"
+        oninput="const v=parseNum(this.value);if(!isNaN(v)&&v>0){worthState.auctionPrice=v;updateWorthSummary();}" />
+      <span style="font-size:13px;color:var(--muted);">enter manually or import from AH link above</span>
     </div>
-  </div>
-  <div class="sell-suggest">
-    <div class="ss-label">Suggested Sell Price</div>
-    <div class="ss-val">${fmt(suggested)}</div>
-    <div class="ss-sub">= cost (${fmt(cost)}) + ${margin}% margin</div>
   </div>`;
-
-  // Slider listener
-  const slider=container.querySelector('#worth-margin-slider');
-  if(slider){
-    slider.addEventListener('input',()=>{
-      worthState.margin=parseInt(slider.value);
-      saveLocal(); // persist margin
-      updateWorthSummary();
-    });
-  }
 }
 
 function setAhStatus(msg,cls=''){
@@ -1568,7 +1754,7 @@ el('panels').addEventListener('input',e=>{
   }
   if(t.dataset.action==='set-price'){
     const v=parseNum(t.value); t.classList.toggle('error',isNaN(v)&&t.value!=='');
-    if(!isNaN(v)){setPrice(t.dataset.pid,t.dataset.iid,v);updateDisplay(t.dataset.pid);reapplyBudget(t.dataset.pid);}
+    if(!isNaN(v)){setPrice(t.dataset.pid,t.dataset.iid,v);updateDisplay(t.dataset.pid);reapplyBudget(t.dataset.pid);updateStockDisplay(t.dataset.pid);}
     return;
   }
   if(t.dataset.action==='set-sell'){
@@ -1576,10 +1762,10 @@ el('panels').addEventListener('input',e=>{
     if(!isNaN(v)){setSell(t.dataset.pid,v);updateDisplay(t.dataset.pid);reapplyBudget(t.dataset.pid);}
     return;
   }
-  if(t.dataset.action==='set-inv-qty'){
-    const {pid,iid}=t.dataset;
-    setInvQty(pid,iid,t.value);
-    updateInvDisplay(pid);
+  if(t.dataset.action==='set-stock-qty'){
+    const {pid,origId}=t.dataset;
+    setInvQty(pid,origId,t.value);
+    updateStockDisplay(pid);
     return;
   }
 
@@ -1639,7 +1825,7 @@ el('panels').addEventListener('click',async e=>{
           if(bp>0){
             local.prices[`${pid}__${iid}`]=bp; saveLocal();
             const inp=el(`inp-price-${pid}-${iid}`);
-            if(inp) inp.value=Number.isInteger(bp)?displayNum(bp):bp.toFixed(1);
+            if(inp) inp.value=fmtPrice(bp);
             updated++;
           }
         });
@@ -1655,9 +1841,9 @@ el('panels').addEventListener('click',async e=>{
       if(sellKey&&data.products[sellKey]){
         const sp=data.products[sellKey];
         let sellP=0;
-        // Use sell_summary[0] (highest buy order = what buyers will pay)
-        if(sp.buy_summary&&sp.buy_summary.length>0) sellP=sp.buy_summary[0].pricePerUnit;
-        else if(sp.quick_status?.buyPrice) sellP=sp.quick_status.buyPrice;
+        // sell_summary = buy orders (what you get when instaselling)
+        if(sp.sell_summary&&sp.sell_summary.length>0) sellP=sp.sell_summary[0].pricePerUnit;
+        else if(sp.quick_status?.sellPrice) sellP=sp.quick_status.sellPrice;
         if(sellP>0){
           setSell(pid,sellP);
           const si=el(`inp-sell-${pid}`);
@@ -1668,7 +1854,7 @@ el('panels').addEventListener('click',async e=>{
       updateDisplay(pid);
       reapplyBudget(pid);
       if(isInvMode(pid)) updateInvDisplay(pid);
-      st.className='bazaar-status ok'; st.textContent=`✓ Updated ${updated} price${updated!==1?'s':''} (incl. sell)`;
+      st.className='bazaar-status ok'; st.textContent=`✓ Updated ${updated} price${updated!==1?'s':''}`;
     }catch(err){st.className='bazaar-status err';st.textContent='✗ '+err.message;console.error(err);}
     b.classList.remove('loading'); b.textContent='⟳ Fetch Live Bazaar Prices';
     return;
@@ -1706,6 +1892,14 @@ el('panels').addEventListener('click',async e=>{
           }
         }
       }
+      // Also fetch all essence prices for normal stars calculation
+      for(const [name,key] of Object.entries(UPGRADES.normal_stars.essenceTypes)){
+        const ep=data.products[key]; if(!ep) continue;
+        let bp=0;
+        if(ep.buy_summary&&ep.buy_summary.length>0) bp=ep.buy_summary[0].pricePerUnit; // instabuy price for essence (you're buying it)
+        if(bp>0) worthState.essencePrices[key]=bp;
+      }
+      updateNormalStarLabels();
       updateWorthSummary();
       // Re-render enchant chips to reflect new prices
       ['ult_enchants','reg_enchants'].forEach(s=>renderEnchantChips(s));
@@ -1757,6 +1951,8 @@ el('panels').addEventListener('click',async e=>{
         if(detRes.ok){ const det=await detRes.json(); lore=det.description||det.lore||det.itemLore||''; }
       }catch(le){ console.warn('Lore fetch failed, using enchantments array',le); }
       const itemName=stripCodes(auc.itemName||auc.item_name||'');
+      const rawTag=inferItemTag(auc.itemName||auc.item_name||itemName);
+      worthState.itemImageUrl=`https://sky.coflnet.com/static/icon/${encodeURIComponent(rawTag)}`;
       const auctionPrice=auc.startingBid||auc.starting_bid||0;
       // If we got lore, parse it; if not, build from the enchantments array Coflnet provides
       if(!lore&&auc.enchantments&&auc.enchantments.length){
@@ -1827,14 +2023,15 @@ el('panels').addEventListener('click',async e=>{
       // Floor price lookup via Coflnet
       const tag=inferItemTag(auc.item_name||itemName);
       worthState.baseItemTag=tag;
+      worthState.itemImageUrl=`https://sky.coflnet.com/static/icon/${encodeURIComponent(tag)}`;
       setAhStatus(`✓ Parsed! Fetching clean floor price for ${tag}...`,'ok');
       try{
         const fres=await fetch(`https://sky.coflnet.com/api/auctions/tag/${encodeURIComponent(tag)}/active/bin?page=0`);
         if(fres.ok){
           const fdata=await fres.json();
-          // fdata is array of auctions sorted by price asc; find clean ones (no enchants in name ideally)
+          // Sort by price ascending — lowest BIN first (fine if it has regular enchants)
           if(fdata&&fdata.length){
-            const floors=fdata.filter(a=>a.bin&&a.startingBid>0).sort((a,b)=>a.startingBid-b.startingBid);
+            const floors=fdata.filter(a=>a.startingBid>0).sort((a,b)=>a.startingBid-b.startingBid);
             if(floors.length){
               worthState.baseItemCost=floors[0].startingBid;
               const floorBox=el('ah-floor-box');
@@ -2037,7 +2234,6 @@ el('panels').addEventListener('change',e=>{
     const invPanel=el(`inv-panel-${pid}`);
     if(normalWrap) normalWrap.style.display=t.checked?'none':'block';
     if(invPanel){invPanel.className='inv-panel'+(t.checked?' visible':'');}
-    if(t.checked) updateInvDisplay(pid);
     return;
   }
   // Alt ingredient toggle (e.g. Bambuleaf vs Mochibear on Pandarai)
@@ -2057,9 +2253,12 @@ el('panels').addEventListener('change',e=>{
     const activeInp=el(`inp-price-${pid}-${isAlt?ing.altId:ing.id}`);
     const inactiveInp=el(`inp-price-${pid}-${isAlt?ing.id:ing.altId}`);
     if(activeInp){ activeInp.id=`inp-price-${pid}-${isAlt?ing.altId:ing.id}`; activeInp.dataset.iid=isAlt?ing.altId:ing.id; activeInp.value=displayNum(getPrice(pid,isAlt?ing.altId:ing.id)); }
+    // Update stock section label for this ingredient
+    const stockLbl=el(`stock-lbl-${pid}-${origId}`);
+    if(stockLbl) stockLbl.textContent=(isAlt?ing.altName:ing.name)+' I have';
     updateDisplay(pid);
     reapplyBudget(pid);
-    if(isInvMode(pid)) updateInvDisplay(pid);
+    updateStockDisplay(pid);
     return;
   }
 });
@@ -2091,5 +2290,6 @@ function inputGroupEl(label,sub,inputId,val){
   renderAll();
 })();
 </script>
+
 </body>
 </html>
