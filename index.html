@@ -512,6 +512,15 @@ const DEFAULT_PRODUCTS=[
    ingredients:[{id:'pest',name:'Pest',perUnit:1000/64},{id:'chill',name:'Chill',perUnit:1000/64},{id:'bezal',name:'Bezal',perUnit:400/64},{id:'draconic',name:'Draconic',perUnit:160/64}],
    defaultPrices:{pest:43000,chill:6000,bezal:13500,draconic:135000,sell:1540000},
    bazaarSell:'SHARD_DRAGONFLY'},
+  {id:'bambloom',name:'Bambloom',
+   chain:'(Bambuleaf OR Mochibear) + Glacite Walker → Bambloom',
+   ingredients:[
+     {id:'bambuleaf',name:'Bambuleaf',perUnit:1000/400,altId:'mochibear',altName:'Mochibear'},
+     {id:'glacite',name:'Glacite Walker',perUnit:1000/400}
+   ],
+   defaultPrices:{bambuleaf:42000,mochibear:42000,glacite:7500,sell:186000},
+   bazaarSell:'SHARD_BAMBLOOM',
+   altIngredients:true},
 ];
 
 const BAZAAR_MAP={
