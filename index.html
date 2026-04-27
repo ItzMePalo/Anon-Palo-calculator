@@ -85,7 +85,7 @@
   .budget-row{background:rgba(246,201,14,0.05);border:1px solid rgba(246,201,14,0.2);border-radius:14px;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:10px;}
   .budget-badge{font-size:13px;color:var(--gold);margin-top:4px;}
 
-  /* ── STOCK MODE (from-stock calculator) ── */
+  /* ── STOCK MODE ── */
   .stock-section{background:var(--surface);border:1px solid rgba(96,165,250,0.2);border-radius:14px;padding:22px 26px;margin-bottom:16px;}
   .stock-title{font-size:14px;font-weight:700;color:var(--blue);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
   .stock-sub{font-size:13px;color:var(--muted);margin-bottom:16px;}
@@ -98,7 +98,6 @@
   .stock-result .sr-hi{font-weight:700;color:var(--accent);}
   .stock-result .sr-need{color:var(--blue);}
   .stock-result .sr-cost{color:var(--gold);}
-  /* keep toggle-switch for alt-ingredient toggle */
   .toggle-switch{position:relative;width:44px;height:24px;flex-shrink:0;}
   .toggle-switch input{opacity:0;width:0;height:0;}
   .toggle-slider{position:absolute;cursor:pointer;inset:0;background:var(--surface2);border:1px solid var(--border2);border-radius:24px;transition:0.2s;}
@@ -115,7 +114,6 @@
     -webkit-text-fill-color:var(--text)!important;
     -webkit-appearance:none;
     appearance:none;
-    /* iOS Safari autofill override */
     -webkit-box-shadow:0 0 0 1000px var(--surface2) inset!important;
     box-shadow:0 0 0 1000px var(--surface2) inset!important;
   }
@@ -156,7 +154,6 @@
 
   /* ── FLIP LOG ── */
   .log-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:28px;}
-  /* ── LOG FLIP INLINE ── */
   .log-flip-box{background:rgba(246,201,14,0.05);border:1px solid rgba(246,201,14,0.2);border-radius:14px;padding:20px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:8px;}
   .log-flip-left{flex:1;min-width:180px;}
   .log-flip-title{font-size:16px;font-weight:600;color:var(--gold);}
@@ -165,7 +162,6 @@
   .log-flip-status{font-size:13px;min-width:80px;}
   .log-flip-status.ok{color:var(--accent);}
   .log-flip-status.err{color:var(--red);}
-  /* ── WORTH SAVE PRICE ── */
   .worth-save-btn{background:rgba(126,232,184,0.08);border:1px solid rgba(126,232,184,0.25);color:var(--accent);border-radius:7px;padding:5px 11px;font-size:12px;font-weight:600;font-family:inherit;cursor:pointer;transition:all 0.12s;}
   .worth-save-btn:hover{background:rgba(126,232,184,0.18);}
   .worth-save-btn.saving{opacity:0.5;pointer-events:none;}
@@ -223,10 +219,8 @@
   /* ── ITEM WORTH ── */
   .worth-layout{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:start;}
   @media(max-width:900px){.worth-layout{grid-template-columns:1fr;}}
-
   .worth-left{}
   .worth-right{position:sticky;top:24px;}
-
   .worth-section{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px;}
   .worth-section-header{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;background:var(--surface2);border-bottom:1px solid var(--border);cursor:pointer;user-select:none;}
   .worth-section-header:hover{background:var(--border);}
@@ -237,8 +231,6 @@
   .worth-section-chevron.open{transform:rotate(180deg);}
   .worth-section-body{padding:20px 22px;display:none;}
   .worth-section-body.open{display:block;animation:fadeIn 0.15s ease;}
-
-  /* stepper + qty row */
   .worth-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);gap:12px;}
   .worth-row:last-child{border-bottom:none;}
   .worth-row-left{flex:1;}
@@ -255,8 +247,6 @@
   .worth-price-label{font-size:11px;color:var(--muted);min-width:50px;text-align:right;}
   .price-tag{font-size:13px;color:var(--muted);min-width:70px;text-align:right;}
   .price-tag.has-val{color:var(--accent);}
-
-  /* enchant search */
   .enchant-search{width:100%;background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:15px;font-family:inherit;padding:11px 14px;outline:none;margin-bottom:14px;-webkit-appearance:none;-webkit-text-fill-color:var(--text);}
   .enchant-search:focus{border-color:var(--purple);}
   .enchant-list{display:flex;flex-direction:column;gap:2px;max-height:320px;overflow-y:auto;}
@@ -273,8 +263,6 @@
   .enchant-chip{display:flex;align-items:center;gap:6px;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.3);border-radius:20px;padding:5px 12px;font-size:13px;color:var(--purple);}
   .enchant-chip .chip-rm{background:none;border:none;color:var(--muted);cursor:pointer;font-size:14px;padding:0;line-height:1;}
   .enchant-chip .chip-rm:hover{color:var(--red);}
-
-  /* summary card */
   .worth-summary{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
   .ws-header{padding:20px 24px;background:var(--surface2);border-bottom:1px solid var(--border);}
   .ws-title{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;}
@@ -310,8 +298,6 @@
   .item-name-input:focus{border-color:var(--purple);}
   .worth-reset-btn{background:rgba(255,94,94,0.08);border:1px solid rgba(255,94,94,0.25);color:var(--red);border-radius:10px;padding:10px 16px;font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;}
   .worth-reset-btn:hover{background:rgba(255,94,94,0.15);}
-
-  /* ── AH IMPORT ── */
   .ah-import-box{background:var(--surface);border:1px solid rgba(192,132,252,0.3);border-radius:14px;padding:24px 28px;margin-bottom:20px;}
   .ah-import-title{font-size:14px;font-weight:700;color:var(--purple);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;}
   .ah-import-sub{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.5;}
@@ -335,17 +321,10 @@
   .ah-parsed-label{color:var(--muted);}
   .ah-parsed-val{font-weight:600;color:var(--text);}
   .ah-parsed-val.accent{color:var(--accent);}
-  .ah-parsed-val.gold{color:var(--gold);}
-  .ah-parsed-val.purple{color:var(--purple);}
-  .ah-parsed-val.blue{color:var(--blue);}
   .floor-box{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.2);border-radius:10px;margin-top:10px;flex-wrap:wrap;}
   .floor-label{font-size:13px;color:var(--muted);flex:1;}
   .floor-val{font-size:18px;font-weight:700;color:var(--blue);}
   .floor-sub{font-size:12px;color:var(--muted);margin-top:2px;}
-  .floor-search-btn{background:rgba(96,165,250,0.1);border:1px solid rgba(96,165,250,0.3);color:#93c5fd;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;}
-  .floor-search-btn:hover{background:rgba(96,165,250,0.18);}
-  .floor-search-btn.loading{opacity:0.6;pointer-events:none;}
-  /* Base item cost row in summary */
   .ws-base-row{padding:14px 24px;background:rgba(96,165,250,0.04);border-top:1px solid var(--border);}
   .ws-base-label{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;}
   .ws-base-val{font-size:18px;font-weight:700;color:var(--blue);}
@@ -395,19 +374,10 @@
 </div>
 
 <script>
-// ─── CONFIG ──────────────────────────────────────────────────────────────────
-// ─── TOKEN SETUP ──────────────────────────────────────────────────────────────
-// Replace 'PASTE_YOUR_TOKEN_HERE' with your GitHub Personal Access Token.
-// In GitHub: Settings → Developer Settings → Personal access tokens → Tokens (classic)
-// Permissions needed: repo (full), specifically "Contents: Read and Write"
-// IMPORTANT: Your data.json must already exist in the repo with at least: {"products":[],"flips":[],"worthPrices":{}}
-// If it doesn't exist, create it manually in GitHub with that content first.
-const GH_USER   = 'ItzMePalo';
-const GH_REPO   = 'Anon-Palo-Calculator';
-const GH_BRANCH = 'main';
-const GH_FILE   = 'data.json';
-const GH_API    = `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_FILE}`;
-const GH_TOKEN  = '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';
+// ─── JSONBIN CONFIG ───────────────────────────────────────────────────────────
+const JB_BIN_ID  = '69ee25ebaaba8821973cca43';
+const JB_API_KEY = '$2a$10$UO42fj.qpQ3J5WvIKo7zS.x9EdhUvqom9xoxSFPuHEg.yna4qEtOK';
+const JB_BASE    = `https://api.jsonbin.io/v3/b/${JB_BIN_ID}`;
 
 // ─── HELPERS ─────────────────────────────────────────────────────────────────
 function parseNum(raw){
@@ -430,11 +400,9 @@ function displayNum(n){
   if(n>=1e3) return parseFloat((n/1e3).toFixed(2))+'k';
   return String(n);
 }
-// fmtPrice: show raw number for price inputs - preserves decimals, no k/m conversion
 function fmtPrice(n){
   if(!n&&n!==0) return '';
-  // Round to at most 1 decimal place to avoid floating point noise
-  const r = Math.round(n*10)/10;
+  const r=Math.round(n*10)/10;
   return String(r);
 }
 function fmt(n){
@@ -451,10 +419,7 @@ function el(id){return document.getElementById(id);}
 function setText(id,v){const e=el(id);if(e)e.textContent=v;}
 function setClass(id,c){const e=el(id);if(e)e.className=c;}
 
-// ─── GITHUB SYNC ─────────────────────────────────────────────────────────────
-let ghToken=GH_TOKEN;
-let ghSha='';
-
+// ─── JSONBIN SYNC ─────────────────────────────────────────────────────────────
 function setStatus(msg,cls=''){
   const s=el('sync-status');
   if(!s) return;
@@ -462,54 +427,48 @@ function setStatus(msg,cls=''){
   s.className='sync-status'+(cls?' '+cls:'');
 }
 
-async function ghRead(){
+async function jbRead(){
   setStatus('⟳ Syncing...','loading');
   try{
-    const headers={'Accept':'application/vnd.github.v3+json'};
-    if(ghToken&&ghToken!=='PASTE_YOUR_TOKEN_HERE') headers['Authorization']='token '+ghToken;
-    const res=await fetch(GH_API+`?ref=${GH_BRANCH}&t=${Date.now()}`,{headers});
-    if(res.status===404){setStatus('⚠ No data.json yet','');return null;}
-    if(res.status===401||res.status===403){setStatus('⚠ Token missing or invalid — see instructions','err');return null;}
+    const res=await fetch(`${JB_BASE}/latest`,{
+      headers:{
+        'X-Master-Key': JB_API_KEY,
+        'X-Bin-Meta':   'false',
+      }
+    });
     if(!res.ok) throw new Error('HTTP '+res.status);
-    const json=await res.json();
-    ghSha=json.sha;
-    const decoded=JSON.parse(atob(json.content.replace(/\n/g,'')));
+    const data=await res.json();
     setStatus('✓ Synced','ok');
-    return decoded;
-  }catch(e){setStatus('✗ Sync failed','err');console.error('ghRead:',e);return null;}
+    return data;
+  }catch(e){
+    setStatus('✗ Sync failed','err');
+    console.error('jbRead:',e);
+    return null;
+  }
 }
 
-async function ghWrite(data){
-  if(!ghToken||ghToken==='PASTE_YOUR_TOKEN_HERE'){
-    setStatus('⚠ No token — open index.html, find GH_TOKEN and paste your token','err');
-    return false;
-  }
+async function jbWrite(data){
   setStatus('⟳ Saving...','loading');
   try{
-    // If we don't have a SHA yet (first run or page reload), fetch it now
-    if(!ghSha){
-      try{
-        const r=await fetch(GH_API+`?ref=${GH_BRANCH}&t=${Date.now()}`);
-        if(r.ok){const j=await r.json();ghSha=j.sha||'';}
-      }catch(e){/* file might not exist yet, sha stays empty */}
-    }
-    const body={
-      message:'Update data.json via Shard Flip Calculator',
-      content:btoa(unescape(encodeURIComponent(JSON.stringify(data,null,2)))),
-      branch:GH_BRANCH,
-    };
-    if(ghSha) body.sha=ghSha;
-    const res=await fetch(GH_API,{
-      method:'PUT',
-      headers:{'Authorization':'token '+ghToken,'Content-Type':'application/json'},
-      body:JSON.stringify(body),
+    const res=await fetch(JB_BASE,{
+      method: 'PUT',
+      headers:{
+        'Content-Type': 'application/json',
+        'X-Master-Key': JB_API_KEY,
+      },
+      body: JSON.stringify(data),
     });
-    if(!res.ok){const err=await res.json().catch(()=>({}));throw new Error(err.message||'HTTP '+res.status);}
-    const json=await res.json();
-    ghSha=json.content.sha;
+    if(!res.ok){
+      const err=await res.json().catch(()=>({}));
+      throw new Error(err.message||'HTTP '+res.status);
+    }
     setStatus('✓ Saved','ok');
     return true;
-  }catch(e){setStatus('✗ Save failed: '+e.message,'err');console.error('ghWrite:',e);return false;}
+  }catch(e){
+    setStatus('✗ Save failed: '+e.message,'err');
+    console.error('jbWrite:',e);
+    return false;
+  }
 }
 
 // ─── DEFAULT PRODUCTS ─────────────────────────────────────────────────────────
@@ -555,7 +514,6 @@ const DEFAULT_PRODUCTS=[
    bazaarSell:'SHARD_DRAGONFLY'},
 ];
 
-// ingredient bazaar keys
 const BAZAAR_MAP={
   mz:'SHARD_MINER_ZOMBIE',chill:'SHARD_CHILL',invisibug:'SHARD_INVISIBUG',
   pest:'SHARD_PEST',glacite:'SHARD_GLACITE_WALKER',bambuleaf:'SHARD_BAMBULEAF',
@@ -571,8 +529,8 @@ let local={
   budgets:     JSON.parse(localStorage.getItem('sfc_budgets')     ||'{}'),
   invMode:     JSON.parse(localStorage.getItem('sfc_invmode')     ||'{}'),
   invQtys:     JSON.parse(localStorage.getItem('sfc_invqtys')     ||'{}'),
-  altChoice:   JSON.parse(localStorage.getItem('sfc_altchoice')   ||'{}'), // {pid__ingId: 'alt' | 'base'}
-  worthPrices: JSON.parse(localStorage.getItem('sfc_worthprices') ||'{}'), // {itemId: price}
+  altChoice:   JSON.parse(localStorage.getItem('sfc_altchoice')   ||'{}'),
+  worthPrices: JSON.parse(localStorage.getItem('sfc_worthprices') ||'{}'),
   worthMargin: parseFloat(localStorage.getItem('sfc_worthmargin') ||'20'),
   activeTab:   localStorage.getItem('sfc_active')||'stalagmight',
 };
@@ -612,17 +570,16 @@ function setInvMode(pid,v){local.invMode[pid]=v;saveLocal();}
 function setInvQty(pid,iid,v){local.invQtys[`${pid}__${iid}`]=v;saveLocal();}
 function getAltChoice(pid,iid){return local.altChoice[`${pid}__${iid}`]||'base';}
 function setAltChoice(pid,iid,v){local.altChoice[`${pid}__${iid}`]=v;saveLocal();}
-// Get the effective ingredient id (base or alt)
 function getEffIngId(pid,ing){
   if(!ing.altId) return ing.id;
-  return getAltChoice(pid,ing.id)==='alt' ? ing.altId : ing.id;
+  return getAltChoice(pid,ing.id)==='alt'?ing.altId:ing.id;
 }
 function getEffIngName(pid,ing){
   if(!ing.altId) return ing.name;
-  return getAltChoice(pid,ing.id)==='alt' ? ing.altName : ing.name;
+  return getAltChoice(pid,ing.id)==='alt'?ing.altName:ing.name;
 }
 
-// ─── CALC ─────────────────────────────────────────────────────────────────────
+// ─── CALC ────────────────────────────────────────────────────────────────────
 function calc(product){
   const qty=getQty(product.id);
   let totalCost=0;
@@ -645,8 +602,6 @@ function calc(product){
   return{qty,ings,totalCost,sellPrice,revenue,profit,costPerShard,profitPerShard,margin};
 }
 
-// ─── STOCK CALC ───────────────────────────────────────────────────────────────
-// Given amounts of each ingredient, figure out max outputs, what to buy, profit
 function calcStock(product){
   const pid=product.id;
   let maxOutputs=Infinity;
@@ -661,12 +616,9 @@ function calcStock(product){
     if(perOutput>0&&have>0) maxOutputs=Math.min(maxOutputs,possible);
     ingData.push({origId:origIng.id,effId,effName,have,perOutput,possible});
   }
-  // If no stock entered at all, return null
   const anyEntered=ingData.some(i=>i.have>0);
   if(!anyEntered) return null;
   if(maxOutputs===Infinity) maxOutputs=0;
-
-  // For each ingredient: how many do you have, how many do you need, how many to buy
   const breakdown=[];
   let totalBuyCost=0;
   for(const ing of ingData){
@@ -678,16 +630,12 @@ function calcStock(product){
     totalBuyCost+=buyCost;
     breakdown.push({...ing,needed,toUse,toBuy,buyCost});
   }
-
   const sellPrice=getSell(pid);
   const revenue=Math.round(maxOutputs*sellPrice);
-  // Total cost = cost of what you're buying to fill gaps
   const profit=Math.round(revenue-totalBuyCost);
-
   return{maxOutputs,breakdown,revenue,totalBuyCost,profit,sellPrice,anyEntered};
 }
 
-// ─── FLIP LOG CALC ────────────────────────────────────────────────────────────
 function calcLifetime(){
   let totalRevenue=0,totalSpend=0;
   remoteData.flips.forEach(f=>{
@@ -709,17 +657,14 @@ function renderTabs(){
     b.textContent=p.name; b.dataset.tabId=p.id;
     bar.appendChild(b);
   });
-  // Worth tab
   const worthBtn=document.createElement('button');
   worthBtn.className='tab tab-worth'+(local.activeTab==='__worth__'?' active':'');
   worthBtn.textContent='💎 Item Worth'; worthBtn.dataset.tabId='__worth__';
   bar.appendChild(worthBtn);
-  // Log tab
   const logBtn=document.createElement('button');
   logBtn.className='tab tab-log'+(local.activeTab==='__log__'?' active':'');
   logBtn.textContent='📋 Flip Log'; logBtn.dataset.tabId='__log__';
   bar.appendChild(logBtn);
-  // Manage tab
   const manBtn=document.createElement('button');
   manBtn.className='tab tab-manage'+(local.activeTab==='__manage__'?' active':'');
   manBtn.textContent='+ Manage'; manBtn.dataset.tabId='__manage__';
@@ -747,13 +692,11 @@ function buildProduct(product){
   div.className='panel active'; div.dataset.pid=pid;
   const r=calc(product);
 
-  // Header
   const header=document.createElement('div'); header.className='product-header';
   const titleEl=document.createElement('div'); titleEl.className='product-title'; titleEl.textContent=product.name;
   const chainEl=document.createElement('div'); chainEl.className='chain-badge'; chainEl.textContent=product.chain;
   header.appendChild(titleEl); header.appendChild(chainEl); div.appendChild(header);
 
-  // ── From-stock calculator ──
   const stockSection=document.createElement('div'); stockSection.className='stock-section';
   const stockTitle=document.createElement('div'); stockTitle.className='stock-title'; stockTitle.textContent='From My Stock';
   const stockSub=document.createElement('div'); stockSub.className='stock-sub'; stockSub.textContent='Enter how many ingredient shards you have — calculates max outputs and what you still need to buy.';
@@ -761,8 +704,6 @@ function buildProduct(product){
   const stockGrid=document.createElement('div'); stockGrid.className='stock-grid';
   product.ingredients.forEach(origIng=>{
     const f=document.createElement('div'); f.className='stock-field';
-    // Effective ingredient (could be alt)
-    const effId=getEffIngId(pid,origIng);
     const effName=getEffIngName(pid,origIng);
     const lbl=document.createElement('label'); lbl.textContent=effName+' I have';
     lbl.id=`stock-lbl-${pid}-${origIng.id}`;
@@ -777,10 +718,8 @@ function buildProduct(product){
   stockSection.appendChild(stockResult);
   div.appendChild(stockSection);
 
-  // ── Normal quantity mode ──
   const normalWrap=document.createElement('div'); normalWrap.id=`normal-wrap-${pid}`;
   normalWrap.style.display='block';
-
   normalWrap.appendChild(secLabel('Target Quantity'));
   normalWrap.appendChild(inputGroupEl(`How many ${product.name} shards do you want?`,'Supports 64, 1k, 2.5m — everything scales automatically',`inp-qty-${pid}`,getQtyStr(pid)));
 
@@ -794,7 +733,6 @@ function buildProduct(product){
   normalWrap.appendChild(budRow);
   div.appendChild(normalWrap);
 
-  // Ingredients
   div.appendChild(secLabel('Ingredients & Prices'));
   const bazWrap=document.createElement('div'); bazWrap.style.cssText='display:flex;align-items:center;gap:12px;margin-bottom:14px;';
   const bazBtn=document.createElement('button'); bazBtn.className='bazaar-btn'; bazBtn.dataset.action='fetch-bazaar'; bazBtn.dataset.pid=pid; bazBtn.textContent='⟳ Fetch Live Bazaar Prices';
@@ -803,12 +741,10 @@ function buildProduct(product){
 
   const table=document.createElement('div'); table.className='ingredients';
   table.innerHTML='<div class="ing-header"><span>Ingredient</span><div style="display:flex;gap:52px;"><span>Qty needed</span><span>Price / shard</span><span style="min-width:100px;text-align:right;">Total cost</span></div></div>';
-  // Use original ingredients list (with altId info) for UI, but display effective values from r.ings
   product.ingredients.forEach((origIng,idx)=>{
-    const ing=r.ings[idx]; // has effective id/name/price from calc()
+    const ing=r.ings[idx];
     const isAlt=origIng.altId&&getAltChoice(pid,origIng.id)==='alt';
     const row=document.createElement('div'); row.className='ing-row';
-    // Name column: if altId exists, show toggle switch
     const nameWrap=document.createElement('div'); nameWrap.style.cssText='display:flex;flex-direction:column;gap:6px;min-width:150px;';
     const nameEl=document.createElement('div'); nameEl.className='ing-name'; nameEl.id=`ing-name-${pid}-${origIng.id}`; nameEl.textContent=ing.name;
     nameWrap.appendChild(nameEl);
@@ -821,19 +757,10 @@ function buildProduct(product){
       const togSlider=document.createElement('span'); togSlider.className='toggle-slider';
       togWrap.appendChild(togInp); togWrap.appendChild(togSlider);
       const altLbl2=document.createElement('span'); altLbl2.style.cssText='font-size:12px;color:var(--blue);'; altLbl2.id=`alt-lbl-${pid}-${origIng.id}`; altLbl2.textContent=isAlt?origIng.altName:origIng.name;
-      altRow.appendChild(altLbl);
-      altRow.appendChild(togWrap);
-      altRow.appendChild(altLbl2);
-      // Second price input for alt ingredient
-      const altPriceInp=makeSmartInput(`inp-price-${pid}-${isAlt?origIng.id:origIng.altId}`,displayNum(getPrice(pid,isAlt?origIng.id:origIng.altId)));
-      altPriceInp.style.cssText='width:90px;font-size:14px;margin-top:4px;';
-      altPriceInp.dataset.action='set-price'; altPriceInp.dataset.pid=pid; altPriceInp.dataset.iid=isAlt?origIng.id:origIng.altId;
-      altPriceInp.placeholder='alt price';
-      // Show the inactive ingredient's price beneath toggle
+      altRow.appendChild(altLbl); altRow.appendChild(togWrap); altRow.appendChild(altLbl2);
       const altPriceWrap=document.createElement('div'); altPriceWrap.style.cssText='font-size:11px;color:var(--muted);margin-top:3px;';
       altPriceWrap.id=`alt-price-lbl-${pid}-${origIng.id}`; altPriceWrap.textContent=(isAlt?origIng.name:origIng.altName)+': '+displayNum(getPrice(pid,isAlt?origIng.id:origIng.altId));
-      nameWrap.appendChild(altRow);
-      nameWrap.appendChild(altPriceWrap);
+      nameWrap.appendChild(altRow); nameWrap.appendChild(altPriceWrap);
     }
     const right=document.createElement('div'); right.className='ing-right';
     const qEl=document.createElement('div'); qEl.className='ing-qty'; qEl.id=`iqty-${pid}-${origIng.id}`; qEl.textContent=ing.needed.toLocaleString();
@@ -868,7 +795,6 @@ function buildProduct(product){
     <div class="profit-row"><span class="label">Net Profit</span><span class="val ${r.profit>=0?'pos':'neg'}" id="pb-profit-${pid}">${r.profit>=0?'+':''}${fmt(r.profit)}</span></div>`;
   div.appendChild(pb);
 
-  // ── Log This Flip button ──
   div.appendChild(secLabel('Log Flip'));
   const logBox=document.createElement('div'); logBox.className='log-flip-box'; logBox.id=`log-flip-box-${pid}`;
   logBox.innerHTML=`
@@ -882,9 +808,6 @@ function buildProduct(product){
       <div class="log-flip-status" id="log-flip-status-${pid}"></div>
     </div>`;
   div.appendChild(logBox);
-
-  // Re-render inventory result if inv mode is on
-
   return div;
 }
 
@@ -895,7 +818,6 @@ function updateDisplay(pid){
     const origIng=product.ingredients[idx];
     setText(`iqty-${pid}-${origIng.id}`,ing.needed.toLocaleString());
     setText(`icost-${pid}-${origIng.id}`,fmt(ing.cost));
-    // refresh price input to match active ingredient
     const pInp=el(`inp-price-${pid}-${ing.id}`); if(pInp&&document.activeElement!==pInp) pInp.value=fmtPrice(ing.price);
   });
   setText(`cps-val-${pid}`,fmt(r.costPerShard));
@@ -913,9 +835,7 @@ function updateDisplay(pid){
   setText(`pb-profit-${pid}`,(r.profit>=0?'+':'')+fmt(r.profit));
   setClass(`pb-profit-${pid}`,'val '+(r.profit>=0?'pos':'neg'));
   pulseCards();
-  // also refresh sell price input
   const si=el(`inp-sell-${pid}`); if(si&&document.activeElement!==si) si.value=fmtPrice(getSell(pid));
-  // refresh log-flip-box subtitle
   const logSub=el(`log-flip-box-${pid}`)?.querySelector('.log-flip-sub');
   if(logSub) logSub.textContent=`Saves current qty (${r.qty.toLocaleString()}) at ${fmt(r.sellPrice)}/shard to your Flip Log.`;
 }
@@ -925,15 +845,12 @@ function updateStockDisplay(pid){
   const sr=el(`stock-result-${pid}`); if(!sr) return;
   const s=calcStock(product);
   if(!s){sr.innerHTML='Enter quantities above to see how many you can make.';return;}
-  
   let html=`<div style="margin-bottom:8px;">`;
   html+=`Can make: <span class="sr-hi">${s.maxOutputs.toLocaleString()} ${product.name} shards</span>`;
   if(s.revenue>0) html+=` → Revenue: <span class="sr-cost">${fmt(s.revenue)}</span>`;
   html+=`</div>`;
-  
   const needToBuy=s.breakdown.filter(i=>i.toBuy>0);
   const alreadyHave=s.breakdown.filter(i=>i.toBuy===0&&i.have>0);
-  
   if(needToBuy.length){
     html+=`<div style="margin-bottom:6px;color:var(--blue);font-weight:600;font-size:13px;">Need to buy:</div>`;
     needToBuy.forEach(i=>{
@@ -946,7 +863,6 @@ function updateStockDisplay(pid){
   } else if(alreadyHave.length){
     html+=`<div style="font-size:13px;color:var(--accent);">You have enough of all ingredients!</div>`;
   }
-  
   sr.innerHTML=html;
 }
 
@@ -969,7 +885,6 @@ function reapplyBudget(pid){
 function buildLog(){
   const div=document.createElement('div'); div.className='panel active';
   const lt=calcLifetime();
-
   const stats=document.createElement('div'); stats.className='log-stats'; stats.id='log-stats';
   stats.innerHTML=`<div class="log-card"><div class="lc-label">Total Revenue</div><div class="lc-val gold" id="lt-rev">${fmt(lt.totalRevenue)}</div></div>
     <div class="log-card"><div class="lc-label">Total Spent</div><div class="lc-val" id="lt-spend">${fmt(lt.totalSpend)}</div></div>
@@ -999,7 +914,6 @@ function buildLog(){
   form.appendChild(preview);
   const logErr=document.createElement('div'); logErr.className='alert'; logErr.id='log-err';
   const logBtn=document.createElement('button'); logBtn.className='btn btn-gold'; logBtn.dataset.action='log-flip'; logBtn.textContent='Log Flip';
-  if(!ghToken){logBtn.disabled=true;logBtn.title='Need a GitHub token';logBtn.style.opacity='0.5';}
   form.appendChild(logBtn); form.appendChild(logErr);
   div.appendChild(form);
   ['log-qty','log-sell','log-cost'].forEach(id=>{ el(id)?.addEventListener('input',updateLogPreview); });
@@ -1075,7 +989,6 @@ function buildManage(){
   div.appendChild(lp);
   const ap=document.createElement('div'); ap.className='manage-panel';
   const ah=document.createElement('h3'); ah.textContent='Add New Product'; ap.appendChild(ah);
-  if(!ghToken){const w=document.createElement('div');w.style.cssText='color:var(--gold);font-size:14px;margin-bottom:16px;padding:12px 16px;background:rgba(246,201,14,0.08);border-radius:10px;';w.textContent='⚠ You need a GitHub token to add products.';ap.appendChild(w);}
   ap.innerHTML+=`
     <div class="form-row">
       <div class="form-field" style="flex:1;min-width:180px;"><label>Product name</label><input type="text" id="new-name" placeholder="e.g. Wartybug" autocomplete="off" /></div>
@@ -1093,7 +1006,7 @@ function buildManage(){
     <div class="form-row" style="margin-top:12px;align-items:flex-end;">
       <button class="btn btn-ghost btn-sm" data-action="add-ing-row">+ ingredient</button>
       <div class="form-field"><label>Default sell price</label><input type="text" id="new-sell" placeholder="500k" autocomplete="off" style="min-width:110px;" /></div>
-      <button class="btn btn-accent" data-action="add-product" ${!ghToken?'disabled style="opacity:0.5;"':''}>Add Product</button>
+      <button class="btn btn-accent" data-action="add-product">Add Product</button>
     </div>
     <div id="add-error" class="alert"></div>`;
   div.appendChild(ap);
@@ -1101,7 +1014,6 @@ function buildManage(){
 }
 
 // ─── ITEM WORTH PANEL ─────────────────────────────────────────────────────────
-// Upgrade definitions
 const UPGRADES = {
   hpb: {
     label: 'Hot Potato Books',
@@ -1118,7 +1030,6 @@ const UPGRADES = {
   },
   master_stars: {
     label: 'Master Stars (M1–M5)',
-    // Each master star has its own bazaar price — stored separately, displayed as cumulative stepper
     starPrices: [
       {id:'mstar1',bazaarKey:'DUNGEON_MASTER_STAR_1',defaultPrice:500000},
       {id:'mstar2',bazaarKey:'DUNGEON_MASTER_STAR_2',defaultPrice:1500000},
@@ -1126,27 +1037,17 @@ const UPGRADES = {
       {id:'mstar4',bazaarKey:'DUNGEON_MASTER_STAR_4',defaultPrice:10000000},
       {id:'mstar5',bazaarKey:'DUNGEON_MASTER_STAR_5',defaultPrice:25000000},
     ],
-    items: [] // empty — handled specially
+    items: []
   },
-  // Normal stars: 1-5 via essence. Essence type depends on item type; cost varies by rarity.
-  // Essence amounts per star (common pattern: star N costs N*50 essence for rare, N*75 epic, N*100 legendary)
-  // Actual formula from wiki: Star 1=50 Rare/75 Epic/100 Leg, Star 2=100/150/200, Star 3=150/225/300, Star 4=200/300/400, Star 5=250/375/500
   normal_stars: {
     label: 'Normal Stars (★1–★5, Essence)',
-    items: [], // empty — handled specially via single stepper
-    // Essence costs vary per item (not per rarity) — user enters manually
-    // Common ranges: Necron 200/300/400/500/600, Shadow Assassin 100/150/200/250/300, etc.
-    essenceCosts: null, // manual input only
-    // bazaar keys for each essence type (instasell price = what you get, but here we're BUYING essence to use it)
+    items: [],
+    essenceCosts: null,
     essenceTypes: {
-      WITHER_ESSENCE:   'WITHER_ESSENCE',
-      UNDEAD_ESSENCE:   'UNDEAD_ESSENCE',
-      SPIDER_ESSENCE:   'SPIDER_ESSENCE',
-      DRAGON_ESSENCE:   'DRAGON_ESSENCE',
-      DIAMOND_ESSENCE:  'DIAMOND_ESSENCE',
-      ICE_ESSENCE:      'ICE_ESSENCE',
-      GOLD_ESSENCE:     'GOLD_ESSENCE',
-      CRIMSON_ESSENCE:  'CRIMSON_ESSENCE',
+      WITHER_ESSENCE:'WITHER_ESSENCE',UNDEAD_ESSENCE:'UNDEAD_ESSENCE',
+      SPIDER_ESSENCE:'SPIDER_ESSENCE',DRAGON_ESSENCE:'DRAGON_ESSENCE',
+      DIAMOND_ESSENCE:'DIAMOND_ESSENCE',ICE_ESSENCE:'ICE_ESSENCE',
+      GOLD_ESSENCE:'GOLD_ESSENCE',CRIMSON_ESSENCE:'CRIMSON_ESSENCE',
     }
   },
   scrolls: {
@@ -1167,7 +1068,6 @@ const UPGRADES = {
   ult_enchants: {
     label: 'Ultimate Enchants (all 24)',
     items: [
-      // Weapon
       { id:'ult_wise',       name:'Ultimate Wise',      maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_WISE_5',             defaultPrice:80000000 },
       { id:'ult_chimera',    name:'Chimera',             maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_CHIMERA_5',          defaultPrice:120000000 },
       { id:'ult_one_for_all',name:'One For All',         maxTier:1, bazaarKey:'ENCHANTMENT_ULTIMATE_ONE_FOR_ALL_1',      defaultPrice:150000000 },
@@ -1182,7 +1082,6 @@ const UPGRADES = {
       { id:'ult_missile',    name:'Missile',             maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_MISSILE_5',          defaultPrice:8000000 },
       { id:'ult_the_one',    name:'The One',             maxTier:3, bazaarKey:'ENCHANTMENT_ULTIMATE_THE_ONE_3',          defaultPrice:0, customPrice:true },
       { id:'ult_first_imp',  name:'First Impression',   maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_FIRST_IMPRESSION_5', defaultPrice:0, customPrice:true },
-      // Armor
       { id:'ult_bank',       name:'Ultimate Bank',       maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_BANK_5',             defaultPrice:5000000 },
       { id:'ult_jerry',      name:'Ultimate Jerry',      maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_JERRY_5',            defaultPrice:3000000 },
       { id:'ult_legion',     name:'Legion',              maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_LEGION_5',           defaultPrice:20000000 },
@@ -1192,78 +1091,56 @@ const UPGRADES = {
       { id:'ult_no_pain',    name:'No Pain No Gain',     maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_NO_PAIN_NO_GAIN_5',  defaultPrice:1000000 },
       { id:'ult_bobbin',     name:"Bobbin' Time",        maxTier:3, bazaarKey:"ENCHANTMENT_ULTIMATE_BOBBIN_TIME_3",      defaultPrice:200000000 },
       { id:'ult_habanero',   name:'Habanero Tactics',    maxTier:4, bazaarKey:'ENCHANTMENT_ULTIMATE_HABANERO_TACTICS_4', defaultPrice:50000000 },
-      { id:'ult_refrigerate',name:'Refrigerate',         maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_REFRIGERATE_5',     defaultPrice:0, customPrice:true },
+      { id:'ult_refrigerate',name:'Refrigerate',         maxTier:5, bazaarKey:'ENCHANTMENT_ULTIMATE_REFRIGERATE_5',      defaultPrice:0, customPrice:true },
     ]
   },
   reg_enchants: {
     label: 'Regular Enchants',
     items: [
-      // ── Sword ──
-      { id:'enc_sharp',     name:'Sharpness',           maxTier:7, bazaarKey:'ENCHANTMENT_SHARPNESS_6',              defaultPrice:2000000 },
-      { id:'enc_crit',      name:'Critical',            maxTier:6, bazaarKey:'ENCHANTMENT_CRITICAL_6',               defaultPrice:500000 },
-      { id:'enc_execute',   name:'Execute',             maxTier:6, bazaarKey:'ENCHANTMENT_EXECUTE_5',                defaultPrice:3000000 },
-      { id:'enc_looting',   name:'Looting',             maxTier:5, bazaarKey:'ENCHANTMENT_LOOTING_5',                defaultPrice:200000 },
-      { id:'enc_life_steal',name:'Life Steal',          maxTier:5, bazaarKey:'ENCHANTMENT_LIFE_STEAL_4',             defaultPrice:1000000 },
-      { id:'enc_syphon',    name:'Syphon',              maxTier:5, bazaarKey:'ENCHANTMENT_SYPHON_4',                 defaultPrice:800000 },
-      { id:'enc_ender_sl',  name:'Ender Slayer',        maxTier:7, bazaarKey:'ENCHANTMENT_ENDER_SLAYER_6',           defaultPrice:5000000 },
-      { id:'enc_giant_kill',name:'Giant Killer',        maxTier:7, bazaarKey:'ENCHANTMENT_GIANT_KILLER_6',           defaultPrice:3000000 },
-      { id:'enc_vampirism', name:'Vampirism',           maxTier:6, bazaarKey:'ENCHANTMENT_VAMPIRISM_6',              defaultPrice:500000 },
-      { id:'enc_prosecute', name:'Prosecute',           maxTier:5, bazaarKey:null,                                    defaultPrice:0, customPrice:true },
-      { id:'enc_champion',  name:'Champion',            maxTier:10,bazaarKey:null,                                    defaultPrice:0, customPrice:true },
-      { id:'enc_scavenger', name:'Scavenger',           maxTier:5, bazaarKey:'ENCHANTMENT_SCAVENGER_4',              defaultPrice:500000 },
-      { id:'enc_experience',name:'Experience',          maxTier:4, bazaarKey:'ENCHANTMENT_EXPERIENCE_4',             defaultPrice:200000 },
-      { id:'enc_first_str', name:'First Strike',        maxTier:4, bazaarKey:'ENCHANTMENT_FIRST_STRIKE_4',           defaultPrice:300000 },
-      { id:'enc_thunderlord',name:'Thunderlord',        maxTier:7, bazaarKey:'ENCHANTMENT_THUNDERLORD_6',            defaultPrice:2000000 },
-      { id:'enc_cubism',    name:'Cubism',              maxTier:5, bazaarKey:'ENCHANTMENT_CUBISM_5',                 defaultPrice:100000 },
-      { id:'enc_impaling',  name:'Impaling',            maxTier:3, bazaarKey:null,                                    defaultPrice:0, customPrice:true },
-      { id:'enc_smite',     name:'Smite',               maxTier:7, bazaarKey:'ENCHANTMENT_SMITE_7',                  defaultPrice:1000000 },
-      { id:'enc_divine_gift',name:'Divine Gift',        maxTier:3, bazaarKey:null,                                    defaultPrice:0, customPrice:true },
-      // ── Bow ──
-      { id:'enc_power',     name:'Power',               maxTier:7, bazaarKey:'ENCHANTMENT_POWER_6',                  defaultPrice:1500000 },
-      { id:'enc_drag_tracer',name:'Dragon Tracer',      maxTier:5, bazaarKey:'ENCHANTMENT_DRAGON_TRACER_5',          defaultPrice:500000 },
-      { id:'enc_snipe',     name:'Snipe',               maxTier:4, bazaarKey:'ENCHANTMENT_SNIPE_3',                  defaultPrice:200000 },
-      { id:'enc_overload',  name:'Overload',            maxTier:5, bazaarKey:'ENCHANTMENT_OVERLOAD_5',               defaultPrice:50000000 },
-      { id:'enc_inf_quiv',  name:'Infinite Quiver',     maxTier:10,bazaarKey:'ENCHANTMENT_INFINITE_QUIVER_10',       defaultPrice:8000000 },
-      // ── Armor ──
-      { id:'enc_growth',    name:'Growth',              maxTier:7, bazaarKey:'ENCHANTMENT_GROWTH_6',                 defaultPrice:2000000 },
-      { id:'enc_prot',      name:'Protection',          maxTier:7, bazaarKey:'ENCHANTMENT_PROTECTION_6',             defaultPrice:1000000 },
-      { id:'enc_true_prot', name:'True Protection',     maxTier:1, bazaarKey:'ENCHANTMENT_TRUE_PROTECTION_1',        defaultPrice:5000000 },
-      { id:'enc_feather',   name:'Feather Falling',     maxTier:10,bazaarKey:'ENCHANTMENT_FEATHER_FALLING_10',       defaultPrice:8000000 },
-      { id:'enc_thorns',    name:'Thorns',              maxTier:3, bazaarKey:'ENCHANTMENT_THORNS_3',                 defaultPrice:300000 },
-      { id:'enc_rejuv',     name:'Rejuvenate',          maxTier:5, bazaarKey:'ENCHANTMENT_REJUVENATE_5',             defaultPrice:1000000 },
-      { id:'enc_strong_mana',name:'Strong Mana',        maxTier:5, bazaarKey:null,                                    defaultPrice:0, customPrice:true },
-      { id:'enc_sugar_rush',name:'Sugar Rush',          maxTier:3, bazaarKey:'ENCHANTMENT_SUGAR_RUSH_3',             defaultPrice:500000 },
-      // ── Misc/Combat ──
-      { id:'enc_dragon',    name:'Dragon Hunter',       maxTier:5, bazaarKey:'ENCHANTMENT_DRAGON_HUNTER_5',          defaultPrice:500000 },
-      { id:'enc_over_lv7',  name:'Overload VII',        maxTier:7, bazaarKey:null,                                    defaultPrice:0, customPrice:true },
-      { id:'enc_luck_sea',  name:'Luck of the Sea',     maxTier:6, bazaarKey:'ENCHANTMENT_LUCK_OF_THE_SEA_6',        defaultPrice:500000 },
-      { id:'enc_lure',      name:'Lure',                maxTier:6, bazaarKey:'ENCHANTMENT_LURE_6',                   defaultPrice:300000 },
-      { id:'enc_blessing',  name:'Blessing',            maxTier:5, bazaarKey:'ENCHANTMENT_BLESSING_5',               defaultPrice:200000 },
+      { id:'enc_sharp',     name:'Sharpness',       maxTier:7, bazaarKey:'ENCHANTMENT_SHARPNESS_6',       defaultPrice:2000000 },
+      { id:'enc_crit',      name:'Critical',        maxTier:6, bazaarKey:'ENCHANTMENT_CRITICAL_6',        defaultPrice:500000 },
+      { id:'enc_execute',   name:'Execute',         maxTier:6, bazaarKey:'ENCHANTMENT_EXECUTE_5',         defaultPrice:3000000 },
+      { id:'enc_looting',   name:'Looting',         maxTier:5, bazaarKey:'ENCHANTMENT_LOOTING_5',         defaultPrice:200000 },
+      { id:'enc_life_steal',name:'Life Steal',      maxTier:5, bazaarKey:'ENCHANTMENT_LIFE_STEAL_4',      defaultPrice:1000000 },
+      { id:'enc_syphon',    name:'Syphon',          maxTier:5, bazaarKey:'ENCHANTMENT_SYPHON_4',          defaultPrice:800000 },
+      { id:'enc_ender_sl',  name:'Ender Slayer',    maxTier:7, bazaarKey:'ENCHANTMENT_ENDER_SLAYER_6',    defaultPrice:5000000 },
+      { id:'enc_giant_kill',name:'Giant Killer',    maxTier:7, bazaarKey:'ENCHANTMENT_GIANT_KILLER_6',    defaultPrice:3000000 },
+      { id:'enc_vampirism', name:'Vampirism',       maxTier:6, bazaarKey:'ENCHANTMENT_VAMPIRISM_6',       defaultPrice:500000 },
+      { id:'enc_scavenger', name:'Scavenger',       maxTier:5, bazaarKey:'ENCHANTMENT_SCAVENGER_4',       defaultPrice:500000 },
+      { id:'enc_experience',name:'Experience',      maxTier:4, bazaarKey:'ENCHANTMENT_EXPERIENCE_4',      defaultPrice:200000 },
+      { id:'enc_first_str', name:'First Strike',    maxTier:4, bazaarKey:'ENCHANTMENT_FIRST_STRIKE_4',    defaultPrice:300000 },
+      { id:'enc_thunderlord',name:'Thunderlord',    maxTier:7, bazaarKey:'ENCHANTMENT_THUNDERLORD_6',     defaultPrice:2000000 },
+      { id:'enc_cubism',    name:'Cubism',          maxTier:5, bazaarKey:'ENCHANTMENT_CUBISM_5',          defaultPrice:100000 },
+      { id:'enc_smite',     name:'Smite',           maxTier:7, bazaarKey:'ENCHANTMENT_SMITE_7',           defaultPrice:1000000 },
+      { id:'enc_power',     name:'Power',           maxTier:7, bazaarKey:'ENCHANTMENT_POWER_6',           defaultPrice:1500000 },
+      { id:'enc_drag_tracer',name:'Dragon Tracer',  maxTier:5, bazaarKey:'ENCHANTMENT_DRAGON_TRACER_5',   defaultPrice:500000 },
+      { id:'enc_snipe',     name:'Snipe',           maxTier:4, bazaarKey:'ENCHANTMENT_SNIPE_3',           defaultPrice:200000 },
+      { id:'enc_overload',  name:'Overload',        maxTier:5, bazaarKey:'ENCHANTMENT_OVERLOAD_5',        defaultPrice:50000000 },
+      { id:'enc_inf_quiv',  name:'Infinite Quiver', maxTier:10,bazaarKey:'ENCHANTMENT_INFINITE_QUIVER_10',defaultPrice:8000000 },
+      { id:'enc_growth',    name:'Growth',          maxTier:7, bazaarKey:'ENCHANTMENT_GROWTH_6',          defaultPrice:2000000 },
+      { id:'enc_prot',      name:'Protection',      maxTier:7, bazaarKey:'ENCHANTMENT_PROTECTION_6',      defaultPrice:1000000 },
+      { id:'enc_true_prot', name:'True Protection', maxTier:1, bazaarKey:'ENCHANTMENT_TRUE_PROTECTION_1', defaultPrice:5000000 },
+      { id:'enc_feather',   name:'Feather Falling', maxTier:10,bazaarKey:'ENCHANTMENT_FEATHER_FALLING_10',defaultPrice:8000000 },
+      { id:'enc_thorns',    name:'Thorns',          maxTier:3, bazaarKey:'ENCHANTMENT_THORNS_3',          defaultPrice:300000 },
+      { id:'enc_rejuv',     name:'Rejuvenate',      maxTier:5, bazaarKey:'ENCHANTMENT_REJUVENATE_5',      defaultPrice:1000000 },
+      { id:'enc_sugar_rush',name:'Sugar Rush',      maxTier:3, bazaarKey:'ENCHANTMENT_SUGAR_RUSH_3',      defaultPrice:500000 },
+      { id:'enc_dragon',    name:'Dragon Hunter',   maxTier:5, bazaarKey:'ENCHANTMENT_DRAGON_HUNTER_5',   defaultPrice:500000 },
+      { id:'enc_luck_sea',  name:'Luck of the Sea', maxTier:6, bazaarKey:'ENCHANTMENT_LUCK_OF_THE_SEA_6', defaultPrice:500000 },
+      { id:'enc_lure',      name:'Lure',            maxTier:6, bazaarKey:'ENCHANTMENT_LURE_6',            defaultPrice:300000 },
+      { id:'enc_blessing',  name:'Blessing',        maxTier:5, bazaarKey:'ENCHANTMENT_BLESSING_5',        defaultPrice:200000 },
     ]
   },
 };
 
-// worth state — qtys/session only; prices persisted to localStorage
-// We build upgrade price map from local.worthPrices on init
 let worthState = {
-  itemName: '',
-  margin: 20,  // overwritten from local.worthMargin after local is defined
-  upgrades: {}, // { id: { qty:N, price:P, isLive:false } }
-  addedEnchants: [], // [{id, name, tier, price, isLive}]
-  livePrices: {}, // bazaarKey -> price
-  baseItemCost: 0,
-  baseItemTag: '',
-  auctionPrice: 0,
-  itemImageUrl: '',
-  normalStarsCount: 0,
-  normalStarEssenceType: 'WITHER_ESSENCE',
-  normalStarEssencePerStar: 0, // user inputs manually (varies per item)
-  essencePrices: {}
+  itemName:'',margin:20,upgrades:{},addedEnchants:[],livePrices:{},
+  baseItemCost:0,baseItemTag:'',auctionPrice:0,itemImageUrl:'',
+  normalStarsCount:0,normalStarEssenceType:'WITHER_ESSENCE',
+  normalStarEssencePerStar:0,essencePrices:{}
 };
-// Restore saved prices into worthState after local is initialized
+
 function restoreWorthPrices(){
-  worthState.margin = local.worthMargin||20;
-  // Merge: remote (data.json) takes priority, localStorage as fallback
+  worthState.margin=local.worthMargin||20;
   const merged={...local.worthPrices,...remoteData.worthPrices};
   for(const [secId,sec] of Object.entries(UPGRADES)){
     for(const item of sec.items){
@@ -1275,30 +1152,25 @@ function restoreWorthPrices(){
     }
   }
 }
-// Save a worth price — always to data.json, also cache in localStorage
-async function saveWorthPrice(itemId, price){
-  local.worthPrices[itemId]=Math.round(price);  // local cache for offline speed
+
+async function saveWorthPrice(itemId,price){
+  local.worthPrices[itemId]=Math.round(price);
   saveLocal();
   remoteData.worthPrices[itemId]=Math.round(price);
-  await ghWrite(remoteData);  // persist to data.json
+  await jbWrite(remoteData);
 }
 
-// ─── LORE PARSER ─────────────────────────────────────────────────────────────
-function stripCodes(s){ return s.replace(/§[0-9a-fklmnor]/gi,'').trim(); }
+function stripCodes(s){return s.replace(/§[0-9a-fklmnor]/gi,'').trim();}
 
 function parseLore(loreStr){
-  const lines = loreStr.split('\n').map(stripCodes).filter(Boolean);
-  const result = { hpb:0, fphb:0, recomb:false, stars:0, enchants:[], scrolls:[], reforge:'' };
+  const lines=loreStr.split('\n').map(stripCodes).filter(Boolean);
+  const result={hpb:0,fphb:0,recomb:false,stars:0,enchants:[],scrolls:[],reforge:''};
   for(const line of lines){
-    // HPB count from "N/15 Hot Potato Books Applied"
-    const hpbFull = line.match(/(\d+)\s*\/\s*15/);
-    if(hpbFull){ const n=parseInt(hpbFull[1]); result.hpb=Math.min(n,10); result.fphb=Math.max(0,n-10); }
-    // Recombobulated tag
+    const hpbFull=line.match(/(\d+)\s*\/\s*15/);
+    if(hpbFull){const n=parseInt(hpbFull[1]);result.hpb=Math.min(n,10);result.fphb=Math.max(0,n-10);}
     if(/recombobulated/i.test(line)||line.includes('\u2726')) result.recomb=true;
-    // Stars via ✪ symbols in item name row
     const starCount=(line.match(/\u272a/g)||[]).length;
     if(starCount>result.stars) result.stars=starCount;
-    // Enchant lines: "Name Tier" at end of line
     const em=line.match(/^([A-Za-z][A-Za-z '\-]{1,30}?)\s+([IVXivx]{1,4}|\d{1,2})$/);
     if(em){
       const eName=em[1].trim(); const eTierRaw=em[2];
@@ -1307,7 +1179,6 @@ function parseLore(loreStr){
         result.enchants.push({name:eName,tier});
       }
     }
-    // Scrolls
     if(/shadow assassin/i.test(line)) result.scrolls.push('Shadow Assassin Scroll');
     if(/juju shortbow/i.test(line)&&/scroll/i.test(line)) result.scrolls.push('Juju Shortbow Scroll');
     if(/necromancer.*scroll/i.test(line)) result.scrolls.push('Necromancer Scroll');
@@ -1355,7 +1226,7 @@ function inferItemTag(itemName){
 function worthCost(){
   let total=0;
   total+=worthState.baseItemCost||0;
-  for(const [secId, sec] of Object.entries(UPGRADES)){
+  for(const [secId,sec] of Object.entries(UPGRADES)){
     if(secId==='ult_enchants'||secId==='reg_enchants') continue;
     if(secId==='normal_stars'){total+=calcNormalStarsCost();continue;}
     if(secId==='master_stars'){total+=calcMasterStarsCost();continue;}
@@ -1371,51 +1242,33 @@ function worthCost(){
 
 function worthBreakdown(){
   const rows=[];
-  for(const [secId, sec] of Object.entries(UPGRADES)){
+  for(const [secId,sec] of Object.entries(UPGRADES)){
     if(secId==='ult_enchants'||secId==='reg_enchants') continue;
-    if(secId==='normal_stars'){
-      const ns=calcNormalStarsCost();
-      const nsc=worthState.normalStarsCount||0;
-      if(ns>0&&nsc>0) rows.push({label:`★${nsc} Normal Stars (essence)`,val:ns});
-      continue;
-    }
-    if(secId==='master_stars'){
-      const ms=calcMasterStarsCost();
-      const msc=worthState.upgrades['master_stars_count']?.qty||0;
-      if(ms>0&&msc>0) rows.push({label:`✪${msc} Master Stars`,val:ms});
-      continue;
-    }
+    if(secId==='normal_stars'){const ns=calcNormalStarsCost();const nsc=worthState.normalStarsCount||0;if(ns>0&&nsc>0)rows.push({label:`★${nsc} Normal Stars (essence)`,val:ns});continue;}
+    if(secId==='master_stars'){const ms=calcMasterStarsCost();const msc=worthState.upgrades['master_stars_count']?.qty||0;if(ms>0&&msc>0)rows.push({label:`✪${msc} Master Stars`,val:ms});continue;}
     for(const item of sec.items){
       const s=worthState.upgrades[item.id];
       if(!s||!s.qty) continue;
       rows.push({label:`${item.name} ×${s.qty}`,val:s.qty*(s.price||item.defaultPrice)});
     }
   }
-  for(const e of worthState.addedEnchants){
-    rows.push({label:`${e.name} ${e.tier>0?'T'+e.tier:''}`,val:e.price||0});
-  }
+  for(const e of worthState.addedEnchants){rows.push({label:`${e.name} ${e.tier>0?'T'+e.tier:''}`,val:e.price||0});}
   return rows;
 }
 
 function buildWorth(){
   const div=document.createElement('div'); div.className='panel active';
-
-  // Title row
   const titleRow=document.createElement('div'); titleRow.style.cssText='margin-bottom:28px;';
   const ph=document.createElement('div'); ph.className='product-title'; ph.textContent='Item Worth Calculator';
   const ps=document.createElement('div'); ps.style.cssText='font-size:14px;color:var(--muted);margin-top:8px;'; ps.textContent='Add upgrades manually or import directly from an AH listing to auto-detect everything.';
   titleRow.appendChild(ph); titleRow.appendChild(ps); div.appendChild(titleRow);
 
-  // ── AH IMPORT BOX ──
   const ahBox=document.createElement('div'); ahBox.className='ah-import-box';
   ahBox.innerHTML=`
     <div class="ah-import-title">\u{1F517} Import from Auction House</div>
-    <div class="ah-import-sub">
-      Paste a <a href="https://www.brandonfowler.me/skyblockah/" target="_blank" rel="noopener">Brandonfowler.me</a> auction link, or a raw auction UUID.
-      We\u2019ll auto-detect HPBs, stars, recombs, enchants, scrolls, and look up the clean floor price.
-    </div>
+    <div class="ah-import-sub">Paste a <a href="https://www.brandonfowler.me/skyblockah/" target="_blank" rel="noopener">Brandonfowler.me</a> auction link, or a raw auction UUID.</div>
     <div class="ah-url-row">
-      <input class="ah-url-inp" type="text" id="ah-url-inp" placeholder="e.g. https://www.brandonfowler.me/skyblockah/?...  or  7d01ffc3a89c40d398b7518a272045e4" autocomplete="off" />
+      <input class="ah-url-inp" type="text" id="ah-url-inp" placeholder="e.g. https://www.brandonfowler.me/skyblockah/?...  or  7d01ffc3..." autocomplete="off" />
       <button class="ah-import-btn" id="ah-import-btn" data-action="ah-import">⟳ Import</button>
     </div>
     <div class="ah-status" id="ah-status"></div>
@@ -1423,11 +1276,9 @@ function buildWorth(){
     <div class="floor-box" id="ah-floor-box" style="display:none;">
       <div class="floor-label"><strong>Clean floor price</strong><div class="floor-sub" style="margin-top:2px;"></div></div>
       <div class="floor-val">—</div>
-    </div>
-  `;
+    </div>`;
   div.appendChild(ahBox);
 
-  // Item name + fetch + reset row
   const topRow=document.createElement('div'); topRow.className='worth-fetch-row';
   const nameInp=document.createElement('input'); nameInp.className='item-name-input'; nameInp.type='text'; nameInp.placeholder='Item name (e.g. Bouquet of Lies)'; nameInp.value=worthState.itemName; nameInp.id='worth-item-name';
   const fetchBtn=document.createElement('button'); fetchBtn.className='bazaar-btn'; fetchBtn.dataset.action='worth-fetch-bazaar'; fetchBtn.textContent='⟳ Fetch Live Prices';
@@ -1436,13 +1287,11 @@ function buildWorth(){
   topRow.appendChild(nameInp); topRow.appendChild(fetchBtn); topRow.appendChild(bazStat); topRow.appendChild(resetBtn);
   div.appendChild(topRow);
 
-  // Layout
   const layout=document.createElement('div'); layout.className='worth-layout';
   const left=document.createElement('div'); left.className='worth-left';
   const right=document.createElement('div'); right.className='worth-right';
   layout.appendChild(left); layout.appendChild(right);
 
-  // ── LEFT: upgrade sections ──
   ['hpb','recomb','master_stars','normal_stars','scrolls','skins'].forEach(secId=>{
     const sec=UPGRADES[secId];
     const secCost=calcSectionCost(secId);
@@ -1454,7 +1303,6 @@ function buildWorth(){
     hdr.appendChild(titleSpan); hdr.appendChild(badge); hdr.appendChild(chev); wrap.appendChild(hdr);
     const body=document.createElement('div'); body.className='worth-section-body'; body.id=`ws-body-${secId}`;
 
-    // ── MASTER STARS: single stepper 0-5, cumulative price display ──
     if(secId==='master_stars'){
       const curStars=worthState.upgrades['master_stars_count']?.qty||0;
       const row=document.createElement('div'); row.className='worth-row';
@@ -1469,19 +1317,12 @@ function buildWorth(){
       const sv=document.createElement('span'); sv.className='step-val'; sv.id='ws-qty-master_stars_count'; sv.textContent=curStars;
       const dp=document.createElement('button'); dp.className='step-btn'; dp.textContent='+'; dp.dataset.action='worth-mstar-step'; dp.dataset.delta='1';
       st.appendChild(dm);st.appendChild(sv);st.appendChild(dp);
-      const costLbl=document.createElement('span'); costLbl.className='price-tag has-val'; costLbl.id='ws-cost-master_stars';
-      costLbl.textContent=curStars>0?fmt(calcMasterStarsCost(curStars)):'';
+      const costLbl=document.createElement('span'); costLbl.className='price-tag has-val'; costLbl.id='ws-cost-master_stars'; costLbl.textContent=curStars>0?fmt(calcMasterStarsCost(curStars)):'';
       rowRight.appendChild(st); rowRight.appendChild(costLbl);
       row.appendChild(rowLeft); row.appendChild(rowRight); body.appendChild(row);
-      // Note about prices
-      const note=document.createElement('div'); note.style.cssText='font-size:12px;color:var(--muted);margin-top:10px;';
-      note.textContent='Each master star has its own price. Fetch Live Prices to update.';
-      body.appendChild(note);
-      wrap.appendChild(body); left.appendChild(wrap);
-      return;
+      wrap.appendChild(body); left.appendChild(wrap); return;
     }
 
-    // ── NORMAL STARS: single stepper 0-5 + essence type + cost per star input ──
     if(secId==='normal_stars'){
       const curStars=worthState.normalStarsCount||0;
       const row=document.createElement('div'); row.className='worth-row';
@@ -1498,10 +1339,7 @@ function buildWorth(){
       const costLbl=document.createElement('span'); costLbl.className='price-tag has-val'; costLbl.id='ws-cost-normal_stars';
       rowRight.appendChild(st); rowRight.appendChild(costLbl);
       row.appendChild(rowLeft); row.appendChild(rowRight); body.appendChild(row);
-
-      // Essence controls
       const ctrlRow=document.createElement('div'); ctrlRow.style.cssText='display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;align-items:flex-end;';
-      // Essence type
       const essWrap=document.createElement('div'); essWrap.style.cssText='display:flex;flex-direction:column;gap:5px;';
       const essLbl=document.createElement('label'); essLbl.style.cssText='font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;'; essLbl.textContent='Essence Type';
       const essSel=document.createElement('select'); essSel.id='ns-essence';
@@ -1513,7 +1351,6 @@ function buildWorth(){
       });
       essSel.addEventListener('change',()=>{worthState.normalStarEssenceType=essSel.value;updateNormalStarDisplay();updateWorthSummary();});
       essWrap.appendChild(essLbl); essWrap.appendChild(essSel); ctrlRow.appendChild(essWrap);
-      // Essence cost per star (manual — varies per item)
       const ecWrap=document.createElement('div'); ecWrap.style.cssText='display:flex;flex-direction:column;gap:5px;';
       const ecLbl=document.createElement('label'); ecLbl.style.cssText='font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;'; ecLbl.textContent='Essence per star (your item)';
       const ecInp=document.createElement('input'); ecInp.type='text'; ecInp.id='ns-ess-per-star'; ecInp.placeholder='e.g. 200';
@@ -1521,19 +1358,16 @@ function buildWorth(){
       ecInp.style.cssText='background:var(--surface2);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:14px;font-family:inherit;padding:8px 12px;outline:none;width:120px;-webkit-text-fill-color:var(--text);';
       ecInp.addEventListener('input',()=>{worthState.normalStarEssencePerStar=parseNum(ecInp.value)||0;updateNormalStarDisplay();updateWorthSummary();});
       ecWrap.appendChild(ecLbl); ecWrap.appendChild(ecInp); ctrlRow.appendChild(ecWrap);
-      // Live essence price
       const epWrap=document.createElement('div'); epWrap.style.cssText='display:flex;flex-direction:column;gap:5px;';
       const epLbl=document.createElement('label'); epLbl.style.cssText='font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;'; epLbl.textContent='Essence price each';
       const epVal=document.createElement('div'); epVal.id='ns-essence-price'; epVal.style.cssText='font-size:14px;color:var(--blue);padding:8px 0;';
-      epVal.textContent=worthState.essencePrices[worthState.normalStarEssenceType]?fmt(worthState.essencePrices[worthState.normalStarEssenceType])+'  each':'—';
+      epVal.textContent='—';
       epWrap.appendChild(epLbl); epWrap.appendChild(epVal); ctrlRow.appendChild(epWrap);
       body.appendChild(ctrlRow);
       setTimeout(()=>updateNormalStarDisplay(),0);
-      wrap.appendChild(body); left.appendChild(wrap);
-      return;
+      wrap.appendChild(body); left.appendChild(wrap); return;
     }
 
-    // ── REGULAR ITEMS (hpb, recomb, scrolls, skins) ──
     sec.items.forEach(item=>{
       const s=worthState.upgrades[item.id]||{qty:0,price:item.defaultPrice,isLive:false};
       const row=document.createElement('div'); row.className='worth-row';
@@ -1557,7 +1391,6 @@ function buildWorth(){
     wrap.appendChild(body); left.appendChild(wrap);
   });
 
-  // ── Enchant sections ──
   ['ult_enchants','reg_enchants'].forEach(secId=>{
     const sec=UPGRADES[secId];
     const secCost=calcSectionCost(secId);
@@ -1568,40 +1401,29 @@ function buildWorth(){
     const chev=document.createElement('span'); chev.className='worth-section-chevron'; chev.id=`ws-chev-${secId}`; chev.textContent='▼';
     hdr.appendChild(titleSpan);hdr.appendChild(badge);hdr.appendChild(chev); wrap.appendChild(hdr);
     const body=document.createElement('div'); body.className='worth-section-body'; body.id=`ws-body-${secId}`;
-
-    // Added enchants chips
     const addedDiv=document.createElement('div'); addedDiv.className='enchant-added'; addedDiv.id=`enchant-added-${secId}`;
     body.appendChild(addedDiv);
-
-    // Search
     const srch=document.createElement('input'); srch.className='enchant-search'; srch.type='text'; srch.placeholder='Search enchants...'; srch.id=`enchant-search-${secId}`;
     srch.dataset.action='enchant-search'; srch.dataset.section=secId;
     body.appendChild(srch);
-
     const list=document.createElement('div'); list.className='enchant-list'; list.id=`enchant-list-${secId}`;
-    buildEnchantList(secId, '', list);
+    buildEnchantList(secId,'',list);
     body.appendChild(list);
     wrap.appendChild(body); left.appendChild(wrap);
-    // Render existing chips
     setTimeout(()=>renderEnchantChips(secId),0);
   });
 
-  // ── RIGHT: summary ──
   const summary=document.createElement('div'); summary.className='worth-summary'; summary.id='worth-summary';
   renderWorthSummary(summary);
   right.appendChild(summary);
-
+  layout.appendChild(left); layout.appendChild(right);
   div.appendChild(layout);
-
-  // name input handler
-  nameInp.addEventListener('input',()=>{ worthState.itemName=nameInp.value; updateWorthSummary(); });
-
+  nameInp.addEventListener('input',()=>{worthState.itemName=nameInp.value;updateWorthSummary();});
   return div;
 }
 
 function calcNormalStarsCost(){
-  const n=worthState.normalStarsCount||0;
-  if(n<=0) return 0;
+  const n=worthState.normalStarsCount||0; if(n<=0) return 0;
   const essenceType=worthState.normalStarEssenceType||'WITHER_ESSENCE';
   const essencePrice=worthState.essencePrices[essenceType]||0;
   const essPerStar=worthState.normalStarEssencePerStar||0;
@@ -1612,8 +1434,7 @@ function calcMasterStarsCost(n){
   if(!n) n=worthState.upgrades['master_stars_count']?.qty||0;
   let total=0;
   for(let s=0;s<n;s++){
-    const sp=UPGRADES.master_stars.starPrices[s];
-    if(!sp) continue;
+    const sp=UPGRADES.master_stars.starPrices[s]; if(!sp) continue;
     const saved=worthState.upgrades[sp.id];
     total+=(saved?.price||sp.defaultPrice);
   }
@@ -1624,8 +1445,7 @@ function calcMasterStarsCostBreakdown(n){
   if(!n) return 'No master stars';
   const parts=[];
   for(let s=0;s<n;s++){
-    const sp=UPGRADES.master_stars.starPrices[s];
-    if(!sp) continue;
+    const sp=UPGRADES.master_stars.starPrices[s]; if(!sp) continue;
     const price=worthState.upgrades[sp.id]?.price||sp.defaultPrice;
     parts.push(`M${s+1}: ${fmt(price)}`);
   }
@@ -1644,55 +1464,25 @@ function updateNormalStarDisplay(){
     else if(n>0) sub.textContent=`${n} stars — enter essence/star and fetch price above`;
     else sub.textContent='';
   }
-  const costLbl=el('ws-cost-normal_stars');
-  if(costLbl) costLbl.textContent=totalCost>0?fmt(totalCost):'';
-  const epEl=el('ns-essence-price');
-  if(epEl) epEl.textContent=essPrice>0?fmt(essPrice)+' each':'—';
+  const costLbl=el('ws-cost-normal_stars'); if(costLbl) costLbl.textContent=totalCost>0?fmt(totalCost):'';
+  const epEl=el('ns-essence-price'); if(epEl) epEl.textContent=essPrice>0?fmt(essPrice)+' each':'—';
 }
 
 function calcSectionCost(secId){
-  const sec=UPGRADES[secId];
-  if(!sec) return 0;
+  const sec=UPGRADES[secId]; if(!sec) return 0;
   if(secId==='normal_stars') return calcNormalStarsCost();
   if(secId==='master_stars') return calcMasterStarsCost();
   if(secId==='ult_enchants'||secId==='reg_enchants'){
-    return worthState.addedEnchants.filter(e=>{
-      return sec.items.some(i=>i.id===e.id);
-    }).reduce((a,e)=>a+(e.price||0),0);
+    return worthState.addedEnchants.filter(e=>sec.items.some(i=>i.id===e.id)).reduce((a,e)=>a+(e.price||0),0);
   }
   return sec.items.reduce((a,item)=>{
-    const s=worthState.upgrades[item.id];
-    if(!s||!s.qty) return a;
+    const s=worthState.upgrades[item.id]; if(!s||!s.qty) return a;
     return a+s.qty*(s.price||item.defaultPrice);
   },0);
 }
 
-function updateNormalStarLabels(){
-  const rarity=worthState.normalStarRarity||'legendary';
-  const essenceType=worthState.normalStarEssenceType||'WITHER_ESSENCE';
-  const essencePrice=worthState.essencePrices[essenceType]||0;
-  const costs=UPGRADES.normal_stars.essenceCosts[rarity]||UPGRADES.normal_stars.essenceCosts.legendary;
-  for(let s=1;s<=5;s++){
-    const sid='nstar'+s;
-    const essAmt=costs[s-1];
-    const cost=Math.round(essAmt*essencePrice);
-    // Update label
-    const qEl=el(`ws-qty-${sid}`); // stepper value
-    // Update the sub label if present
-    const subEl=el(`ws-sub-${sid}`);
-    if(subEl) subEl.textContent=`${essAmt} essence${essencePrice>0?' = '+fmt(cost):''}`;
-    // Update stored price
-    if(!worthState.upgrades[sid]) worthState.upgrades[sid]={qty:0,price:cost,isLive:false};
-    else worthState.upgrades[sid].price=cost;
-  }
-  // Update essence price display
-  const epEl=el('ns-essence-price');
-  if(epEl) epEl.textContent=essencePrice>0?fmt(essencePrice)+' per essence':'— (fetch bazaar prices above)';
-}
-
-function buildEnchantList(secId, filter, listEl){
-  const sec=UPGRADES[secId];
-  listEl.innerHTML='';
+function buildEnchantList(secId,filter,listEl){
+  const sec=UPGRADES[secId]; listEl.innerHTML='';
   const fl=filter.toLowerCase();
   sec.items.filter(item=>!fl||item.name.toLowerCase().includes(fl)).forEach(item=>{
     const s=worthState.upgrades[item.id]||{price:item.defaultPrice,isLive:false};
@@ -1702,21 +1492,16 @@ function buildEnchantList(secId, filter, listEl){
     const tier=document.createElement('div'); tier.className='enchant-item-tier'; tier.textContent=`Max T${item.maxTier}`;
     left.appendChild(nm);left.appendChild(tier);
     const right=document.createElement('div'); right.className='enchant-item-right';
-    // Tier select
     const ts=document.createElement('select'); ts.className='enchant-tier-sel'; ts.id=`ench-tier-${item.id}`;
     for(let t=1;t<=item.maxTier;t++){const o=document.createElement('option');o.value=t;o.textContent='T'+t;ts.appendChild(o);}
     ts.value=item.maxTier;
-    // Price input
     const pi=document.createElement('input'); pi.className='worth-price-inp'+(s.isLive?' live':''); pi.type='text'; pi.value=s.price>0?displayNum(s.price):''; pi.placeholder=displayNum(item.defaultPrice)||'price';
-    pi.id=`ws-price-${item.id}`; pi.dataset.action='worth-price'; pi.dataset.itemId=item.id;
-    pi.style.width='90px';
-    // Save price + Add button
+    pi.id=`ws-price-${item.id}`; pi.dataset.action='worth-price'; pi.dataset.itemId=item.id; pi.style.width='90px';
     const saveEnchBtn=document.createElement('button'); saveEnchBtn.className='worth-save-btn'; saveEnchBtn.dataset.action='worth-save-price'; saveEnchBtn.dataset.itemId=item.id;
-    saveEnchBtn.textContent=remoteData.worthPrices[item.id]>0?'✓':'Save'; saveEnchBtn.title='Save price to data.json';
+    saveEnchBtn.textContent=remoteData.worthPrices[item.id]>0?'✓':'Save'; saveEnchBtn.title='Save price';
     const ab=document.createElement('button'); ab.className='enchant-add-btn'; ab.textContent='+ Add'; ab.dataset.action='add-enchant'; ab.dataset.itemId=item.id; ab.dataset.section=secId;
     right.appendChild(ts);right.appendChild(pi);right.appendChild(saveEnchBtn);right.appendChild(ab);
-    row.appendChild(left);row.appendChild(right);
-    listEl.appendChild(row);
+    row.appendChild(left);row.appendChild(right); listEl.appendChild(row);
   });
 }
 
@@ -1725,7 +1510,7 @@ function renderEnchantChips(secId){
   const sec=UPGRADES[secId];
   const relevant=worthState.addedEnchants.filter(e=>sec.items.some(i=>i.id===e.id));
   addedDiv.innerHTML='';
-  relevant.forEach((e,idx)=>{
+  relevant.forEach(e=>{
     const chip=document.createElement('div'); chip.className='enchant-chip';
     const lbl=document.createElement('span'); lbl.textContent=`${e.name}${e.tier>0?' T'+e.tier:''} (${fmt(e.price)})`;
     const rm=document.createElement('button'); rm.className='chip-rm'; rm.textContent='×'; rm.dataset.action='remove-enchant'; rm.dataset.enchantId=e.uid;
@@ -1734,23 +1519,19 @@ function renderEnchantChips(secId){
 }
 
 function renderWorthSummary(container){
-  const upgradeWorth=worthCost()-(worthState.baseItemCost||0); // upgrades only
-  const totalWorth=worthCost(); // base + upgrades
-  const ahPaid=worthState.auctionPrice||0; // what you paid on AH
+  const upgradeWorth=worthCost()-(worthState.baseItemCost||0);
+  const totalWorth=worthCost();
+  const ahPaid=worthState.auctionPrice||0;
   const flipProfit=ahPaid>0?Math.round(totalWorth-ahPaid):null;
   const breakdown=worthBreakdown();
-
-  // Item image if available
   const imgHtml=worthState.itemImageUrl?
-    `<img src="${worthState.itemImageUrl}" alt="${worthState.itemName||''}" style="width:48px;height:48px;image-rendering:pixelated;border-radius:8px;background:var(--surface2);border:1px solid var(--border);flex-shrink:0;" onerror="this.style.display='none'">`
-    :'';
-
+    `<img src="${worthState.itemImageUrl}" alt="${worthState.itemName||''}" style="width:48px;height:48px;image-rendering:pixelated;border-radius:8px;background:var(--surface2);border:1px solid var(--border);flex-shrink:0;" onerror="this.style.display='none'">`:'';
   container.innerHTML=`
   <div class="ws-header">
     <div class="ws-title">Item Worth</div>
     <div style="display:flex;align-items:center;gap:12px;margin-top:4px;">
       ${imgHtml}
-      <div class="ws-item-name" id="ws-item-name-display">${worthState.itemName||'Unnamed Item'}</div>
+      <div class="ws-item-name">${worthState.itemName||'Unnamed Item'}</div>
     </div>
   </div>
   ${worthState.baseItemCost>0?`<div class="ws-base-row"><div class="ws-base-label">Clean floor price</div><div class="ws-base-val">${fmt(worthState.baseItemCost)}</div><div class="ws-base-sub">${worthState.baseItemTag||''} — lowest BIN</div></div>`:''}
@@ -1767,12 +1548,12 @@ function renderWorthSummary(container){
       <div style="font-size:32px;font-weight:700;color:${flipProfit>=0?'var(--accent)':'var(--red)'};">${flipProfit>=0?'+':''}${fmt(flipProfit)}</div>
       <div style="font-size:12px;color:var(--muted);margin-top:4px;">Worth ${fmt(totalWorth)} − Paid ${fmt(ahPaid)}</div>
     </div>`:''}
-    ${breakdown.length>0?`<div class="ws-breakdown" style="margin-top:14px;">${breakdown.map(r=>`<div class="ws-breakdown-row"><span class="wbr-label">${r.label}</span><span class="wbr-val">${fmt(r.val)}</span></div>`).join('')}</div>`:'<div style="font-size:13px;color:var(--muted);margin-top:8px;">Add upgrades on the left to calculate.</div>'}
+    ${breakdown.length>0?`<div class="ws-breakdown">${breakdown.map(r=>`<div class="ws-breakdown-row"><span class="wbr-label">${r.label}</span><span class="wbr-val">${fmt(r.val)}</span></div>`).join('')}</div>`:'<div style="font-size:13px;color:var(--muted);margin-top:8px;">Add upgrades on the left to calculate.</div>'}
   </div>
   <div style="padding:16px 24px;border-top:1px solid var(--border);">
     <div style="font-size:11px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">You Paid (AH Price)</div>
     <div style="display:flex;align-items:center;gap:10px;">
-      <input type="text" id="worth-ah-paid-inp" value="${ahPaid>0?fmtPrice(ahPaid):''}" placeholder="e.g. 6800000" 
+      <input type="text" id="worth-ah-paid-inp" value="${ahPaid>0?fmtPrice(ahPaid):''}" placeholder="e.g. 6800000"
         style="background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:17px;font-family:inherit;padding:10px 14px;outline:none;flex:1;-webkit-text-fill-color:var(--text);"
         oninput="const v=parseNum(this.value);if(!isNaN(v)&&v>0){worthState.auctionPrice=v;updateWorthSummary();}" />
       <span style="font-size:13px;color:var(--muted);">enter manually or import from AH link above</span>
@@ -1788,8 +1569,6 @@ function setAhStatus(msg,cls=''){
 function updateWorthSummary(){
   const summary=el('worth-summary'); if(!summary) return;
   renderWorthSummary(summary);
-  // Re-attach slider listener is handled inside renderWorthSummary
-  // Update section badges
   for(const secId of Object.keys(UPGRADES)){
     const badge=el(`ws-badge-${secId}`); if(!badge) continue;
     const cost=calcSectionCost(secId);
@@ -1801,15 +1580,12 @@ function updateWorthSummary(){
 // ─── EVENT DELEGATION ─────────────────────────────────────────────────────────
 el('panels').addEventListener('input',e=>{
   const t=e.target;
-
   if(t.id&&t.id.startsWith('inp-qty-')){
     const pid=t.id.replace('inp-qty-','');
     t.classList.toggle('error',isNaN(parseNum(t.value))&&t.value!=='');
-    setQtyStr(pid,t.value);
-    setBudgetStr(pid,'');
+    setQtyStr(pid,t.value); setBudgetStr(pid,'');
     const bi=el(`inp-budget-${pid}`); if(bi) bi.value='';
-    if(!isNaN(parseNum(t.value))) updateDisplay(pid);
-    return;
+    if(!isNaN(parseNum(t.value))) updateDisplay(pid); return;
   }
   if(t.id&&t.id.startsWith('inp-budget-')){
     const pid=t.id.replace('inp-budget-','');
@@ -1819,46 +1595,32 @@ el('panels').addEventListener('input',e=>{
     if(!isNaN(budget)&&budget>0){
       const product=getProduct(pid);
       if(product){const r=calc(product);if(r.costPerShard>0){const mq=Math.floor(budget/r.costPerShard);setQtyStr(pid,String(mq));const qi=el(`inp-qty-${pid}`);if(qi)qi.value=displayNum(mq);updateDisplay(pid);setText(`budget-badge-${pid}`,`Max ${mq.toLocaleString()} shards`);}}
-    } else {setText(`budget-badge-${pid}`,'Enter coins to auto-calc max shards');}
-    return;
+    } else {setText(`budget-badge-${pid}`,'Enter coins to auto-calc max shards');} return;
   }
   if(t.dataset.action==='set-price'){
     const v=parseNum(t.value); t.classList.toggle('error',isNaN(v)&&t.value!=='');
-    if(!isNaN(v)){setPrice(t.dataset.pid,t.dataset.iid,v);updateDisplay(t.dataset.pid);reapplyBudget(t.dataset.pid);updateStockDisplay(t.dataset.pid);}
-    return;
+    if(!isNaN(v)){setPrice(t.dataset.pid,t.dataset.iid,v);updateDisplay(t.dataset.pid);reapplyBudget(t.dataset.pid);updateStockDisplay(t.dataset.pid);} return;
   }
   if(t.dataset.action==='set-sell'){
     const v=parseNum(t.value); t.classList.toggle('error',isNaN(v)&&t.value!=='');
-    if(!isNaN(v)){setSell(t.dataset.pid,v);updateDisplay(t.dataset.pid);reapplyBudget(t.dataset.pid);}
-    return;
+    if(!isNaN(v)){setSell(t.dataset.pid,v);updateDisplay(t.dataset.pid);reapplyBudget(t.dataset.pid);} return;
   }
   if(t.dataset.action==='set-stock-qty'){
-    const {pid,origId}=t.dataset;
-    setInvQty(pid,origId,t.value);
-    updateStockDisplay(pid);
-    return;
+    const{pid,origId}=t.dataset; setInvQty(pid,origId,t.value); updateStockDisplay(pid); return;
   }
-
-  // Worth price inputs
   if(t.dataset.action==='worth-price'){
-    const itemId=t.dataset.itemId;
-    const v=parseNum(t.value);
+    const itemId=t.dataset.itemId; const v=parseNum(t.value);
     if(!isNaN(v)&&v>0){
       if(!worthState.upgrades[itemId]) worthState.upgrades[itemId]={qty:0,price:v,isLive:false};
       else worthState.upgrades[itemId].price=v;
       worthState.addedEnchants.forEach(e=>{if(e.id===itemId) e.price=v;});
-      saveWorthPrice(itemId,v); // persist to localStorage immediately
+      saveWorthPrice(itemId,v);
     }
-    updateWorthSummary();
-    return;
+    updateWorthSummary(); return;
   }
-
-  // Enchant search
   if(t.dataset.action==='enchant-search'){
-    const secId=t.dataset.section;
-    const list=el(`enchant-list-${secId}`); if(!list) return;
-    buildEnchantList(secId,t.value,list);
-    return;
+    const secId=t.dataset.section; const list=el(`enchant-list-${secId}`); if(!list) return;
+    buildEnchantList(secId,t.value,list); return;
   }
 });
 
@@ -1866,72 +1628,45 @@ el('panels').addEventListener('click',async e=>{
   const b=e.target.closest('[data-action]'); if(!b) return;
   const action=b.dataset.action;
 
-  // ── Inventory toggle ──
-  if(action==='inv-toggle'||b.id&&b.id.startsWith('inv-toggle-')){return;} // handled via change
-  // toggle handled below via change event on checkbox
-
   if(action==='fetch-bazaar'){
-    const pid=b.dataset.pid;
-    const st=el(`bazaar-status-${pid}`);
+    const pid=b.dataset.pid; const st=el(`bazaar-status-${pid}`);
     b.classList.add('loading'); b.textContent='⟳ Fetching...';
     st.className='bazaar-status'; st.textContent='Connecting...';
     try{
       const res=await fetch('https://api.hypixel.net/v2/skyblock/bazaar');
       if(!res.ok) throw new Error('HTTP '+res.status);
-      const data=await res.json();
-      if(!data.success) throw new Error('API error');
+      const data=await res.json(); if(!data.success) throw new Error('API error');
       const product=getProduct(pid); if(!product) throw new Error('No product');
       let updated=0;
-      // Update ingredient prices
-      product.ingredients.forEach((origIng,idx)=>{
-        // Fetch both base and alt ingredient prices for ingredients with altId
+      product.ingredients.forEach((origIng)=>{
         const idsToFetch=origIng.altId?[origIng.id,origIng.altId]:[origIng.id];
         idsToFetch.forEach(iid=>{
           const bk=BAZAAR_MAP[iid]; if(!bk) return;
           const prod=data.products[bk]; if(!prod) return;
           let bp=0;
-          // sell_summary = buy orders = instasell price = lower price (what we want for ingredient cost)
           if(prod.sell_summary&&prod.sell_summary.length>0) bp=prod.sell_summary[0].pricePerUnit;
           else if(prod.quick_status?.sellPrice) bp=prod.quick_status.sellPrice;
-          if(bp>0){
-            local.prices[`${pid}__${iid}`]=bp; saveLocal();
-            const inp=el(`inp-price-${pid}-${iid}`);
-            if(inp) inp.value=fmtPrice(bp);
-            updated++;
-          }
+          if(bp>0){local.prices[`${pid}__${iid}`]=bp;saveLocal();const inp=el(`inp-price-${pid}-${iid}`);if(inp)inp.value=fmtPrice(bp);updated++;}
         });
-        // Also update the alt price label beneath toggle if present
         if(origIng.altId){
           const isAlt=getAltChoice(pid,origIng.id)==='alt';
           const altPriceLbl=el(`alt-price-lbl-${pid}-${origIng.id}`);
           if(altPriceLbl) altPriceLbl.textContent=(isAlt?origIng.name:origIng.altName)+': '+displayNum(getPrice(pid,isAlt?origIng.id:origIng.altId));
         }
       });
-      // ── NEW: Also update sell price ──
       const sellKey=product.bazaarSell;
       if(sellKey&&data.products[sellKey]){
-        const sp=data.products[sellKey];
-        let sellP=0;
-        // buy_summary = sell offers = instabuy price = higher price (what buyers pay you when you sell)
+        const sp=data.products[sellKey]; let sellP=0;
         if(sp.buy_summary&&sp.buy_summary.length>0) sellP=sp.buy_summary[0].pricePerUnit;
         else if(sp.quick_status?.buyPrice) sellP=sp.quick_status.buyPrice;
-        if(sellP>0){
-          setSell(pid,sellP);
-          const si=el(`inp-sell-${pid}`);
-          if(si) si.value=Number.isInteger(sellP)?displayNum(sellP):sellP.toFixed(1);
-          updated++;
-        }
+        if(sellP>0){setSell(pid,sellP);const si=el(`inp-sell-${pid}`);if(si)si.value=Number.isInteger(sellP)?displayNum(sellP):sellP.toFixed(1);updated++;}
       }
-      updateDisplay(pid);
-      reapplyBudget(pid);
-      if(isInvMode(pid)) updateInvDisplay(pid);
+      updateDisplay(pid); reapplyBudget(pid); updateStockDisplay(pid);
       st.className='bazaar-status ok'; st.textContent=`✓ Updated ${updated} price${updated!==1?'s':''}`;
-    }catch(err){st.className='bazaar-status err';st.textContent='✗ '+err.message;console.error(err);}
-    b.classList.remove('loading'); b.textContent='⟳ Fetch Live Bazaar Prices';
-    return;
+    }catch(err){st.className='bazaar-status err';st.textContent='✗ '+err.message;}
+    b.classList.remove('loading'); b.textContent='⟳ Fetch Live Bazaar Prices'; return;
   }
 
-  // ── Worth: fetch bazaar ──
   if(action==='worth-fetch-bazaar'){
     const st=el('worth-bazaar-status');
     b.classList.add('loading'); b.textContent='⟳ Fetching...';
@@ -1939,10 +1674,8 @@ el('panels').addEventListener('click',async e=>{
     try{
       const res=await fetch('https://api.hypixel.net/v2/skyblock/bazaar');
       if(!res.ok) throw new Error('HTTP '+res.status);
-      const data=await res.json();
-      if(!data.success) throw new Error('API error');
+      const data=await res.json(); if(!data.success) throw new Error('API error');
       let updated=0;
-      // Go through all upgrade items with a bazaarKey
       for(const sec of Object.values(UPGRADES)){
         for(const item of sec.items){
           if(!item.bazaarKey) continue;
@@ -1952,56 +1685,46 @@ el('panels').addEventListener('click',async e=>{
           else if(prod.quick_status?.sellPrice) bp=prod.quick_status.sellPrice;
           if(bp>0){
             if(!worthState.upgrades[item.id]) worthState.upgrades[item.id]={qty:(worthState.upgrades[item.id]?.qty||0),price:bp,isLive:true};
-            else {worthState.upgrades[item.id].price=bp;worthState.upgrades[item.id].isLive=true;}
+            else{worthState.upgrades[item.id].price=bp;worthState.upgrades[item.id].isLive=true;}
             worthState.livePrices[item.bazaarKey]=bp;
             const inp=el(`ws-price-${item.id}`);
             if(inp){inp.value=Number.isInteger(bp)?displayNum(bp):bp.toFixed(1);inp.classList.add('live');}
-            // update enchant if added
             worthState.addedEnchants.forEach(e=>{if(e.id===item.id){e.price=bp;e.isLive=true;}});
-            saveWorthPrice(item.id,bp);
-            updated++;
+            saveWorthPrice(item.id,bp); updated++;
           }
         }
       }
-      // Fetch essence prices (buy_summary = instabuy, you're buying essence)
-      for(const [name,key] of Object.entries(UPGRADES.normal_stars.essenceTypes)){
+      for(const[name,key] of Object.entries(UPGRADES.normal_stars.essenceTypes)){
         const ep=data.products[key]; if(!ep) continue;
         let bp=0;
         if(ep.buy_summary&&ep.buy_summary.length>0) bp=ep.buy_summary[0].pricePerUnit;
         if(bp>0) worthState.essencePrices[key]=bp;
       }
-      // Fetch master star prices
       for(const sp of UPGRADES.master_stars.starPrices){
         const mp=data.products[sp.bazaarKey]; if(!mp) continue;
         let bp=0;
-        if(mp.sell_summary&&mp.sell_summary.length>0) bp=mp.sell_summary[0].pricePerUnit; // instasell = lower price to buy
+        if(mp.sell_summary&&mp.sell_summary.length>0) bp=mp.sell_summary[0].pricePerUnit;
         if(bp>0){
           if(!worthState.upgrades[sp.id]) worthState.upgrades[sp.id]={qty:0,price:bp,isLive:true};
-          else {worthState.upgrades[sp.id].price=bp;worthState.upgrades[sp.id].isLive=true;}
+          else{worthState.upgrades[sp.id].price=bp;worthState.upgrades[sp.id].isLive=true;}
           updated++;
         }
       }
-      updateNormalStarDisplay();
-      updateWorthSummary();
-      // Re-render enchant chips to reflect new prices
+      updateNormalStarDisplay(); updateWorthSummary();
       ['ult_enchants','reg_enchants'].forEach(s=>renderEnchantChips(s));
       st.className='bazaar-status ok'; st.textContent=`✓ Updated ${updated} live prices`;
     }catch(err){st.className='bazaar-status err';st.textContent='✗ '+err.message;}
-    b.classList.remove('loading'); b.textContent='⟳ Fetch Live Prices';
-    return;
+    b.classList.remove('loading'); b.textContent='⟳ Fetch Live Prices'; return;
   }
 
-  // ── Worth: reset ──
   if(action==='worth-save-price'){
-    const itemId=b.dataset.itemId;
-    const inp=el(`ws-price-${itemId}`);
+    const itemId=b.dataset.itemId; const inp=el(`ws-price-${itemId}`);
     const v=parseNum(inp?.value||'');
     if(isNaN(v)||v<=0){alert('Enter a valid price first.');return;}
     b.classList.add('saving'); b.textContent='Saving...';
     await saveWorthPrice(itemId,v);
     b.classList.remove('saving'); b.textContent='✓ Saved'; b.classList.add('saved');
-    setTimeout(()=>{b.classList.remove('saved');b.textContent='Save';},2500);
-    return;
+    setTimeout(()=>{b.classList.remove('saved');b.textContent='Save';},2500); return;
   }
 
   if(action==='worth-reset'){
@@ -2012,55 +1735,35 @@ el('panels').addEventListener('click',async e=>{
     renderAll(); return;
   }
 
-  // ── AH Import ──
   if(action==='ah-import'){
     const inp=el('ah-url-inp'); if(!inp) return;
     const raw=inp.value.trim();
-    if(!raw){ setAhStatus('Paste a Brandonfowler.me link or auction UUID first.','err'); return; }
+    if(!raw){setAhStatus('Paste a Brandonfowler.me link or auction UUID first.','err');return;}
     const uuid=extractAuctionUUID(raw);
-    if(!uuid){ setAhStatus('Could not find a valid auction UUID in that link.','err'); return; }
+    if(!uuid){setAhStatus('Could not find a valid auction UUID in that link.','err');return;}
     const btn=el('ah-import-btn'); if(btn){btn.classList.add('loading');btn.textContent='⟳ Fetching...';}
-    setAhStatus('Fetching auction from Hypixel API...','loading');
+    setAhStatus('Fetching auction...','loading');
     try{
-      // Hypixel auction API — no key needed for public auctions
-      // Use Coflnet API — no API key required
       const res=await fetch(`https://sky.coflnet.com/api/auction/${uuid}`);
       if(!res.ok) throw new Error('HTTP '+res.status+' — auction may have expired or UUID is wrong');
       const auc=await res.json();
-      // Coflnet also provides a flat lore string via /api/auction/{uuid}/details
       let lore='';
       try{
         const detRes=await fetch(`https://sky.coflnet.com/api/auction/${uuid}/details`);
-        if(detRes.ok){ const det=await detRes.json(); lore=det.description||det.lore||det.itemLore||''; }
-      }catch(le){ console.warn('Lore fetch failed, using enchantments array',le); }
+        if(detRes.ok){const det=await detRes.json();lore=det.description||det.lore||det.itemLore||'';}
+      }catch(le){console.warn('Lore fetch failed',le);}
       const itemName=stripCodes(auc.itemName||auc.item_name||'');
-      const rawTag=inferItemTag(auc.itemName||auc.item_name||itemName);
-      worthState.itemImageUrl=`https://sky.coflnet.com/static/icon/${encodeURIComponent(rawTag)}`;
+      worthState.itemImageUrl=`https://sky.coflnet.com/static/icon/${encodeURIComponent(inferItemTag(auc.itemName||auc.item_name||itemName))}`;
       const auctionPrice=auc.startingBid||auc.starting_bid||0;
-      // If we got lore, parse it; if not, build from the enchantments array Coflnet provides
       if(!lore&&auc.enchantments&&auc.enchantments.length){
-        // Coflnet returns enchantments as [{type:"sharpness",level:6}, ...]
-        lore = auc.enchantments.map(e=>e.type.replace(/_/g,' ')+' '+e.level).join('\n');
+        lore=auc.enchantments.map(e=>e.type.replace(/_/g,' ')+' '+e.level).join('\n');
       }
-      worthState.itemName=itemName;
-      worthState.auctionPrice=auctionPrice;
-      // Parse lore
+      worthState.itemName=itemName; worthState.auctionPrice=auctionPrice;
+      worthState.upgrades={}; worthState.addedEnchants=[];
       const parsed=parseLore(lore);
-      // Apply to worthState
-      // Reset upgrades first (keep live prices)
-      worthState.upgrades={};worthState.addedEnchants=[];
-      // HPB
-      if(parsed.hpb>0){ worthState.upgrades['hpb']={qty:parsed.hpb,price:worthState.upgrades['hpb']?.price||UPGRADES.hpb.items[0].defaultPrice,isLive:false}; }
-      if(parsed.fphb>0){ worthState.upgrades['fphb']={qty:parsed.fphb,price:worthState.upgrades['fphb']?.price||UPGRADES.hpb.items[1].defaultPrice,isLive:false}; }
-      // Recomb
-      if(parsed.recomb){ worthState.upgrades['recomb']={qty:1,price:worthState.upgrades['recomb']?.price||UPGRADES.recomb.items[0].defaultPrice,isLive:false}; }
-      // Stars
-      for(let s=1;s<=Math.min(parsed.stars,5);s++){
-        const sid='star'+s;
-        const sitem=UPGRADES.stars.items[s-1];
-        worthState.upgrades[sid]={qty:1,price:worthState.upgrades[sid]?.price||sitem.defaultPrice,isLive:false};
-      }
-      // Scrolls
+      if(parsed.hpb>0) worthState.upgrades['hpb']={qty:parsed.hpb,price:worthState.upgrades['hpb']?.price||700000,isLive:false};
+      if(parsed.fphb>0) worthState.upgrades['fphb']={qty:parsed.fphb,price:worthState.upgrades['fphb']?.price||2500000,isLive:false};
+      if(parsed.recomb) worthState.upgrades['recomb']={qty:1,price:worthState.upgrades['recomb']?.price||6500000,isLive:false};
       const scrollMap={'Shadow Assassin Scroll':'scroll_sa','Juju Shortbow Scroll':'scroll_jc','Necromancer Scroll':'scroll_necro','Livid Dagger Scroll':'scroll_livid'};
       for(const sName of parsed.scrolls){
         const sid=scrollMap[sName]; if(!sid) continue;
@@ -2068,82 +1771,57 @@ el('panels').addEventListener('click',async e=>{
         const cur=worthState.upgrades[sid];
         worthState.upgrades[sid]={qty:(cur?.qty||0)+1,price:cur?.price||sitem.defaultPrice,isLive:false};
       }
-      // Enchants — merge lore-parsed + Coflnet structured enchantments array
-      const encSeen=new Set();
       const mergedEnchants=[...parsed.enchants];
       if(auc.enchantments&&auc.enchantments.length){
         for(const ce of auc.enchantments){
           const name=(ce.type||'').replace(/_/g,' ').replace(/\b\w/g,x=>x.toUpperCase());
-          const tier=ce.level||1;
-          const key=name.toLowerCase()+'_'+tier;
-          if(!mergedEnchants.some(e=>e.name.toLowerCase()===name.toLowerCase())) mergedEnchants.push({name,tier});
+          if(!mergedEnchants.some(e=>e.name.toLowerCase()===name.toLowerCase())) mergedEnchants.push({name,tier:ce.level||1});
         }
       }
       for(const enc of mergedEnchants){
-        const match=matchEnchant(enc.name,enc.tier);
-        if(!match) continue;
+        const match=matchEnchant(enc.name,enc.tier); if(!match) continue;
         const uid=match.item.id+'_'+Date.now()+'_'+Math.random();
         const price=worthState.upgrades[match.item.id]?.price||match.item.defaultPrice||0;
         worthState.addedEnchants.push({uid,id:match.item.id,name:match.item.name,tier:match.tier,price,isLive:false});
       }
-      // Item name input
       const ni=el('worth-item-name'); if(ni) ni.value=itemName;
-      // Show parsed preview
       const previewLines=[
-        `Item: ${itemName}`,
-        `Listed price: ${fmt(auctionPrice)}`,
-        parsed.hpb||parsed.fphb ? `HPBs: ${parsed.hpb} Hot Potato + ${parsed.fphb} Fuming` : null,
-        parsed.recomb ? 'Recombobulated: yes' : null,
-        parsed.stars ? `Stars: ${parsed.stars}✪` : null,
-        parsed.scrolls.length ? `Scrolls: ${parsed.scrolls.join(', ')}` : null,
-        parsed.enchants.length ? `Enchants detected: ${parsed.enchants.length} (${parsed.enchants.slice(0,4).map(e=>e.name+' T'+e.tier).join(', ')}${parsed.enchants.length>4?'…':''})` : null,
+        `Item: ${itemName}`,`Listed price: ${fmt(auctionPrice)}`,
+        parsed.hpb||parsed.fphb?`HPBs: ${parsed.hpb} Hot Potato + ${parsed.fphb} Fuming`:null,
+        parsed.recomb?'Recombobulated: yes':null,parsed.stars?`Stars: ${parsed.stars}✪`:null,
+        parsed.enchants.length?`Enchants detected: ${parsed.enchants.length}`:null,
       ].filter(Boolean);
       const prev=el('ah-parsed-preview');
-      if(prev){
-        prev.className='ah-parsed-preview visible';
-        prev.innerHTML=previewLines.map(l=>`<div class="ah-parsed-row"><span class="ah-parsed-label">${l.split(':')[0]}</span><span class="ah-parsed-val accent">${l.split(':').slice(1).join(':').trim()}</span></div>`).join('');
-      }
-      // Floor price lookup via Coflnet
+      if(prev){prev.className='ah-parsed-preview visible';prev.innerHTML=previewLines.map(l=>`<div class="ah-parsed-row"><span class="ah-parsed-label">${l.split(':')[0]}</span><span class="ah-parsed-val accent">${l.split(':').slice(1).join(':').trim()}</span></div>`).join('');}
       const tag=inferItemTag(auc.item_name||itemName);
       worthState.baseItemTag=tag;
-      worthState.itemImageUrl=`https://sky.coflnet.com/static/icon/${encodeURIComponent(tag)}`;
-      setAhStatus(`✓ Parsed! Fetching clean floor price for ${tag}...`,'ok');
+      setAhStatus(`✓ Parsed! Fetching floor price...`,'ok');
       try{
         const fres=await fetch(`https://sky.coflnet.com/api/auctions/tag/${encodeURIComponent(tag)}/active/bin?page=0`);
         if(fres.ok){
           const fdata=await fres.json();
-          // Sort by price ascending — lowest BIN first (fine if it has regular enchants)
           if(fdata&&fdata.length){
             const floors=fdata.filter(a=>a.startingBid>0).sort((a,b)=>a.startingBid-b.startingBid);
             if(floors.length){
               worthState.baseItemCost=floors[0].startingBid;
               const floorBox=el('ah-floor-box');
-              if(floorBox){floorBox.style.display='flex';floorBox.querySelector('.floor-val').textContent=fmt(worthState.baseItemCost);floorBox.querySelector('.floor-sub').textContent=`Lowest clean BIN for ${tag}`;}
-              setAhStatus(`✓ Done! Upgrades auto-filled. Clean floor: ${fmt(worthState.baseItemCost)}`,'ok');
+              if(floorBox){floorBox.style.display='flex';floorBox.querySelector('.floor-val').textContent=fmt(worthState.baseItemCost);}
+              setAhStatus(`✓ Done! Clean floor: ${fmt(worthState.baseItemCost)}`,'ok');
             }
           }
         }
-      }catch(fe){console.warn('Floor price lookup failed:',fe);}
-      updateWorthSummary();
-      renderAll();
-    }catch(err){
-      setAhStatus('✗ '+err.message,'err');
-      console.error('AH import error:',err);
-    }
-    if(btn){btn.classList.remove('loading');btn.textContent='⟳ Import';}
-    return;
+      }catch(fe){console.warn('Floor lookup failed:',fe);}
+      updateWorthSummary(); renderAll();
+    }catch(err){setAhStatus('✗ '+err.message,'err');console.error('AH import error:',err);}
+    if(btn){btn.classList.remove('loading');btn.textContent='⟳ Import';} return;
   }
 
-  // ── Worth: toggle section ──
   if(action==='toggle-worth-section'){
     const secId=b.dataset.section;
-    const body=el(`ws-body-${secId}`);
-    const chev=el(`ws-chev-${secId}`);
-    if(body){body.classList.toggle('open');if(chev)chev.classList.toggle('open');}
-    return;
+    const body=el(`ws-body-${secId}`); const chev=el(`ws-chev-${secId}`);
+    if(body){body.classList.toggle('open');if(chev)chev.classList.toggle('open');} return;
   }
 
-  // ── Worth: stepper ──
   if(action==='worth-mstar-step'){
     const delta=parseInt(b.dataset.delta);
     const cur=worthState.upgrades['master_stars_count']?.qty||0;
@@ -2153,97 +1831,65 @@ el('panels').addEventListener('click',async e=>{
     const qEl=el('ws-qty-master_stars_count'); if(qEl) qEl.textContent=nw;
     const sub=el('ws-mstar-sub'); if(sub) sub.textContent=calcMasterStarsCostBreakdown(nw);
     const costLbl=el('ws-cost-master_stars'); if(costLbl) costLbl.textContent=nw>0?fmt(calcMasterStarsCost(nw)):'';
-    updateWorthSummary();
-    return;
+    updateWorthSummary(); return;
   }
+
   if(action==='worth-nstar-step'){
     const delta=parseInt(b.dataset.delta);
-    const cur=worthState.normalStarsCount||0;
-    worthState.normalStarsCount=Math.max(0,Math.min(5,cur+delta));
+    worthState.normalStarsCount=Math.max(0,Math.min(5,(worthState.normalStarsCount||0)+delta));
     const qEl=el('ws-qty-normal_stars_count'); if(qEl) qEl.textContent=worthState.normalStarsCount;
-    updateNormalStarDisplay();
-    updateWorthSummary();
-    return;
+    updateNormalStarDisplay(); updateWorthSummary(); return;
   }
+
   if(action==='worth-step'){
-    const itemId=b.dataset.itemId;
-    const delta=parseInt(b.dataset.delta);
-    const max=parseInt(b.dataset.max)||1;
-    // Find default price
+    const itemId=b.dataset.itemId; const delta=parseInt(b.dataset.delta); const max=parseInt(b.dataset.max)||1;
     let defPrice=0;
-    for(const sec of Object.values(UPGRADES)){
-      const found=sec.items.find(i=>i.id===itemId);
-      if(found){defPrice=found.defaultPrice;break;}
-    }
+    for(const sec of Object.values(UPGRADES)){const found=sec.items.find(i=>i.id===itemId);if(found){defPrice=found.defaultPrice;break;}}
     if(!worthState.upgrades[itemId]) worthState.upgrades[itemId]={qty:0,price:defPrice,isLive:false};
     const s=worthState.upgrades[itemId];
     s.qty=Math.max(0,Math.min(max,s.qty+delta));
     const qEl=el(`ws-qty-${itemId}`); if(qEl) qEl.textContent=s.qty;
     const costEl=el(`ws-cost-${itemId}`); if(costEl){costEl.textContent=s.qty>0?fmt(s.qty*(s.price||defPrice)):'';costEl.className='price-tag'+(s.qty>0?' has-val':'');}
-    updateWorthSummary();
-    return;
+    updateWorthSummary(); return;
   }
 
-  // ── Worth: add enchant ──
   if(action==='add-enchant'){
-    const itemId=b.dataset.itemId;
-    const secId=b.dataset.section;
-    const sec=UPGRADES[secId];
-    const item=sec.items.find(i=>i.id===itemId); if(!item) return;
-    const tierEl=el(`ench-tier-${itemId}`);
-    const tier=tierEl?parseInt(tierEl.value):item.maxTier;
-    const priceEl=el(`ws-price-${itemId}`);
-    const price=parseNum(priceEl?.value)||item.defaultPrice||0;
+    const itemId=b.dataset.itemId; const secId=b.dataset.section;
+    const sec=UPGRADES[secId]; const item=sec.items.find(i=>i.id===itemId); if(!item) return;
+    const tierEl=el(`ench-tier-${itemId}`); const tier=tierEl?parseInt(tierEl.value):item.maxTier;
+    const priceEl=el(`ws-price-${itemId}`); const price=parseNum(priceEl?.value)||item.defaultPrice||0;
     const uid=itemId+'_'+Date.now();
     worthState.addedEnchants.push({uid,id:itemId,name:item.name,tier,price,isLive:worthState.upgrades[itemId]?.isLive||false});
     if(!worthState.upgrades[itemId]) worthState.upgrades[itemId]={qty:1,price,isLive:false};
-    if(price>0) saveWorthPrice(itemId,price); // persist price
-    updateWorthSummary();
-    renderEnchantChips(secId);
-    return;
+    if(price>0) saveWorthPrice(itemId,price);
+    updateWorthSummary(); renderEnchantChips(secId); return;
   }
 
-  // ── Worth: remove enchant ──
   if(action==='remove-enchant'){
     const uid=b.dataset.enchantId;
     const e=worthState.addedEnchants.find(x=>x.uid===uid);
     worthState.addedEnchants=worthState.addedEnchants.filter(x=>x.uid!==uid);
     updateWorthSummary();
-    if(e){
-      // find section
-      for(const [secId,sec] of Object.entries(UPGRADES)){
-        if(sec.items.some(i=>i.id===e.id)){renderEnchantChips(secId);break;}
-      }
-    }
+    if(e){for(const[secId,sec] of Object.entries(UPGRADES)){if(sec.items.some(i=>i.id===e.id)){renderEnchantChips(secId);break;}}}
     return;
   }
 
-  // ── Log flip ──
   if(action==='log-flip-inline'){
-    const pid=b.dataset.pid;
-    const product=getProduct(pid); if(!product) return;
+    const pid=b.dataset.pid; const product=getProduct(pid); if(!product) return;
     const r=calc(product);
     if(r.qty<=0||r.sellPrice<=0){alert('Set a qty and sell price first.');return;}
-    const noteInp=el(`log-note-inline-${pid}`);
-    const note=noteInp?.value.trim()||'';
+    const noteInp=el(`log-note-inline-${pid}`); const note=noteInp?.value.trim()||'';
     const statusEl=el(`log-flip-status-${pid}`);
     b.disabled=true; b.textContent='Saving...';
     const flip={id:Date.now(),productId:pid,productName:product.name,qty:Math.round(r.qty),sellPrice:Math.round(r.sellPrice),costPerShard:Math.round(r.costPerShard),note,date:new Date().toISOString()};
     remoteData.flips.push(flip);
-    const ok=await ghWrite(remoteData);
+    const ok=await jbWrite(remoteData);
     if(ok){
       if(statusEl){statusEl.textContent='✓ Logged!';statusEl.className='log-flip-status ok';}
       if(noteInp) noteInp.value='';
-      // Update sub text with new qty info
-      const subEl=b.closest('.log-flip-box')?.querySelector('.log-flip-sub');
-      if(subEl) subEl.textContent=`Saves current qty (${r.qty.toLocaleString()}) at ${fmt(r.sellPrice)}/shard to your Flip Log.`;
       setTimeout(()=>{if(statusEl){statusEl.textContent='';statusEl.className='log-flip-status';}},3000);
-    } else {
-      remoteData.flips.pop();
-      if(statusEl){statusEl.textContent='✗ Save failed';statusEl.className='log-flip-status err';}
-    }
-    b.disabled=false; b.textContent='📋 Log Flip';
-    return;
+    }else{remoteData.flips.pop();if(statusEl){statusEl.textContent='✗ Save failed';statusEl.className='log-flip-status err';}}
+    b.disabled=false; b.textContent='📋 Log Flip'; return;
   }
 
   if(action==='log-flip'){
@@ -2259,31 +1905,28 @@ el('panels').addEventListener('click',async e=>{
     const product=getProduct(pid);
     const flip={id:Date.now(),productId:pid,productName:product?.name||pid,qty:Math.round(qty),sellPrice:Math.round(sell),costPerShard:Math.round(cost),note,date:new Date().toISOString()};
     remoteData.flips.push(flip);
-    const ok=await ghWrite(remoteData);
+    const ok=await jbWrite(remoteData);
     if(ok){el('log-qty').value='';el('log-sell').value='';el('log-note').value='';el('log-preview').textContent='Fill in the fields above to preview profit';refreshLogStats();}
-    else{remoteData.flips.pop();errEl.textContent='Failed to save. Check your token.';errEl.style.display='block';}
+    else{remoteData.flips.pop();errEl.textContent='Failed to save.';errEl.style.display='block';}
     return;
   }
 
   if(action==='delete-flip'){
-    if(!ghToken){alert('Need a token to delete flips.');return;}
     const i=parseInt(b.dataset.flipIndex);
     if(!confirm('Delete this flip?')) return;
     remoteData.flips.splice(i,1);
-    const ok=await ghWrite(remoteData);
+    const ok=await jbWrite(remoteData);
     if(ok) refreshLogStats();
     else{remoteData.flips.splice(i,0,remoteData.flips[i]);alert('Save failed.');}
     return;
   }
 
   if(action==='delete-product'){
-    if(!ghToken){alert('Need a token to delete products.');return;}
     const pid=b.dataset.pid;
     if(!confirm('Remove this product?')) return;
     remoteData.products=remoteData.products.filter(p=>p.id!==pid);
     if(local.activeTab===pid) local.activeTab=remoteData.products[0]?.id||'__manage__';
-    await ghWrite(remoteData); saveLocal(); renderAll();
-    return;
+    await jbWrite(remoteData); saveLocal(); renderAll(); return;
   }
 
   if(action==='add-ing-row'){
@@ -2298,10 +1941,7 @@ el('panels').addEventListener('click',async e=>{
   }
 
   if(action==='add-product'){
-    if(!ghToken){alert('Need a GitHub token to add products.');return;}
-    const name=el('new-name')?.value.trim();
-    const chain=el('new-chain')?.value.trim();
-    const sell=parseNum(el('new-sell')?.value)||0;
+    const name=el('new-name')?.value.trim(); const chain=el('new-chain')?.value.trim(); const sell=parseNum(el('new-sell')?.value)||0;
     const errEl=el('add-error'); errEl.style.display='none';
     if(!name){errEl.textContent='Product name required.';errEl.style.display='block';return;}
     let baseSlug=slugify(name),id=baseSlug,n=1;
@@ -2319,55 +1959,30 @@ el('panels').addEventListener('click',async e=>{
     const newP={id,name,chain:chain||name,ingredients,defaultPrices};
     remoteData.products.push(newP);
     ingredients.forEach(ing=>{local.prices[`${id}__${ing.id}`]=defaultPrices[ing.id];});
-    local.prices[`${id}__sell`]=Math.round(sell);
-    local.qtys[id]='64';
-    const ok=await ghWrite(remoteData);
+    local.prices[`${id}__sell`]=Math.round(sell); local.qtys[id]='64';
+    const ok=await jbWrite(remoteData);
     if(ok){saveLocal();local.activeTab=id;renderAll();}
-    else{remoteData.products.pop();errEl.textContent='Save failed. Check your token.';errEl.style.display='block';}
+    else{remoteData.products.pop();errEl.textContent='Save failed.';errEl.style.display='block';}
     return;
   }
 });
 
-// ── Inventory toggle via change event ──
 el('panels').addEventListener('change',e=>{
   const t=e.target;
-  if(t.id&&t.id.startsWith('inv-toggle-')){
-    const pid=t.id.replace('inv-toggle-','');
-    setInvMode(pid,t.checked);
-    const normalWrap=el(`normal-wrap-${pid}`);
-    const invPanel=el(`inv-panel-${pid}`);
-    if(normalWrap) normalWrap.style.display=t.checked?'none':'block';
-    if(invPanel){invPanel.className='inv-panel'+(t.checked?' visible':'');}
-    return;
-  }
-  // Alt ingredient toggle (e.g. Bambuleaf vs Mochibear on Pandarai)
   if(t.dataset.action==='toggle-alt-ing'){
-    const {pid,origId}=t.dataset;
+    const{pid,origId}=t.dataset;
     setAltChoice(pid,origId,t.checked?'alt':'base');
-    // Update name label
     const product=getProduct(pid); if(!product) return;
     const ing=product.ingredients.find(i=>i.id===origId); if(!ing||!ing.altId) return;
     const isAlt=t.checked;
     const nameEl=el(`ing-name-${pid}-${origId}`); if(nameEl) nameEl.textContent=isAlt?ing.altName:ing.name;
-    // Update the alt label text beside toggle
     const altLbl=el(`alt-lbl-${pid}-${origId}`); if(altLbl) altLbl.textContent=isAlt?ing.altName:ing.name;
-    // Update the price label for inactive ing
     const altPriceLbl=el(`alt-price-lbl-${pid}-${origId}`); if(altPriceLbl) altPriceLbl.textContent=(isAlt?ing.name:ing.altName)+': '+displayNum(getPrice(pid,isAlt?ing.id:ing.altId));
-    // Swap which price input is shown (re-id the active input)
-    const activeInp=el(`inp-price-${pid}-${isAlt?ing.altId:ing.id}`);
-    const inactiveInp=el(`inp-price-${pid}-${isAlt?ing.id:ing.altId}`);
-    if(activeInp){ activeInp.id=`inp-price-${pid}-${isAlt?ing.altId:ing.id}`; activeInp.dataset.iid=isAlt?ing.altId:ing.id; activeInp.value=displayNum(getPrice(pid,isAlt?ing.altId:ing.id)); }
-    // Update stock section label for this ingredient
-    const stockLbl=el(`stock-lbl-${pid}-${origId}`);
-    if(stockLbl) stockLbl.textContent=(isAlt?ing.altName:ing.name)+' I have';
-    updateDisplay(pid);
-    reapplyBudget(pid);
-    updateStockDisplay(pid);
-    return;
+    const stockLbl=el(`stock-lbl-${pid}-${origId}`); if(stockLbl) stockLbl.textContent=(isAlt?ing.altName:ing.name)+' I have';
+    updateDisplay(pid); reapplyBudget(pid); updateStockDisplay(pid); return;
   }
 });
 
-// ─── HELPERS ──────────────────────────────────────────────────────────────────
 function secLabel(text){const e=document.createElement('div');e.className='section-label';e.textContent=text;return e;}
 function makeSmartInput(id,val,placeholder=''){
   const i=document.createElement('input');i.className='smart-input';i.type='text';
@@ -2385,12 +2000,12 @@ function inputGroupEl(label,sub,inputId,val){
 
 // ─── BOOT ────────────────────────────────────────────────────────────────────
 (async()=>{
-  const remote=await ghRead();
+  const remote=await jbRead();
   if(remote) applyRemote(remote);
   if(local.activeTab!=='__manage__'&&local.activeTab!=='__log__'&&local.activeTab!=='__worth__'&&!getProduct(local.activeTab)){
-    local.activeTab=remoteData.products[0]?.id||'__manage__';saveLocal();
+    local.activeTab=remoteData.products[0]?.id||'__manage__'; saveLocal();
   }
-  restoreWorthPrices(); // load saved item worth prices from localStorage
+  restoreWorthPrices();
   renderAll();
 })();
 </script>
