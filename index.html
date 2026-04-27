@@ -492,18 +492,7 @@ const DEFAULT_PRODUCTS=[
    chain:'(Bambuleaf OR Mochibear) + Glacite Walker → Pandarai',
    ingredients:[
      {id:'bambuleaf',name:'Bambuleaf',perUnit:1000/400,altId:'mochibear',altName:'Mochibear'},
-     {id:'glacite',name:'Glacite Walker',perUnit:1000/400},
-  {id:'bambloom',name:'Bambloom',
-   chain:'(Bambuleaf OR Mochibear) + Glacite Walker → Bambloom',
-   ingredients:[
-     {id:'bambuleaf',name:'Bambuleaf',perUnit:1000/400,altId:'mochibear',altName:'Mochibear'},
-     {id:'glacite',name:'Glacite Walker',perUnit:1000/400},
-   {id:'cryo',name:'Cryo',
-   chain:'(Taurus OR Spike) + Shell Wise → Cryo',
-   ingredients:[
-     {id:'taurus',name:'Taurus',perUnit:1000/400,altId:'spike',altName:'Spike'},
-     {id:'shellwise',name:'Shell wise',perUnit:1000/1000}
-  
+     {id:'glacite',name:'Glacite Walker',perUnit:1000/400}
    ],
    defaultPrices:{bambuleaf:42000,mochibear:42000,glacite:7500,sell:204000},
    bazaarSell:'SHARD_PANDARAI',
@@ -523,14 +512,13 @@ const DEFAULT_PRODUCTS=[
    ingredients:[{id:'pest',name:'Pest',perUnit:1000/64},{id:'chill',name:'Chill',perUnit:1000/64},{id:'bezal',name:'Bezal',perUnit:400/64},{id:'draconic',name:'Draconic',perUnit:160/64}],
    defaultPrices:{pest:43000,chill:6000,bezal:13500,draconic:135000,sell:1540000},
    bazaarSell:'SHARD_DRAGONFLY'},
-     
-],
- const BAZAAR_MAP={
+];
+
+const BAZAAR_MAP={
   mz:'SHARD_MINER_ZOMBIE',chill:'SHARD_CHILL',invisibug:'SHARD_INVISIBUG',
   pest:'SHARD_PEST',glacite:'SHARD_GLACITE_WALKER',bambuleaf:'SHARD_BAMBULEAF',
   ghost:'SHARD_GHOST',cod:'SHARD_COD',bezal:'SHARD_BEZAL',draconic:'SHARD_DRACONIC',
-  mochibear:'SHARD_MOCHIBEAR',cryo: 'SHARD_CRYO' ,taurus: 'SHARD_TAURUS', shellwise: 'SHARD_SHELLWISE',
-  Spike: 'SHARD_SPIKE',
+  mochibear:'SHARD_MOCHIBEAR',
 };
 
 // ─── STATE ───────────────────────────────────────────────────────────────────
