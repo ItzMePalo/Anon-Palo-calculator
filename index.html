@@ -18,7 +18,6 @@
   body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(126,232,184,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(126,232,184,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
   .wrapper{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:0 36px 120px;}
 
-  /* ── HEADER ── */
   header{padding:52px 0 40px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid var(--border);margin-bottom:44px;}
   .logo{font-size:34px;font-weight:700;letter-spacing:-0.5px;}
   .logo span{color:var(--accent);}
@@ -29,7 +28,6 @@
   .sync-status.err{color:var(--red);border-color:rgba(255,94,94,0.3);}
   .sync-status.loading{color:var(--gold);border-color:rgba(246,201,14,0.3);}
 
-  /* ── TABS ── */
   .tabs{display:flex;gap:5px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:5px;flex-wrap:wrap;}
   .tab{padding:10px 20px;border-radius:10px;font-size:15px;font-weight:500;cursor:pointer;color:var(--muted);transition:all 0.15s;border:none;background:none;font-family:inherit;white-space:nowrap;-webkit-appearance:none;appearance:none;text-decoration:none;-webkit-text-fill-color:var(--muted);}
   .tab:hover{color:var(--text);-webkit-text-fill-color:var(--text);}
@@ -45,7 +43,6 @@
   .panel.active{display:block;animation:fadeIn 0.2s ease;}
   @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 
-  /* ── PRODUCT PANEL ── */
   .product-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:32px;}
   .product-title{font-size:32px;font-weight:700;}
   .chain-badge{font-size:13px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 18px;line-height:1.9;max-width:640px;}
@@ -82,7 +79,6 @@
   .budget-row{background:rgba(246,201,14,0.05);border:1px solid rgba(246,201,14,0.2);border-radius:14px;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:10px;}
   .budget-badge{font-size:13px;color:var(--gold);margin-top:4px;}
 
-  /* ── STOCK MODE ── */
   .stock-section{background:var(--surface);border:1px solid rgba(96,165,250,0.2);border-radius:14px;padding:22px 26px;margin-bottom:16px;}
   .stock-title{font-size:14px;font-weight:700;color:var(--blue);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
   .stock-sub{font-size:13px;color:var(--muted);margin-bottom:16px;}
@@ -141,6 +137,9 @@
   .ing-qty{font-size:19px;font-weight:600;color:var(--accent);min-width:80px;text-align:right;}
   .ing-cost{font-size:14px;color:var(--muted);min-width:100px;text-align:right;}
 
+  /* Waste info badge */
+  .waste-badge{font-size:11px;color:var(--gold);background:rgba(246,201,14,0.08);border:1px solid rgba(246,201,14,0.2);border-radius:6px;padding:3px 8px;margin-top:4px;display:inline-block;}
+
   .profit-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:20px;}
   .profit-row{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid var(--border);}
   .profit-row:last-child{border-bottom:none;background:var(--surface2);}
@@ -149,7 +148,6 @@
   .profit-row .val.pos{color:var(--accent);}
   .profit-row .val.neg{color:var(--red);}
 
-  /* ── FLIP LOG ── */
   .log-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:28px;}
   .log-flip-box{background:rgba(246,201,14,0.05);border:1px solid rgba(246,201,14,0.2);border-radius:14px;padding:20px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:8px;}
   .log-flip-left{flex:1;min-width:180px;}
@@ -196,7 +194,6 @@
     .flip-row>*:nth-child(3),.flip-row>*:nth-child(4){display:none;}
   }
 
-  /* ── MANAGE PANEL ── */
   .manage-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:20px;}
   .manage-panel h3{font-size:20px;font-weight:600;margin-bottom:20px;}
   .form-row{display:flex;align-items:flex-end;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
@@ -209,7 +206,6 @@
   .p-chain{font-size:13px;color:var(--muted);margin-top:3px;}
   .alert{background:rgba(255,94,94,0.08);border:1px solid rgba(255,94,94,0.3);border-radius:10px;padding:12px 16px;font-size:14px;color:var(--red);margin-top:12px;display:none;}
 
-  /* ── BUTTONS ── */
   .btn{padding:11px 22px;border-radius:10px;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;border:none;transition:all 0.15s;}
   .btn-accent{background:var(--accent);color:#0a0c10;}
   .btn-accent:hover{background:var(--accent2);}
@@ -297,6 +293,109 @@ function el(id){return document.getElementById(id);}
 function setText(id,v){const e=el(id);if(e)e.textContent=v;}
 function setClass(id,c){const e=el(id);if(e)e.className=c;}
 
+// ─── FUSION SIMULATION (5+5→2) ───────────────────────────────────────────────
+// Simulates a single fusion stage: given a target number of outputs,
+// returns the actual outputs (rounded up to nearest even batch) and
+// the inputs required (each input = ceil(target/2)*5).
+function fusionStage(targetOut){
+  const batches=Math.ceil(targetOut/2); // each batch yields 2
+  const actualOut=batches*2;
+  const inputEach=batches*5; // each of the 2 ingredients
+  return{batches,actualOut,inputEach};
+}
+
+// Each product has a fusionChain function that takes a desired output qty
+// and returns {actualOut, ingredients:{id->needed}, waste:{id->waste}}
+// For products without a proper chain (custom added), falls back to perUnit math.
+
+const FUSION_CHAINS={
+  // MZ + Chill → Trog → Trog + MZ → Quartzfang → QF + MZ → Stalagmight
+  'stalagmite': function(want){
+    const s3=fusionStage(want);            // stage3: QF + MZ → Stalagmight
+    const s2=fusionStage(s3.inputEach);    // stage2: Trog + MZ → Quartzfang (need s3.inputEach QF)
+    const s1=fusionStage(s2.inputEach);    // stage1: MZ + Chill → Trog (need s2.inputEach Trogs)
+    const mz = s1.inputEach + s2.inputEach + s3.inputEach;
+    const chill = s1.inputEach;
+    return{
+      actualOut: s3.actualOut,
+      ingredients:{ mz, chill },
+      waste:{ mz: mz - (s3.actualOut * (1560/64)), chill: chill - (s3.actualOut * (1000/64)) }
+    };
+  },
+  // MZ + Invisibug → Termite → Termite + Invisibug → Ladybug → Ladybug + Invisibug → Lunar Moth
+  'lunar-moth': function(want){
+    const s3=fusionStage(want);
+    const s2=fusionStage(s3.inputEach);
+    const s1=fusionStage(s2.inputEach);
+    const mz = s1.inputEach;
+    const invisibug = s1.inputEach + s2.inputEach + s3.inputEach;
+    return{
+      actualOut: s3.actualOut,
+      ingredients:{ mz, invisibug },
+      waste:{}
+    };
+  },
+  // Pest+Chill→Mantis (parallel) MZ+Invisibug→Termite (parallel) → Mantis+Termite→Cropeetle
+  'cropeetle': function(want){
+    const s3=fusionStage(want);          // Mantis + Termite → Cropeetle
+    const s1=fusionStage(s3.inputEach);  // Pest + Chill → Mantis
+    const s2=fusionStage(s3.inputEach);  // MZ + Invisibug → Termite
+    return{
+      actualOut: s3.actualOut,
+      ingredients:{ pest: s1.inputEach, chill: s1.inputEach, mz: s2.inputEach, invisibug: s2.inputEach },
+      waste:{}
+    };
+  },
+  // (Bambuleaf/Mochibear) + Glacite → Pandarai  (1 stage)
+  'pandarai': function(want){
+    const s1=fusionStage(want);
+    return{
+      actualOut: s1.actualOut,
+      ingredients:{ bambuleaf: s1.inputEach, glacite: s1.inputEach },
+      waste:{}
+    };
+  },
+  // Ghost + Cod → Sphinx  (1 stage)
+  'sphinx': function(want){
+    const s1=fusionStage(want);
+    return{
+      actualOut: s1.actualOut,
+      ingredients:{ ghost: s1.inputEach, cod: s1.inputEach },
+      waste:{}
+    };
+  },
+  // Pest+Chill→Mantis → Mantis+Bezal→Firefly  (2 stages)
+  'firefly': function(want){
+    const s2=fusionStage(want);          // Mantis + Bezal → Firefly
+    const s1=fusionStage(s2.inputEach);  // Pest + Chill → Mantis
+    return{
+      actualOut: s2.actualOut,
+      ingredients:{ pest: s1.inputEach, chill: s1.inputEach, bezal: s2.inputEach },
+      waste:{}
+    };
+  },
+  // Pest+Chill→Mantis→Mantis+Bezal→Firefly→Firefly+Draconic→Dragonfly  (3 stages)
+  'dragonfly': function(want){
+    const s3=fusionStage(want);          // Firefly + Draconic → Dragonfly
+    const s2=fusionStage(s3.inputEach);  // Mantis + Bezal → Firefly
+    const s1=fusionStage(s2.inputEach);  // Pest + Chill → Mantis
+    return{
+      actualOut: s3.actualOut,
+      ingredients:{ pest: s1.inputEach, chill: s1.inputEach, bezal: s2.inputEach, draconic: s3.inputEach },
+      waste:{}
+    };
+  },
+  // (Bambuleaf/Mochibear) + Glacite → Bambloom  (1 stage)
+  'bambloom': function(want){
+    const s1=fusionStage(want);
+    return{
+      actualOut: s1.actualOut,
+      ingredients:{ bambuleaf: s1.inputEach, glacite: s1.inputEach },
+      waste:{}
+    };
+  },
+};
+
 // ─── JSONBIN SYNC ─────────────────────────────────────────────────────────────
 function setStatus(msg,cls=''){
   const s=el('sync-status');
@@ -309,10 +408,7 @@ async function jbRead(){
   setStatus('⟳ Syncing...','loading');
   try{
     const res=await fetch(`${JB_BASE}/latest`,{
-      headers:{
-        'X-Master-Key': JB_API_KEY,
-        'X-Bin-Meta':   'false',
-      }
+      headers:{'X-Master-Key':JB_API_KEY,'X-Bin-Meta':'false'}
     });
     if(!res.ok) throw new Error('HTTP '+res.status);
     const data=await res.json();
@@ -329,17 +425,11 @@ async function jbWrite(data){
   setStatus('⟳ Saving...','loading');
   try{
     const res=await fetch(JB_BASE,{
-      method: 'PUT',
-      headers:{
-        'Content-Type': 'application/json',
-        'X-Master-Key': JB_API_KEY,
-      },
-      body: JSON.stringify(data),
+      method:'PUT',
+      headers:{'Content-Type':'application/json','X-Master-Key':JB_API_KEY},
+      body:JSON.stringify(data),
     });
-    if(!res.ok){
-      const err=await res.json().catch(()=>({}));
-      throw new Error(err.message||'HTTP '+res.status);
-    }
+    if(!res.ok){const err=await res.json().catch(()=>({}));throw new Error(err.message||'HTTP '+res.status);}
     setStatus('✓ Saved','ok');
     return true;
   }catch(e){
@@ -411,22 +501,22 @@ const BAZAAR_MAP={
 // ─── STATE ───────────────────────────────────────────────────────────────────
 let remoteData={products:DEFAULT_PRODUCTS,flips:[]};
 let local={
-  prices:      JSON.parse(localStorage.getItem('sfc_prices')      ||'{}'),
-  qtys:        JSON.parse(localStorage.getItem('sfc_qtys')        ||'{}'),
-  budgets:     JSON.parse(localStorage.getItem('sfc_budgets')     ||'{}'),
-  invMode:     JSON.parse(localStorage.getItem('sfc_invmode')     ||'{}'),
-  invQtys:     JSON.parse(localStorage.getItem('sfc_invqtys')     ||'{}'),
-  altChoice:   JSON.parse(localStorage.getItem('sfc_altchoice')   ||'{}'),
-  activeTab:   localStorage.getItem('sfc_active')||'stalagmight',
+  prices:    JSON.parse(localStorage.getItem('sfc_prices')    ||'{}'),
+  qtys:      JSON.parse(localStorage.getItem('sfc_qtys')      ||'{}'),
+  budgets:   JSON.parse(localStorage.getItem('sfc_budgets')   ||'{}'),
+  invMode:   JSON.parse(localStorage.getItem('sfc_invmode')   ||'{}'),
+  invQtys:   JSON.parse(localStorage.getItem('sfc_invqtys')   ||'{}'),
+  altChoice: JSON.parse(localStorage.getItem('sfc_altchoice') ||'{}'),
+  activeTab: localStorage.getItem('sfc_active')||'stalagmight',
 };
 function saveLocal(){
-  localStorage.setItem('sfc_prices',      JSON.stringify(local.prices));
-  localStorage.setItem('sfc_qtys',        JSON.stringify(local.qtys));
-  localStorage.setItem('sfc_budgets',     JSON.stringify(local.budgets));
-  localStorage.setItem('sfc_invmode',     JSON.stringify(local.invMode));
-  localStorage.setItem('sfc_invqtys',     JSON.stringify(local.invQtys));
-  localStorage.setItem('sfc_altchoice',   JSON.stringify(local.altChoice));
-  localStorage.setItem('sfc_active',      local.activeTab);
+  localStorage.setItem('sfc_prices',    JSON.stringify(local.prices));
+  localStorage.setItem('sfc_qtys',      JSON.stringify(local.qtys));
+  localStorage.setItem('sfc_budgets',   JSON.stringify(local.budgets));
+  localStorage.setItem('sfc_invmode',   JSON.stringify(local.invMode));
+  localStorage.setItem('sfc_invqtys',   JSON.stringify(local.invQtys));
+  localStorage.setItem('sfc_altchoice', JSON.stringify(local.altChoice));
+  localStorage.setItem('sfc_active',    local.activeTab);
 }
 
 function applyRemote(data){
@@ -461,27 +551,68 @@ function getEffIngName(pid,ing){
   return getAltChoice(pid,ing.id)==='alt'?ing.altName:ing.name;
 }
 
-// ─── CALC ────────────────────────────────────────────────────────────────────
+// ─── CALC (fusion-aware) ──────────────────────────────────────────────────────
 function calc(product){
-  const qty=getQty(product.id);
+  const want=getQty(product.id);
+  const pid=product.id;
+  const chainFn=FUSION_CHAINS[pid];
+
+  // Resolve alt ingredients to their effective IDs
+  function effId(ing){ return getEffIngId(pid,ing); }
+
+  let actualOut=want;
+  let fusionIngredients=null; // map of effId -> needed qty
+  let wasteInfo=null;
+
+  if(chainFn){
+    // Run the fusion simulation with the base ingredient IDs
+    // For alt ingredients (pandarai/bambloom), bambuleaf slot may actually be mochibear
+    const sim=chainFn(want);
+    actualOut=sim.actualOut;
+    fusionIngredients={};
+    wasteInfo={};
+
+    // Map simulation ingredient IDs to the effective IDs chosen by alt toggle
+    for(const [simId, qty] of Object.entries(sim.ingredients)){
+      // Find which product ingredient has this base ID
+      const ing=product.ingredients.find(i=>i.id===simId||(i.altId&&(i.id===simId||i.altId===simId)));
+      const resolvedId = ing ? effId(ing) : simId;
+      fusionIngredients[resolvedId]=(fusionIngredients[resolvedId]||0)+qty;
+    }
+    if(sim.waste){
+      for(const [simId, w] of Object.entries(sim.waste)){
+        const ing=product.ingredients.find(i=>i.id===simId||(i.altId&&(i.id===simId||i.altId===simId)));
+        const resolvedId = ing ? effId(ing) : simId;
+        wasteInfo[resolvedId]=w;
+      }
+    }
+  }
+
   let totalCost=0;
-  const ings=product.ingredients.map(ing=>{
-    const effId=getEffIngId(product.id,ing);
-    const effName=getEffIngName(product.id,ing);
-    const price=getPrice(product.id,effId);
-    const needed=Math.ceil(ing.perUnit*qty);
+  const ings=product.ingredients.map(origIng=>{
+    const eId=effId(origIng);
+    const eName=getEffIngName(pid,origIng);
+    const price=getPrice(pid,eId);
+    let needed;
+    if(fusionIngredients&&fusionIngredients[eId]!==undefined){
+      needed=fusionIngredients[eId];
+    } else {
+      needed=Math.ceil(origIng.perUnit*want);
+    }
     const cost=Math.round(needed*price);
     totalCost+=cost;
-    return {...ing,id:effId,name:effName,origId:ing.id,altId:ing.altId,altName:ing.altName,price,needed,cost};
+    return{...origIng,id:eId,name:eName,origId:origIng.id,altId:origIng.altId,altName:origIng.altName,price,needed,cost};
   });
+
   totalCost=Math.round(totalCost);
-  const sellPrice=getSell(product.id);
-  const revenue=Math.round(qty*sellPrice);
+  const sellPrice=getSell(pid);
+  const revenue=Math.round(actualOut*sellPrice);
   const profit=Math.round(revenue-totalCost);
-  const costPerShard=qty>0?Math.round(totalCost/qty):0;
-  const profitPerShard=qty>0?Math.round(profit/qty):0;
+  const costPerShard=actualOut>0?Math.round(totalCost/actualOut):0;
+  const profitPerShard=actualOut>0?Math.round(profit/actualOut):0;
   const margin=totalCost>0?profit/totalCost*100:0;
-  return{qty,ings,totalCost,sellPrice,revenue,profit,costPerShard,profitPerShard,margin};
+  const wastefree=(actualOut===want);
+  return{qty:actualOut,requestedQty:want,ings,totalCost,sellPrice,revenue,profit,costPerShard,profitPerShard,margin,wastefree,wasteInfo};
 }
 
 function calcStock(product){
@@ -525,6 +656,32 @@ function calcLifetime(){
     totalSpend  +=Math.round(f.qty*f.costPerShard);
   });
   return{totalRevenue:Math.round(totalRevenue),totalSpend:Math.round(totalSpend),totalProfit:Math.round(totalRevenue-totalSpend),count:remoteData.flips.length};
+}
+
+// ─── BUDGET: binary search for max qty using fusion-accurate calc ─────────────
+function calcMaxQtyForBudget(product,budget){
+  // For fusion products, we can't just divide because cost/shard changes with rounding.
+  // Binary search for the largest want qty where totalCost <= budget.
+  const chainFn=FUSION_CHAINS[product.id];
+  if(!chainFn){
+    // fallback: use cost per shard from current calc
+    const r=calc(product);
+    return r.costPerShard>0?Math.floor(budget/r.costPerShard):0;
+  }
+  let lo=0,hi=budget; // upper bound: can never need more shards than budget coins
+  // But realistically cap to avoid huge loops
+  hi=Math.min(hi,10000000);
+  while(lo<hi){
+    const mid=Math.ceil((lo+hi)/2);
+    // temporarily set qty and calc
+    const oldStr=local.qtys[product.id];
+    local.qtys[product.id]=String(mid);
+    const r=calc(product);
+    local.qtys[product.id]=oldStr;
+    if(r.totalCost<=budget) lo=mid;
+    else hi=mid-1;
+  }
+  return lo;
 }
 
 // ─── RENDER ──────────────────────────────────────────────────────────────────
@@ -574,6 +731,14 @@ function buildProduct(product){
   const chainEl=document.createElement('div'); chainEl.className='chain-badge'; chainEl.textContent=product.chain;
   header.appendChild(titleEl); header.appendChild(chainEl); div.appendChild(header);
 
+  // Fusion warning if actualOut != requestedQty
+  if(FUSION_CHAINS[pid]&&r.qty!==r.requestedQty){
+    const warn=document.createElement('div');
+    warn.style.cssText='background:rgba(246,201,14,0.07);border:1px solid rgba(246,201,14,0.25);border-radius:10px;padding:12px 18px;font-size:13px;color:var(--gold);margin-bottom:16px;';
+    warn.textContent=`⚠ Fusion rounding: you wanted ${r.requestedQty.toLocaleString()} but will actually get ${r.qty.toLocaleString()} (batches of 5+5→2 rounded up). Costs reflect exact materials needed.`;
+    div.appendChild(warn);
+  }
+
   const stockSection=document.createElement('div'); stockSection.className='stock-section';
   const stockTitle=document.createElement('div'); stockTitle.className='stock-title'; stockTitle.textContent='From My Stock';
   const stockSub=document.createElement('div'); stockSub.className='stock-sub'; stockSub.textContent='Enter how many ingredient shards you have — calculates max outputs and what you still need to buy.';
@@ -596,9 +761,8 @@ function buildProduct(product){
   div.appendChild(stockSection);
 
   const normalWrap=document.createElement('div'); normalWrap.id=`normal-wrap-${pid}`;
-  normalWrap.style.display='block';
   normalWrap.appendChild(secLabel('Target Quantity'));
-  normalWrap.appendChild(inputGroupEl(`How many ${product.name} shards do you want?`,'Supports 64, 1k, 2.5m — everything scales automatically',`inp-qty-${pid}`,getQtyStr(pid)));
+  normalWrap.appendChild(inputGroupEl(`How many ${product.name} shards do you want?`,'Supports 64, 1k, 2.5m — fusion rounding applied automatically',`inp-qty-${pid}`,getQtyStr(pid)));
 
   const budRow=document.createElement('div'); budRow.className='budget-row';
   const budLeft=document.createElement('div');
@@ -654,7 +818,7 @@ function buildProduct(product){
   div.appendChild(sellG);
 
   const cpsBox=document.createElement('div'); cpsBox.className='cps-box'; cpsBox.id=`cps-box-${pid}`;
-  cpsBox.innerHTML=`<div class="cps-half"><div class="cps-label">Cost per shard</div><div class="cps-val pos" id="cps-val-${pid}">${fmt(r.costPerShard)}</div><div class="cps-sub">coins spent per shard made</div></div>
+  cpsBox.innerHTML=`<div class="cps-half"><div class="cps-label">Cost per shard</div><div class="cps-val pos" id="cps-val-${pid}">${fmt(r.costPerShard)}</div><div class="cps-sub" id="cps-out-${pid}">actual output: ${r.qty.toLocaleString()} shards</div></div>
     <div class="cps-divider"></div>
     <div class="cps-half"><div class="cps-label">Profit per shard</div><div class="cps-val ${r.profitPerShard>=0?'pos':'neg'}" id="pps-val-${pid}">${r.profitPerShard>=0?'+':''}${fmt(r.profitPerShard)}</div><div class="cps-sub">coins gained per shard sold</div></div>`;
   div.appendChild(cpsBox);
@@ -677,7 +841,7 @@ function buildProduct(product){
   logBox.innerHTML=`
     <div class="log-flip-left">
       <div class="log-flip-title">Log This Flip</div>
-      <div class="log-flip-sub">Saves current qty (${r.qty.toLocaleString()}) at ${fmt(r.sellPrice)}/shard to your Flip Log.</div>
+      <div class="log-flip-sub" id="log-flip-sub-${pid}">Saves current qty (${r.qty.toLocaleString()}) at ${fmt(r.sellPrice)}/shard to your Flip Log.</div>
     </div>
     <div class="log-flip-right">
       <input class="smart-input log-note-inp" type="text" id="log-note-inline-${pid}" placeholder="Note (optional)" autocomplete="off" style="width:200px;font-size:14px;" />
@@ -691,6 +855,24 @@ function buildProduct(product){
 function updateDisplay(pid){
   const product=getProduct(pid); if(!product) return;
   const r=calc(product);
+
+  // Update fusion warning if it exists or needs to exist
+  const panelEl=document.querySelector(`.panel[data-pid="${pid}"]`);
+  if(panelEl){
+    let warn=panelEl.querySelector('.fusion-warn');
+    if(FUSION_CHAINS[pid]&&r.qty!==r.requestedQty){
+      if(!warn){
+        warn=document.createElement('div');
+        warn.className='fusion-warn';
+        warn.style.cssText='background:rgba(246,201,14,0.07);border:1px solid rgba(246,201,14,0.25);border-radius:10px;padding:12px 18px;font-size:13px;color:var(--gold);margin-bottom:16px;';
+        panelEl.insertBefore(warn,panelEl.querySelector('.stock-section'));
+      }
+      warn.textContent=`⚠ Fusion rounding: you wanted ${r.requestedQty.toLocaleString()} but will actually get ${r.qty.toLocaleString()} (batches of 5+5→2 rounded up). Costs reflect exact materials needed.`;
+    } else if(warn){
+      warn.remove();
+    }
+  }
+
   r.ings.forEach((ing,idx)=>{
     const origIng=product.ingredients[idx];
     setText(`iqty-${pid}-${origIng.id}`,ing.needed.toLocaleString());
@@ -698,6 +880,7 @@ function updateDisplay(pid){
     const pInp=el(`inp-price-${pid}-${ing.id}`); if(pInp&&document.activeElement!==pInp) pInp.value=fmtPrice(ing.price);
   });
   setText(`cps-val-${pid}`,fmt(r.costPerShard));
+  setText(`cps-out-${pid}`,`actual output: ${r.qty.toLocaleString()} shards`);
   setText(`pps-val-${pid}`,(r.profitPerShard>=0?'+':'')+fmt(r.profitPerShard));
   setClass(`pps-val-${pid}`,'cps-val '+(r.profitPerShard>=0?'pos':'neg'));
   setText(`s-cost-${pid}`,fmt(r.totalCost));
@@ -707,13 +890,13 @@ function updateDisplay(pid){
   setText(`s-margin-${pid}`,r.margin.toFixed(1)+'%');
   setClass(`s-margin-${pid}`,'card-val '+(r.profit>=0?'gold':'red'));
   setText(`pb-cost-${pid}`,'-'+fmt(r.totalCost));
-  setText(`pb-rev-lbl-${pid}`,`Revenue (${r.qty} × ${fmt(r.sellPrice)})`);
+  setText(`pb-rev-lbl-${pid}`,`Revenue (${r.qty.toLocaleString()} × ${fmt(r.sellPrice)})`);
   setText(`pb-rev-${pid}`,'+'+fmt(r.revenue));
   setText(`pb-profit-${pid}`,(r.profit>=0?'+':'')+fmt(r.profit));
   setClass(`pb-profit-${pid}`,'val '+(r.profit>=0?'pos':'neg'));
   pulseCards();
   const si=el(`inp-sell-${pid}`); if(si&&document.activeElement!==si) si.value=fmtPrice(getSell(pid));
-  const logSub=el(`log-flip-box-${pid}`)?.querySelector('.log-flip-sub');
+  const logSub=el(`log-flip-sub-${pid}`);
   if(logSub) logSub.textContent=`Saves current qty (${r.qty.toLocaleString()}) at ${fmt(r.sellPrice)}/shard to your Flip Log.`;
 }
 
@@ -748,9 +931,8 @@ function reapplyBudget(pid){
   const budget=parseNum(budStr);
   if(isNaN(budget)||budget<=0) return;
   const product=getProduct(pid); if(!product) return;
-  const r=calc(product);
-  if(r.costPerShard>0){
-    const mq=Math.floor(budget/r.costPerShard);
+  const mq=calcMaxQtyForBudget(product,budget);
+  if(mq>0){
     setQtyStr(pid,String(mq));
     const qi=el(`inp-qty-${pid}`); if(qi) qi.value=displayNum(mq);
     setText(`budget-badge-${pid}`,`Max ${mq.toLocaleString()} shards`);
@@ -907,7 +1089,10 @@ el('panels').addEventListener('input',e=>{
     setBudgetStr(pid,t.value);
     if(!isNaN(budget)&&budget>0){
       const product=getProduct(pid);
-      if(product){const r=calc(product);if(r.costPerShard>0){const mq=Math.floor(budget/r.costPerShard);setQtyStr(pid,String(mq));const qi=el(`inp-qty-${pid}`);if(qi)qi.value=displayNum(mq);updateDisplay(pid);setText(`budget-badge-${pid}`,`Max ${mq.toLocaleString()} shards`);}}
+      if(product){
+        const mq=calcMaxQtyForBudget(product,budget);
+        if(mq>0){setQtyStr(pid,String(mq));const qi=el(`inp-qty-${pid}`);if(qi)qi.value=displayNum(mq);updateDisplay(pid);setText(`budget-badge-${pid}`,`Max ${mq.toLocaleString()} shards`);}
+      }
     } else {setText(`budget-badge-${pid}`,'Enter coins to auto-calc max shards');} return;
   }
   if(t.dataset.action==='set-price'){
