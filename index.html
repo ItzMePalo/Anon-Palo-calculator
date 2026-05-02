@@ -805,10 +805,39 @@ function reapplyBudget(pid){
   const product=getProduct(pid); if(!product) return;
   const r=calc(product);
   if(r.costPerShard>0){
-    const mq=Math.floor(budget/r.costPerShard);
+    // Step 1: raw max from budget
+    let mq=Math.floor(budget/r.costPerShard);
+    // Step 2: find the largest qty <= mq where every ingredient rounds up
+    // to a multiple of 5 with NO leftover — i.e. rawNeeded is already a
+    // multiple of 5 for every ingredient. We step down by 1 until all
+    // ingredients satisfy Math.ceil(perUnit*qty/5)*5 === perUnit*qty exactly,
+    // meaning perUnit*qty is a whole multiple of 5 with no fractional part.
+    // In practice we just need the qty where ceil(raw/5)*5 stays within budget.
+    // Simplest correct approach: keep stepping down until total cost <= budget
+    // AND all ingredient raws are multiples of 5 (no leftovers).
+    function noLeftovers(q){
+      return product.ingredients.every(ing=>{
+        const raw=ing.perUnit*q;
+        return Math.abs(raw - Math.round(raw/5)*5) < 0.0001;
+      });
+    }
+    // First clamp to budget with batch rounding applied
+    while(mq>0){
+      // Recalc cost at this qty with batch rounding applied
+      let cost=0;
+      product.ingredients.forEach(ing=>{
+        const raw=ing.perUnit*mq;
+        const needed=Math.ceil(raw/5)*5;
+        cost+=needed*getPrice(pid,getEffIngId(pid,ing));
+      });
+      if(cost<=budget) break;
+      mq--;
+    }
+    // Then step down further until no leftover materials
+    while(mq>0&&!noLeftovers(mq)) mq--;
     setQtyStr(pid,String(mq));
     const qi=el(`inp-qty-${pid}`); if(qi) qi.value=displayNum(mq);
-    setText(`budget-badge-${pid}`,`Max ${mq.toLocaleString()} shards`);
+    setText(`budget-badge-${pid}`,`Max ${mq.toLocaleString()} shards (no leftovers)`);
     updateDisplay(pid);
   }
 }
@@ -961,8 +990,7 @@ el('panels').addEventListener('input',e=>{
     t.classList.toggle('error',isNaN(budget)&&t.value!=='');
     setBudgetStr(pid,t.value);
     if(!isNaN(budget)&&budget>0){
-      const product=getProduct(pid);
-      if(product){const r=calc(product);if(r.costPerShard>0){const mq=Math.floor(budget/r.costPerShard);setQtyStr(pid,String(mq));const qi=el(`inp-qty-${pid}`);if(qi)qi.value=displayNum(mq);updateDisplay(pid);setText(`budget-badge-${pid}`,`Max ${mq.toLocaleString()} shards`);}}
+      reapplyBudget(pid);
     } else {setText(`budget-badge-${pid}`,'Enter coins to auto-calc max shards');} return;
   }
   if(t.dataset.action==='set-price'){
