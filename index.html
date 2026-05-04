@@ -735,8 +735,9 @@ function buildProduct(product){
       <div class="log-flip-sub">Saves current qty (${r.qty.toLocaleString()}) at ${fmt(r.sellPrice)}/shard to your Flip Log.</div>
     </div>
     <div class="log-flip-right">
-      <input class="smart-input log-note-inp" type="text" id="log-note-inline-${pid}" placeholder="Note (optional)" autocomplete="off" style="width:200px;font-size:14px;" />
-      <button class="btn btn-gold log-flip-btn" data-action="log-flip-inline" data-pid="${pid}">📋 Log Flip</button>
+      <input type="text" id="log-note-inline-${pid}" placeholder="Note (optional)" autocomplete="off"
+        style="background:var(--surface2);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-size:14px;font-family:inherit;padding:10px 14px;width:200px;outline:none;-webkit-text-fill-color:var(--text);box-shadow:none;-webkit-box-shadow:none;" />
+      <button style="padding:11px 22px;border-radius:10px;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;border:1px solid rgba(246,201,14,0.3);background:rgba(246,201,14,0.12);color:var(--gold);transition:all 0.15s;" data-action="log-flip-inline" data-pid="${pid}">Log Flip</button>
       <div class="log-flip-status" id="log-flip-status-${pid}"></div>
     </div>`;
   div.appendChild(logBox);
@@ -1211,12 +1212,21 @@ function inputGroupEl(label,sub,inputId,val){
 
 // ─── BOOT ────────────────────────────────────────────────────────────────────
 (async()=>{
-  const remote=await jbRead();
-  if(remote) applyRemote(remote);
+  // Render immediately with local/default data so the UI appears instantly
   if(local.activeTab!=='__manage__'&&local.activeTab!=='__log__'&&!getProduct(local.activeTab)){
     local.activeTab=remoteData.products[0]?.id||'__manage__'; saveLocal();
   }
   renderAll();
+
+  // Then sync with JSONbin in the background and re-render if anything changed
+  const remote=await jbRead();
+  if(remote){
+    applyRemote(remote);
+    if(local.activeTab!=='__manage__'&&local.activeTab!=='__log__'&&!getProduct(local.activeTab)){
+      local.activeTab=remoteData.products[0]?.id||'__manage__'; saveLocal();
+    }
+    renderAll();
+  }
 })();
 </script>
 </body>
